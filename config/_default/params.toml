@@ -2,8 +2,8 @@ gitRepo = "https://github.com/jerdog/jmeiss-me-toha"
 background = "images/background.jpg"
 
 [logo]
-main = "images/avatar.png"
-#inverted = "images/inverted-logo.png"
+main = "images/me.png"
+inverted = "images/me.png"
 favicon = "images/fav.png"
 
 [features.portfolio]
@@ -18,6 +18,9 @@ enable = true
 [features.blog]
 enable = true
 showAuthor = true
+
+[features.toc]
+enable = true
 
 [footer]
 enable = true
