@@ -1,0 +1,19 @@
+# some information about you
+name: "Jeremy Meiss"
+nickname: "Jeremy"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hello, I am"
+image: "images/author/jeremy-meiss.jpg"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  github: jerdog
+  linkedin: jeremymeiss
+  twitter: IAmJerdog
+
+# some summary about what you do
+summary:
+  - I am a Developer
+  - I am a Devops
+  - I love servers
+  - I work on open-source projects
+  - I love to work with some fun projects
