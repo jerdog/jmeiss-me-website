@@ -9,5 +9,9 @@ enable = true
   [features.portfolio.toc]
   enable = true
 
+[features.blog]
+enable = true
+showAuthor = true
+
 [footer]
 enable = true
