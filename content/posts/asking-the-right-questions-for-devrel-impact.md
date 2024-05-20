@@ -1,7 +1,7 @@
 ---
 title: "Asking the Right Questions for DevRel Impact, Part 3"
 date: 2023-09-06T13:30:22-05:00
-hero: /images/asking-right-questions.jpg
+hero: /images/posts/asking-right-questions.jpg
 description: "Part 3 of a (currently) 5 Part series on Developer Relations, and how we can move it forward into the years to come. When you start a new Developer Relations or Community role at a company, it's important to get a handle on where DevRel sits within your company. These questions will help."
 draft: false
 author: "Jeremy Meiss"

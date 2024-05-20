@@ -1,7 +1,7 @@
 ---
 title: Broaden your Community and Developer Relations reach through collaboration
 date: 2020-02-11
-hero: /images/community-collab.jpg
+hero: /images/posts/community-collab.jpg
 description: "Community is hard. It just is. There. I said it. With all of the hard work that building communities is, why would you ever make it that much harder on yourself by building your community in a bubble?"
 author: "Jeremy Meiss"
 tags:

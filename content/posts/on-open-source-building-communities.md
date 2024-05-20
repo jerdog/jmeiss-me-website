@@ -1,7 +1,7 @@
 ---
 title: On Open Source and Building Communities
 date: 2017-10-28
-hero: /images/open-source-communities.png
+hero: /images/posts/open-source-communities.png
 description: "Open source is where true innovation happens. There. I’ve said it. The free exchange of ideas, the creative juices that comes from open source and open source communities is unparalleled in proprietary businesses and software."
 draft: false
 author: "Jeremy Meiss"

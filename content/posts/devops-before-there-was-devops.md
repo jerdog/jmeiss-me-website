@@ -1,7 +1,7 @@
 ---
 title: DevOps before there was DevOps, 20yr old style
 date: 2020-01-17
-hero: /images/ethernet-switch.png
+hero: /images/posts/ethernet-switch.png
 description: "From 1995-1997 I worked at an Internet provider who was at the bleeding edge of the WWW explosion. This, is my DevOps story."
 draft: false
 author: "Jeremy Meiss"
