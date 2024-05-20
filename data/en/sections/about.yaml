@@ -40,34 +40,65 @@ socialLinks:
 # You can also show a circular bar indicating the level of expertise on a certain skill
 badges:
 - type: certification
-  name: Certified Kubernetes Security Specialist
-  url: "https://www.credly.com/org/the-linux-foundation/badge/exam-developer-certified-kubernetes-security-specialist"
-  badge: "https://images.credly.com/size/680x680/images/f4bf92ed-8985-40b2-bc07-2f9308780854/kubernetes-security-specialist-logo-examdev.png"
+  name: Program Committee Member - cdCon 2024
+  url: "https://www.credly.com/badges/acda211f-6ef3-4c3a-9c61-f84fac44ddbf/public_url"
+  badge: "https://images.credly.com/images/bc34a53d-bd05-4b41-85b1-21e05a5e9055/image.png"
 
 - type: certification
-  name: Istio and IBM Cloud Kubernetes Service
-  url: "https://www.credly.com/org/the-linux-foundation/badge/exam-developer-certified-kubernetes-security-specialist"
-  badge: "https://images.credly.com/size/680x680/images/8d34d489-84bf-4861-a4a0-9e9d68318c5c/Beyond_basics_of_Istio_on_Cloud_v2.png"
+  name: "Speaker: Open Source Summit North America 2024"
+  url: "https://www.credly.com/badges/9b26abca-7931-4439-a021-e66266a7fa76/public_url"
+  badge: "https://images.credly.com/size/220x220/images/5d7ece29-f2e6-47aa-88d9-d99c5ba0a336/image.png"
 
 - type: certification
-  name: Artificial Intelligence and Machine Learning
-  url: "https://www.credly.com/org/grupo-bancolombia/badge/artificial-intelligence-and-machine-learning"
-  badge: "https://images.credly.com/size/680x680/images/e027514f-9d07-4b29-862f-fe21a8aaebf1/ae.png"
+  name: "Program Committee Member: Open Source Summit North America 2024"
+  url: "https://www.credly.com/badges/41424ceb-e7f6-46ef-9fce-03dcf13d52f6/public_url"
+  badge: "https://images.credly.com/size/220x220/images/98a7375e-c775-4c9f-9d25-505143929a3f/image.png"
+
+- type: certification
+  name: "Speaker - Continuous Delivery Mini Summit 2023"
+  url: "https://www.credly.com/badges/166bd9c8-97a3-47cd-88de-0ba135efcdbb/public_url"
+  badge: "https://images.credly.com/size/220x220/images/0b753312-2772-40be-92bc-2d7ea2cdf291/image.png"
+
+- type: certification
+  name: "Program Committee: Spinnaker Summit 2023"
+  url: "https://www.credly.com/badges/7713068e-7427-475b-8da5-9d32b3b3baa8/public_url"
+  badge: "https://images.credly.com/size/220x220/images/5c4cfea8-0069-4e94-b350-4a2157f62621/image.png"
+
+- type: certification
+  name: "Speaker - cdCon 2022"
+  url: "https://www.credly.com/badges/d4359d19-c9d1-4e93-a726-1227dd1acf66/public_url"
+  badge: "https://images.credly.com/size/220x220/images/d0b72760-8a19-42e0-8a8e-9c10a5ce93ee/image.png"
 
 - type: soft-skill-indicator
-  name: Leadership
-  percentage: 85
-  color: blue
-
-- type: soft-skill-indicator
-  name: Team Work
+  name: Community Management
   percentage: 90
-  color: yellow
+  color: "#cc33ff"
 
 - type: soft-skill-indicator
-  name: Hard Working
-  percentage: 85
-  color: orange
+  name: Developer Relations
+  percentage: 90
+  color: "#6600ff"
+
+- type: soft-skill-indicator
+  name: Conference Speaking
+  percentage: 80
+  color: "#6699ff"
+
+- type: soft-skill-indicator
+  name: Management
+  percentage: 80
+  color: "#9966ff"
+
+- type: soft-skill-indicator
+  name: Strategy
+  percentage: 80
+  color: "#99ccff"
+
+- type: soft-skill-indicator
+  name: Product Management
+  percentage: 75
+  color: "#ffccff"
+
 
 # you can also provide color code instead of the color name
 # - type: soft-skill-indicator
