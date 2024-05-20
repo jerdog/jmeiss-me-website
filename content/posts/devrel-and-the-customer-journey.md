@@ -1,7 +1,7 @@
 ---
 title: "DevRel and the Customer Journey, Part 4"
 date: 2023-09-06T13:40:42-05:00
-hero: /images/posts/the-journey.jpg
+hero: /images/posts/the-journey.png
 description: "Part 4 of a (currently) 5 Part series on Developer Relations, and how we can move it forward into the years to come. DevRel is not a revenue-generating organization - it’s a cost center. It's important, then, to prove the value of the organization early, and often."
 draft: false
 author: "Jeremy Meiss"
@@ -179,4 +179,5 @@ Businesses are always changing. One week the focus could be to raise awareness i
 
 ---
 
-Cover photo by <a href="https://unsplash.com/@jannesglas?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jannes Glas</a> on <a href="https://unsplash.com/photos/P6iOpqQpwwU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Cover Photo by <a href="https://unsplash.com/@thematthoward?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Matt Howard</a> on <a href="https://unsplash.com/photos/mountain-pass-during-sunrise-A4iL43vunlY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  

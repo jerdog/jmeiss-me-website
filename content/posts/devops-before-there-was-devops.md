@@ -1,7 +1,7 @@
 ---
 title: DevOps before there was DevOps, 20yr old style
 date: 2020-01-17
-hero: /images/posts/ethernet-switch.png
+hero: /images/posts/ethernet-switch.jpg
 description: "From 1995-1997 I worked at an Internet provider who was at the bleeding edge of the WWW explosion. This, is my DevOps story."
 draft: false
 author: "Jeremy Meiss"
@@ -91,3 +91,8 @@ Finally, we come to automation. This is where I think my 20 year old self really
 ![teamwork](https://media.giphy.com/media/xmz2JEFmNsGru/giphy.gif)<figcaption>via <a href="https://giphy.com/embed/xmz2JEFmNsGru">GIPHY</a></figcaption>
 
 So if you've gotten this far without a table flip, give yourself a cookie! This of course was completely in jest, and not at all the correct application of DevOps principles, or really a good way of working for anything or anyone. I would like to say that I have learned a few things since then. Now where did I put that Sharpie marker and tone generator?
+
+---
+
+Cover Photo by <a href="https://unsplash.com/@thomasjsn?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Thomas Jensen</a> on <a href="https://unsplash.com/photos/black-network-switch-with-cables-ISG-rUel0Uw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
