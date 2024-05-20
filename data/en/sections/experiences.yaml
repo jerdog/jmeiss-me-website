@@ -1,0 +1,242 @@
+section:
+  name: Experience # Titre de la section (par défaut: "" )
+  id: experiences # url id/slug of section *Required*
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
+
+experiences:
+- company:
+    name: DevEx Institute
+    url: "https://devex.institute"
+    location: "Remote"
+    logo: /images/experiences/devex-institute-logo.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: #Consulting on Developer Experience and fostering the community to equip developers to champion the DevEx they deserve.
+  positions:
+  - designation: Co-Founder, DevEx Consultant
+    start: Jan 2024
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    #end: Aug 2023
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Help and advise companies in creating, managing, and growing their Developer Experience initiatives. 
+    - Build relationships with developers and practitioners in the community.
+    - Speak on topics related to Developer Experience at events, conferences, and meetups.
+
+- company: 
+    name: blueDog Consulting
+    url: 
+    location: "Remote"
+    logo: 
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: ""
+  positions:
+  - designation: Independent Consultant
+    start: Mar 2017
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    #end: Aug 2023
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Help and advise companies in creating, managing, and growing their Developer Relations and Developer Community activities, including
+
+      - Developer community and engagement initiatives
+
+      - Building up their internal- and external-facing experience for developers and practitioners
+
+      - Advising on content around use cases and developer-centric endeavors via documentation, tutorials, blog posts, and videos
+    
+    - Speak at industry and developer events about Developer Relations, Community, Developer Productivity, and more.
+
+- company:
+    name: CircleCI
+    url: "https://circleci.com"
+    location: "Remote"
+    logo: /images/experiences/circleci-logo-black-horizontal.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: #CircleCI is a continuous integration and continuous delivery platform that can be used to implement DevOps practices.
+  positions:
+  - designation: Director, Developer Relations & Community
+    start: Feb 2020
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Aug 2023
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Led both execution and strategy in building a program to engage, educate, and excite the user base and build relationships with developers across the verticals. 
+    - Managed a global team of Developer Advocates and Community Managers focusing on creating scalable, impactful, and trackable programs serving both internal and external audiences. 
+    - Collaborated closely with Product, Customer Engineering, Business Development, Engineering, Brand Marketing teams, and Events to ensure coordinated participation and a consistent narrative for the developer. 
+    - Worked with Marketing and Sales to effectively launch new services, features, and enhancements through the community and support the CircleCI Developer Community through speaking engagements, webinars, and other events.
+    - <strong>Achievements</strong>
+
+      - Grew team through the COVID-19 pandemic, and built a strong, cohesive team that was able to pivot to a virtual-first world.
+
+      - Formulated strategy which integrated the DevRel & Community org into the Customer journey, and built tracking and reporting mechanisms to measure success.
+
+      - Built the event participation model for the DevRel & Community org which contributed over $3mil in pipeline during my time there.
+
+- company:
+    name: Solace
+    url: "https://solace.com"
+    location: "Remote"
+    logo: /images/experiences/solace-logo.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: #Solace enables the smart movement of data through event broker technology and event mesh.
+  positions:
+  - designation: Director, Developer Relations & Community
+    start: Feb 2019
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Feb 2020
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Led, coordinated, and managed the global Developer Community, the team, and Developer Relations initiatives. 
+    - Used Developer Advocacy to shape the product roadmap, refine the developer experience, and build growth and engagement. 
+    - Responsible for putting in place the developer content strategy to provide developers using the PubSub+ platform with the resources necessary to be successful, from samples to tutorials to workshops and more. 
+    - Attended and spoke at conferences, events, and participated in online and offline communities, to grow the awareness and implementation of Solace PubSub+.
+
+- company:
+    name: Auth0
+    url: "https://auth0.com"
+    location: "Remote"
+    logo: /images/experiences/auth0-logo.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: #Auth0 is a flexible, drop-in solution to add authentication and authorization services to your applications.
+  positions:
+  - designation: Head of Community
+    start: Dec 2017
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Feb 2019
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Led a team tasked with building, growing, and maintaining a community for Developers interested in Auth0 products.
+    - Developed and implemented the online and offline engagement strategy.
+    - Refined the Developer Experience for the product, and built relationships with developers.
+    - Attended and spoke at events around Modern Identity, Community, and Developer Relations. 
+    - Built out Open Source Maintainer strategy, as well as implemented an MVP/Experts program.
+
+- company:
+    name: Fastboot Mobile, LLC
+    url: 
+    location: "Remote"
+    logo: 
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: 
+  positions:
+  - designation: Co-Founder, COO
+    start: Apr 2014
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Dec 2017
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Managed overall technical operations and direction, including project management and R&D with a focus on Android platform and application development, Web and IoT solutions, and security process analysis. 
+    - Managed multi-functional, multi-national, distributed teams in 4 countries and across 6 time zones. 
+    - Client management, technical consulting, and support on solutions delivered to OEMs, carriers and mobile brands in China, India and United States. 
+    - Quality control on solution delivery.
+
+- company:
+    name: XDA Developers
+    url: "https://www.xda-developers.com/page/about/"
+    location: "Remote"
+    logo: /images/experiences/xda-logo.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: 
+  positions:
+  - designation: Developer & Community Relations Director
+    start: Feb 2010
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Dec 2017
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Public face of largest mobile online community in the world with over 7mil members
+    - Management and oversight of News Portal.
+    - Building relationships between OEMs and independent developers, and between developers and their users.
+    - Advocate for Open Source practices and advocate for the use of Open Source in the mobile industry, including license compliance with OEMs like Sony, Samsung, HTC, and others.
+    - Speaking at conferences and meeting with teams on how to work with the community to implement their product, whether software, hardware, or services.
+    
+- company:
+    name: Intouch Solutions
+    url: "https://www.eversanaintouch.com/solutions/"
+    location: "Overland Park, KS"
+    logo: /images/experiences/intouchsolutions-logo.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: 
+  positions:
+  - designation: Business Systems Analyst
+    start: Mar 2012
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Apr 2014
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Digital Media initiatives and innovative direction for client projects surrounding.
+    - Requirements building for Web, Mobile Web, iPhone and iPad applications, as well as internal business applications. 
+    - Interact with clients, internal and external, around technical functionality, back end interaction and user management, user experience, layout and functional design.
+
+- company:
+    name: Ericsson, Inc. (Sprint Network Services)
+    url: "https://www.ericsson.com/en"
+    location: "Overland Park, KS"
+    logo: /images/experiences/ericsson-logo.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: 
+  positions:
+  - designation: App Dev II / Technical Project Manager
+    start: Sep 2009
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Feb 2012
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Project management, delivering global business solutions for the Customer that meet business requirements within the agreed upon timelines.
+    - Driving results through collaborative sessions, meetings and work sessions.
+    - Liasion between the Customer business units and I/T as well as Ericsson resources, bringing them together to accomplish agreed upon tasks.
+    - Drove the globalization process for applications needed to be used by Ericsson resources around the world to meet the needs of the Customer.
+    - Delivered Sharepoint solution and helped run daily status calls and delivered VP-level reports for the UAT phase of the movement of Ericsson employees off of the Sprint network.
+
+- company:
+    name: Sprint
+    url: "https://www.sprint.com"
+    location: "Overland Park, KS"
+    logo: /images/experiences/sprint-logo.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: 
+  positions:
+  - designation: Various, last as Systems Analyst II
+    start: Feb 2001
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Sep 2009
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Managed team responsible for delivering automation solutions to the Sprint I/T Helpdesk and building the reporting system used in providing Ops Reviews to Executive Management.
+    - Provided daily mentoring, reviews and scheduling for team of 8 application developers as well as providing monthly reports to up-per management.
+    - Wireline and Wireless Numbering Management and ensured compliance with FCC guidelines.
+    - Liaison between I/T and the specific business unit impacted, including software integration, development and support.
+    - nvolved in the Sprint Nextel integration activities as a SME.
+    - Metrics and report creation with presentation to upper and senior management.
+    - Systems and application administrator for tools related to Access Management’s day-to-day business and providing 24x7 support.
+
+- company:
+    name: Hallmark Cards
+    url: "https://www.hallmark.com"
+    location: "Kansas City, MO"
+    logo: /images/experiences/hallmark-logo.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: 
+  positions:
+  - designation: Various, last as Technical Liason
+    start: Jun 1998
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Feb 2001
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Responsibilities included specialized business unit technical support; systems and database analysis; helpdesk management; and liaison work between specific business units and I/T.
