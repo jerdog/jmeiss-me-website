@@ -1,6 +1,6 @@
 baseURL = 'https://jmeiss-me-toha.netlify.app/'
 languageCode = 'en-us'
-title = 'Jeremy Meiss | DevEx & DevRel Professional'
+title = 'Jeremy Meiss'
 enableEmoji = true
 
 [markup.goldmark.renderer]
