@@ -1,3 +1,15 @@
 # Use H
-[imports]
+[[imports]]
 path = "github.com/hugo-toha/toha/v4"
+
+[[mounts]]
+source = "./node_modules/flag-icon-css/flags"
+target = "static/flags"
+
+[[mounts]]
+source = "./node_modules/@fontsource/mulish/files"
+target = "static/files"
+
+[[mounts]]
+source = "./node_modules/katex/dist/fonts"
+target = "static/fonts"

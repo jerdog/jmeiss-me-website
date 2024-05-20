@@ -1,0 +1,13 @@
+gitRepo = "https://github.com/jerdog/jmeiss-me-toha"
+
+[features.portfolio]
+enable = true
+
+  [features.portfolio.blog]
+  enable = true
+
+  [features.portfolio.toc]
+  enable = true
+
+[footer]
+enable = true
