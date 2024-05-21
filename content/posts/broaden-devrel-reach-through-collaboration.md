@@ -20,7 +20,7 @@ And I love it. All of it. Well, maybe not _all_ of it. But it's what I love doin
 
 With all of the hard work that building communities is, why would you ever make it that much harder on yourself by building your community in a bubble? Why position yourself on an island, staring at Wilson?
 
-![wilson](/images/posts/wilson.gif)
+![wilson](https://tenor.com/view/wilson-volleyball-castaway-island-match-gif-6160666)
 
 Building developer communities requires you to function much like the very developers you're building your community for.  Developers exist in interconnected communities due to the particular software or technology they might develop with/for, their hobbies, etc. These might be everything from TypeScript to Open Source to Salesforce Trailblazers. Because of that, it makes sense to grow a community, especially when starting from scratch, by collaborating with others.
 
