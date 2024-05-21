@@ -113,7 +113,7 @@ If you’re finding it difficult to identify them, here are some that my previou
   </tr>
 </table>
 
-As I mentioned, these are all just a few of the _many_ activities that we identified. One thing that also helped us identify, and track, all of the activities being performed in the community and by the team was by using Orbit and the Orbit Love model. You can read about some of the ways I implemented Orbit at CircleCI [here](https://orbit.love/blog/customer-story-circleci). There are other tools like [Common Room](https://www.commonroom.io/) which help you achieve the same thing, but it’s important that you have a way to capture all of the activities in order to accurately report on them.
+As I mentioned, these are all just a few of the _many_ activities that we identified. One thing that also helped us identify, and track, all of the activities being performed in the community and by the team was by using Orbit and the [Orbit Love model](https://orbit.love/model). You can read about some of the ways I implemented Orbit at CircleCI [here](https://orbit.love/blog/customer-story-circleci). There are other tools like [Common Room](https://www.commonroom.io/) which help you achieve the same thing, but it’s important that you have a way to capture all of the activities in order to accurately report on them.
 
 #### Match up the activities with their spot in the Customer journey
 
