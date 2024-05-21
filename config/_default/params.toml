@@ -1,4 +1,4 @@
-gitRepo = "https://github.com/jerdog/jmeiss-me-toha"
+#gitRepo = "https://github.com/jerdog/jmeiss-me-toha"
 background = "images/background.jpg"
 
 [logo]
