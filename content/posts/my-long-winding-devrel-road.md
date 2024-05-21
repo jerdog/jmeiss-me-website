@@ -4,7 +4,9 @@ date: 2019-04-25
 hero: /images/posts/long-winding-road.jpg
 description: "I've spent the last roughly 25 years in IT, with the last 12 or so being a part of technical communities and Developer Relations (DevRel). For those who are new to the term, DevRel is literally about building relationships with the developer community. This is my journey to my chosen career."
 draft: false
-author: "Jeremy Meiss"
+author:
+  name: Jeremy Meiss
+  image: /images/author/jeremy-meiss.jpg
 tags:
   - devrel
   - career

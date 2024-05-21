@@ -4,7 +4,9 @@ date: 2019-08-14
 hero: /images/posts/giving-someone-elses-talk.jpg
 description: "Preparing a talk to give anywhere is a daunting experience, but giving someone else's talk takes that to a whole new level. Following these steps will not magically make it a great talk, but they will help you prepare - and maybe, just maybe, the talk will become one that you begin to give because it's become your own. "
 draft: false
-author: "Jeremy Meiss"
+author:
+  name: Jeremy Meiss
+  image: /images/author/jeremy-meiss.jpg
 tags:
   - community
   - speaking

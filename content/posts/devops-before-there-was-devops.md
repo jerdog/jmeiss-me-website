@@ -4,7 +4,9 @@ date: 2020-01-17
 hero: /images/posts/ethernet-switch.jpg
 description: "From 1995-1997 I worked at an Internet provider who was at the bleeding edge of the WWW explosion. This, is my DevOps story."
 draft: false
-author: "Jeremy Meiss"
+author:
+  name: Jeremy Meiss
+  image: /images/author/jeremy-meiss.jpg
 tags:
   - devops
   - humor

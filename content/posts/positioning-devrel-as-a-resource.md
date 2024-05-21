@@ -4,7 +4,9 @@ date: 2023-09-06T14:00:54-05:00
 hero: /images/posts/all-about-positioning.jpg
 description: "Part 5 of a (currently) 5 Part series on Developer Relations, and how we can move it forward into the years to come. DevRel is not a revenue-generating organization - it’s a cost center. It's important, then, to prove the value of the organization early, and often."
 draft: false
-author: "Jeremy Meiss"
+author:
+  name: Jeremy Meiss
+  image: /images/author/jeremy-meiss.jpg
 tags:
   - community
   - devrel

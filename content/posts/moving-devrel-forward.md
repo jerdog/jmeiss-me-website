@@ -4,7 +4,9 @@ date: 2023-09-06T13:12:50-05:00
 hero: /images/posts/couple-pushing-elephant.jpg
 description: "The first in a 5 Part series on Developer Relations, and how we can move it forward into the years to come. It is not meant as a definitive roadmap, but more as a kickstart down the road of conversation."
 draft: false
-author: "Jeremy Meiss"
+author:
+  name: Jeremy Meiss
+  image: /images/author/jeremy-meiss.jpg
 tags:
   - community
   - devrel

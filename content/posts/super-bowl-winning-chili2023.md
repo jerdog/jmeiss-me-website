@@ -4,7 +4,9 @@ date: 2023-02-19T17:19:27-06:00
 draft: true
 image: "/images/chili-2023.jpg"
 description: ""
-author: "Jeremy Meiss"
+author:
+  name: Jeremy Meiss
+  image: /images/author/jeremy-meiss.jpg
 tags:
   - community
   - devrel

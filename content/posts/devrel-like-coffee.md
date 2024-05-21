@@ -4,7 +4,9 @@ date: 2019-01-03
 hero: /images/posts/devrel-like-coffee-final.png
 description: "So the year is 2008. My wife and I have 3 kids, 2 full-time jobs, and we’ve just bought a coffee shop. No one ever said I was the smartest pea in the pod. Follow along as we discuss DevRel, coffee, and how they both go together."
 draft: false
-author: "Jeremy Meiss"
+author:
+  name: Jeremy Meiss
+  image: /images/author/jeremy-meiss.jpg
 tags:
   - devrel
   - coffee
