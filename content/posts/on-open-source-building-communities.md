@@ -15,7 +15,7 @@ toc: true
 
 Open source is where true innovation happens. There. I’ve said it. The free exchange of ideas, the creative juices that comes from open source and open source communities is unparalleled in proprietary businesses and software. So now that’s out of the way, let’s talk about what open source is and the advantages it can bring you and/or your business, and then we'll talk about the core pieces of building communities.
 
-![doctorcool](/images/TheDoctor_cool.gif)
+![doctorcool](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWhzeDZoYXZjcjU2NXJ6Ymk0ZXRycXAxdG1lbXZ0eXBjbWhkMDZyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U45ze76aj7DvG/giphy.gif)
 
 ## Open Source: The What and The Why
 The [Open Source Initiative](https://opensource.org) defines open source as:
@@ -47,7 +47,7 @@ Open source is all around us. Heck, with traditionally proprietary companies lik
 
 Keeping software up-to-date is essential to ensuring that bugs and security issues are mitigated as quickly as possible and limiting the effect to the public. However, when you're relying on a proprietary software company to provide updates, you're at their mercy in when they decide to deploy them. A great case in point would be buying a Google phone (Nexus or Pixel) as opposed to something from Samsung or HTC: you'll get faster software updates as you're not bridled by the OEMs need to modify everything. And we're not even adding carriers into the mix. Often these proprietary companies don’t feel the same urgency that you do, even though the software may be mission-critical to you and your business. With open source software you’re able to either contribute the fix yourself, or pull the fix down, and **patch your code on your schedule**. By **contributing the fixes upstream** you’re illustrating the positive lifecycle that happens in open source, thus providing benefits for you and everyone else - meaning everyone wins!
 
-![everyonewins](/images/everyonewins.jpg)
+![everyonewins](https://cdn-images-1.medium.com/max/620/1*eGt3nfans6NLcPB5OmNTZw.jpeg)
 
 ### Free as in speech, not beer
 We’ve all seen terms like “FOSS”, “Libre” - which all refer to free, open source software. The term “free” does not necessarily mean that the software is without cost - sometimes it is, sometimes it isn’t. What “free” more refers to the rights that the software offers to the consumer by default, with the monetary cost being something subjective to the respective developer/organization. For instance, software like Adobe Flash or Internet Explorer can be freely downloaded but is completely non-free proprietary software.
@@ -63,7 +63,7 @@ When software is not FOSS, you have a high potential to welcome risks as a user 
 
 Open source software is also like the “give-a-penny-take-a-penny” philosophy of software. If you use the software, whatever it is, there is an implicit obligation to give back to the community. Think of it as the Golden Rule applied to software. Some might remember the early Shareware models for software “back in the day”. Typically in the license for the software, which often was actually distributed on floppy disks between friends or on BBS’s, would be a clause which stated that you were able to share the software (hence “shareware”) with anyone, and if you found it useful and wanted to continue to use it you would need to send some amount to the developer. This has changed over time with the onset of different software licenses and online software repos like GitHub, but in the 1980s this was the norm.
 
-![keepcalm](/images/keepcalm-opensource.jpg)
+![keepcalm](https://cdn-images-1.medium.com/max/730/0*ZNKgQp36g2FaNQ7_.jpg)
 
 ## Open source == Community; Community == Open source
 Open source software projects tend to naturally facilitate community, whether something intentional or not. The [Open Source Initiative](https://opensource.org/community) has the following to say:
