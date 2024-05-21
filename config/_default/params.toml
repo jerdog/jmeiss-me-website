@@ -6,6 +6,12 @@ main = "images/me.png"
 inverted = "images/me.png"
 favicon = "images/fav.png"
 
+[features.analytics]
+enable = true
+
+[features.analytics.services.google]
+id = "G-7LJ0M7K1R6"
+
 [features.portfolio]
 enable = true
 
