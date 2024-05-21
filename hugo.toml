@@ -3,13 +3,17 @@ languageCode = 'en-us'
 title = 'Jeremy Meiss'
 enableEmoji = true
 
-[markup.goldmark.renderer]
-unsafe = true
-
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+        [markup.goldmark.renderHooks]
+            [markup.goldmark.renderHooks.link]
+                enableDefault = true
 [markup.tableOfContents]
-startLevel = 2
-endLevel = 6
-ordered = false
+    startLevel = 2
+    endLevel = 6
+    ordered = false
 
 [outputs]
 home = [ "HTML", "RSS", "JSON" ]
