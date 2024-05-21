@@ -35,6 +35,15 @@ socialLinks:
   icon: "fab fa-twitter"
   url: "https://twitter.com/IAmJerdog"
 
+- name: Mastodon
+  icon: "fa-brands fa-mastodon"
+  url: "hachyderm.io/@jerdog"
+
+- name: Devto
+  icon: "fa-brands fa-dev"
+  url: "https://dev.to/jerdog"
+
+
 # Show your badges
 # You can show your verifiable certificates from https://www.credly.com.
 # You can also show a circular bar indicating the level of expertise on a certain skill

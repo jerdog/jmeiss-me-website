@@ -119,9 +119,17 @@
                 <li><a href={{ printf "https://www.researchgate.net/profile/%s" $value }} target="_blank" rel="noopener">
                   <span><i class="fab fa-researchgate"></i></span> <span>{{ $author.name }}</span>
                 </a></li>
-              {{ else if (eq $key "twitter") }}
+                {{ else if (eq $key "twitter") }}
                 <li><a href={{ printf "https://twitter.com/%s" $value }} target="_blank" rel="noopener">
                   <span><i class="fab fa-twitter"></i></span> <span>{{ $value }}</span>
+                </a></li>
+                {{ else if (eq $key "mastodon") }}
+                <li><a href={{ printf "https://%s" $value }} target="_blank" rel="noopener">
+                  <span><i class="fa-brands fa-mastodon"></i></span> <span>{{ $value }}</span>
+                </a></li>
+                {{ else if (eq $key "devto") }}
+                <li><a href={{ printf "https://dev.to/%s" $value }} target="_blank" rel="noopener">
+                  <span><i class="fa-brands fa-dev"></i></span> <span>{{ $value }}</span>
                 </a></li>
               {{ else if reflect.IsMap $value }}
                 <li>

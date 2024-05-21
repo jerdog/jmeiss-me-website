@@ -2,13 +2,15 @@
 name: "Jeremy Meiss"
 nickname: "Jeremy"
 # greeting message before your name. it will default to "Hi! I am" if not provided
-greeting: "Hello, I am"
+greeting: "Hello, my name is"
 image: "images/author/jeremy-meiss.jpg"
 # give your some contact information. they will be used in the footer
 contactInfo:
   github: jerdog
   linkedin: jeremymeiss
   twitter: IAmJerdog
+  mastodon: hachyderm.io/@jerdog
+  devto: jerdog
 
 # some summary about what you do
 summary:
