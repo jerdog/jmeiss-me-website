@@ -22,17 +22,17 @@ _**Author's Note:** What follows is the foundation of a conference talk most rec
 
 With the rapidly evolving landscape of modern software development, tools, and services (e.g., the [CNCF Landscape](https://landscape.cncf.io/)), Continuous Integration and Continuous Deployment (commonly referred to together as “CI/CD”) stand as transformative pillars — reshaping how software is delivered and the very experience of those crafting it. *Developer Experience (DevEx) encompasses developers' journey as they learn and deploy technology.*
 
-A successful DevEx focuses on eliminating obstacles that hinder a developer or practitioner from achieving success. It also refers to developers' overall satisfaction and efficiency while working on software projects. That includes the tools, processes, and environments that shape developers' interactions with code, infrastructure, and each other. A positive DevEx is crucial for enhancing productivity as it directly influences how quickly and effectively developers can build, test, and deploy software. 
+A successful DevEx focuses on eliminating obstacles that hinder a developer or practitioner from achieving success. It also refers to developers' overall satisfaction and efficiency while working on software projects. That includes the tools, processes, and environments that shape developers' interactions with code, infrastructure, and each other. A positive DevEx is crucial for enhancing productivity as it directly influences how quickly and effectively developers can build, test, and deploy software.
 
-CI/CD's impact on the software engineering industry’s collective DevEx is significant, offering a dynamic shift in how developers collaborate, create, and deliver software. By automating integration, testing, and deployment processes, CI/CD accelerates the development cycles, empowering developers with faster feedback loops, improved code quality, and the ability to iterate swiftly. 
+CI/CD's impact on the software engineering industry’s collective DevEx is significant, offering a dynamic shift in how developers collaborate, create, and deliver software. By automating integration, testing, and deployment processes, CI/CD accelerates the development cycles, empowering developers with faster feedback loops, improved code quality, and the ability to iterate swiftly.
 
-By streamlining workflows, reducing friction, and providing intuitive tools, a good DevEx empowers developers to focus on creating high-quality code, fostering innovation, and ultimately contributing to faster and more reliable software delivery. For now, we will hone in on two critical pillars: standardization and interoperability. 
+By streamlining workflows, reducing friction, and providing intuitive tools, a good DevEx empowers developers to focus on creating high-quality code, fostering innovation, and ultimately contributing to faster and more reliable software delivery. For now, we will hone in on two critical pillars: standardization and interoperability.
 
 CI/CD standardization brings consistency to development pipelines, reducing friction and enhancing collaboration. At the same time, interoperability ensures seamless integration across diverse toolsets, fostering flexibility in development environments. Together, they both play pivotal roles in optimizing DevEx and improving overall productivity in the software development lifecycle. For this post, however, we will focus on CI/CD standardization.
 
 ## What is “CI/CD Standardization?”
 
-CI/CD Standardization aims to minimize variability, reduce errors, and foster an environment where developers can efficiently collaborate. You can achieve standardization by defining explicit, repeatable code integration, testing, and deployment processes, thus ensuring a smooth development journey. Implementing CI/CD pipeline standardization is crucial for streamlining the development process and enhancing DevEx. 
+CI/CD Standardization aims to minimize variability, reduce errors, and foster an environment where developers can efficiently collaborate. You can achieve standardization by defining explicit, repeatable code integration, testing, and deployment processes, thus ensuring a smooth development journey. Implementing CI/CD pipeline standardization is crucial for streamlining the development process and enhancing DevEx.
 
 Here are some critical steps and better practices to start with for achieving pipeline standardization.
 
@@ -40,13 +40,13 @@ Here are some critical steps and better practices to start with for achieving pi
 
 Streamlining the developer experience with CI/CD standardization begins with a thorough assessment and analysis of current pipelines. This allows us to make informed decisions and implement the changes that will lead to more efficient and effective development processes. This involves everything from understanding existing workflows, tools, and processes to identifying pain points, bottlenecks, and areas requiring standardization. Evaluating specific project requirements and constraints helps prioritize the standardization efforts effectively, laying the foundation for a cohesive and efficient CI/CD ecosystem.
 
-After assessment, organizations should establish clear goals, prioritize standardization (and subsequently interoperability), and invest in comprehensive documentation and training to overcome challenges and ensure successful adoption. Standardizing pipelines, selecting compatible tools, and integrating them seamlessly – promotes consistency and reliability across the CI/CD process. 
+After assessment, organizations should establish clear goals, prioritize standardization (and subsequently interoperability), and invest in comprehensive documentation and training to overcome challenges and ensure successful adoption. Standardizing pipelines, selecting compatible tools, and integrating them seamlessly – promotes consistency and reliability across the CI/CD process.
 
 ### :chart:	Define your goals
 
 Clearly defining the goals for your standardization efforts should be done before you make any process changes. An important step is understanding the desired outcome for your organization and articulating the specific objectives, such as improving workflow efficiency, enhancing collaboration, and ensuring consistency across pipelines. Aligning your standardization goals with the broader business objectives helps prioritize your efforts and drive tangible improvements.
 
-Regularly measuring and evaluating your progress and adjusting as needed fosters a culture of collaboration and knowledge-sharing, promoting continuous improvement. Once you succeed in your standardization efforts, you’ll be able to start making interoperability a priority, which we will discuss in the next post. 
+Regularly measuring and evaluating your progress and adjusting as needed fosters a culture of collaboration and knowledge-sharing, promoting continuous improvement. Once you succeed in your standardization efforts, you’ll be able to start making interoperability a priority, which we will discuss in the next post.
 
 ### :toolbox: Select tools and practices
 
@@ -58,7 +58,7 @@ As mentioned, documentation and training ensure that teams have the knowledge an
 
 A quick note here is how vital Version Control Systems (VCS) are for Developer Experience and your standardization efforts. Organizations can ensure consistency and reliability across development workflows by centralizing code repositories and enforcing versioning practices. Utilizing version control systems such as Git enables teams to track changes, collaborate effectively, and maintain a single source of truth for code, promoting transparency and accountability within the development process.
 
-Version control facilitates automated testing, validation, and deployment processes, enabling organizations to establish standardized pipelines and workflows. By integrating version control with CI/CD tools and practices, organizations can automate code reviews, testing, and deployment tasks, reducing manual intervention and ensuring consistent and reliable software delivery. 
+Version control facilitates automated testing, validation, and deployment processes, enabling organizations to establish standardized pipelines and workflows. By integrating version control with CI/CD tools and practices, organizations can automate code reviews, testing, and deployment tasks, reducing manual intervention and ensuring consistent and reliable software delivery.
 
 ### :weight_lifting: Automated testing and validation
 
@@ -70,7 +70,7 @@ Utilizing automated testing frameworks and tools enables teams to execute tests 
 
 Documentation and training play a pivotal role in streamlining the Developer Experience. When organizations invest in comprehensive documentation and training programs, they see more robust internal and external results for their company. Clear and accessible documentation guides standardized workflows and empowers teams to work efficiently within standardized CI/CD environments.
 
-Robust training programs are a tremendous asset to the company to help teams understand the rationale behind standardization efforts and how to implement standardized practices in their workflows effectively. By providing hands-on training sessions and educational resources, organizations can foster a culture of continuous learning and improvement internally and externally — ensuring standardization efforts translate into tangible improvements in the Developer Experience. 
+Robust training programs are a tremendous asset to the company to help teams understand the rationale behind standardization efforts and how to implement standardized practices in their workflows effectively. By providing hands-on training sessions and educational resources, organizations can foster a culture of continuous learning and improvement internally and externally — ensuring standardization efforts translate into tangible improvements in the Developer Experience.
 
 ---
 

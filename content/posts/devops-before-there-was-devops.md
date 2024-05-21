@@ -58,13 +58,13 @@ I live in Kansas. Silos are a regular thing across the plains. I can honestly sa
 <figcaption>via <a href="https://giphy.com/embed/2vA33ikUb0Qz6">GIPHY</a></figcaption>
 
 ##Practice systems thinking
-I holistically approached the problem by using all of the resources available to me. My chair was comfortable, I had the patch panels and switches within easy reach, the telephone had a speakerphone, and I had a pen ready to write down the location and it had plenty of ink. 
+I holistically approached the problem by using all of the resources available to me. My chair was comfortable, I had the patch panels and switches within easy reach, the telephone had a speakerphone, and I had a pen ready to write down the location and it had plenty of ink.
 
 ![thinking](https://media.giphy.com/media/v3mwgBgNm7iOk/giphy.gif)
 <figcaption>via <a href="https://giphy.com/embed/v3mwgBgNm7iOk">GIPHY</a></figcaption>
 
 ##Learn from failure
-I recognised the failure in not marking locations when the wires were ran left me with a learning opportunity on how to automate. I also learned that a ball point pen wasn't as effective as a Sharpie. 
+I recognised the failure in not marking locations when the wires were ran left me with a learning opportunity on how to automate. I also learned that a ball point pen wasn't as effective as a Sharpie.
 >“Failure is the condiment that gives success its flavor.”
 ― Truman Capote
 

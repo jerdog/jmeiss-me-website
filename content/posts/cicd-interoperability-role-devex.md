@@ -22,9 +22,9 @@ _**Author's Note:** What follows is the foundation of a conference talk most rec
 
 As mentioned in the previous article on CI/CD standardization, the landscape of modern software development, tools, and services constantly changes - just look at the [CNCF Landscape](https://landscape.cncf.io/). A study conducted by DemandSage states that organizations are using *[371 SaaS applications on average](https://www.demandsage.com/saas-statistics/#:~:text=Organizations%20Use%20371%20SaaS%20Applications%20On%20Average)*, which illustrates the importance of a good Developer Experience (DevEx) for your developers and practitioners to ensure productivity.
 
-![DemandSage graph on 371 average SaaS applications](/images/371-saas-applications.png)
+![DemandSage graph on 371 average SaaS applications](/images/posts/371-saas-applications.png)
 
-*Developer Experience (DevEx) encompasses developers' journey as they learn and deploy technology.* When successful, it focuses on eliminating obstacles that hinder a developer or practitioner from achieving success in their endeavors. It also refers to developers' overall satisfaction and efficiency while working on software projects. That includes the tools, processes, and environments that shape developers' interactions with code, infrastructure, and each other. A positive DevEx is crucial for enhancing productivity as it directly influences how quickly and effectively developers can build, test, and deploy software. 
+*Developer Experience (DevEx) encompasses developers' journey as they learn and deploy technology.* When successful, it focuses on eliminating obstacles that hinder a developer or practitioner from achieving success in their endeavors. It also refers to developers' overall satisfaction and efficiency while working on software projects. That includes the tools, processes, and environments that shape developers' interactions with code, infrastructure, and each other. A positive DevEx is crucial for enhancing productivity as it directly influences how quickly and effectively developers can build, test, and deploy software.
 
 Continuous Integration and Continuous Deployment (commonly referred to together as “CI/CD”) is significant, and since its inception as an idea and practice has offered a dynamic shift in how developers collaborate, create, and deliver software. By automating integration, testing, and deployment processes, CI/CD accelerates the development cycles, empowering developers with faster feedback loops, improved code quality, and the ability to iterate swiftly. CI/CD interoperability ensures seamless integration across diverse toolsets, fostering flexibility in development environments. Let’s look deeper into this and the impact of interoperability on DevEx.
 
@@ -44,7 +44,7 @@ Streamlined workflows are essential for maximizing efficiency, collaboration, an
 
 ### Cross-functional collaboration
 
-Cross-functional collaboration becomes necessary to drive innovation, efficiency, and customer value through your CI/CD systems, especially when you have varying tool preferences or use different systems between departments. By breaking down silos, promoting communication, and leveraging diverse expertise, organizations can unleash the full potential of their teams and deliver high-quality software products more effectively. 
+Cross-functional collaboration becomes necessary to drive innovation, efficiency, and customer value through your CI/CD systems, especially when you have varying tool preferences or use different systems between departments. By breaking down silos, promoting communication, and leveraging diverse expertise, organizations can unleash the full potential of their teams and deliver high-quality software products more effectively.
 
 Fostering a shared understanding of project goals, objectives, and priorities among development, operations, quality assurance, and other teams ensures that everyone works towards common objectives and reduces the risk of miscommunication or misunderstandings. Teams with broader backgrounds and perspectives often lead to innovative solutions and creative problem-solving. By bringing together individuals with differing skill sets, experiences, and viewpoints — organizations enable cross-functional collaboration, which allows teams to leverage each other's strengths and expertise to tackle complex challenges more effectively.
 
@@ -52,7 +52,7 @@ Leveraging multiple teams' collective capabilities and resources enables efficie
 
 ### Flexibility and adaptability
 
-In today's dynamic software development landscape, requirements, technologies, and market conditions can change rapidly. Flexible CI/CD systems enable teams to respond quickly to these changes by adjusting workflows, incorporating new tools, or adopting emerging practices. This agility allows organizations to stay ahead of the curve and remain competitive. 
+In today's dynamic software development landscape, requirements, technologies, and market conditions can change rapidly. Flexible CI/CD systems enable teams to respond quickly to these changes by adjusting workflows, incorporating new tools, or adopting emerging practices. This agility allows organizations to stay ahead of the curve and remain competitive.
 
 Flexibility encourages experimentation and innovation by allowing teams to explore new ideas, technologies, and approaches. It allows teams to test hypotheses, iterate on solutions, and adapt their processes based on feedback and learnings. This fosters a culture of innovation and continuous improvement within the organization.
 
@@ -60,19 +60,19 @@ By embracing flexibility, organizations can future-proof their CI/CD processes a
 
 ## Advancing interoperability in your organization
 
-Once you have adopted the above practices or already have them, the following can help you reach “Advanced Mode,” taking your organization to another level within the DevEx world and can continue advancing across several aspects. 
+Once you have adopted the above practices or already have them, the following can help you reach “Advanced Mode,” taking your organization to another level within the DevEx world and can continue advancing across several aspects.
 
 ### Ecosystem integration
 
-Ecosystem integration in CI/CD systems involves seamlessly incorporating and interacting with various tools, services, and platforms within the software development and delivery ecosystem. Whether it's version control systems, build automation tools, testing frameworks, or deployment platforms, integration allows teams to assemble a customized toolchain tailored to their requirements. 
+Ecosystem integration in CI/CD systems involves seamlessly incorporating and interacting with various tools, services, and platforms within the software development and delivery ecosystem. Whether it's version control systems, build automation tools, testing frameworks, or deployment platforms, integration allows teams to assemble a customized toolchain tailored to their requirements.
 
-Humans are not good at manual processes and repetitive tasks, so implementing end-to-end automation of your CI/CD processes — from code commit to deployment and monitoring — helps your teams minimize manual intervention and accelerate the delivery of high-quality software. 
+Humans are not good at manual processes and repetitive tasks, so implementing end-to-end automation of your CI/CD processes — from code commit to deployment and monitoring — helps your teams minimize manual intervention and accelerate the delivery of high-quality software.
 
 Greater visibility and traceability in the software delivery process are essential to keep track of the disparate tools and services used. Teams can comprehensively view project status, progress, and performance by aggregating information from version control systems, issue trackers, CI servers, and deployment platforms.
 
 #### The role of community and open-source
 
-A quick note here about community and open source: Participation in the broader ecosystem, like communities, open source projects, forums, and professional groups centered around the tools you use, vastly enriches DevEx for your company. It offers developers a chance to contribute to larger projects, learn from peers outside their organization, and stay abreast of industry trends and better practices. 
+A quick note here about community and open source: Participation in the broader ecosystem, like communities, open source projects, forums, and professional groups centered around the tools you use, vastly enriches DevEx for your company. It offers developers a chance to contribute to larger projects, learn from peers outside their organization, and stay abreast of industry trends and better practices.
 
 Companies that encourage collaboration within communities help to address potential interoperability challenges. This can take the form of sharing success stories and case studies about how your company uses the specific tool or service to submit fixes and improvements for others to benefit from. Don’t underestimate how much this can contribute to the overall developer experience within your company.
 
@@ -107,7 +107,7 @@ To overcome the challenge of diverse toolsets and achieve interoperability, orga
 
 ### Data format and schema differences
 
-With many data formats and schema differences between the tools and services used in a typical organization, it’s no surprise it is a significant challenge. Each tool may produce or consume data in specific formats or adhere to particular schemas, leading to discrepancies that hinder seamless information exchange across the CI/CD pipeline. These differences can result in data loss, corruption, or misinterpretation during integration, impeding the automation and orchestration of workflows. 
+With many data formats and schema differences between the tools and services used in a typical organization, it’s no surprise it is a significant challenge. Each tool may produce or consume data in specific formats or adhere to particular schemas, leading to discrepancies that hinder seamless information exchange across the CI/CD pipeline. These differences can result in data loss, corruption, or misinterpretation during integration, impeding the automation and orchestration of workflows.
 
 Overcoming this challenge requires the development of robust data transformation and mapping strategies to harmonize disparate formats and schemas, ensuring accurate data exchange throughout the CI/CD ecosystem. This may involve implementing middleware solutions, data transformation pipelines, or standardization efforts to promote consistency and interoperability in data handling practices across the software delivery process.
 

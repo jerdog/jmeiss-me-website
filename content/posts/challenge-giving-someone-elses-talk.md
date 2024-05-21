@@ -45,7 +45,7 @@ Oh, and I guess I should mention that this came a few days before I was set to t
 ## It is a big deal.
 When you prepare for a talk, you usually pull from a list of already brewing ideas you have (I currently have 2, with a 3rd likely around this topic). That means it's something that you really feel strongly about, you know the core direction you want to go, and you just need that abstract accepted to give you that push to get started. Not to mention you'll have quite a few months to start planning, outlining, practicing, redoing, perfecting, and finishing. And then scrap it all the weekend before and start over. But that's not the point. The point here is that the talk is yours. It's on your schedule. It's your baby.
 
-But now, when you're presented with the need to give someone else's talk, panic sets in. Everything compresses itself down into a construct that you seemingly have no control over. You're now working against the clock and your own insecurities. 
+But now, when you're presented with the need to give someone else's talk, panic sets in. Everything compresses itself down into a construct that you seemingly have no control over. You're now working against the clock and your own insecurities.
 
 ![pull all you dang hair out](/images/pull-hair-out.gif)
 
@@ -71,7 +71,7 @@ As you build up to the time to give this talk, you're going to get nervous becau
 
 ![i am not a fan of clippy](/images/crazy-clippy.gif)
 
-But the message here is that you can do this. You've been practicing, and you're going to do great. 
+But the message here is that you can do this. You've been practicing, and you're going to do great.
 
 ![Keanu riffing](/images/keanu-riffing.gif)
 

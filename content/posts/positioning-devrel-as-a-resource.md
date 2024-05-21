@@ -46,8 +46,8 @@ Multiple orgs within the company are pushing the need for “upsell” and “la
 ## Marketing collaboration
 Marketing wants to grow the awareness of the Product, and is looking for new ways to show how developers can be using it in their normal workflow. The DevRel team can be a great resource to help in some of the following ways:
 
-* Help source case studies, as previously mentioned, from developers in the Community. This is a great way for a Champion program, or a group of highly active community members, to get involved and raise their profile in the community, inside your company, and even within their own job. 
-* Provide Marketing teams with the different tools that developers use your Product with, and make connections through your network to that other company to do some co-marketing activities. Some of them could be webinars, live-streams, workshops at conferences, meetups, blog posts, etc. 
+* Help source case studies, as previously mentioned, from developers in the Community. This is a great way for a Champion program, or a group of highly active community members, to get involved and raise their profile in the community, inside your company, and even within their own job.
+* Provide Marketing teams with the different tools that developers use your Product with, and make connections through your network to that other company to do some co-marketing activities. Some of them could be webinars, live-streams, workshops at conferences, meetups, blog posts, etc.
 
 These are just some of the bigger examples of how you can be a resource to other teams in your Company. Let your creativity fly, and see what you come up with! This is another example of how the question-asking exercise comes into play, helping you understand what other organizations have a need for.
 
@@ -63,15 +63,15 @@ It is a common (and basically true) statement. Traditional marketing is all abou
 
 But yet, devs respond to “marketing” all of the time! It's all in how the DevRel team builds that relationship, builds that trust. Giving a conference talk about a DevOps concept or principle that aligns with what your Product does, while having your company logo on the slide, and being introduced with where you work, and maybe even mentioning at the end, “I would be glad to chat with you about what my company does, or to learn more about this concept I’ve just shared”, all are ways that build trust while _still_ making people aware of your company. Oh, and also being truthful about what your product can/can’t do when they ask. Don’t force them to use it with wild claims that won’t be backed up, or that they’re not going to use, when another product might actually be better for them in the stage they’re in. Believe me, they will remember. And they will come calling when they need something that better fits what your company does.
 
-So here’s the rub. In business you're either making the thing, or selling the thing. Whichever one you are, your objectives need to line up accordingly. If they don't, you'll be out of a job. DevRel teams must always balance the needs of the customer and the needs of the business. If customers (devs) don't end up using your product you'll be out of a job. That's basic economics. 
+So here’s the rub. In business you're either making the thing, or selling the thing. Whichever one you are, your objectives need to line up accordingly. If they don't, you'll be out of a job. DevRel teams must always balance the needs of the customer and the needs of the business. If customers (devs) don't end up using your product you'll be out of a job. That's basic economics.
 
-And I’ll say this now: DevRel as a profession needs to grow the fuck up and recognize that it's not a bad thing to participate in the marketing/sales process. You can do so and still keep the trust with devs. 
+And I’ll say this now: DevRel as a profession needs to grow the fuck up and recognize that it's not a bad thing to participate in the marketing/sales process. You can do so and still keep the trust with devs.
 
-##In closing… for now
+## In closing… for now
 
-The point with all of this, is that DevRel needs to wake up and recognize that it _must_ show its value to the Business, and in as many areas as possible, in order to stay ahead of the dreaded “what do you do?” and “what’s the ROI?” questions. Any attempt by DevRel to distance itself from areas of the Business will ultimately result in the Business distancing itself from that DevRel team. 
+The point with all of this, is that DevRel needs to wake up and recognize that it _must_ show its value to the Business, and in as many areas as possible, in order to stay ahead of the dreaded “what do you do?” and “what’s the ROI?” questions. Any attempt by DevRel to distance itself from areas of the Business will ultimately result in the Business distancing itself from that DevRel team.
 
-I will continue to add more to this, and likely break it up into an easily consumable series soon. In the meantime, please comment below, or reach out on my socials, to chat more. 
+I will continue to add more to this, and likely break it up into an easily consumable series soon. In the meantime, please comment below, or reach out on my socials, to chat more.
 
 And if your company, or even your DevRel team, is in need of some help around these things, let’s chat.
 

@@ -19,6 +19,7 @@ I’ve personally spent over 10 years in the official “DevRel/Community” spa
 Before I get too far into this, I do want to make sure you take some time to go over the great resources that Rizèl Scarlett put together in her [DevRel Journey Series](https://dev.to/blackgirlbytes/series/19293), with a specific call out to her [Tips to Succeed in your First DevRel Job](https://dev.to/blackgirlbytes/tips-to-succeed-in-your-first-devrel-job-48m7).
 
 ## Before joining
+
 One of the first steps is to make sure you fully understand everything you can about the job you’re potentially taking. Making sure you ask some of these questions will help you to be a bit more informed about what you might expect before you start.
 
 1. How does the company make, and lose, money?
@@ -33,32 +34,39 @@ These will help to give you an idea of the company and how it’s structured and
 {{< figure src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ndebj3n68n7fr5c3hygi.jpg" width="800" attr="Tim Marshall, Unsplash" attrlink="https://unsplash.com/s/photos/new-meetings?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" >}}
 
 ## When you start
+
 That first day, or week(s) in some cases, is usually full of all of the onboarding tasks which will occupy your time. That is, however, a good time to start your own personal onboarding to the team and company with some of the below steps:
 
 1. If you’re onboarding with more than just yourself, build relationships with your fellow “first day-ers” - you never know when your paths might cross again and it’s good to have a frame of reference.
+
 2. Meet with your manager and clarify the job as you understood it when you took the position to make sure you’re both on the same page. Also,
-  * Make sure you understand the timeframe they have for the first deliverables for the position (30/60/90 day plan, strategy, etc.) and how they would like to receive it.
-  * What is the budget that I have for the team? What was last year’s budget? What amount of discretionary spending do I have?
-  * Identify how they would like to receive information like metrics, status, objectives, etc.
-  * Identify who they would like you to meet with. This will likely be a high-level list, and you will want to drill down with each person when you meet with them.
+
+   * Make sure you understand the timeframe they have for the first deliverables for the position (30/60/90 day plan, strategy, etc.) and how they would like to receive it.
+   * What is the budget that I have for the team? What was last year’s budget? What amount of discretionary spending do I have?
+   * Identify how they would like to receive information like metrics, status, objectives, etc.
+   * Identify who they would like you to meet with. This will likely be a high-level list, and you will want to drill down with each person when you meet with them.
 
 ## After the onboarding
+
 Once you’ve gotten through the “administrative” pieces of joining the company, you want to get started with the “roadshow”. This involves meeting with those identified by your manager, along with leaders in the following areas:
+
 - Product Managers, Owners, etc.
 - Product Marketing, Content, Demand Gen, etc.
 - Engineering, Sales Engineering, etc.
 - C-Level
 - Customer Success
 
-In those conversations, make sure to ask “Who else should I talk to?” and setup those meetings soon after. Below I will provide the questions that _I_ use for the respective areas, some of which are duplicated across different teams. If you use any of these, it’s important that you customize them to your respective company. 
+In those conversations, make sure to ask “Who else should I talk to?” and setup those meetings soon after. Below I will provide the questions that _I_ use for the respective areas, some of which are duplicated across different teams. If you use any of these, it’s important that you customize them to your respective company.
 
 ### Questions for everyone
+
 1. What is the mission, vision, and values for the company? What are they for <insert department here>?
 2. What are your priorities and goals? What wins do you need? How can DevRel help you accomplish those? How can I help you?
 3. What are your biggest concerns about working with developers?
 4. Do you have any concerns about the Developer Relations team and the way they’ve worked cross-functionally in the past?
 
 ### Questions for Product teams
+
 1. What are the pillars of our product?
 2. What is our threshold for a new account for them having successfully “onboarded”?
 3. What are the things we are currently hearing from users about our product?
@@ -66,6 +74,7 @@ In those conversations, make sure to ask “Who else should I talk to?” and se
 5. Do we know why developers do / do not choose us?
 
 ### Questions for Marketing teams
+
 1. [Demand Gen] What is our process for identifying developers at conferences/trade shows/events? How do we decide what to send to them? Any examples?
 2. [Demand Gen] What is our current process around swag? Who is responsible?
 3. [Demand Gen] What is the process for attending/sponsoring conferences?
@@ -77,23 +86,29 @@ In those conversations, make sure to ask “Who else should I talk to?” and se
 4. [Product Marketing] Do we know why developers do / do not choose us?
 
 ### Questions for Customer Success teams
+
 1. What are the customer pain points that your teams are currently hearing about? 
 2. Are there any identified users who are already passionate about us?
 3. Is there a space where we collect and share common issues or FAQ with the community?
 
 ### If there is already a community….
+
 1. What is the current community forum process? Who owns what?
+
   * The system?
   * Answering questions?
   * Outreach activities?
   * Any current processes to get an answer from someone in the company?
+
 2. What metrics are currently collecting about the community? Programming languages? Functions/roles? Geographic locations?
 
 ## What now?
-Once you’ve gathered all of the answers, it’s time to look for common themes from each which can help you identify potential opportunities as you build your strategy and program. In theory, you should be able to have the beginnings of a strategy and program to present within the first 60 days to the key stakeholders who you identified during your “roadshow” in order to get their feedback, and then modify as needed by the 90th day. 
+
+Once you’ve gathered all of the answers, it’s time to look for common themes from each which can help you identify potential opportunities as you build your strategy and program. In theory, you should be able to have the beginnings of a strategy and program to present within the first 60 days to the key stakeholders who you identified during your “roadshow” in order to get their feedback, and then modify as needed by the 90th day.
 Over the next 3 months (equal to the first 6 months on the job), start to implement the first steps of your strategy and tweak it as needed, with a mind to seeing results within the first year. This _doesn’t_ mean that _everything_ would be done and yielding results in the first year, but rather that you should start to see progress around your strategy, and that you’re hitting specific milestones that were identified. Then rinse and repeat.
 
 ## Insight from others in the community
+
 As I prepared to write this blog post, after thinking about it for a _long_ time, I reached out to the DevRel community on [Twitter](https://twitter.com/iamjerdog/status/1598310868831420416?s=61&t=YvgB3Gv7I5wD_1Pbicjrfg) and [Mastodon](https://hachyderm.io/@jerdog/109438713777579466) to see what other insights they had to share, which you can find below.
 
 {{< tweet user="picsoung" id="1598376849725267969" >}}
@@ -108,7 +123,7 @@ As I prepared to write this blog post, after thinking about it for a _long_ time
 {{< tweet user="dparzych" id="1599887914271264768" >}}
 
 And some additional thoughts from [Mimmis on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7005570989564588032?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7005570989564588032%2C7006010382095900672%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287006010382095900672%2Curn%3Ali%3Aactivity%3A7005570989564588032%29)
->Great pragmatic advice around process and types of questions for anyone starting a new job, not just in DevRel, where you are tasked with coming up with plans and recommendations (certainly works for developer marketing and B2B marketing as well). 
+>Great pragmatic advice around process and types of questions for anyone starting a new job, not just in DevRel, where you are tasked with coming up with plans and recommendations (certainly works for developer marketing and B2B marketing as well).
 >
 >Ask about and try to understand overall company strategies and objectives, take an interest in not only your own job function but adjacent depts and roles and how they contribute to those objectives, don't be afraid to ask questions, take notes and put two and two together from different meetings, summarize your observations and findings as you go along.
 >

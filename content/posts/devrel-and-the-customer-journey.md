@@ -63,7 +63,7 @@ Let’s break these down.
 
 #### Find out the Customer journey at your company
 
-When you’re first joining the company, or when you’re going back to perform the Q&A steps I mention above, making sure to ask the different groups what the [Customer journey](https://www.gartner.com/en/marketing/glossary/customer-journey) looks like, and who owns it. It is not uncommon to get different answers from each department, which is its own exercise later in really nailing down ownership for something very crucial like this. 
+When you’re first joining the company, or when you’re going back to perform the Q&A steps I mention above, making sure to ask the different groups what the [Customer journey](https://www.gartner.com/en/marketing/glossary/customer-journey) looks like, and who owns it. It is not uncommon to get different answers from each department, which is its own exercise later in really nailing down ownership for something very crucial like this.
 
 In different companies at different stages and sizes, and even customer-base, who you end up talking to will be different. Here are a few that I have chatted with in the past who owned, or at least had some input into, the Customer journey:
 
@@ -72,14 +72,14 @@ In different companies at different stages and sizes, and even customer-base, wh
 * Product Marketing
 * Product
 
-What you are looking for in the Customer journey is to capture all of the touch points, which are moments when the customer interacts with your brand, and all of the stages that have been identified, which are goal-driven actions to take. These have all been put together and (should) drive all of the customer-driven activities taking place. 
+What you are looking for in the Customer journey is to capture all of the touch points, which are moments when the customer interacts with your brand, and all of the stages that have been identified, which are goal-driven actions to take. These have all been put together and (should) drive all of the customer-driven activities taking place.
 
 <figure>
   <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qn6vlwdt01j6jgt21i6q.png">
   <figcaption>Ex. customer journey (<a href="https://delighted.com/blog/guide-to-customer-journey-mapping">source</a>)</figcaption>
 </figure>
 
-Note: this is also a great opportunity to start to identify what the elusive [DevRel Qualified Leads](https://www.marythengvall.com/blog/2019/12/14/devrel-qualified-leads-repurposing-a-common-business-metrics-to-prove-value) (DRQLs) could look like for your team. 
+Note: this is also a great opportunity to start to identify what the elusive [DevRel Qualified Leads](https://www.marythengvall.com/blog/2019/12/14/devrel-qualified-leads-repurposing-a-common-business-metrics-to-prove-value) (DRQLs) could look like for your team.
 
 #### Identify your team’s activities
 
@@ -158,7 +158,7 @@ Making sure to identify these for your team, and to include them in your reporti
 
 #### Rinse. Repeat (regularly).
 
-Businesses are always changing. One week the focus could be to raise awareness in developer communities about your company and the product and get people trying it out. The next week is that it’s important to target Enterprises, and next month it’s imperative that your team push the limits on what the company could do and/or become with AI. As a result, your activity inputs and outputs will change on a pretty consistent basis, and so it’s imperative that you continually perform these activities. 
+Businesses are always changing. One week the focus could be to raise awareness in developer communities about your company and the product and get people trying it out. The next week is that it’s important to target Enterprises, and next month it’s imperative that your team push the limits on what the company could do and/or become with AI. As a result, your activity inputs and outputs will change on a pretty consistent basis, and so it’s imperative that you continually perform these activities.
 
 ---
 

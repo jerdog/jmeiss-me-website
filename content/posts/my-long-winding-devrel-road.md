@@ -14,7 +14,7 @@ Hi, I'm Jeremy. I've spent the last roughly 25 years in IT, with the last 12 or 
 
 >_To the community I represent the company; to the company I represent the community. I must have both of their interests in mind at all times._
 
-It wasn't until I recorded an episode on DevRel for the SlashData Podcast that I looked back at where I began in DevRel and Community, and became surprised at a few things I had forgotten. 
+It wasn't until I recorded an episode on DevRel for the SlashData Podcast that I looked back at where I began in DevRel and Community, and became surprised at a few things I had forgotten.
 
 {{< tweet user="iamjerdog" id="1120692581913047040" >}}
 
@@ -28,7 +28,7 @@ At certain times in your career it is good to reflect on the journey, the things
 
 As early as I can remember I have always had a symbiotic relationship with technology, from really the first time I picked up a [ColecoVision](https://en.wikipedia.org/wiki/ColecoVision) in the early 1980s. I, as many of my generation born in the 70s, could pick up something technical and almost immediately be able to work it without learning. I loved tech. I also quickly became the person in my family (extended included) who would be called upon to fix anything or explain how something worked (which also severely impacted quite a few of my family vacations visiting relatives while growing up). I still remember explaining DNS to my parents and grandparents using the post office example.
 
-It was in the mid-1980s that I received my first computer, an [IBM PC-XT](https://en.wikipedia.org/wiki/IBM_Personal_Computer_XT) (Intel 8088 @ 4.77 MHz!!!), from my uncle who worked at a government contractor. Seems the government routinely discarded computers _yearly_ and he salvaged a few and sent me one. I was in heaven, and quickly set about learning that `del .` from the C:\ root directory would delete everything. 
+It was in the mid-1980s that I received my first computer, an [IBM PC-XT](https://en.wikipedia.org/wiki/IBM_Personal_Computer_XT) (Intel 8088 @ 4.77 MHz!!!), from my uncle who worked at a government contractor. Seems the government routinely discarded computers _yearly_ and he salvaged a few and sent me one. I was in heaven, and quickly set about learning that `del .` from the C:\ root directory would delete everything.
 
 ![huge tiny mistake](https://media.giphy.com/media/1rBCI5HKJPd0k/giphy.gif)
 <figcaption>Exact statement to my mother.</figcaption>
@@ -72,7 +72,7 @@ Fast-forward to 2014 when I started a mobile development services company with t
 
 Over the last 4+ years I have continued to refine my DevRel philosophy, a lot of which is contained in the [reasons a company should care about DevRel](https://dev.to/jerdog/developer-communities-and-why-your-company-should-care-2b79) and my [coffee and DevRel diatribe](https://dev.to/jerdog/devrel-is-like-coffee-and-other-profundities-2ian). I've built some great relationships with people in the industry and helped grow [The DevRel Collective](https://devrelcollective.fun), a community for DevRel professionals. And I'm still learning.
 
-Now I am the Director of Community at [Solace](https://solace.com), helping build out a developer community and implement DevRel strategy for a great company. It's challenging as we're dealing with growing awareness within Enterprise companies already using our product, while also fostering community amongst those who already know about us. 
+Now I am the Director of Community at [Solace](https://solace.com), helping build out a developer community and implement DevRel strategy for a great company. It's challenging as we're dealing with growing awareness within Enterprise companies already using our product, while also fostering community amongst those who already know about us.
 
 One thing that stands out for me, and I want to make sure others hear this, is that while DevRel is in the technical space in its core interactions, it is by no means a requirement that you be an engineer in order to be in DevRel. This of course depends on the specific role and company, but if you are looking to get into DevRel do not take a perceived lack of "technical expertise" as a deterrent. The field is awash with professionals with "non-traditional" backgrounds like scientists, actors and actresses, and more. All that I feel is required is empathy, and the ability to "stand in the gap" for developers back to the company.
 

@@ -37,7 +37,7 @@ _Also of note: much of this specific content comes from a previous post I wrote,
 
 When you start a new Developer Relations or Community role at a company, you may well be their first hire, or you're coming in after someone else (or a group) has left, or you’re coming in to take over the team (or any variety of these and others not mentioned). During that initial onboarding you'll usually be asked to provide a 30/60/90 plan along with a strategy for the next year. This may seem daunting, but it’s something you should be prepared to do. You may also be coming at this as someone who's already in the role at the company, but you're wanting to reshape your DevRel Program to gain the maximum impact at your company. What follows 
 
-I’ve personally spent roughly the last 15 years in the Community and/or DevRel space, with the last 12 or so in an official capacity. What follows are the questions and steps I’ve learned to apply which are by no means a complete list - I’ve added to this list after each role change - but should be a good starting point for you. 
+I’ve personally spent roughly the last 15 years in the Community and/or DevRel space, with the last 12 or so in an official capacity. What follows are the questions and steps I’ve learned to apply which are by no means a complete list - I’ve added to this list after each role change - but should be a good starting point for you.
 
 If you haven't already, I highly suggest you take a look at the great resources that Rizèl Scarlett put together in her [DevRel Journey Series](https://dev.to/blackgirlbytes/series/19293), with a specific call out to her [Tips to Succeed in your First DevRel Job](https://dev.to/blackgirlbytes/tips-to-succeed-in-your-first-devrel-job-48m7).
 
@@ -77,7 +77,7 @@ Once you’ve gotten through the “administrative” pieces of joining the comp
 - C-Level
 - Customer Success
 
-In those conversations, make sure to ask “Who else should I talk to?” and setup those meetings soon after. Below I will provide the questions that _I_ use for the respective areas, some of which are duplicated across different teams. If you use any of these, it’s important that you customize them to your respective company. 
+In those conversations, make sure to ask “Who else should I talk to?” and setup those meetings soon after. Below I will provide the questions that _I_ use for the respective areas, some of which are duplicated across different teams. If you use any of these, it’s important that you customize them to your respective company.
 
 ### Questions for everyone
 
@@ -123,7 +123,7 @@ In those conversations, make sure to ask “Who else should I talk to?” and se
 
 ## What now?
 
-Once you’ve gathered all of the answers, it’s time to look for common themes from each which can help you identify potential opportunities as you build your strategy and program. In theory, you should be able to have the beginnings of a strategy and program to present within the first 60 days to the key stakeholders who you identified during your “roadshow” in order to get their feedback, and then modify as needed by the 90th day. 
+Once you’ve gathered all of the answers, it’s time to look for common themes from each which can help you identify potential opportunities as you build your strategy and program. In theory, you should be able to have the beginnings of a strategy and program to present within the first 60 days to the key stakeholders who you identified during your “roadshow” in order to get their feedback, and then modify as needed by the 90th day.
 
 Over the next 3 months (equal to the first 6 months on the job), start to implement the first steps of your strategy and tweak it as needed, with a mind to seeing results within the first year. This _doesn’t_ mean that _everything_ would be done and yielding results in the first year, but rather that you should start to see progress around your strategy, and that you’re hitting specific milestones that were identified. Then rinse and repeat.
 
