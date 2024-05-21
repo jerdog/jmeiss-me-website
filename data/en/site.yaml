@@ -11,12 +11,13 @@ description: "Personal website of Jeremy Meiss, DevEx and DevRel Professional."
 # they will be separated by a divider from the main menus.
 customMenus:
 - name: Speaking
-  url: https://speaking.jmeiss.me/
+  url: http://speaking.jmeiss.me/
   # specify whether to hide the menu item from top navbar or not.
   hideFromNavbar: false
   # specify whether to show the menu item in footer or not.
   # if you set it to true, make sure you have set `footer.navigation.customMenus: true` in your config.yaml
   showOnFooter: true
+  newTab: true
 
 # Specify OpenGraph Headers
 openGraph:
