@@ -144,7 +144,7 @@ This step is one that is difficult, but extremely necessary. You can’t prove t
 2. If possible, make sure these reports can be accessed at any time, by anyone within the company. I’ve done this with integrations to Confluence, charts and tables housed in Excel or Google Sheets linked to Powerpoint or Google Slides, reports in Looker, etc. It’s also good to regularly post inside your company comms tool, like Slack, general information about some highlight and then link to the report(s). This helps keep your team and what you’re doing top of mind.
 3. Make sure you report on any cross-team / interdepartmental collaboration that you and your team do as well. You should be actively looking for these anyways, and reporting on them will raise the value-prop that DevRel has.
 
-#####A quick note on DevRel Qualified Leads
+##### A quick note on DevRel Qualified Leads
 
 As I mentioned above, this whole activity can help to unlock DRQLs for your team. These are not “leads” in the traditional sales or marketing sense, but instead are specific developers, or companies even, that your team is able to connect with internal teams to satisfy some need or business requirement. For instance, here’s a quick breakdown of what could be included in these:
 
