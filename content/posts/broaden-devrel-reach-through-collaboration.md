@@ -30,7 +30,7 @@ This collaboration starts by first taking stock of the developers in your commun
 
 You have a product which developers use to make their job easier. Let's say that the developers using your product have to install it somewhere, whether it's in the cloud, on-premise, etc. One such product happens to have a very active community of open source contributors who the company behind the product gets together yearly for a community conference. At this conference are developers who work at the same companies that you are targeting for adoption of your product. This is a prime opportunity to make the worlds collide, for lack of a better term.
 
-![collaborate](/images/posts/collab.gif)
+![collaborate](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzduNW5uZG93MTVkeHlkZjBtNmR1OXBqaXMxdmVmNXM3aHFhbzdleCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c5eqVJN7oNLTq/giphy.gif)
 
 There are a number of ways that you can get involved in these other communities:
 
