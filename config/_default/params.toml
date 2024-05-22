@@ -6,6 +6,13 @@ main = "images/me.png"
 inverted = "images/me.png"
 favicon = "images/fav.png"
 
+[features.tags]
+enable = true
+on_card = true
+
+[features.readingTime]
+enable = true
+
 [features.analytics]
 enable = true
 
