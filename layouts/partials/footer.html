@@ -152,6 +152,12 @@
           </ul>
         </div>
         {{ end }}
+        <!-------------- Disclaimer / Notice --------------->
+        {{ if (and $disclaimerEnabled $disclaimer) }}
+        <div class="col-md-4 col-sm-12">
+          <p id="disclaimer"><strong>{{ $disclaimer | markdownify }}</strong></p>
+        </div>
+        {{ end }}
         <!-------------- Newsletter --------------->
         {{ if $newsletterEnabled }}
           {{ $provider := site.Params.footer.newsletter.provider }}
@@ -196,12 +202,14 @@
         {{ end }}
       </div>
     </div>
+<!-- Removal of i18n section for disclaimer text / moved higher
     {{ if and $disclaimerEnabled $disclaimer}}
     <hr />
     <div class="container">
       <p id="disclaimer"><strong>{{ i18n "disclaimer_text" }}:</strong> {{ $disclaimer | markdownify }}</p>
     </div>
     {{ end }}
+ -->
     {{ if $credentialsEnabled }}
     <hr />
     <div class="container">

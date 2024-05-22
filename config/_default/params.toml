@@ -37,3 +37,21 @@ enable = true
 
 [footer]
 enable = true
+
+    [footer.navigation]
+    enable = true
+    customMenus = true
+
+    [footer.contactMe]
+    enable = true
+
+    [footer.credentials]
+    enable = true
+
+    [footer.newsletter]
+    enable = false
+    provider = "mailchimp"
+    mailchimpURL = ""
+
+    [footer.disclaimer]
+    enable = true
