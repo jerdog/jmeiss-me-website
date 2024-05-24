@@ -1,5 +1,5 @@
 +++
-title = 'Talk About Devrel Metrics'
+title = "Let's Talk About Devrel Metrics"
 date = 2024-05-24T10:06:42-05:00
 draft = false
 hero = "/images/posts/devrel-metrics.jpg" # location of images should be in /images/posts/
