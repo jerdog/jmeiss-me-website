@@ -5,6 +5,7 @@ draft = false
 hero = "/images/posts/devrel-metrics.jpg" # location of images should be in /images/posts/
 tags = [ "devrel", "metrics", "series" ]
 toc = true
+summary = "Crunching numbers is hard. And OKRs suck. So that means we can forget about DevRel metrics, right? Well, chat about that now."
 [author]
     name = "Jeremy Meiss"
     image = "/images/author/jeremy-meiss.jpg"
@@ -44,7 +45,7 @@ Let's face it: OKRs suck. I don't think anyone disagrees with that sentiment. Bu
 
 Gone are the days, with rare exception in companies (usually early stage) where budget doesn't matter or you're small enough that everybody knows what everybody and their pet is doing at any given time, when you can just tell your manager and above, _"Trust me. Things are going well and DevRel is kicking it and our community is growing!"_ Gone are the days where a company hires a Cult of Personality as the defining characteristic of their DevRel team. Gone are the days when DevRel just flies all over the world and everyone in the company just accepts that they're _"doing DevRel things"_, or _"it's for the community!" The times they (truly) are a-changin'. _(thank you, Bob Dylan and Keb Mo, whose version is below)_
 
-{% embed https://www.youtube.com/watch?v=TbupB7AFdLM %}
+{{< youtube TbupB7AFdLM >}}
 
 But is that such a bad thing? If you're not changing, you're dying. Some would argue that DevRel is dying because it has "a lack of useful outcomes", and as a result it must change. And now. And I would posit that the reason it's dying is because the discipline (and many who practice it) has been so resistant to change, and to metrics.
 

@@ -5,6 +5,7 @@ draft = true
 hero = "" # location of images should be in /images/posts/
 tags = [ "", "", "" ]
 toc = true
+summary = ""
 [author]
     name = "Jeremy Meiss"
     image = "/images/author/jeremy-meiss.jpg"

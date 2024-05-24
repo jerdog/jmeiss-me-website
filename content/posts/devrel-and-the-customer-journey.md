@@ -3,6 +3,7 @@ title: "DevRel and the Customer Journey, Part 4"
 date: 2023-09-06T13:40:42-05:00
 hero: /images/posts/the-journey.jpg
 description: "Part 4 of a (currently) 6 Part series on Developer Relations, and how we can move it forward into the years to come. DevRel is not a revenue-generating organization - it’s a cost center. It's important, then, to prove the value of the organization early, and often."
+summary: "DevRel is not a revenue-generating organization - it’s a cost center. It's important, then, to prove the value of the organization early, and often."
 draft: false
 author:
   name: Jeremy Meiss

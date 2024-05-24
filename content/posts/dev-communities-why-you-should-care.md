@@ -3,6 +3,7 @@ title: Developer Communities and Why Your Company Should Care
 date: 2017-02-08
 hero: /images/posts/dev-communities.jpg
 description: "If you’re a company offering a service or product for businesses or consumers to use, you are likely to be dealing with developers. There is no better way to work with these developers than through developer communities."
+summary: "If you’re a company offering a service or product for businesses or consumers to use, you are likely to be dealing with developers. There is no better way to work with these developers than through developer communities."
 draft: false
 author:
   name: Jeremy Meiss

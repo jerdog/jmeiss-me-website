@@ -10,6 +10,7 @@ tags:
   - Cell phone plans
   - Sprint
 hero: /images/posts/sprintHeartbreak.png
+summary: "Picking a wireless provider can sometimes be like dating - you both present yourselves as something you probably aren’t, but not willing to admit it until after you’re locked in."
 description: "Picking a wireless provider can sometimes be like dating - you both present yourselves as something you probably aren’t, but not willing to admit it until after you’re locked in."
 toc: false
 ---

@@ -3,6 +3,7 @@ title: So you’re starting a new DevRel Job
 date: 2022-12-01
 hero: /images/posts/starting-new.jpg
 description: "In the Developer Relations space it’s not uncommon to take a position at a company where you’re either the first DevRel, or you’re joining a new team, or taking over a new team. However that fits, these are the first actions I take."
+summary: "In the Developer Relations space it’s not uncommon to take a position at a company where you’re either the first DevRel, or you’re joining a new team, or taking over a new team. However that fits, these are the first actions I take."
 draft: false
 author:
   name: Jeremy Meiss

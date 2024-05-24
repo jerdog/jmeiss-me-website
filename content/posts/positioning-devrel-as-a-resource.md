@@ -2,7 +2,8 @@
 title: "Positioning DevRel as a Resource, Part 5"
 date: 2023-09-06T14:00:54-05:00
 hero: /images/posts/all-about-positioning.jpg
-description: "Part 5 of a (currently) 6 Part series on Developer Relations, and how we can move it forward into the years to come. DevRel is not a revenue-generating organization - it’s a cost center. It's important, then, to prove the value of the organization early, and often."
+description: "Part 5 of a (currently) 6 Part series on Developer Relations, and how we can move it forward into the years to come. Building relationships with Developers is what DevRel is all about. That means that within your company, you should not be hesitant to be seen as a resource, and even a partner (!!!), to Sales, Marketing, Product, and even Recruiting!"
+summary: "Building relationships with Developers is what DevRel is all about. That means that within your company, you should not be hesitant to be seen as a resource, and even a partner (!!!), to Sales, Marketing, Product, and even Recruiting!"
 draft: false
 author:
   name: Jeremy Meiss
