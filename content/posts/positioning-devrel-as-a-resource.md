@@ -2,7 +2,7 @@
 title: "Positioning DevRel as a Resource, Part 5"
 date: 2023-09-06T14:00:54-05:00
 hero: /images/posts/all-about-positioning.jpg
-description: "Part 5 of a (currently) 5 Part series on Developer Relations, and how we can move it forward into the years to come. DevRel is not a revenue-generating organization - it’s a cost center. It's important, then, to prove the value of the organization early, and often."
+description: "Part 5 of a (currently) 6 Part series on Developer Relations, and how we can move it forward into the years to come. DevRel is not a revenue-generating organization - it’s a cost center. It's important, then, to prove the value of the organization early, and often."
 draft: false
 author:
   name: Jeremy Meiss
@@ -14,13 +14,13 @@ tags:
 toc: true
 ---
 
-_**Author's Note:** What follows is Part 5 of a (currently) 5 Part series on Developer Relations, and how we can move it forward into the years to come. It is not meant as a definitive roadmap, but more as a kickstart down the road of conversation. Please comment as you see fit, and be part of what Developer Relations can become._
+_**Author's Note:** What follows is Part 5 of a (currently) 6 Part series on Developer Relations, and how we can move it forward into the years to come. It is not meant as a definitive roadmap, but more as a kickstart down the road of conversation. Please comment as you see fit, and be part of what Developer Relations can become._
 
 ---
 
 <table width="50%" border="1">
     <tr>
-        <th>Moving Developer Relations Forward (5 Part Series):</th>
+        <th>Moving Developer Relations Forward (6 Part Series):</th>
     </tr>
     <tr>
         <td>
@@ -29,6 +29,7 @@ _**Author's Note:** What follows is Part 5 of a (currently) 5 Part series on Dev
             <li><a href="/posts/asking-the-right-questions-for-devrel-impact">Asking the right questions for DevRel impact</a></li>
             <li><a href="/posts/devrel-and-the-customer-journey">Developer Relations and the customer journey</a></li>
             <li><strong><em>Positioning DevRel as a resource within your company (this post)</em></strong></li>
+            <li><a href="/posts/talk-about-devrel-metrics">So let's talk about DevRel Metrics</a></li>
         </td>
     </tr>
 </table>
@@ -86,7 +87,7 @@ You can find me at:
 
 <table width="50%" border="1">
     <tr>
-        <th>Moving Developer Relations Forward (5 Part Series):</th>
+        <th>Moving Developer Relations Forward (6 Part Series):</th>
     </tr>
     <tr>
         <td>
@@ -95,6 +96,7 @@ You can find me at:
             <li><a href="/posts/asking-the-right-questions-for-devrel-impact">Asking the right questions for DevRel impact</a></li>
             <li><a href="/posts/devrel-and-the-customer-journey">Developer Relations and the customer journey</a></li>
             <li><strong><em>Positioning DevRel as a resource within your company (this post)</em></strong></li>
+            <li><a href="/posts/talk-about-devrel-metrics">So let's talk about DevRel Metrics</a></li>
         </td>
     </tr>
 </table>
