@@ -1,14 +1,14 @@
 [build]
-command = "hugo --gc --minify"
-publish = "public"
+    command = "hugo --gc --minify"
+    publish = "public"
 
 [context.production.environment]
-HUGO_ENABLEGITINFO = "true"
-HUGO_ENV           = "production"
-HUGO_VERSION       = "0.124.1"
-NODE_VERSION       = "v18.12.1"
-NPM_VERSION        = "8.19.2"
-GO_VERSION         = "1.22.3"
+    HUGO_ENABLEGITINFO = "true"
+    HUGO_ENV           = "production"
+    HUGO_VERSION       = "0.124.1"
+    NODE_VERSION       = "v18.12.1"
+    NPM_VERSION        = "8.19.2"
+    GO_VERSION         = "1.22.3"
 
 [context.split1]
 command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify --enableGitInfo"
@@ -39,4 +39,4 @@ command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --mini
     GO_VERSION   = "1.22.3"
 
 [context.next.environment]
-HUGO_ENABLEGITINFO = "true"
+    HUGO_ENABLEGITINFO = "true"
