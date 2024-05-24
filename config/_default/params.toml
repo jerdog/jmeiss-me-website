@@ -35,6 +35,9 @@ showAuthor = true
 [features.toc]
 enable = true
 
+[features.pagination]
+maxPostsPerPage = 9
+
 [footer]
 enable = true
 
