@@ -124,7 +124,7 @@ The first step in figuring out what to measure is to ask a couple of questions o
 
 The answers to those questions will give you the framework for identifying the metrics, KPIs, etc. that you should be using.
 
-{% embed https://twitter.com/jonobacon/status/1363177613498458114 %}
+{{< tweet user="jonobacon" id=1363177613498458114 >}}
 
 Let's take this scenario as an example: Your company has put an emphasis on "land and expand" activities to drive growth within customers using your company's product. In the course of the conversations about how your team can help contribute (note: there are _many_ ways and opportunities for a DevRel team to provide value here), you find out that the Sales Team wants to drive awareness of the product to new teams within existing customers, and they're looking for ways to do so. Here are some activities, and metrics, that you could start doing and begin to track:
 
@@ -132,6 +132,7 @@ Let's take this scenario as an example: Your company has put an emphasis on "lan
 | --- | --- |
 | Perform workshops onsite at existing customer | # of workshops performed, # of attendees at workshops, % of increase in new users |
 | Give a talk or webinar about X feature which drives increased usage and/or customer retention | # of webinar attendees, # of new users, % increase of feature usage |
+
 
 Now you may want to set a specific number, if you have a baseline already of what the number of existing users are, or usage of X feature, etc., or you may want to use that activity to set the baseline to the improve against. Either way, these are real numbers and you can (and should) be tying your activities and accomplishments to them, while also making sure other areas of the company know about your efforts and what you did. Then rinse and repeat, continuously learning and improving and iterating.
 
@@ -146,7 +147,7 @@ Another scenario: you feel that your team really needs to be out meeting with de
 
 You might notice that all of these would qualify as a DRQL (DevRel Qualified Lead) that I [talked about earlier](https://dev.to/jerdog/devrel-and-the-customer-journey-4gjc#:~:text=A%20quick%20note%20on%20DevRel%20Qualified%20Leads). This is a real example of how you can prove the value of your activities. It's important though to make sure that you follow up directly with the specific team so that they know what you did and what next step needs to be taken to move forward with it.
 
-{% embed https://twitter.com/jonobacon/status/976186666988769280 %}
+{{< tweet user="jonobacon" id=976186666988769280 >}}
 
 ## It's not all fuzzy metrics
 
