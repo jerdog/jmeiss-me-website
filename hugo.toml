@@ -16,4 +16,4 @@ enableEmoji = true
     ordered = false
 
 [outputs]
-home = [ "HTML", "RSS", "JSON" ]
+home = [ "HTML", "RSS", "JSON", "TXT" ]
