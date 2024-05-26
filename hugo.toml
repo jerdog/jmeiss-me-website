@@ -15,6 +15,10 @@ enableEmoji = true
     endLevel = 6
     ordered = false
 
+[outputs]
+home = [ "HTML", "RSS", "JSON", "TXT" ]
+page = [ "HTML", "TXT" ]
+
 [outputFormats]
     [outputFormats.TXT]
     name = "text"
@@ -25,10 +29,7 @@ enableEmoji = true
     noUgly = true
     permalinkable = true
 
-[outputs]
-home = [ "HTML", "RSS", "JSON", "TXT" ]
-# page = [ "HTML", "TXT" ]
-
 [mediaTypes]
   [mediaTypes."text/plain"]
     suffix = "txt"
+
