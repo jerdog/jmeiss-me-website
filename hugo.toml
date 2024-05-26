@@ -17,19 +17,19 @@ enableEmoji = true
 
 [outputs]
 home = [ "HTML", "RSS", "JSON", "TXT" ]
-page = [ "HTML", "TXT" ]
+# page = [ "HTML", "TXT" ]
 
-[outputFormats]
-    [outputFormats.TXT]
-    name = "text"
-    baseName = "text"
-    mediaType = "text/plain"
-    isHTML = false
-    isPlainText = true
-    noUgly = true
-    permalinkable = true
+# [outputFormats]
+#     [outputFormats.TXT]
+#     # name = "text"
+#     baseName = "text"
+#     mediaType = "text/plain"
+#     isHTML = false
+#     isPlainText = true
+#     # noUgly = true
+#     permalinkable = true
 
-[mediaTypes]
-  [mediaTypes."text/plain"]
-    suffix = "txt"
+# [mediaTypes]
+#   [mediaTypes."text/plain"]
+#     suffix = "txt"
 
