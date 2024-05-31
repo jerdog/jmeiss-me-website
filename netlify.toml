@@ -1,5 +1,5 @@
 [build]
-    command = "hugo --gc --minify"
+    command = "hugo --gc --minify && cp static/keybase.txt public/"
     publish = "public"
 
 [context.production.environment]
@@ -11,7 +11,7 @@
     GO_VERSION         = "1.22.3"
 
 [context.split1]
-command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify --enableGitInfo"
+command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify --enableGitInfo && cp static/keybase.txt public/"
 
     [context.split1.environment]
     HUGO_ENV     = "production"
@@ -21,7 +21,7 @@ command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --mini
     GO_VERSION   = "1.22.3"
 
 [context.deploy-preview]
-command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL && cp static/keybase.txt public/"
 
     [context.deploy-preview.environment]
     HUGO_VERSION = "0.124.1"
@@ -30,7 +30,7 @@ command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --mini
     GO_VERSION   = "1.22.3"
 
 [context.branch-deploy]
-command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify -b $DEPLOY_PRIME_URL"
+command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify -b $DEPLOY_PRIME_URL && cp static/keybase.txt public/"
 
     [context.branch-deploy.environment]
     HUGO_VERSION = "0.124.1"

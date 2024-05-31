@@ -16,4 +16,20 @@ enableEmoji = true
     ordered = false
 
 [outputs]
-home = [ "HTML", "RSS", "JSON" ]
+home = [ "HTML", "RSS", "JSON", "TXT" ]
+# page = [ "HTML", "TXT" ]
+
+# [outputFormats]
+#     [outputFormats.TXT]
+#     # name = "text"
+#     baseName = "text"
+#     mediaType = "text/plain"
+#     isHTML = false
+#     isPlainText = true
+#     # noUgly = true
+#     permalinkable = true
+
+# [mediaTypes]
+#   [mediaTypes."text/plain"]
+#     suffix = "txt"
+
