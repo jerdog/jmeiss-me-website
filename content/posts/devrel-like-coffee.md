@@ -32,7 +32,7 @@ This term “Developer Relations” isn’t _really_ all that new in terms of Te
 
 Eloquent, right? I mean, I didn’t skip college for nothin’! _(Not exactly true, but not the subject of this diatribe.)_
 
-Ok, so let’s use a definition which is a bit more elegant from Mary Thengvall’s [_The Business Value of Developer Relations_](https://www.amazon.com/Business-Value-Developer-Relations-Communities/dp/1484237471)_:_
+Ok, so let’s use a definition which is a bit more elegant from Mary Thengvall’s _[The Business Value of Developer Relations](https://www.amazon.com/Business-Value-Developer-Relations-Communities/dp/1484237471):_
 
 > build relationships with the developer community
 
@@ -88,7 +88,8 @@ Early in our adventure, I started to notice a phrase that many customers who wer
 
 It would start with a confused, almost glassy-eyed expression in response to the question of what the staff could get for them — and then after a few moments they would utter the following phrase:
 
-> **Um, I’ll just have a cup of coffee…..**
+> Um, I’ll just have a cup of coffee....
+<cite>Confused Charbucks Customer</cite>
 
 Now we were of course a coffee shop, so it made sense that they would want a cup of coffee. But what was a consistent indicator as you would watch their experience, was “I’ll just have….” That phrase was often a resignation to the plethora of information they were being assaulted with, and instead of engaging with that menu and the barista and identifying something to order, they would settle for a cup of coffee.
 
@@ -114,9 +115,10 @@ I was smitten. I dove headfirst into learning, and tasting, everything I could a
 
 ### So back to coffee as DevRel
 
-This afore-mentioned passion served me well when I would engage with our customers and begin to educate them on what a good cup of coffee should be, and what they would likely enjoy. It wasn’t uncommon for me to convert someone who “required” their coffee be equal parts milk, sugar, and coffee into a straight, black coffee drinker — all because I found out what they were looking for, wanting, and even (for some people) needing by asking, listening, and building a relationship with them. Douglas Adams said it best,
+This afore-mentioned passion served me well when I would engage with our customers and begin to educate them on what a good cup of coffee should be, and what they would likely enjoy. It wasn’t uncommon for me to convert someone who “required” their coffee be equal parts milk, sugar, and coffee into a straight, black coffee drinker — all because I found out what they were looking for, wanting, and even (for some people) needing by asking, listening, and building a relationship with them. A wise philosopher said it best,
 
 > To give real service you must add something which cannot be bought or measured with money, and that is sincerity and integrity.
+<cite>Douglas<span class="cite-last-name">Adams</span></cite>
 
 See, that’s DevRel to a “T” in my opinion. You have a product you are “evangelising”, and it requires that you actively listen, ask questions, build relationships with those developers using the product. It’s not _always_ about pizza and beer (doesn’t hurt either), but it _is_ about being intentional — it’s about being real. Developers can see through the marketing and sales bulls&\*& which so often is sent their way, and are willing to listen and try your product if/when they trust you. And that trust doesn’t happen immediately.
 

@@ -15,7 +15,8 @@ toc: false
 ---
 Hi, I'm Jeremy. I've spent the last roughly 25 years in IT, with the last 12 or so being a part of technical communities and Developer Relations (DevRel). For those who are new to the term, DevRel is literally about _building relationships with the developer community_. It is being the advocate for developers using your product, service, "thing", back to areas in your company or organisation, like Product and Engineering, about their experience(s), suggestions, etc. As Mary Thengvall likes to describe DevRel in her [book](https://t.co/axOdZlTEth):
 
->_To the community I represent the company; to the company I represent the community. I must have both of their interests in mind at all times._
+>To the community I represent the company; to the company I represent the community. I must have both of their interests in mind at all times.
+<cite>Mary<span class="cite-last-name">Thengvall</span></cite>
 
 It wasn't until I recorded an episode on DevRel for the SlashData Podcast that I looked back at where I began in DevRel and Community, and became surprised at a few things I had forgotten.
 
@@ -27,7 +28,8 @@ At certain times in your career it is good to reflect on the journey, the things
 
 ## In the beginning...
 
->_In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move._  **-Douglas Adams**
+> In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.
+<cite>Douglas<span class="cite-last-name">Adams</span></cite>
 
 As early as I can remember I have always had a symbiotic relationship with technology, from really the first time I picked up a [ColecoVision](https://en.wikipedia.org/wiki/ColecoVision) in the early 1980s. I, as many of my generation born in the 70s, could pick up something technical and almost immediately be able to work it without learning. I loved tech. I also quickly became the person in my family (extended included) who would be called upon to fix anything or explain how something worked (which also severely impacted quite a few of my family vacations visiting relatives while growing up). I still remember explaining DNS to my parents and grandparents using the post office example.
 
@@ -40,7 +42,8 @@ Never fear. The original DOS install 5 1/4" disks to the rescue.
 
 ![ms dos 2.0](https://pbs.twimg.com/media/DktzdH9XgAAIPO6.jpg)
 
->_A learning experience is one of those things that says, 'You know that thing you just did? Don't do that.'_ **―Douglas Adams**
+> A learning experience is one of those things that says, 'You know that thing you just did? Don't do that.'
+<cite>Douglas<span class="cite-last-name">Adams</span></cite>
 
 One other thing I remember about those early days, was going to the library. I love to read. In those days, I would read anything I could get my hands on about computers. I read about apps and concepts I have long since forgotten. We would leave the library with a laundry basket _full_ (not kidding) of books, and in two weeks would return them all. Read.
 
@@ -79,7 +82,8 @@ Now I am the Director of Community at [Solace](https://solace.com), helping buil
 
 One thing that stands out for me, and I want to make sure others hear this, is that while DevRel is in the technical space in its core interactions, it is by no means a requirement that you be an engineer in order to be in DevRel. This of course depends on the specific role and company, but if you are looking to get into DevRel do not take a perceived lack of "technical expertise" as a deterrent. The field is awash with professionals with "non-traditional" backgrounds like scientists, actors and actresses, and more. All that I feel is required is empathy, and the ability to "stand in the gap" for developers back to the company.
 
->_Developers don't care what you know, until they know that you care._ **-Jeremy Meiss**
+> Developers don't care what you know, until they know that you care.
+<cite>Jeremy<span class="cite-last-name">Meiss</span></cite>
 
 I love the DevRel community, for what it's taught me and given me, and what I hope to give back. Reach out if you have any thoughts or questions around ways you too can embark on the DevRel journey.
 

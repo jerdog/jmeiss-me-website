@@ -59,7 +59,8 @@ These are just some of the bigger examples of how you can be a resource to other
 
 I hear this retort/excuse as to why a DevRel team _shouldn’t_ be doing these sorts of things all of the time. It’s usually followed up with:
 
->”Developers don’t like Sales/Marketing, and now you’re telling me that we need to be doing Sales/Marketing things!?!”
+> Developers don’t like Sales/Marketing, and now you’re telling me that we need to be doing Sales/Marketing things!?!
+<cite>some Dev Advocate on the street</cite>
 
 Well, Yes. Also, No.
 

@@ -107,13 +107,15 @@ And that’s all valid. But it’s also something that can be overcome. There ar
 
 The data about your Community and DevRel program has got to tell a story, and that story needs to be easy to follow and draw parallels to the activities you are doing to show the impact.  
 
-> _"In a world full of data, storytelling is an art."_ - attributed to [Brent Dykes](https://www.effectivedatastorytelling.com/)
+> In a world full of data, storytelling is an art. 
+<cite><a href="https://www.effectivedatastorytelling.com/">attributed</a> to Brent<span class="cite-last-name">Dykes</span></cite>
 
 At the same time, the data you are pulling will not stay static throughout the maturity of the DevRel program. It needs to evolve, and so you'll need to constantly stretch and exercise this skill.
 
 ## So how do we measure to show impact?
 
-> “Define what you want to measure for success, THEN measure the things which indicate that.” Morgan Ramsey, Pluralsight at Monktoberfest 2023
+> Define what you want to measure for success, THEN measure the things which indicate that.
+<cite>Morgan<span class="cite-last-name">Ramsey</span> at Monktoberfest 2023</cite>
 
 The first step in figuring out what to measure is to ask a couple of questions of yourself, your team, your management,  your department, and even other departments you interact with:
 

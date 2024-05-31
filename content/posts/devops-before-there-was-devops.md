@@ -48,47 +48,56 @@ I had found the magical solution. Over the next roughly 2hrs, our building exper
 
 I had implemented, without even knowing it, a few of the core DevOps principles (as laid out in Emily Freeman's fantastic book ["DevOps for Dummies"](http://amzn.to/2XL7lGM)) before they were a thing. I was a trailblazer!
 
-##Encourage teamwork
+## Encourage teamwork
+
 Instead of taking on the project all myself, I efficiently roped others into my ambitious gamble. They unknowingly provided me with the legwork, and allowed me to sit in the server room with my feet up, and eat bonbons until the next group of people recognised they needed to join me in this project.
 
 ![teamwork](https://media.giphy.com/media/xUPGcjQ6dJEjH5uwMw/giphy.gif)
 <figcaption>via <a href="https://giphy.com/embed/xUPGcjQ6dJEjH5uwMw">GIPHY</a></figcaption>
 
-##Reduce silos
+## Reduce silos
+
 I live in Kansas. Silos are a regular thing across the plains. I can honestly say, that as a result of my brilliant plan, no new silos were created during, or since. I'd say that was successful.
 
 ![success](https://media.giphy.com/media/2vA33ikUb0Qz6/giphy.gif)
 <figcaption>via <a href="https://giphy.com/embed/2vA33ikUb0Qz6">GIPHY</a></figcaption>
 
-##Practice systems thinking
+## Practice systems thinking
+
 I holistically approached the problem by using all of the resources available to me. My chair was comfortable, I had the patch panels and switches within easy reach, the telephone had a speakerphone, and I had a pen ready to write down the location and it had plenty of ink.
 
 ![thinking](https://media.giphy.com/media/v3mwgBgNm7iOk/giphy.gif)
 <figcaption>via <a href="https://giphy.com/embed/v3mwgBgNm7iOk">GIPHY</a></figcaption>
 
-##Learn from failure
+## Learn from failure
+ 
 I recognised the failure in not marking locations when the wires were ran left me with a learning opportunity on how to automate. I also learned that a ball point pen wasn't as effective as a Sharpie.
->“Failure is the condiment that gives success its flavor.”
-― Truman Capote
 
-##Communicate
+> “Failure is the condiment that gives success its flavor.”
+<cite>Truman<span class="cite-last-name">Capote</span></cite>
+
+## Communicate
+
 Telephones. They used to be used to talk on, not text and take selfies. I used it. I communicated with multiple people over a few hours, and they were all extremely thankful.
 
 ![comms](https://media.giphy.com/media/lXHj6CJpdEhxe/giphy.gif)
 <figcaption>via <a href="https://giphy.com/embed/lXHj6CJpdEhxe">GIPHY</a></figcaption>
 
-##Accept feedback
+## Accept feedback
+
 I heard, loud and clear, that people were having issues with their internet connection. I took that feedback and rolled it into actionable results, i.e. I plugged their cable back in. I then accepted that they were happy with the service I had given. I'd say that was a very productive morning.
 
 ![feedback](https://i.imgur.com/aBGOnae.gif)
 <figcaption>from <a href="https://tenor.com/5gkO.gif">Tenor GIFs</a></figcaption>
 
-##Iterate rapidly
+## Iterate rapidly
+
 The challenge with any project, be it software or building a deck (if you're reading this, you would be **100% correct** that I should not help you build a deck), is how quickly you can repeat what you've just done, making any changes along the way, and roll it out, thus making way for the next sprint. I wasn't going to be running any race, still won't, but for me I was able to take a 1-2 day process, and turn it into a less than half a day success story by breaking it down into groups of 10. I iterated like a BOSS!
 
 ![boss](https://media.giphy.com/media/qFwiRo6isWjza/giphy.gif)<figcaption>via <a href="https://giphy.com/embed/qFwiRo6isWjza">GIPHY</a></figcaption>
 
-##Automate where appropriate
+## Automate where appropriate
+
 Finally, we come to automation. This is where I think my 20 year old self really excelled. I was able to automate the manual process of going to 70+ outlets in the building and using a tone generator on every one, down to never leaving my chair and having everyone in the building do the task for me. I dare say that also was a good example of teamwork.
 
 ![teamwork](https://media.giphy.com/media/xmz2JEFmNsGru/giphy.gif)<figcaption>via <a href="https://giphy.com/embed/xmz2JEFmNsGru">GIPHY</a></figcaption>

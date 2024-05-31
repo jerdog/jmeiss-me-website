@@ -24,7 +24,8 @@ Open source is where true innovation happens. There. I’ve said it. The free ex
 ## Open Source: The What and The Why
 The [Open Source Initiative](https://opensource.org) defines open source as:
 
-> "software that can be freely used, changed, and shared (in modified or unmodified form) by anyone" ([source](https://opensource.org/osd))
+> software that can be freely used, changed, and shared (in modified or unmodified form) by anyone
+<cite><a href="https://opensource.org/osd">Open Source Initiative</a></cite>
 
 At last month’s Open Source Summit in San Francisco, the Executive Director of the Linux Foundation, Jim Zemlin, shared the following stats:
 
@@ -123,7 +124,8 @@ Everything that happens in a community needs to be done with transparency and op
 ## Lifecycle of Communities
 Communities are just as generational as families, and you will typically see the lifecycle reflect something very similar to the below. There is no pre-determined time frame that someone might spend in each role in the community before they “upgrade”. Some will move very quickly through some or all, whereas others might consistently plod along.
 
->"If you can enable an environment in which people can share, they will and the benefits will entice others to join." -Susannah Fox, **[Medicine 2.0: Peer-to-peer healthcare](http://www.pewinternet.org/2011/09/18/medicine-2-0-peer-to-peer-healthcare/)**, *Beacon #3*
+> If you can enable an environment in which people can share, they will and the benefits will entice others to join.
+<cite>Susannah<span class="cite-last-name">Fox</span>, <a href="http://www.pewinternet.org/2011/09/18/medicine-2-0-peer-to-peer-healthcare/">source</a>
 
 It is important to not restrict people from benefiting from the community without registering (**Lurker**), e.g. free downloads or being able to read posts. It is good to require signing up in order to participate though as it shows intention and desire to enter the community (**Novice**). The next step could come quickly for some, or longer for others, where they actively start participating and reach a level as a **Regular** member. This would typically see them participating more, contributing new content or helping support others. Eventually you will start to see **Leaders** begin to emerge from the ranks, and it is a good thing to recognize this early and engage them. Give them something to do, let them take ownership, or else you run the risk of losing them. You’ll know a leader in the community as they’ll be the ones embodying the spirit and vision and values of the community, and will be the standard for what it looks like to truly participate. Not everyone is able to spend a consistent amount of time though in the community, and after awhile you will have **Elders** who will emerge and they tend to be those who are on their way out, usually due to things like job, family, lack of interest, new stage in life, etc. They often will impart sage advice to a situation, or provide suggestions, and when they talk, people will listen. But they also just aren’t as active anymore. You could see them as the elders in a tribe who are nearing the end of life in said tribe (not nearly as morbid as you think). It’s important to get their feedback on how things are going, but you will need to know that they likely don’t have the same passion or time as before.
 
