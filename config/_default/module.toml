@@ -13,3 +13,7 @@ target = "static/files"
 [[mounts]]
 source = "./node_modules/katex/dist/fonts"
 target = "static/fonts"
+
+[[mounts]]
+source = "./static/images"
+target = "static/images"
