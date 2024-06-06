@@ -66,7 +66,7 @@ These cloud-based IDEs are all based on the same idea: offer fully-configured de
 
 ## Developer Experience can drive innovation
 
-Who, in 1976, could have imagined that a developer could have a fully configured development environment in the “cloud”? As technology evolved, the need for more robust and integrated development environments grew, and options emerged for developers to choose the best tool for the job. Or what they want to use since Vim and Emacs still have rabid followings.
+Who, in 1976, could have imagined that a developer could have a fully configured development environment in the “cloud”? As technology evolved, the need for more robust and integrated development environments grew, and options emerged for developers to choose the best tool for the job. Or what they want to use since Vim and Emacs still have avid followings.
 
 We went from:
 
