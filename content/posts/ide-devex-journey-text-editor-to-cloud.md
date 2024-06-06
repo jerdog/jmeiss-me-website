@@ -60,20 +60,11 @@ Yes, I know I’m probably missing quite a few others.
 
 These cloud-based IDEs all share the same idea: they offer fully configured development environments in the cloud that are accessible from anywhere and anyone, reducing the need for complex local setups.
 
-Yes, I know I'm probably missing quite a few others.
-
-These cloud-based IDEs are all based on the same idea: offer fully-configured development environments in the cloud, accessible from anywhere and anyone, reducing the need for complex local setups.
-
 ## Developer Experience can drive innovation
 
 Who, in 1976, could have imagined that a developer could have a fully configured development environment in the “cloud”? As technology evolved, the need for more robust and integrated development environments grew, and options emerged for developers to choose the best tool for the job. Or what they want to use since Vim and Emacs still have avid followings.
 
-We went from:
-
-> ...the use of an IDE was not well received by developers since it would fence in their creativity.
-<cite>Computerwoche, Germany, 1995</cite>
-
-to features like these being table stakes for developer experience:
+We went from the feeling that IDEs aren't well received, (see above quote from _Computerwoche_) to features like these being essential for developer experience:
 
 - Code completion
 - Syntax highlighting
