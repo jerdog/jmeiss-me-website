@@ -13,11 +13,11 @@ summary = ""
 
 ## The DevEx Journey: From Text Editors to Cloud-Based IDEs
 
-Remember the days of text-based editors like Vim and Emacs? It's a far cry from today's sophisticated IDEs with features like code completion and debugging tools. Here's a brief, and wholy incomplete, timeline to illustrate this:
+Remember the days of text-based editors like Vim and Emacs? It's a far cry from today's sophisticated IDEs with features like code completion and debugging tools, and "developer experience" is one of the biggest reasons why. Here's a brief, and wholy incomplete, timeline to illustrate this:
 
 ### Text only editors
 
-Before the 1990s, you had primarily text-based editors for writing code, like Vi, which evidently is supposed to be called "SIX."
+Before the 1990s, you primarily had text-based editors for writing code, like Vi, which evidently is supposed to be called "SIX."
 
 ![USER FRIENDLY by Illiad](https://www.oreilly.com/api/v2/epubs/9781492078791/files/assets/lvv8_0101.png)
 
@@ -31,7 +31,7 @@ One of the first IDEs with a plugin concept was HP Softbench, released in 1989. 
 
 ![HP Softbench in `Library as a Service` mode](/images/posts/hp-softbench-manuals.jpg)
 
-It's a fascinating read as HP lays out its software architecture and development vision, including automated testing, distributed computing, integrated and interchangeable tools, and more. [Here is the link](http://hparchive.com/Journals/HPJ-1990-06.pdf) to the PDF - I highly recommend reading it.
+It's a fascinating read as HP lays out its software architecture and development vision, including automated testing, distributed computing, integrated and interchangeable tools, and more. [Here is the link](http://hparchive.com/Journals/HPJ-1990-06.pdf) to the PDF - I highly recommend giving it a read.
 
 The early reviews of IDEs as a concept weren't great, though. In 1995, Computer Week in Germany commented that:
 
@@ -44,7 +44,7 @@ Around the same time HP was releasing Softbench, we had native IDEs emerging: Tu
 
 ### The World Wide Web expansion
 
-With the launch of the World Wide Web, and its subsequent explosion of growth, IDEs started becoming more graphical and having a more modern look and feel. The first HTML WYSIWYG editor, WebMagic, was built by Silicon Graphics and released in January 1995 (in less than 90 days!). I recommend reading the series of blog posts that its creator, John McCrea, wrote about concerning the history of WebMagic which really begins [here](https://therealmccrea.com/2014/12/26/webmagic-the-untold-and-rather-improbable-story-behind-the-first-wysiwyg-html-editor/), and follow the next few posts afterwards.
+With the launch of the World Wide Web, and its subsequent explosion of growth, IDEs started becoming more graphical and having a more modern look and feel. The first HTML WYSIWYG editor, [WebMagic](https://wiki.preterhuman.net/WebMagic), was built by Silicon Graphics and released in January 1995 (in less than 90 days!). I recommend reading the series of blog posts that its creator, John McCrea, wrote about concerning the history of WebMagic which really begins [here](https://therealmccrea.com/2014/12/26/webmagic-the-untold-and-rather-improbable-story-behind-the-first-wysiwyg-html-editor/), and follow the next few posts afterwards.
 
 FrontPage soon followed in October 1995 after Microsoft acquired it from Vermeer, and then Macromedia's Dreamweaver broke on to the scene in 1997, after they [acquired Backstage](https://adobe.fandom.com/wiki/Macromedia_Backstage) (different "Backstage" product) from iBand in 1996). Dreamweaver _completely_ changed the game in many respects, as Macromedia had a history of their products getting community-sourced tools, plugins, scripts, etc.
 
@@ -54,15 +54,15 @@ Microsoft FrontPage 2000 saw the first inclusion of plugins and integrations in 
 
 In the late 2000s Sublime Text entered the scene, followed later by Atom and VS Code, all of which focused on speed, user-friendly interfaces, extensible plugin ecosystems, and more. They catered to a range of developers by being less resource-intensive and more customizable.
 
-Then we had the rise of the cloud, and the arrival of the cloud-based IDEs. The first cloud-based IDE was [PHPanywhere](https://techcrunch.com/2009/07/25/code-in-your-browser-with-phpanywhere/) (eventually becoming CodeAnywhere) in 2009, followed by Cloud9 in 2010 (before AWS bought it in 2016), CodePen (2012), Glitch (2018), GitPod (2019), GitHub Codespaces (2020), Google's Project IDX (2024). 
+Then we had the rise of the cloud, and the arrival of the cloud-based IDEs. The first cloud-based IDE was [PHPanywhere](https://techcrunch.com/2009/07/25/code-in-your-browser-with-phpanywhere/) (eventually becoming CodeAnywhere) in 2009, followed by Cloud9 in 2010 (before AWS bought it in 2016), CodePen (2012), Glitch (2018), GitPod (2019), GitHub Codespaces (2020), Google's Project IDX (2024).
 
 Yes, I know I'm probably missing quite a few others.
 
-These cloud-based IDEs are all based on the same idea: offer fully-configured development environments in the cloud, accessible from anywhere and anyone, reducing the need for complex local setups. 
+These cloud-based IDEs are all based on the same idea: offer fully-configured development environments in the cloud, accessible from anywhere and anyone, reducing the need for complex local setups.
 
 ## Developer Experience can drive innovation
 
-Who, in 1976, could have imagined that a developer could have a fully-configured development environment in the cloud? As technology evolved, the need for more powerful and integrated development environments grew, and options emerged for developers to choose the best tool for the job. Or what they want to use, since `vim` and `emacs` still have rabid followings. 
+Who, in 1976, could have imagined that a developer could have a fully-configured development environment in the "cloud"? As technology evolved, the need for more powerful and integrated development environments grew, and options emerged for developers to choose the best tool for the job. Or what they want to use, since `vim` and `emacs` still have rabid followings.
 
 We went from:
 
