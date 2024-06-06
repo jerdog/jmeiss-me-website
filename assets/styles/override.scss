@@ -90,6 +90,7 @@ blockquote::after {
 	text-indent: 0;
 }
 
+@media all {
 cite {
 	display: block;
 	margin-top: 30px;
@@ -97,7 +98,9 @@ cite {
 	text-align: center;
 	font: bold .9rem var(--type-body);
 	text-transform: uppercase;
-	color: #{'hsl(0 0% 20%)'};
+	// color: #{'hsl(0 0% 20%)'};
+	color: var(--accent-color);
+}
 }
 
 @media (min-width: 768px) {
