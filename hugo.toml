@@ -1,6 +1,6 @@
-baseURL = 'https://jmeiss-me-toha.netlify.app/'
+baseURL = 'https://jmeiss.me/'
 languageCode = 'en-us'
-title = 'Jeremy Meiss'
+title = 'Jeremy Meiss | DevEx & DevRel Professional'
 enableEmoji = true
 
 [markup]

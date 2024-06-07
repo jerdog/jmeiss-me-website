@@ -21,7 +21,7 @@ customMenus:
 
 # Specify OpenGraph Headers
 openGraph:
-  title: Jeremy's website
+  title: Jeremy Meiss | DevEx & DevRel Professional
   type: website
   description: Personal website of Jeremy Meiss, DevEx and DevRel Professional.
   image: images/author/jeremy-meiss.jpg
