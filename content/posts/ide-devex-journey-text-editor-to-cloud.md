@@ -5,7 +5,8 @@ draft = false
 hero = '/images/posts/textEditors-cloudIDEs.jpg' # location of images should be in /images/posts/
 tags = [ "devex", "developer experience", "software development", "devops", "cloud", "ide"]
 toc = true
-summary = ""
+description = "Remember the days of text-based editors like Vim? It’s a far cry from today’s sophisticated IDEs with features like code completion and debugging tools, and “developer experience” is one of the biggest reasons why."
+summary = "The text-based editors of before are a far cry from today's sophisticated IDEs, and 'developer experience' is one of the biggest reasons why."
 [author]
     name = "Jeremy Meiss"
     image = "/images/author/jeremy-meiss.jpg"
