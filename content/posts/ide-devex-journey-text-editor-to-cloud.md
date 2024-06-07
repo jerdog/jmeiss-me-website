@@ -13,7 +13,7 @@ summary = ""
 
 Remember the days of text-based editors like [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) and [Emacs](https://en.wikipedia.org/wiki/Emacs)? It’s a far cry from today’s sophisticated IDEs with features like code completion and debugging tools, and “developer experience” is one of the biggest reasons why. Here’s a brief and wholly incomplete timeline to illustrate this:
 
-### Text only editors
+## Text only editors
 
 Before the 1990s, you primarily had text-based editors for writing code, like [Vi](https://en.wikipedia.org/wiki/Vi_(text_editor)), which evidently is supposed to be called “SIX.”
 
@@ -23,7 +23,7 @@ Who knew? It was created in 1976 (originally as ex) and included in the first B
 
 Then we had Emacs in 1985, Vim in 1991, and my personal favorite, [Nano](https://en.wikipedia.org/wiki/GNU_nano). And only partially because I can exit it without throwing out the computer and buying a new one like I do with Vim. Saving the planet, one less computer thrown away because of Vim at a time.
 
-### The cutting edge: HP Softbench?
+## The cutting edge: HP Softbench?
 
 One of the first IDEs with a plugin concept was [HP Softbench](https://en.wikipedia.org/wiki/Softbench), released in 1989. HP Softbench was one of the first plugin IDEs, shipped with its own library, and was extensively discussed in the June 1990 edition of the HP Journal.
 
@@ -36,11 +36,11 @@ The early reviews of IDEs as a concept weren’t great, though. In 1995, Compute
 > ...the use of an IDE was not well received by developers since it would fence in their creativity.
 <cite>Computerwoche, Germany, 1995</cite>
 
-### Native IDEs enter the scene
+## Native IDEs enter the scene
 
 Around the same time HP was releasing Softbench, native IDEs were emerging: [Turbo Pascal](https://en.wikipedia.org/wiki/Turbo_Pascal) in 1983 and Apple’s [Macintosh Programmer’s Workshop](https://en.wikipedia.org/wiki/Macintosh_Programmer%27s_Workshop) in 1986. [Borland Delphi](https://en.wikipedia.org/wiki/Delphi_(software)) was released in 1995 and was really the first to focus on Rapid Application Development (RAD) as a concept. Fun fact: Delphi is [still around today](https://www.embarcadero.com/products/delphi), courtesy of Embarcadero.
 
-### The World Wide Web expansion
+## The World Wide Web expansion
 
 With the launch of the World Wide Web and its subsequent explosion of growth, IDEs started becoming more graphical and having a more modern look and feel. The first HTML WYSIWYG editor, [WebMagic](https://wiki.preterhuman.net/WebMagic), was built by Silicon Graphics and released in January 1995 (in less than 90 days!). I recommend reading the series of blog posts that its creator, John McCrea, wrote about the history of WebMagic, which really begins [here](https://therealmccrea.com/2014/12/26/webmagic-the-untold-and-rather-improbable-story-behind-the-first-wysiwyg-html-editor/), and following the next few posts afterward.
 
@@ -48,7 +48,7 @@ With the launch of the World Wide Web and its subsequent explosion of growth, ID
 
 Microsoft FrontPage 2000 saw the first inclusion of plugins and integrations in early 1999 to make web management easier via FrontPage Server Extensions. [NetBeans](https://en.wikipedia.org/wiki/NetBeans) was released in 2000 for Java. [IntelliJ IDEA](https://en.wikipedia.org/wiki/IntelliJ_IDEA) and [Eclipse](https://en.wikipedia.org/wiki/Eclipse_(software)) followed in 2001, along with [Visual Studio](https://en.wikipedia.org/wiki/Visual_Studio), which offered enhanced functionality and more sophisticated features like intelligent code completion, refactoring tools, and improved version control integration. We saw a noticeable increase in support for multiple languages and frameworks, making these IDEs more versatile.
 
-### Lightweight, extensible, and now Cloud-based
+## Lightweight, extensible, and now Cloud-based
 
 In the late 2000s, [Sublime Text](https://en.wikipedia.org/wiki/Sublime_Text) entered the scene, followed later by [Atom](https://en.wikipedia.org/wiki/Atom_(text_editor)) and [VS Code](https://en.wikipedia.org/wiki/Visual_Studio_Code). All of these focused on speed, user-friendly interfaces, extensible plugin ecosystems, and more. They catered to a range of developers by being less resource-intensive and more customizable.
 
