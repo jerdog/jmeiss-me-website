@@ -1,8 +1,8 @@
 +++
-title = 'A DevEx Journey - Text editors to Cloud-based IDEs'
+title = 'From Text Editors to Cloud-based IDEs - a DevEx journey'
 date = 2024-06-10T06:49:35-05:00
 draft = false
-hero = "" # location of images should be in /images/posts/
+hero = '/images/posts/textEditors-cloudIDEs.jpg' # location of images should be in /images/posts/
 tags = [ "devex", "developer experience", "software development", "devops", "cloud", "ide"]
 toc = true
 summary = ""
@@ -10,8 +10,6 @@ summary = ""
     name = "Jeremy Meiss"
     image = "/images/author/jeremy-meiss.jpg"
 +++
-
-## The DevEx Journey: From Text Editors to Cloud-Based IDEs
 
 Remember the days of text-based editors like [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) and [Emacs](https://en.wikipedia.org/wiki/Emacs)? It’s a far cry from today’s sophisticated IDEs with features like code completion and debugging tools, and “developer experience” is one of the biggest reasons why. Here’s a brief and wholly incomplete timeline to illustrate this:
 
