@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
   <head>
-    <title>{{ .Page.Title }}</title>
+    <title>
+    {{ if ne page.IsHome true }}
+        {{ .Site.Title }} | {{ .Page.Title }}{{ else }}
+        {{ .Page.Title }}
+    {{ end }}
+    </title>
     <!------ ADD COMMON HEADERS -------->
     {{- partial "header.html" . -}}
     {{ template "_internal/opengraph.html" . }}

@@ -1,5 +1,6 @@
 {{ define "header" }}
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}" />
+<title>{{ .Site.Title }} | {{ .Title }}</title>
 {{ end }}
 
 {{ define "navbar" }}
