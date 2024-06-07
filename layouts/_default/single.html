@@ -1,5 +1,6 @@
 {{ define "header" }}
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}" />
+<title>{{ .Site.Title }} | {{ .Title }}</title>
 {{ end }}
 
 {{ define "navbar" }}
@@ -59,13 +60,10 @@
         {{ if site.Params.features.tags.enable }}
           {{partial "misc/tags.html" .Params.tags }}
         {{ end }}
-        <div class="post-content" id="post-content">
-          {{ .Page.Content }}
-        </div>
 
         <!-- Share or Contribute -->
         <div class="row ps-3 pe-3">
-        <!--Social Media Share Buttons-->
+          <!--Social Media Share Buttons-->
           <div class="col-md-6 share-buttons">
           {{ if site.Params.features.blog.shareButtons }}
             <strong>{{ i18n "share_on" }}:</strong>
@@ -104,13 +102,13 @@
                   <i class="fab fa-diaspora"></i>
                 </a>
             {{ end }}
-             {{ if site.Params.features.blog.shareButtons.mastodon }}
+              {{ if site.Params.features.blog.shareButtons.mastodon }}
                 <a class="btn icon-button bg-mastodon" href="https://mastodon.social/share?text={{ .Title }} - {{ .Permalink }}" target="_blank">
                   <i class="fab fa-mastodon"></i>
                 </a>
             {{ end }}
             {{ if site.Params.features.blog.shareButtons.whatsapp }}
-                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text={{ .Title }} {{ .Permalink }}" target="_blank">
+                  <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text={{ .Title }} {{ .Permalink }}" target="_blank">
                   <i class="fab fa-whatsapp"></i>
                 </a>
             {{ end }}
@@ -120,7 +118,14 @@
                 </a>
             {{ end }}
           {{ end }}
-          </div>
+        </div>
+
+        <hr />
+
+        <div class="post-content" id="post-content">
+          {{ .Page.Content }}
+        </div>
+
 
         <!--- Improve this page button --->
         {{ if site.Params.GitRepo }}
@@ -147,9 +152,9 @@
 
 
       <!---Next and Previous Navigator -->
-      <hr />
+      <!-- <hr />
         {{ partial "navigators/next-prev-navigator.html" . }}
-      <hr />
+      <hr /> -->
 
       <!----- Add comment support  ----->
       {{ if site.Params.features.comment.enable }}
