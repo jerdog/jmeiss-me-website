@@ -32,6 +32,12 @@ enable = true
 enable = true
 showAuthor = true
 
+  [features.blog.shareButtons]
+  facebook = true
+  twitter = true
+  linkedin = true
+  reddit = true
+
 [features.toc]
 enable = true
 

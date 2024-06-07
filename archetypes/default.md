@@ -2,7 +2,7 @@
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = {{ .Date }}
 draft = true
-hero = "" # location of images should be in /images/posts/
+hero = '' # location of images should be in /images/posts/
 tags = [ "", "", "" ]
 toc = true
 summary = ""
