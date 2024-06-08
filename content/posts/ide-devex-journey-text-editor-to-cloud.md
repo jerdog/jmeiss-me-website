@@ -12,7 +12,18 @@ summary = "The text-based editors of before are a far cry from today's sophistic
     image = "/images/author/jeremy-meiss.jpg"
 +++
 
-Remember the days of text-based editors like [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) and [Emacs](https://en.wikipedia.org/wiki/Emacs)? It’s a far cry from today’s sophisticated IDEs with features like code completion and debugging tools, and “developer experience” is one of the biggest reasons why. Here’s a brief and wholly incomplete timeline to illustrate this:
+Remember the days of text-based editors like [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) and [Emacs](https://en.wikipedia.org/wiki/Emacs)? It’s a far cry from today’s sophisticated IDEs with features like code completion and debugging tools, and “developer experience” is one of the biggest reasons why.
+
+Before we get too nostalgic, I'm going to define Developer Experience (DevEx).
+
+## What is Developer Experience?
+
+DevEx encompasses everything a developer, or ops practitioner, interacts with throughout the software development lifecycle. It includes the tools they use, the processes they follow, and their work environment. To quote a fantastic DevEx practitioner:
+
+> DevEx is the journey of developers as they learn and deploy technology. When successful, it focuses on eliminating obstacles that hinder a developer or practitioner from achieving success in their endeavors.
+<cite>Jessica<span class="cite-last-name">West</span></cite>
+
+With that in place, here’s a brief and wholly incomplete timeline to illustrate the impact of DevEx on software development.
 
 ## Text only editors
 
