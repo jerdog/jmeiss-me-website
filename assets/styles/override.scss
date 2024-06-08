@@ -57,6 +57,11 @@ blockquote {
 	text-indent: 1.6em;
 }
 
+blockquote p {
+	margin-top: 1.3rem;
+    margin-bottom: 1rem;
+}
+
 @media (min-width: 768px) {
 	blockquote {
 		margin: 40px 60px;
