@@ -1,6 +1,6 @@
 +++
 title = 'Developer Experience is essential for DevOps success'
-date = 2024-06-13T12:21:04-05:00
+date = 2024-06-12T12:21:04-05:00
 draft = true
 hero = "/images/posts/devex-devops-success.jpg" # location of images should be in /images/posts/
 tags = [ "devex", "developer experience", "devops"]
