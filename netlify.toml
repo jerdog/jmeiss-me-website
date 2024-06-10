@@ -1,5 +1,5 @@
 [build]
-    command = "hugo --gc --minify && cp static/keybase.txt public/"
+    command = "hugo --gc --minify --buildFuture && cp static/keybase.txt public/"
     publish = "public"
 
 [context.production.environment]
