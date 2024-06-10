@@ -1,6 +1,6 @@
 +++
 title = 'From Text Editors to Cloud-based IDEs - a DevEx journey'
-date = 2024-06-11T06:49:35-05:00
+date = 2024-06-10T06:49:35-05:00
 draft = false
 hero = '/images/posts/textEditors-cloudIDEs.jpg' # location of images should be in /images/posts/
 tags = [ "devex", "developer experience", "software development", "devops", "cloud", "ide"]
