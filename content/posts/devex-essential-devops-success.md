@@ -23,7 +23,7 @@ Developer Experience (DevEx) encompasses everything a developer, or ops practiti
 > DevEx is the journey of developers as they learn and deploy technology. When successful, it focuses on eliminating obstacles that hinder a developer or practitioner from achieving success in their endeavors.
 <cite>Jessica<span class="cite-last-name">West</span></cite>
 
-It is about their every interaction with systems, tools, and processes. I touched on this with my post on the [evolution of Integrated Development Environments](../ide-devex-journey-text-editor-to-cloud) (IDEs) from text-based editors to Cloud-based IDEs. The post explains how the overall Developer Experience with software development has evolved, leading to where we sit with IDEs now. Things we didn't know we would want back in the 1960s are commonplace and the expected norm now in the 2020s.
+It is about their every interaction with systems, tools, and processes. I touched on this with my post on the [evolution of Integrated Development Environments](ide-devex-journey-text-editor-to-cloud) (IDEs) from text-based editors to Cloud-based IDEs. The post explains how the overall Developer Experience with software development has evolved, leading to where we sit with IDEs now. Things we didn't know we would want back in the 1960s are commonplace and the expected norm now in the 2020s.
 
 ### Modern Development
 
