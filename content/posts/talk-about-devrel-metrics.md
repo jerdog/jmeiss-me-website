@@ -57,7 +57,7 @@ So what do we do?
 
 Growing up, did you ever measure yourself on the wall to figure out how much you’d grown over the last week or year? You could easily visualise where you were, and where you are, even if it was a miniscule difference. It meant something! And maybe you even had a line above that which represented where you wanted to be, or a parent or sibling whose height you wanted to match or even beat.
 
-DevRel as a discipline is [basically 30 years old](https://jmeiss.me/posts/devrel-and-the-customer-journey/#:~:text=much%20of%20a%20history%20lesson%2C%20), and yet there’s such a general resistance about measuring DevRel, either as a general discipline, or the individual program in the company. Why is that?
+DevRel as a discipline is [basically 30 years old](the-foundations-of-devrel/#begin-at-the-beginning), and yet there’s such a general resistance about measuring DevRel, either as a general discipline, or the individual program in the company. Why is that?
 
 I think there are a couple reasons why:
 
