@@ -130,3 +130,9 @@ cite {
 	background: var(--accent-color);
 	color: var(--quote-bg);
 }
+
+//* fix up twitter tweets *//
+div.twitter-tweet.twitter-tweet-rendered {
+    margin-left: auto;
+    margin-right: auto;
+}
