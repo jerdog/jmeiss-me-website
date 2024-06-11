@@ -2,6 +2,7 @@
 title = 'Developer Experience is essential for DevOps success'
 date = 2024-06-12T12:21:04-05:00
 draft = true
+publishDate = 2024-06-12T12:21:04-05:00
 hero = "/images/posts/devex-devops-success.jpg" # location of images should be in /images/posts/
 tags = [ "devex", "developer experience", "devops"]
 toc = true
@@ -43,7 +44,7 @@ Tools like [Terraform](https://en.wikipedia.org/wiki/Terraform_(software)) and [
 
 A good DevEx facilitates smoother transitions between your dev and ops teams, helps minimize bottlenecks, and enhances collaboration. Proper feedback loops are part of both DevEx and DevOps, and with them in place, you have a positive DevEx that ensures those loops are efficient and productive. This helps DevOps principles take a firm hold within an organization.
 
-A basic definition of what DevOps is would be:
+Here is a basic definition of what DevOps is:
 
 > the combination of practices and tools designed to increase an organization's ability to deliver applications and services faster than traditional software development processes
 
