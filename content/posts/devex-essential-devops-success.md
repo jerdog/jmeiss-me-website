@@ -1,8 +1,8 @@
 +++
 title = "Developer Experience is essential for DevOps success"
-date = 2024-06-12T17:21:04.000Z
-draft = true
-publishDate = 2024-06-12T17:21:04.000Z
+date = 2024-06-12T12:15:11-05:00
+draft = false
+publishDate = 2024-06-12T12:15:11-05:00
 hero = "/images/posts/devex-devops-success.jpg"
 tags = [ "devex", "developer experience", "devops" ]
 toc = true
