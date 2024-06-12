@@ -33,3 +33,5 @@ home = [ "HTML", "RSS", "JSON", "TXT" ]
 #   [mediaTypes."text/plain"]
 #     suffix = "txt"
 
+[frontmatter]
+date = ["publishDate", "date", ":default"]
