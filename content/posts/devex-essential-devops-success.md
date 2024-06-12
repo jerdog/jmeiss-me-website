@@ -1,16 +1,18 @@
 +++
-title = 'Developer Experience is essential for DevOps success'
-date = 2024-06-12T12:21:04-05:00
+title = "Developer Experience is essential for DevOps success"
+date = 2024-06-12T17:21:04.000Z
 draft = true
-publishDate = 2024-06-12T12:21:04-05:00
-hero = "/images/posts/devex-devops-success.jpg" # location of images should be in /images/posts/
-tags = [ "devex", "developer experience", "devops"]
+publishDate = 2024-06-12T17:21:04.000Z
+hero = "/images/posts/devex-devops-success.jpg"
+tags = [ "devex", "developer experience", "devops" ]
 toc = true
 description = "DevEx is a factor throughout the development process and is influenced by chosen tools, technologies, and platforms. It also directly impacts how well our DevOps practices are implemented and adopted."
 summary = "DevEx is a factor throughout the development process and is influenced by chosen tools, technologies, and platforms. It also directly impacts how well our DevOps practices are implemented and adopted."
+keywords = [ "developer experience", "devex", "devops" ]
+slug = "developer-experience-essential-devops-success"
 [author]
-    name = "Jeremy Meiss"
-    image = "/images/author/jeremy-meiss.jpg"
+name = "Jeremy Meiss"
+image = "/images/author/jeremy-meiss.jpg"
 +++
 
 The ease with which a developer or ops practioner interacts with a tool or service, from setup to even issue resolution, directly impacts their productivity, satisfaction, and even the quality of the products they build and use. DevEx is crucial throughout the development process and is influenced by chosen tools, technologies, and platforms. Ease of use, reliability, accessibility, documentation clarity, build efficiency, testing effectiveness, and deployment smoothness all impact the overall dev experience.
