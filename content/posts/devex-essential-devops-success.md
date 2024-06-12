@@ -32,7 +32,7 @@ It is about their every interaction with systems, tools, and processes. I touche
 
 DevEx strategies have evolved to meet contemporary development challenges and opportunities. From basic, manually configured environments to sophisticated, cloud-based, and automated setups, the journey reflects a relentless pursuit of efficiency, usability, and developer productivity.
 
-In the highly competitive landscape of modern software development, DevEx is the critical differentiator that makes a company and its products and services stand out. A positive DevEx translates into the ability to attract top talent, helps companies increase team performance and product quality, have more engaged and productive development teams, and also **enhances a brand reputation, directly impacting the bottom line.
+In the highly competitive landscape of modern software development, DevEx is the critical differentiator that makes a company and its products and services stand out. A positive DevEx translates into the ability to attract top talent, helps companies increase team performance and product quality, have more engaged and productive development teams, and also enhances a brand reputation, directly impacting the bottom line.
 
 ### DevEx touches environment management
 
@@ -64,6 +64,9 @@ The backbone of DevOps is effective Communication, which ensures all members of 
 
 Collective accountability for the quality and reliability of software is another critical component of DevOps. It blurs the lines between roles traditionally separated by development and operations, moving from a "not my job" mentality to a "we're in this together" mindset, where success and failures are shared equally. To activate this shared responsibility, focusing on the developer experience will empower all team members with access to the tools and information they need to contribute across the entire software lifecycle. Democratizing this access results from pursuing good DevEx, which encourages a culture where everyone feels ownership of the product and is motivated to contribute to its success.
 
+> DevEx is ruthlessly eliminating barriers (and blockers) that keep your developers from being successful.
+<cite>Jeremy<span class="cite-last-name">Meiss</span></cite>
+
 ---
 
 By integrating DevEx with these core DevOps principles, organizations can build more cohesive, agile, and effective teams that are better equipped to meet the demands of modern software development. This mix improves workflow and productivity and enhances the overall quality of the software delivered, ultimately benefiting end-users.
@@ -93,11 +96,6 @@ Some of the better practices to keep in mind when leveling up with DevEx are:
 A company's investment level in DevEx can reflect its values toward its employees, especially its developers. A strong focus on DevEx shows a commitment to employee well-being and efficiency. Prioritizing DevEx helps foster a culture of excellence and innovation. When developers have the right tools, support, and environment, they are more likely to produce high-quality work and push the boundaries of what's possible.
 
 {{< tweet user="IAmJerdog" id=1750563607266410692 >}}
-
-I'll leave you with this:
-
-> DevEx is ruthlessly eliminating barriers (and blockers) that keep your developers from being successful.
-<cite>Jeremy<span class="cite-last-name">Meiss</span></cite>
 
 ---
 
