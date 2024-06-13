@@ -15,7 +15,7 @@ name = "Jeremy Meiss"
 image = "/images/author/jeremy-meiss.jpg"
 +++
 
-The ease with which a developer or ops practioner interacts with a tool or service, from setup to even issue resolution, directly impacts their productivity, satisfaction, and even the quality of the products they build and use. DevEx is crucial throughout the development process and is influenced by chosen tools, technologies, and platforms. Ease of use, reliability, accessibility, documentation clarity, build efficiency, testing effectiveness, and deployment smoothness all impact the overall dev experience.
+The ease with which a developer or ops practitioner interacts with a tool or service, from setup to even issue resolution, directly impacts their productivity, satisfaction, and even the quality of the products they build and use. DevEx is crucial throughout the development process and is influenced by chosen tools, technologies, and platforms. Ease of use, reliability, accessibility, documentation clarity, build efficiency, testing effectiveness, and deployment smoothness all impact the overall dev experience.
 
 This blog post dives into this world of DevEx, exploring its impact, benefits, and how it intertwines with DevOps practices. But first, let's define "Developer Experience".
 
