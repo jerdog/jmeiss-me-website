@@ -39,11 +39,15 @@ socialLinks:
 
 - name: Mastodon
   icon: "fa-brands fa-mastodon"
-  url: "hachyderm.io/@jerdog"
+  url: "https://hachyderm.io/@jerdog"
 
 - name: Devto
   icon: "fa-brands fa-dev"
   url: "https://dev.to/jerdog"
+
+- name: Bluesky
+	icon: "fa-brands fa-bluesky"
+	url: "https://bsky.app/profile/jerdog.dev"
 
 
 # Show your badges
