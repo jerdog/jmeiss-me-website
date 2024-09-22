@@ -46,8 +46,8 @@ socialLinks:
   url: "https://dev.to/jerdog"
 
 - name: Bluesky
-	icon: "fa-brands fa-bluesky"
-	url: "https://bsky.app/profile/jerdog.dev"
+  icon: "fa-brands fa-bluesky"
+  url: "https://bsky.app/profile/jerdog.dev"
 
 
 # Show your badges
