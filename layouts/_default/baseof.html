@@ -7,6 +7,10 @@
         {{ .Page.Title }}
     {{ end }}
     </title>
+
+    <!-- add Mastodon verification -->
+    <a rel="me" href="https://hachyderm.io/@jerdog">Mastodon</a>
+
     <!------ ADD COMMON HEADERS -------->
     {{- partial "header.html" . -}}
     {{ template "_internal/opengraph.html" . }}
