@@ -124,7 +124,7 @@
                   <span><i class="fab fa-twitter"></i></span> <span>{{ $value }}</span>
                 </a></li>
                 {{ else if (eq $key "mastodon") }}
-                <li><a href={{ printf "https://%s" $value }} target="_blank" rel="noopener">
+                <li><a rel="me" href={{ printf "https://%s" $value }} target="_blank" rel="noopener">
                   <span><i class="fa-brands fa-mastodon"></i></span> <span>{{ $value }}</span>
                 </a></li>
                 {{ else if (eq $key "devto") }}
