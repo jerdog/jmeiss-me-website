@@ -1,10 +1,10 @@
 +++
-title = 'It's Not Rocket Science, It's a Flywheel: Engineering Open Source Communities with DevEx'
+title = "It's Not Rocket Science, It's a Flywheel: Engineering Open Source Communities with DevEx"
 date = 2025-12-22T08:13:06-05:00
 draft = false
 publishDate = 2025-12-22T08:13:06-05:00 # should be date in the future to publish once no longer draft
-hero = '/images/posts/devrel-and-devrev.jpg' # location of images should be in /images/posts/
-tags = [ "devrel", "community", "revenue", "sales", "developer relations" ]
+hero = 'devex-flywheel-hero-image.png' # location of images should be in /images/posts/
+tags = [ "devex", "community", "developer experience", "open source" ]
 toc = false
 description = "Open source community growth isn't rocket science; it's engineering. Discover how to use Developer Experience (DevEx) principles to build a self-sustaining 'flywheel' of contributions, reduce burnout, and improve project health."
 summary = "Stop hoping for open source community growth. Learn how to engineer it by applying the 'flywheel' concept to Developer Experience, creating sustainable momentum through better onboarding, tooling, and feedback."
@@ -17,14 +17,14 @@ I have done just about everything in IT over the past few decades, including bei
 
 While hardware has changed, one thing in open source remains a constant struggle: **The Maintainer's Dilemma**. 
 
-![xkcd comic on dependency](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nim5u3iv4svg47g4qbd7.png)
+![xkcd comic on dependency](/images/posts/xkcd_dependency.png)
 (Source: [XKCD](https://xkcd.com/2347/))
 
 You want to grow your project and community, but doing so requires a massive amount of time and effort—resources you likely don’t have. Often, the default response is to simply wait and "hope" for the best: we hope people get involved; we hope for pull requests; we hope we don't burn out.
 
 But as I discussed at Community over Code North America 2025, **hope is not a strategy**. 
 
-![Ted Lasso - it's the hope that kills](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vwiez54pgl8bm6523ryf.gif)
+![Ted Lasso - it's the hope that kills](/images/posts/ted-lasso-hope-that-kills-you.gif)
 
 Building a thriving open source community shouldn't be a mystery, and it doesn't have to be a grind that leads to burnout. Instead of hoping for growth, we need to start *engineering* the conditions for success. To do that, we can combine the physics of a **flywheel** with the principles of **Developer Experience (DevEx)**.
 
@@ -40,9 +40,9 @@ There are 3 **core dimensions** that you can measure (and improve) in Developer 
 
 A positive DevEx is characterized by frictionless workflows that empower developers, reduce unnecessary cognitive overhead, and allow them to focus on high-value, creative work.
 
-![Impacts of DevEx](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xq1mkk7flatzhqqesft4.png)
+![Impacts of DevEx](/images/posts/devex-positive-impacts.png)
 
-> *(I've written a [few things about DevEx](https://dev.to/search?utf8=%E2%9C%93&q=%40jerdog+%23devex) if you'd like to read more)*
+> *(I've written a [few things about DevEx](https://jmeiss.me/tags/developer-experience/) if you'd like to read more)*
 
 ## Why DevEx is (Slightly) Different in Open Source
 
@@ -54,7 +54,7 @@ While DevEx is often discussed in the context of enterprise productivity (saving
 
 In engineering, a [flywheel](https://www.theengineeringchoice.com/what-is-flywheel/) is a mechanical device designed to efficiently store rotational energy. It’s a heavy wheel that requires significant effort to start spinning, but once it gains momentum, it becomes a self-reinforcing loop.
 
-![Parts of a flywheel](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k395j8q7daclq9mohwtz.jpg)
+![Parts of a flywheel](/images/posts/parts-of-flywheel.jpg)
 
 In the context of business and community, the concept is identical. There is no single "lucky break" or "killer innovation" that builds a massive community in one swoop. It is a process of relentlessly pushing a giant, heavy flywheel, turn upon turn, building momentum over time.
 
@@ -123,7 +123,7 @@ When we put it all together:
 - **Public Recognition** -> They feel valued and stick around.
 - **New Leaders Emerge** -> Growing community, less burnout, more sustainability.
 
-![A flywheel spinning and in action](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5levti8yvwba5qtq6u4m.jpg)
+![A flywheel spinning and in action](/images/posts/flywheel-spinning.jpg)
 
 Now you have an engaged contributor who helps improve the project and mentor others. The flywheel is spinning. But how do you measure that?
 
