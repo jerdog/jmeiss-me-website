@@ -116,10 +116,10 @@ As I prepared to write this blog post, after thinking about it for a _long_ time
 
 {{< tweet user="picsoung" id="1598376849725267969" >}}
 {{< tweet user="bas_van_leeuwen" id="1598322211546341376" >}}
-{{< tweet user="mpchlets" id="1598319890519461889" >}}
-{{< tweet user="tristanlombard2" id="1598316512426745864" >}}
-{{< tweet user="tristanlombard2" id="1598327923139821579" >}}
-{{< tweet user="tristanlombard2" id="1598327996863188996" >}}
+![mpchlets twitter post](/images/posts/mpchlets-tweet.png)
+![tristanlombard2 tweet](/images/posts/tristan-tweet-1.png)
+![tristanlombard2 tweet](/images/posts/tristan-tweet-2.png)
+![tristanlombard2 tweet](/images/posts/tristan-tweet-3.png)
 
 (Note: I hadn’t heard of the Likert scale before, though I had used it in other activities, so it’s worth a good read and implementation. Thanks Tristan!!!)
 
