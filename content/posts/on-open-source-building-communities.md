@@ -37,7 +37,7 @@ At last month’s Open Source Summit in San Francisco, the Executive Director of
 
 Jim continued with the following statement:
 
-{{< tweet user="linuxfoundation" id="907274986892791808" >}}
+{{< x user="linuxfoundation" id="907274986892791808" >}}
 
 While that is a seemingly broad, subjective statement, I do believe it holds some merit. It is almost impossible for anyone to develop something without using something that is open source in one fashion or another, whether that be a library, an IDE, or as the base for their product. In addition different licenses allow for different ways of using the code, and is a whole other long, drawn out discussion to have at some other time.
 

@@ -5,12 +5,12 @@ section:
   weight: 4
   showOnNavbar: true
   # Can optionally hide the title in sections
-  # hideTitle: true 
+  # hideTitle: true
 
 experiences:
 - company:
-    name: DevEx Institute
-    url: "https://devex.institute"
+    name: OneStream Software
+    url: "https://onestreamsoftware.com"
     location: "Remote"
     logo: /images/experiences/devex-institute-logo.png
     #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
@@ -26,12 +26,30 @@ experiences:
     - Help and advise companies in creating, managing, and growing their Developer Experience initiatives.
     - Build relationships with developers and practitioners in the community.
     - Speak on topics related to Developer Experience at events, conferences, and meetups.
-
-- company: 
-    name: blueDog Consulting
-    url: 
+- company:
+    name: DevEx Institute
+    url: "https://devex.institute"
     location: "Remote"
-    logo: 
+    logo: /images/experiences/devex-institute-logo.png
+    #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: #Consulting on Developer Experience and fostering the community to equip developers to champion the DevEx they deserve.
+  positions:
+  - designation: Co-Founder, DevEx Consultant
+    start: Jan 2024
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Aug 2024
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Help and advise companies in creating, managing, and growing their Developer Experience initiatives.
+    - Build relationships with developers and practitioners in the community.
+    - Speak on topics related to Developer Experience at events, conferences, and meetups.
+
+- company:
+    name: blueDog Consulting
+    url:
+    location: "Remote"
+    logo:
     #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
     # company overview
     overview: ""
@@ -49,7 +67,7 @@ experiences:
       - Building up their internal- and external-facing experience for developers and practitioners
 
       - Advising on content around use cases and developer-centric endeavors via documentation, tutorials, blog posts, and videos
-    
+
     - Speak at industry and developer events about Developer Relations, Community, Developer Productivity, and more.
 
 - company:
@@ -122,12 +140,12 @@ experiences:
 
 - company:
     name: Fastboot Mobile, LLC
-    url: 
+    url:
     location: "Remote"
-    logo: 
+    logo:
     #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: 
+    overview:
   positions:
   - designation: Co-Founder, COO
     start: Apr 2014
@@ -147,7 +165,7 @@ experiences:
     logo: /images/experiences/xda-logo.png
     #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: 
+    overview:
   positions:
   - designation: Developer & Community Relations Director
     start: Feb 2010
@@ -160,7 +178,7 @@ experiences:
     - Building relationships between OEMs and independent developers, and between developers and their users.
     - Advocate for Open Source practices and advocate for the use of Open Source in the mobile industry, including license compliance with OEMs like Sony, Samsung, HTC, and others.
     - Speaking at conferences and meeting with teams on how to work with the community to implement their product, whether software, hardware, or services.
-    
+
 - company:
     name: Intouch Solutions
     url: "https://www.eversanaintouch.com/solutions/"
@@ -168,7 +186,7 @@ experiences:
     logo: /images/experiences/intouchsolutions-logo.png
     #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: 
+    overview:
   positions:
   - designation: Business Systems Analyst
     start: Mar 2012
@@ -187,7 +205,7 @@ experiences:
     logo: /images/experiences/ericsson-logo.png
     #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: 
+    overview:
   positions:
   - designation: App Dev II / Technical Project Manager
     start: Sep 2009
@@ -208,7 +226,7 @@ experiences:
     logo: /images/experiences/sprint-logo.png
     #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: 
+    overview:
   positions:
   - designation: Various, last as Systems Analyst II
     start: Feb 2001
@@ -231,7 +249,7 @@ experiences:
     logo: /images/experiences/hallmark-logo.png
     #darkLogo: /images/experiences/circleci-logo-white-horizontal.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: 
+    overview:
   positions:
   - designation: Various, last as Technical Liason
     start: Jun 1998

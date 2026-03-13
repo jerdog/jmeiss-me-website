@@ -81,7 +81,7 @@ In those conversations, make sure to ask “Who else should I talk to?” and se
 1. [Demand Gen] What is our process for identifying developers at conferences/trade shows/events? How do we decide what to send to them? Any examples?
 2. [Demand Gen] What is our current process around swag? Who is responsible?
 3. [Demand Gen] What is the process for attending/sponsoring conferences?
-4. [Demand Gen] Where in the funnel do you see DevRel helping? 
+4. [Demand Gen] Where in the funnel do you see DevRel helping?
 5. [Demand Gen] What are our currently targeted developer communities? Regions?
 6. [Demand Gen] Do we know when developers make the transition from checking us out, to “swiping the card”? Do we know why?
 7. [Demand Gen] What is the current geographic customer breakdown, and what are the goals for this year and beyond? Any regions we’re avoiding specifically?
@@ -90,7 +90,7 @@ In those conversations, make sure to ask “Who else should I talk to?” and se
 
 ### Questions for Customer Success teams
 
-1. What are the customer pain points that your teams are currently hearing about? 
+1. What are the customer pain points that your teams are currently hearing about?
 2. Are there any identified users who are already passionate about us?
 3. Is there a space where we collect and share common issues or FAQ with the community?
 
@@ -114,8 +114,8 @@ Over the next 3 months (equal to the first 6 months on the job), start to implem
 
 As I prepared to write this blog post, after thinking about it for a _long_ time, I reached out to the DevRel community on [Twitter](https://twitter.com/iamjerdog/status/1598310868831420416?s=61&t=YvgB3Gv7I5wD_1Pbicjrfg) and [Mastodon](https://hachyderm.io/@jerdog/109438713777579466) to see what other insights they had to share, which you can find below.
 
-{{< tweet user="picsoung" id="1598376849725267969" >}}
-{{< tweet user="bas_van_leeuwen" id="1598322211546341376" >}}
+{{< x user="picsoung" id="1598376849725267969" >}}
+![bas van leeuwen tweet](/images/posts/bas-tweet-community.png)
 ![mpchlets twitter post](/images/posts/mpchlets-tweet.png)
 ![tristanlombard2 tweet](/images/posts/tristan-tweet-1.png)
 ![tristanlombard2 tweet](/images/posts/tristan-tweet-2.png)
@@ -123,7 +123,7 @@ As I prepared to write this blog post, after thinking about it for a _long_ time
 
 (Note: I hadn’t heard of the Likert scale before, though I had used it in other activities, so it’s worth a good read and implementation. Thanks Tristan!!!)
 
-{{< tweet user="dparzych" id="1599887914271264768" >}}
+{{< x user="dparzych" id="1599887914271264768" >}}
 
 And some additional thoughts from [Mimmis on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7005570989564588032?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7005570989564588032%2C7006010382095900672%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287006010382095900672%2Curn%3Ali%3Aactivity%3A7005570989564588032%29)
 >Great pragmatic advice around process and types of questions for anyone starting a new job, not just in DevRel, where you are tasked with coming up with plans and recommendations (certainly works for developer marketing and B2B marketing as well).

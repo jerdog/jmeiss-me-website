@@ -86,16 +86,16 @@ When organizations prioritize DevEx, they ensure that devs have access to tools 
 Some of the better practices to keep in mind when leveling up with DevEx are:
 
 - **Equip teams with integrated, user-friendly tools that support automation, collaboration, and real-time Communication.** Choose the tools that align with both Dev and Ops needs. Get their input in the decision. Just because your buddy's IT startup says they offer 10x developer productivity doesn't mean it works for your teams, much less that it works at all.
-- **Establish cross-functional teams that include roles with diverse expertise** (e.g., development, operations, quality assurance) to foster a shared understanding and responsibility from project inception through deployment and maintenance.  
-- **Establishing robust feedback mechanisms allows for continuous learning and improvement.** Conduct regular retrospectives, incorporate user feedback into development cycles, and use monitoring tools to gather performance and user experience insights.  
-- **Reduce toil and free up team members to focus on more strategic activities by automating repetitive and manual tasks wherever possible.** This includes automating testing, deployments, and infrastructure provisioning.  
-- **Ensure team members have opportunities to learn and grow their skills in development and operations domains.** This helps build empathy between teams and equips individuals with the knowledge to understand and contribute to different stages of the development lifecycle.  
+- **Establish cross-functional teams that include roles with diverse expertise** (e.g., development, operations, quality assurance) to foster a shared understanding and responsibility from project inception through deployment and maintenance.
+- **Establishing robust feedback mechanisms allows for continuous learning and improvement.** Conduct regular retrospectives, incorporate user feedback into development cycles, and use monitoring tools to gather performance and user experience insights.
+- **Reduce toil and free up team members to focus on more strategic activities by automating repetitive and manual tasks wherever possible.** This includes automating testing, deployments, and infrastructure provisioning.
+- **Ensure team members have opportunities to learn and grow their skills in development and operations domains.** This helps build empathy between teams and equips individuals with the knowledge to understand and contribute to different stages of the development lifecycle.
 
 ### Commitment to DevEx and employee well-being
 
 A company's investment level in DevEx can reflect its values toward its employees, especially its developers. A strong focus on DevEx shows a commitment to employee well-being and efficiency. Prioritizing DevEx helps foster a culture of excellence and innovation. When developers have the right tools, support, and environment, they are more likely to produce high-quality work and push the boundaries of what's possible.
 
-{{< tweet user="IAmJerdog" id=1750563607266410692 >}}
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:6emsaxhev75u2rbnljhbfmfb/app.bsky.feed.post/3lbauxprpfs24" data-bluesky-cid="bafyreigm3voktd2flapf42atevn54j3mbo7cssaaecxyhlqflhj7ig6aeq" data-bluesky-embed-color-mode="system"><p lang="en">If your company does not already have a process for gathering feedback (internal &amp; external) on your product and/or the tools you use, you will not have a good Developer Experience ( #DevEx ), and I seriously question the commitment to it.</p>&mdash; Jeremy, the patronizing Saint of DevOps  🇺🇦 (<a href="https://bsky.app/profile/did:plc:6emsaxhev75u2rbnljhbfmfb?ref_src=embed">@jerdog.dev</a>) <a href="https://bsky.app/profile/did:plc:6emsaxhev75u2rbnljhbfmfb/post/3lbauxprpfs24?ref_src=embed">18 November 2024 at 15:38</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 
 ---
 

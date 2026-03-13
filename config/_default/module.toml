@@ -1,19 +1,9 @@
-# Use H
 [[imports]]
-path = "github.com/hugo-toha/toha/v4"
+#path = "github.com/gurusabarish/hugo-profile"
 
+#[[mounts]]
+#source = "/static/images"
+#target = "static/images"
 [[mounts]]
-source = "./node_modules/flag-icon-css/flags"
-target = "static/flags"
-
-[[mounts]]
-source = "./node_modules/@fontsource/mulish/files"
-target = "static/files"
-
-[[mounts]]
-source = "./node_modules/katex/dist/fonts"
-target = "static/fonts"
-
-[[mounts]]
-source = "./static/images"
-target = "static/images"
+  source = "assets"
+  target = "assets"

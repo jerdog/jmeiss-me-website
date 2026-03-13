@@ -49,7 +49,7 @@ Gone are the days, with rare exception in companies (usually early stage) where 
 
 But is that such a bad thing? If you're not changing, you're dying. Some would argue that DevRel is dying because it has "a lack of useful outcomes", and as a result it must change. And now. And I would posit that the reason it's dying is because the discipline (and many who practice it) has been so resistant to change, and to metrics.
 
-I'm one of the Admins for the DevRel Collective, a community _"of DevRel professionals, Community Managers, and others to share resources, learn best practices, support one another, and be amongst our peers"_, and the subject of metrics and KPIs is never without discussion, opinions, and even mind-blowing ideas. There's even a channel devoted to it.  
+I'm one of the Admins for the DevRel Collective, a community _"of DevRel professionals, Community Managers, and others to share resources, learn best practices, support one another, and be amongst our peers"_, and the subject of metrics and KPIs is never without discussion, opinions, and even mind-blowing ideas. There's even a channel devoted to it.
 
 So what do we do?
 
@@ -105,9 +105,9 @@ And that’s all valid. But it’s also something that can be overcome. There ar
 
 ![your data sucks](https://cdn.someecards.com/someecards/usercards/MjAxMy1lZjI5ZGYxZTUxMGI4NzNm.png)
 
-The data about your Community and DevRel program has got to tell a story, and that story needs to be easy to follow and draw parallels to the activities you are doing to show the impact.  
+The data about your Community and DevRel program has got to tell a story, and that story needs to be easy to follow and draw parallels to the activities you are doing to show the impact.
 
-> In a world full of data, storytelling is an art. 
+> In a world full of data, storytelling is an art.
 <cite><a href="https://www.effectivedatastorytelling.com/">attributed</a> to Brent<span class="cite-last-name">Dykes</span></cite>
 
 At the same time, the data you are pulling will not stay static throughout the maturity of the DevRel program. It needs to evolve, and so you'll need to constantly stretch and exercise this skill.
@@ -126,7 +126,7 @@ The first step in figuring out what to measure is to ask a couple of questions o
 
 The answers to those questions will give you the framework for identifying the metrics, KPIs, etc. that you should be using.
 
-{{< tweet user="jonobacon" id=1363177613498458114 >}}
+{{< x user="jonobacon" id=1363177613498458114 >}}
 
 Let's take this scenario as an example: Your company has put an emphasis on "land and expand" activities to drive growth within customers using your company's product. In the course of the conversations about how your team can help contribute (note: there are _many_ ways and opportunities for a DevRel team to provide value here), you find out that the Sales Team wants to drive awareness of the product to new teams within existing customers, and they're looking for ways to do so. Here are some activities, and metrics, that you could start doing and begin to track:
 
@@ -149,7 +149,7 @@ Another scenario: you feel that your team really needs to be out meeting with de
 
 You might notice that all of these would qualify as a DRQL (DevRel Qualified Lead) that I [talked about earlier](https://dev.to/jerdog/devrel-and-the-customer-journey-4gjc#:~:text=A%20quick%20note%20on%20DevRel%20Qualified%20Leads). This is a real example of how you can prove the value of your activities. It's important though to make sure that you follow up directly with the specific team so that they know what you did and what next step needs to be taken to move forward with it.
 
-{{< tweet user="jonobacon" id=976186666988769280 >}}
+{{< x user="jonobacon" id=976186666988769280 >}}
 
 ## It's not all fuzzy metrics
 
@@ -185,4 +185,3 @@ You can find me at:
 ---
 
 Cover photo by <a href="https://unsplash.com/@firmbee?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Firmbee.com</a> on <a href="https://unsplash.com/photos/person-holding-white-samsung-galaxy-tab-jrh5lAq-mIs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-    
