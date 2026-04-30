@@ -98,6 +98,9 @@ export function FeedStrip({ posts }: FeedStripProps) {
 }
 
 function FeedCard({ item }: { item: FeedItem }) {
+  // text-muted (#5a6878) on bg-highlight (#cfe4fb) measures 4.37:1 — under AA.
+  // text-ink-soft (#2a3340) on bg-highlight measures ~10:1 and stays in palette.
+  const metaClass = item.variant === "highlight" ? "text-ink-soft" : "text-muted";
   const inner = (
     <Card
       variant={item.variant}
@@ -111,7 +114,7 @@ function FeedCard({ item }: { item: FeedItem }) {
         · {item.kind} ·
       </p>
       <p className="mt-2 font-display text-lg leading-[1.15] text-ink">{item.title}</p>
-      <p className="mt-2 font-hand text-base text-muted">{item.meta}</p>
+      <p className={`mt-2 font-hand text-base ${metaClass}`}>{item.meta}</p>
     </Card>
   );
 
