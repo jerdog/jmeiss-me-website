@@ -142,7 +142,7 @@ export function SearchDialog() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Open search"
-        className="hidden items-center gap-2 rounded-full border border-paper/30 bg-paper/5 px-3 py-1.5 text-xs text-paper/80 transition-colors hover:bg-paper/10 sm:inline-flex"
+        className="inline-flex w-full items-center gap-2 rounded-full border border-paper/30 bg-paper/5 px-3 py-1.5 text-xs text-paper/80 transition-colors hover:bg-paper/10 sm:w-auto"
       >
         <span aria-hidden>⌕</span>
         <span>Search</span>

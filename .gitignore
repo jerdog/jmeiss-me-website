@@ -108,6 +108,8 @@ out
 /.playwright-mcp/
 # QA review screenshots (regenerated per review pass)
 /docs/review/
+# Netlify deploy preview drops
+/docs/*--jmeiss-me-toha.netlify.app*.json
 
 # Nuxt.js build / generate output
 .nuxt

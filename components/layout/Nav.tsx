@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 import { SearchDialog } from "@/components/layout/SearchDialog";
 
@@ -19,6 +20,32 @@ function isActive(pathname: string, href: string) {
 
 export function Nav() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  // Close the panel whenever the route changes. We diff against the previous
+  // pathname so biome's exhaustive-deps check sees pathname being read.
+  const [lastPath, setLastPath] = useState(pathname);
+  useEffect(() => {
+    if (pathname !== lastPath) {
+      setOpen(false);
+      setLastPath(pathname);
+    }
+  }, [pathname, lastPath]);
+
+  // Close on Escape and lock scroll while open.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-40 bg-ink text-paper">
@@ -40,7 +67,8 @@ export function Nav() {
           </span>
         </Link>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        {/* Desktop nav: visible from sm up. */}
+        <div className="hidden items-center gap-2 sm:flex sm:gap-3">
           <nav aria-label="Primary" className="flex items-center gap-1">
             {items.map((item) => {
               const active = isActive(pathname, item.href);
@@ -52,7 +80,7 @@ export function Nav() {
                   className={cn(
                     "rounded-full px-3 py-2 text-sm transition-colors sm:px-4",
                     active
-                      ? "bg-accent-soft text-ink font-medium"
+                      ? "bg-accent-soft font-medium text-ink"
                       : "text-paper hover:bg-paper/10",
                   )}
                 >
@@ -63,7 +91,86 @@ export function Nav() {
           </nav>
           <SearchDialog />
         </div>
+
+        {/* Mobile: hamburger toggle, hidden from sm up. */}
+        <button
+          type="button"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-nav-panel"
+          onClick={() => setOpen((v) => !v)}
+          className="flex h-10 w-10 items-center justify-center rounded-full text-paper transition-colors hover:bg-paper/10 sm:hidden"
+        >
+          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+          <svg
+            aria-hidden
+            role="presentation"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            {open ? (
+              <>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </>
+            )}
+          </svg>
+        </button>
       </div>
+
+      {/* Mobile drop-down panel. Drop-down anchored under the bar; full-width
+          dim covers the rest of the page so taps outside close it. */}
+      {open ? (
+        <div className="sm:hidden">
+          <button
+            type="button"
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 top-[64px] z-30 cursor-default bg-ink/60 backdrop-blur-[2px]"
+          />
+          <div
+            id="mobile-nav-panel"
+            className="absolute inset-x-0 z-40 border-t border-paper/15 bg-ink shadow-lg"
+          >
+            <nav aria-label="Primary" className="flex flex-col gap-1 px-5 py-4">
+              {items.map((item) => {
+                const active = isActive(pathname, item.href);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      "rounded-full px-4 py-3 text-base transition-colors",
+                      active
+                        ? "bg-accent-soft font-medium text-ink"
+                        : "text-paper hover:bg-paper/10",
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+              <div className="mt-2 border-t border-paper/10 pt-3">
+                <SearchDialog />
+              </div>
+            </nav>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }
