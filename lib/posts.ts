@@ -57,6 +57,17 @@ export interface PostSummary extends PostFrontmatter {
   fileSlug: string;
   /** Estimated read time in minutes (computed from word count). */
   readMinutes: number;
+  /**
+   * Stable, monotonic essay number across the full catalog.
+   *
+   * Numbered chronologically: the oldest published post is № 1; each new
+   * post increments by one. Drafts do NOT consume a number, so the
+   * sequence stays gap-free in production. Computed once at read time
+   * and attached to every post (including drafts in dev) so PostCard,
+   * PostHeader, and any other surface that wants to display "essay № N"
+   * reads from the same source of truth.
+   */
+  essayNumber: number;
 }
 
 export interface Post extends PostSummary {
@@ -326,6 +337,9 @@ async function readPostFile(filePath: string): Promise<Post> {
     fileSlug,
     urlSlug,
     readMinutes,
+    // Placeholder; `readAllPosts` overwrites this with the chronological
+    // sequence number once every post has been read and sorted.
+    essayNumber: 0,
     content: parsed.content,
   };
 }
@@ -341,6 +355,21 @@ async function readAllPosts(): Promise<Post[]> {
       .map((e) => path.join(POSTS_DIR, e.name));
     const posts = await Promise.all(files.map(readPostFile));
     posts.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+
+    // Assign stable essay numbers chronologically: oldest published post is
+    // № 1, each newer one increments. Drafts are skipped in the running
+    // count so production sequences stay gap-free, but they still get a
+    // number assigned (the next slot they'd occupy if published) so dev
+    // previews don't render "essay № 0".
+    let n = posts.filter((p) => !p.draft).length;
+    let draftPlaceholder = n + 1;
+    for (const post of posts) {
+      if (post.draft) {
+        post.essayNumber = draftPlaceholder++;
+      } else {
+        post.essayNumber = n--;
+      }
+    }
     return posts;
   })();
   return cache;
@@ -372,6 +401,7 @@ function stripContent(post: Post): PostSummary {
     fileSlug: post.fileSlug,
     urlSlug: post.urlSlug,
     readMinutes: post.readMinutes,
+    essayNumber: post.essayNumber,
   };
   return summary;
 }

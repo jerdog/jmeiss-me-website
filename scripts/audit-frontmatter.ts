@@ -12,21 +12,27 @@ import { getAllPosts } from "../lib/posts.js";
 async function main() {
   try {
     const posts = await getAllPosts({ includeDrafts: true });
-    console.log(`\nValidated ${posts.length} posts.\n`);
+    const drafts = posts.filter((p) => p.draft).length;
+    console.log(`\nValidated ${posts.length} posts (${drafts} drafts).\n`);
     console.log(
       [
+        "№".padStart(3),
+        "flag".padEnd(5),
         "fileSlug".padEnd(50),
         "urlSlug".padEnd(50),
         "date".padEnd(12),
         "tags",
       ].join(" "),
     );
-    console.log("-".repeat(140));
+    console.log("-".repeat(150));
     for (const p of posts) {
       const date = p.date.slice(0, 10);
       const slugMismatch = p.fileSlug !== p.urlSlug ? " *" : "";
+      const flag = p.draft ? "draft" : "";
       console.log(
         [
+          String(p.essayNumber).padStart(3),
+          flag.padEnd(5),
           (p.fileSlug + slugMismatch).padEnd(50),
           p.urlSlug.padEnd(50),
           date.padEnd(12),
@@ -35,7 +41,10 @@ async function main() {
       );
     }
     console.log(
-      "\n* = frontmatter slug overrides filename (URL differs from filename).\n",
+      "\n* = frontmatter slug overrides filename (URL differs from filename).\n" +
+        "Essay numbers are chronological (oldest = 1). Drafts get placeholder\n" +
+        "slots after the last published post so the production sequence stays\n" +
+        "gap-free.\n",
     );
   } catch (err) {
     console.error("Frontmatter audit failed:");

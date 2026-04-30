@@ -28,7 +28,7 @@ export function PostCard({ post, index = 0, dark }: PostCardProps) {
         className="flex h-full min-h-[220px] flex-col gap-2.5 px-7 py-6"
       >
         <div className={`flex justify-between font-mono text-[10px] uppercase tracking-[0.14em] ${accent}`}>
-          <span>· essay {String(post.urlSlug.length % 999).padStart(3, "0")} ·</span>
+          <span>· essay {String(post.essayNumber).padStart(3, "0")} ·</span>
           <span>{post.readMinutes} min</span>
         </div>
         <h3 className="font-display text-2xl leading-tight tracking-tight">

@@ -58,8 +58,6 @@ export default async function PostPage({ params }: PageProps) {
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
-  const allPosts = await getAllPosts();
-  const number = allPosts.length - allPosts.findIndex((p) => p.urlSlug === post.urlSlug);
   const related = await getRelatedPosts(post.urlSlug, 3);
   const toc = extractToc(post.content);
 
@@ -105,7 +103,7 @@ export default async function PostPage({ params }: PageProps) {
       </Container>
 
       <Container>
-        <PostHeader post={post} number={number} />
+        <PostHeader post={post} number={post.essayNumber} />
       </Container>
 
       <Container className="pt-2 pb-6">
