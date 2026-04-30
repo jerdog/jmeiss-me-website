@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card } from "@/components/surfaces/Card";
 import type { PostSummary } from "@/lib/posts";
+import { formatShortDate } from "@/lib/format";
 
 interface RecentEssaysProps {
   posts: PostSummary[];
@@ -43,7 +44,7 @@ export function RecentEssays({ posts }: RecentEssaysProps) {
                   </span>
                 </span>
                 <span className="hidden text-right font-mono text-[10px] uppercase tracking-[0.12em] text-muted sm:block">
-                  {formatDate(p.date)} · {p.readMinutes} min
+                  {formatShortDate(p.date)} · {p.readMinutes} min
                 </span>
               </Link>
             </li>
@@ -54,10 +55,3 @@ export function RecentEssays({ posts }: RecentEssaysProps) {
   );
 }
 
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}

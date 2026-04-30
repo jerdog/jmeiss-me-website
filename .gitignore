@@ -104,6 +104,11 @@ out
 # Pagefind index (generated)
 /public/pagefind/
 
+# Playwright MCP runtime cache
+/.playwright-mcp/
+# QA review screenshots (regenerated per review pass)
+/docs/review/
+
 # Nuxt.js build / generate output
 .nuxt
 dist

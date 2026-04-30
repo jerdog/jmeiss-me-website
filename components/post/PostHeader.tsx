@@ -3,6 +3,7 @@ import { Card } from "@/components/surfaces/Card";
 import { Tape } from "@/components/surfaces/Tape";
 import type { PostSummary } from "@/lib/posts";
 import { siteConfig } from "@/content/site";
+import { formatLongDate } from "@/lib/format";
 
 interface PostHeaderProps {
   post: PostSummary;
@@ -12,11 +13,7 @@ interface PostHeaderProps {
 
 export function PostHeader({ post, number }: PostHeaderProps) {
   const { person } = siteConfig;
-  const date = new Date(post.date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const date = formatLongDate(post.date);
 
   return (
     <Card variant="card" shadow="ink" className="px-7 py-9 sm:px-12 sm:py-9">
@@ -53,8 +50,6 @@ export function PostHeader({ post, number }: PostHeaderProps) {
             width={44}
             height={44}
             className="h-full w-full object-cover"
-            // Hugo image — fall back to initials if missing
-            onError={undefined}
           />
         </div>
         <div className="leading-tight">

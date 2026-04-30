@@ -86,6 +86,12 @@ const stripMarkdownish = (text: string): string =>
   text
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    // self-closing or inline MDX/HTML elements: <Foo .../>
+    .replace(/<[A-Za-z][A-Za-z0-9._-]*[^>]*\/>/g, "")
+    // paired MDX/HTML elements with bodies: <Foo>...</Foo>
+    .replace(/<([A-Za-z][A-Za-z0-9._-]*)[^>]*>[\s\S]*?<\/\1>/g, "")
+    // any leftover orphan tags
+    .replace(/<\/?[A-Za-z][A-Za-z0-9._-]*[^>]*>/g, "")
     .replace(/[*_`]/g, "")
     .replace(/\s+/g, " ")
     .trim();
@@ -99,8 +105,17 @@ const firstParagraph = (content: string): string => {
       if (buf.length > 0) break;
       continue;
     }
-    if (trimmed.startsWith("#") || trimmed.startsWith(">") || trimmed.startsWith("---"))
+    // Skip headings, blockquotes, frontmatter delimiters, HTML/MDX block tags,
+    // and HTML comments. The first prose paragraph is what we want.
+    if (
+      trimmed.startsWith("#") ||
+      trimmed.startsWith(">") ||
+      trimmed.startsWith("---") ||
+      trimmed.startsWith("<!--") ||
+      trimmed.startsWith("<")
+    ) {
       continue;
+    }
     buf.push(trimmed);
   }
   return stripMarkdownish(buf.join(" ")).slice(0, 240);
@@ -234,8 +249,13 @@ function stripInlineComment(input: string): string {
 }
 
 function parseTomlValue(input: string): unknown {
-  if (input.startsWith('"') && input.endsWith('"')) {
+  // Basic strings (double-quoted, with escape sequences)
+  if (input.startsWith('"') && input.endsWith('"') && input.length >= 2) {
     return input.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+  }
+  // Literal strings (single-quoted, no escapes per TOML spec)
+  if (input.startsWith("'") && input.endsWith("'") && input.length >= 2) {
+    return input.slice(1, -1);
   }
   if (input === "true" || input === "false") return input === "true";
   if (/^-?\d+$/.test(input)) return Number(input);
@@ -357,9 +377,15 @@ function stripContent(post: Post): PostSummary {
 }
 
 /** Single post by URL slug (frontmatter slug -> filename slug). */
-export async function getPostBySlug(slug: string): Promise<Post | undefined> {
+export async function getPostBySlug(
+  slug: string,
+  opts: ParseOptions = {},
+): Promise<Post | undefined> {
   const posts = await readAllPosts();
-  return posts.find((p) => p.urlSlug === slug);
+  const post = posts.find((p) => p.urlSlug === slug);
+  if (!post) return undefined;
+  if (!isPublished(post, opts)) return undefined;
+  return post;
 }
 
 export async function getPostsByTag(

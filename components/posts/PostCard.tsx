@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card } from "@/components/surfaces/Card";
 import type { PostSummary } from "@/lib/posts";
+import { formatShortDate } from "@/lib/format";
 
 interface PostCardProps {
   post: PostSummary;
@@ -40,17 +41,9 @@ export function PostCard({ post, index = 0, dark }: PostCardProps) {
           <span className={`text-xs ${isDark ? "text-paper/70" : "text-muted"}`}>
             {post.tags.map((t) => `#${t}`).join(" ")}
           </span>
-          <span className={`font-hand text-base ${handColor}`}>{formatDate(post.date)} →</span>
+          <span className={`font-hand text-base ${handColor}`}>{formatShortDate(post.date)} →</span>
         </div>
       </Card>
     </Link>
   );
-}
-
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
 }

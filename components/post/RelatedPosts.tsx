@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card } from "@/components/surfaces/Card";
 import type { PostSummary } from "@/lib/posts";
+import { formatShortDate } from "@/lib/format";
 
 interface RelatedPostsProps {
   posts: PostSummary[];
@@ -17,7 +18,7 @@ export function RelatedPosts({ posts }: RelatedPostsProps) {
           <Link key={p.urlSlug} href={`/posts/${p.urlSlug}`} className="block h-full">
             <Card variant="card" shadow="ink-sm" className="h-full px-5 py-4">
               <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-accent">
-                {formatDate(p.date)}
+                {formatShortDate(p.date)}
               </p>
               <p className="mt-2 font-display text-xl leading-tight text-ink">{p.title}</p>
             </Card>
@@ -28,10 +29,3 @@ export function RelatedPosts({ posts }: RelatedPostsProps) {
   );
 }
 
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}

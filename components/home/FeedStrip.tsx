@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card } from "@/components/surfaces/Card";
 import type { PostSummary } from "@/lib/posts";
+import { formatLongDate } from "@/lib/format";
 
 interface FeedStripProps {
   posts: PostSummary[];
@@ -54,7 +55,7 @@ export function FeedStrip({ posts }: FeedStripProps) {
           {
             kind: "POST" as const,
             title: newest[0].title,
-            meta: formatDate(newest[0].date),
+            meta: formatLongDate(newest[0].date),
             rotate: -1,
             variant: "card" as const,
             accent: "accent" as const,
@@ -69,7 +70,7 @@ export function FeedStrip({ posts }: FeedStripProps) {
           {
             kind: "POST" as const,
             title: newest[1].title,
-            meta: formatDate(newest[1].date),
+            meta: formatLongDate(newest[1].date),
             rotate: 0.8,
             variant: "card" as const,
             accent: "accent" as const,
@@ -125,10 +126,3 @@ function FeedCard({ item }: { item: FeedItem }) {
   return inner;
 }
 
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
