@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Speaking",
   description:
     "Keynotes, conference talks, panels, and podcasts on Developer Relations, Developer Experience, community, and more.",
+  alternates: {
+    canonical: "/speaking",
+  },
 };
 
 export default function SpeakingPage() {

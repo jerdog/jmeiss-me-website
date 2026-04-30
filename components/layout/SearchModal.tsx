@@ -145,6 +145,9 @@ export default function SearchModal({ onClose }: SearchModalProps) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search posts…"
+            aria-label="Search posts"
+            autoComplete="off"
+            spellCheck={false}
             className="w-full bg-transparent font-body text-base text-ink outline-none placeholder:text-muted"
           />
           <button

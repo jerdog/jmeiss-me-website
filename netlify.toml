@@ -21,11 +21,42 @@
 # of the static asset bundle. The Netlify Next.js plugin serves /pagefind/*
 # from the public/ directory automatically.
 
+# Security headers applied to every route. Netlify also adds HSTS by default
+# on custom domains, but we set it explicitly so the source of truth is in
+# this file. CSP is intentionally omitted: the post bodies embed YouTube, X,
+# Imgur, etc. and authoring becomes painful with a strict policy. We rely on
+# X-Content-Type-Options + X-Frame-Options + Referrer-Policy + the platform
+# HTTPS to cover the meaningful baseline.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+
 # Long cache for hashed assets, short cache for HTML/feeds.
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/image*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, must-revalidate"
+
+[[headers]]
+  for = "/files/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, must-revalidate"
 
 [[headers]]
   for = "/pagefind/*"

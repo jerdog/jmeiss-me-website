@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Writing",
   description:
     "Essays on Developer Relations, Developer Experience, community, leadership, and the work that makes developer-facing teams effective.",
+  alternates: {
+    canonical: "/posts",
+  },
 };
 
 export default async function WritingIndexPage() {

@@ -7,6 +7,7 @@ import { Bookshelf } from "@/components/about/Bookshelf";
 import { CoffeeLog } from "@/components/about/CoffeeLog";
 import { SocialGrid } from "@/components/about/SocialGrid";
 import { NowPanel } from "@/components/home/NowPanel";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/content/site";
 import { now } from "@/content/now";
 
@@ -14,13 +15,52 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "About Jeremy Meiss — DevRel & DevEx leader, international speaker, KC-based, ADHD-fueled technologist.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {
   const { person, socials, affiliations } = siteConfig;
 
+  // ProfilePage / Person JSON-LD: this is the canonical "about" entity for
+  // the site. Same `@id` as the home page Person so crawlers can stitch the
+  // graph together; here we add the longer description and address details.
+  const profileJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${siteConfig.url}/about#profilepage`,
+    url: `${siteConfig.url}/about`,
+    name: `About ${person.name}`,
+    inLanguage: "en-US",
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${siteConfig.url}/#person`,
+      name: person.name,
+      alternateName: person.handle,
+      description: person.longBio,
+      jobTitle: person.role,
+      url: siteConfig.url,
+      email: `mailto:${person.email}`,
+      image: `${siteConfig.url}${person.portrait}`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Kansas City",
+        addressRegion: "MO",
+        addressCountry: "US",
+      },
+      worksFor: {
+        "@type": "Organization",
+        name: person.company,
+        url: person.companyUrl,
+      },
+      sameAs: socials.filter((s) => s.href.startsWith("http")).map((s) => s.href),
+    },
+  };
+
   return (
     <BPaper>
+      <JsonLd data={profileJsonLd} />
       <Container className="pt-10 pb-6 md:pt-14">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
           <div className="md:col-span-5">

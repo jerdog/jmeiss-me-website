@@ -95,6 +95,7 @@ out
 /.playwright-mcp/
 # QA review screenshots (regenerated per review pass)
 /docs/review/
+/docs/review-*/
 # Netlify deploy preview drops
 /docs/*--jmeiss-me-toha.netlify.app*.json
 

@@ -22,6 +22,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `#${canonical}`,
     description: `Essays tagged #${canonical} on jmeiss.me.`,
+    alternates: {
+      canonical: `/tags/${tagToSlug(canonical)}`,
+    },
   };
 }
 

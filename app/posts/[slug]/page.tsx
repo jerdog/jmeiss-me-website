@@ -7,6 +7,7 @@ import { PostHeader } from "@/components/post/PostHeader";
 import { ContentsRail } from "@/components/post/ContentsRail";
 import { RelatedPosts } from "@/components/post/RelatedPosts";
 import { MDXContent } from "@/components/post/MDXContent";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { extractToc } from "@/lib/mdx";
 import { siteConfig } from "@/content/site";
@@ -62,8 +63,38 @@ export default async function PostPage({ params }: PageProps) {
   const related = await getRelatedPosts(post.urlSlug, 3);
   const toc = extractToc(post.content);
 
+  // BlogPosting JSON-LD: gives Google, Bing, and AI crawlers a structured
+  // version of the metadata they otherwise have to scrape from the OG tags.
+  // Image and author URLs must be absolute for schema.org validators to
+  // accept them, so resolve everything against siteConfig.url.
+  const canonical = post.canonical ?? `${siteConfig.url}/posts/${post.urlSlug}`;
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.updated ?? post.date,
+    url: canonical,
+    mainEntityOfPage: canonical,
+    inLanguage: "en-US",
+    keywords: post.tags,
+    author: {
+      "@type": "Person",
+      name: siteConfig.person.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.person.name,
+      url: siteConfig.url,
+    },
+    image: post.cover ? [`${siteConfig.url}${post.cover}`] : undefined,
+  };
+
   return (
     <BPaper>
+      <JsonLd data={articleJsonLd} />
       <Container className="pt-6 pb-2">
         <Link
           href="/posts"

@@ -9,6 +9,9 @@ import { now } from "@/content/now";
 export const metadata: Metadata = {
   title: "Now",
   description: "What Jeremy Meiss is working on, reading, and drinking right now.",
+  alternates: {
+    canonical: "/now",
+  },
 };
 
 export default function NowPage() {

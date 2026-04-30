@@ -16,6 +16,9 @@ interface PostImageProps {
  *
  * Width and height are required to avoid CLS. The shortcode normalizer or
  * a build-time `image-size` probe should populate them for legacy posts.
+ *
+ * Animated GIFs are passed straight through (`unoptimized`) because next/image
+ * would otherwise turn them into still images while logging a warning.
  */
 export function PostImage({
   src,
@@ -26,6 +29,7 @@ export function PostImage({
   className,
 }: PostImageProps) {
   const isRemote = /^https?:\/\//.test(src);
+  const isAnimated = /\.gif($|\?)/i.test(src);
   const w = width ?? 1200;
   const h = height ?? 800;
 
@@ -48,6 +52,7 @@ export function PostImage({
           height={h}
           className="h-auto max-w-full border border-rule"
           sizes="(min-width: 768px) 720px, 100vw"
+          unoptimized={isAnimated}
         />
       )}
       {caption ? (

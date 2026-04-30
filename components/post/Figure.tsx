@@ -29,6 +29,7 @@ export function Figure({
   className,
 }: FigureProps) {
   const isRemote = /^https?:\/\//.test(src);
+  const isAnimated = /\.gif($|\?)/i.test(src);
 
   return (
     <figure className={cn("my-6", className)}>
@@ -49,6 +50,7 @@ export function Figure({
           height={height}
           className="h-auto max-w-full border border-rule"
           sizes="(min-width: 768px) 720px, 100vw"
+          unoptimized={isAnimated}
         />
       )}
       {(caption || attr) && (
