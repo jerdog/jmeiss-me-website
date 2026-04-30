@@ -23,7 +23,10 @@ export function Footer() {
           <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-soft">
             elsewhere
           </p>
-          <ul className="space-y-1.5">
+          {/* py-2 + leading-relaxed gives ~48px tap height while keeping the
+              tight visual rhythm. Lighthouse flagged the 15–20px links here
+              for overlapping tap targets on mobile. */}
+          <ul className="-my-2">
             {elsewhere.map((social) => {
               const icon = iconForSocial(social.label);
               return (
@@ -31,7 +34,7 @@ export function Footer() {
                   <Link
                     href={social.href}
                     rel={social.rel ?? "noopener noreferrer"}
-                    className="inline-flex items-center gap-2 hover:text-highlight"
+                    className="-mx-2 flex items-center gap-2 rounded-md px-2 py-2 hover:bg-paper/5 hover:text-highlight"
                   >
                     {icon ? (
                       <Icon
@@ -53,13 +56,13 @@ export function Footer() {
           <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-soft">
             side projects
           </p>
-          <ul className="space-y-1.5">
+          <ul className="-my-2">
             {siteConfig.sideProjects.map((p) => (
               <li key={p.name}>
                 <Link
                   href={p.href}
                   rel="noopener noreferrer"
-                  className="hover:text-highlight"
+                  className="-mx-2 flex rounded-md px-2 py-2 hover:bg-paper/5 hover:text-highlight"
                 >
                   {p.name}
                 </Link>
