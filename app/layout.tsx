@@ -85,7 +85,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${dmSerifDisplay.variable} ${inter.variable} ${caveat.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-body bg-paper text-ink antialiased">
+      <body
+        className="font-body bg-paper text-ink antialiased"
+        // Netlify deploy previews inject a `<div data-netlify-deploy-id>`
+        // outside `</html>` which the browser hoists into <body>. React then
+        // sees an unexpected child during hydration and throws #418. The drawer
+        // is preview-only and harmless, so suppressing on the body is correct.
+        // Production won't have anything injected.
+        suppressHydrationWarning
+      >
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
