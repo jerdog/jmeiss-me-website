@@ -41,6 +41,12 @@
   html {
     text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
+    /* Decorative rotated cards, washi tape, and the hero underline SVG can
+       extend past the viewport on narrow phones (Lighthouse content-width
+       audit reported 425px doc in a 360px viewport). overflow-x: clip
+       prevents horizontal scroll without creating a new scroll container,
+       so sticky Nav still works. */
+    overflow-x: clip;
   }
 
   body {
@@ -49,6 +55,7 @@
     font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.5;
+    overflow-x: clip;
   }
 
   ::selection {

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Serif_Display, Inter, Caveat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
@@ -63,6 +63,20 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  manifest: "/manifest.webmanifest",
+};
+
+// themeColor / viewport must live in the dedicated viewport export in Next 15.
+// Using the dark ink color matches the sticky Nav bar so the address bar
+// blends into the chrome on mobile, and gives Lighthouse a passing
+// themed-omnibox audit.
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0b0d10" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0d10" },
+  ],
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
