@@ -1,6 +1,4 @@
-## Hugo specific
-# Generated files by hugo
-/public/
+## Hugo specific (legacy; will be removed at cutover)
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json
@@ -101,6 +99,10 @@ web_modules/
 # Next.js build output
 .next
 out
+.netlify
+
+# Pagefind index (generated)
+/public/pagefind/
 
 # Nuxt.js build / generate output
 .nuxt

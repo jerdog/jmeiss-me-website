@@ -1,42 +1,48 @@
+# Netlify config for the Next.js migration of jmeiss.me.
+#
+# The previous Hugo build is preserved on the `main` branch until cutover.
+# When this branch merges to main, Hugo files (themes, layouts, content/posts,
+# config, etc.) are deleted in the same commit and this file becomes the
+# canonical build configuration.
+
 [build]
-    command = "hugo --gc --minify && cp static/keybase.txt public/"
-    publish = "public"
+  command = "npm run build"
+  publish = ".next"
 
-[context.production.environment]
-    HUGO_ENABLEGITINFO = "true"
-    HUGO_ENV           = "production"
-    HUGO_VERSION       = "0.124.1"
-    NODE_VERSION       = "v18.12.1"
-    NPM_VERSION        = "8.19.2"
-    GO_VERSION         = "1.22.3"
+[build.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
 
-[context.split1]
-command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify --enableGitInfo && cp static/keybase.txt public/"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
-    [context.split1.environment]
-    HUGO_ENV     = "production"
-    HUGO_VERSION = "0.124.1"
-    NODE_VERSION = "v18.12.1"
-    NPM_VERSION  = "8.19.2"
-    GO_VERSION   = "1.22.3"
+# Pagefind index (generated post-build into public/pagefind/) ships as part
+# of the static asset bundle. The Netlify Next.js plugin serves /pagefind/*
+# from the public/ directory automatically.
 
-[context.deploy-preview]
-command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify --buildDrafts --buildFuture -b $DEPLOY_PRIME_URL && cp static/keybase.txt public/"
+# Long cache for hashed assets, short cache for HTML/feeds.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-    [context.deploy-preview.environment]
-    HUGO_VERSION = "0.124.1"
-    NODE_VERSION = "v18.12.1"
-    NPM_VERSION  = "8.19.2"
-    GO_VERSION   = "1.22.3"
+[[headers]]
+  for = "/pagefind/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
 
-[context.branch-deploy]
-command = "hugo mod tidy && hugo mod npm pack && npm install && hugo --gc --minify --buildDrafts --buildFuture -b $DEPLOY_PRIME_URL && cp static/keybase.txt public/"
+[[headers]]
+  for = "/index.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, s-maxage=3600"
 
-    [context.branch-deploy.environment]
-    HUGO_VERSION = "0.124.1"
-    NODE_VERSION = "v18.12.1"
-    NPM_VERSION  = "8.19.2"
-    GO_VERSION   = "1.22.3"
+[[headers]]
+  for = "/atom.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, s-maxage=3600"
 
-[context.next.environment]
-    HUGO_ENABLEGITINFO = "true"
+[[headers]]
+  for = "/feed.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, s-maxage=3600"
