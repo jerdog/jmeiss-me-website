@@ -1,9 +1,0 @@
-[[imports]]
-#path = "github.com/gurusabarish/hugo-profile"
-
-#[[mounts]]
-#source = "/static/images"
-#target = "static/images"
-[[mounts]]
-  source = "assets"
-  target = "assets"
