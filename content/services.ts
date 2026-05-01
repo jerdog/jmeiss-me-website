@@ -1,28 +1,23 @@
-/** "What I actually do" services strip on the home page. */
+/**
+ * "What I actually do" services strip on the home page.
+ *
+ * Edit `content/data/services.yaml`, not this file.
+ */
 
-export interface Service {
-  number: string;
-  title: string;
-  body: string;
-  /** Optional CTA link (e.g. mailto, contact form). */
-  href?: string;
-}
+import { z } from "zod";
+import { loadYaml } from "@/lib/content";
 
-export const services: Service[] = [
-  {
-    number: "01",
-    title: "Build DevRel programs",
-    body: "From scratch or from chaos. Team design, motion plans, measurement, the works.",
-  },
-  {
-    number: "02",
-    title: "Speak at your event",
-    body: "Keynotes, panels, fireside chats. DevRel, DevEx, community, ADHD-fueled tangents.",
-    href: "/speaking",
-  },
-  {
-    number: "03",
-    title: "Advise & coach",
-    body: "For early-stage teams or first-time DevRel leads. Office hours by the half-day.",
-  },
-];
+const ServiceSchema = z.object({
+  number: z.string().min(1),
+  title: z.string().min(1),
+  body: z.string().min(1),
+  href: z.string().optional(),
+});
+
+const ServicesFileSchema = z.object({
+  services: z.array(ServiceSchema).min(1),
+});
+
+export type Service = z.infer<typeof ServiceSchema>;
+
+export const services: Service[] = loadYaml("services.yaml", ServicesFileSchema).services;

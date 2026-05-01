@@ -1,0 +1,16 @@
+# /now page items.
+#
+# Edit this file to update what's shown on /now and the home Now panel.
+# `updated` is a free-form human string (e.g. "May 2026"). `items`
+# appear in the order listed. Delete an item to remove it.
+
+updated: "TBD — Jeremy to set"
+location: "Kansas City, MO"
+
+items:
+  - label: "Working on"
+    text: "Migrating jmeiss.me from Hugo to Next.js. Notes-first, not yet shipped."
+  - label: "Reading"
+    text: "Currently working through a backlog. Updates incoming once /now is wired."
+  - label: "Drinking"
+    text: "Daily-driver pour-overs from local Kansas City roasters."

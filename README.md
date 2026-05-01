@@ -51,15 +51,23 @@ Drafts (`draft: true`) are visible in `npm run dev` so you can preview them loca
 │
 ├── content/                   # All site copy, data, and posts (the editable surface)
 │   ├── posts/                 # *.mdx — individual essays
-│   ├── site.ts                # Site title, bio, socials, copyright, etc.
-│   ├── now.ts                 # /now items
-│   ├── talks.ts               # /speaking talks + topics
-│   ├── reading.ts             # /about bookshelf
-│   ├── coffee.ts              # /about coffee log
-│   └── services.ts            # Home "what i actually do" cards
+│   ├── data/                  # YAML — editable source of truth for site config
+│   │   ├── site.yaml          # Site title, bio, socials, copyright
+│   │   ├── now.yaml           # /now items
+│   │   ├── talks.yaml         # /speaking talks + topics
+│   │   ├── reading.yaml       # /about bookshelf
+│   │   ├── coffee.yaml        # /about coffee log
+│   │   └── services.yaml      # Home "what i actually do" cards
+│   ├── site.ts                # Thin loader: parses + validates site.yaml via Zod
+│   ├── now.ts                 # Thin loader: parses + validates now.yaml
+│   ├── talks.ts               # Thin loader: parses + validates talks.yaml
+│   ├── reading.ts             # Thin loader: parses + validates reading.yaml
+│   ├── coffee.ts              # Thin loader: parses + validates coffee.yaml
+│   └── services.ts            # Thin loader: parses + validates services.yaml
 │
 ├── lib/                       # Shared helpers
 │   ├── posts.ts               # Frontmatter parser (TOML+YAML), Zod schema, getAllPosts/etc.
+│   ├── content.ts             # loadYaml(filename, schema) — used by content/*.ts loaders
 │   ├── mdx.ts                 # MDX compile + ToC extraction
 │   ├── format.ts              # Date formatters (UTC-stable to avoid hydration drift)
 │   └── cn.ts                  # className util
@@ -190,16 +198,39 @@ To publish a draft, flip `draft: false` (or remove the field) in the post's fron
 
 ## Editing site data
 
-Aside from `content/posts/`, all editable copy is in plain TypeScript modules under `content/`:
+Aside from `content/posts/`, all editable copy lives in plain **YAML** files under `content/data/`. Each has a matching `content/<name>.ts` that parses it at build time, validates with Zod, and exports a typed payload — you never have to touch TypeScript to update copy.
 
-- **`content/site.ts`** — Site title, description, your bio, socials, affiliations, copyright. This is the canonical source for OG/JSON-LD/footer/about.
-- **`content/now.ts`** — Items shown on `/now` and the home Now panel.
-- **`content/talks.ts`** — Speaking engagements (`upcoming: true` highlights). The `topics` array drives the chips at the bottom of `/speaking`.
-- **`content/reading.ts`** — Bookshelf entries on `/about`.
-- **`content/coffee.ts`** — Coffee log entries on `/about`.
-- **`content/services.ts`** — The three "what i actually do" cards on the home page.
+| File                            | Used by                                               |
+|---------------------------------|-------------------------------------------------------|
+| `content/data/site.yaml`        | Site title, description, bio, socials, affiliations, copyright. Canonical source for OG, JSON-LD, footer, About. |
+| `content/data/now.yaml`         | `/now` page and the Now panel on the home page.       |
+| `content/data/talks.yaml`       | `/speaking` talks + topic chips.                      |
+| `content/data/reading.yaml`     | Bookshelf on `/about`.                                |
+| `content/data/coffee.yaml`      | Coffee log on `/about`.                               |
+| `content/data/services.yaml`    | "What i actually do" cards on the home page.          |
 
-Empty arrays render an empty-state UI (e.g. "Talk list is being assembled"), so leaving `talks: []` or `reading: []` is intentional and safe.
+**How editing works**
+
+1. Open the YAML file, edit the text.
+2. Save. (`npm run dev` picks it up instantly.)
+3. Commit + push. Netlify rebuilds.
+
+**Validation**
+
+Every field is checked at build time against a Zod schema that lives alongside the loader (for example, `content/site.ts` declares `SiteConfigSchema`). If you typo a field, drop a required one, or pass `"not-a-url"` where a URL is expected, the build fails with a line like:
+
+```text
+Error: Content YAML failed validation (site.yaml):
+  person.email: Invalid email
+```
+
+**Empty lists are fine**
+
+Setting `talks: []`, `reading: []`, or `coffee: []` is intentional — the corresponding UI renders a tidy empty-state block rather than crashing or showing a blank section.
+
+**When to edit the TS file instead of the YAML**
+
+Only when you want to change the schema itself (add a new field, tighten a constraint). The TS file is where the `z.object({...})` schema lives; the YAML file is where data flows.
 
 ## Scripts
 

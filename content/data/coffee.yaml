@@ -1,0 +1,12 @@
+# Coffee log for /about.
+#
+# Add entries like:
+#   - roaster: "Messenger Coffee"
+#     origin: "Colombia, Finca Tamana"
+#     method: "V60"
+#     note: "Raspberry, dark chocolate, a little ginger"
+#     href: "https://messengercoffee.com"  # optional
+#
+# An empty list renders the "brewing notes coming soon" state.
+
+coffee: []

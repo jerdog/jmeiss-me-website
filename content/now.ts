@@ -1,41 +1,26 @@
 /**
- * /now page items.
+ * /now page content.
  *
- * Author/edit by hand; commit to git to deploy. The /now item ordering is
- * preserved in the rendered output. To "clear" an item, delete it from the
- * array — empty arrays render an empty-state UI.
+ * Edit `content/data/now.yaml`, not this file. Build-time Zod validation
+ * catches schema drift; the /now item ordering in YAML is preserved in
+ * the rendered output. An empty `items` list renders an empty-state UI.
  */
 
-export interface NowItem {
-  /** Mono uppercase label, e.g. "WORKING ON". */
-  label: string;
-  /** Sentence-case body text. Plain text is fine; minimal MDX is not currently supported here. */
-  text: string;
-}
+import { z } from "zod";
+import { loadYaml } from "@/lib/content";
 
-export interface NowPage {
-  /** Last update timestamp in human-readable form. */
-  updated: string;
-  /** City + (optional) state. */
-  location: string;
-  items: NowItem[];
-}
+const NowItemSchema = z.object({
+  label: z.string().min(1),
+  text: z.string().min(1),
+});
 
-export const now: NowPage = {
-  updated: "TBD — Jeremy to set",
-  location: "Kansas City, MO",
-  items: [
-    {
-      label: "Working on",
-      text: "Migrating jmeiss.me from Hugo to Next.js. Notes-first, not yet shipped.",
-    },
-    {
-      label: "Reading",
-      text: "Currently working through a backlog. Updates incoming once /now is wired.",
-    },
-    {
-      label: "Drinking",
-      text: "Daily-driver pour-overs from local Kansas City roasters.",
-    },
-  ],
-};
+const NowPageSchema = z.object({
+  updated: z.string().min(1),
+  location: z.string().min(1),
+  items: z.array(NowItemSchema),
+});
+
+export type NowItem = z.infer<typeof NowItemSchema>;
+export type NowPage = z.infer<typeof NowPageSchema>;
+
+export const now: NowPage = loadYaml("now.yaml", NowPageSchema);

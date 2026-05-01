@@ -1,0 +1,22 @@
+# Speaking engagements and topics for /speaking.
+#
+# `talks` is an ordered list (newest first is conventional). Set
+# `upcoming: true` on future engagements — the UI highlights those.
+# Allowed `type` values: Keynote, Talk, Panel, Workshop, Podcast, Webinar.
+#
+# `topics` drives the chips at the bottom of /speaking — these are
+# subjects Jeremy is happy to talk about, not a list of past talks.
+#
+# An empty `talks` list renders an empty-state callout.
+
+talks: []
+
+topics:
+  - "Building DevRel from scratch"
+  - "Measuring DevRel without OKR pain"
+  - "Developer Experience as a strategy"
+  - "Community, but not the cringe kind"
+  - "Mentorship & rebuilding civilisation"
+  - "ADHD in the technologist's life"
+  - "AI in CONTRIBUTING.md"
+  - "CI/CD interoperability"

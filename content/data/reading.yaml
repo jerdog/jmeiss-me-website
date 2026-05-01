@@ -1,0 +1,11 @@
+# Bookshelf for /about.
+#
+# Add entries like:
+#   - title: "Good Strategy / Bad Strategy"
+#     author: "Richard Rumelt"
+#     state: "Reading"               # Reading|Re-reading|Finished|Up next
+#     href: "https://bookshop.org/…" # optional
+#
+# An empty list renders the "bookshelf currently empty" state.
+
+reading: []

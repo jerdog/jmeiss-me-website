@@ -1,95 +1,58 @@
 /**
  * Site-level configuration and personal content.
  *
- * Sourced from the existing Hugo `config/_default/params.toml` so the migration
- * preserves Jeremy's bio, social links, and copy. Content here is consumed by
- * the layout, footer, /about, and Open Graph metadata.
+ * Sourced from `content/data/site.yaml` — edit that file, not this one.
+ * This module loads + validates the YAML at build time via Zod and
+ * exports the typed payload so every call site continues to work
+ * unchanged (`import { siteConfig } from "@/content/site"`).
  */
 
-export interface SocialLink {
-  label: string;
-  handle: string;
-  href: string;
-  rel?: string;
-}
+import { z } from "zod";
+import { loadYaml } from "@/lib/content";
 
-export interface SiteConfig {
-  title: string;
-  description: string;
-  url: string;
-  rssPath: string;
-  person: {
-    name: string;
-    handle: string;
-    role: string;
-    company: string;
-    companyUrl: string;
-    location: string;
-    tagline: string;
-    blurb: string;
-    longBio: string;
-    twitter?: string;
-    email: string;
-    resumeHref: string;
-    avatar: string;
-    portrait: string;
-    portraitCaption: string;
-  };
-  socials: SocialLink[];
-  affiliations: string[];
-  sideProjects: { name: string; href: string }[];
-  copyright: string;
-}
+const SocialLinkSchema = z.object({
+  label: z.string().min(1),
+  handle: z.string().min(1),
+  href: z.string().min(1),
+  rel: z.string().optional(),
+});
 
-export const siteConfig: SiteConfig = {
-  title: "Jeremy Meiss",
-  description: "Personal website of Jeremy Meiss — DevRel & DevEx leader, international speaker, coffee evangelist.",
-  url: "https://jmeiss.me",
-  rssPath: "/index.xml",
-  person: {
-    name: "Jeremy Meiss",
-    handle: "@IAmJerdog",
-    role: "Director of DevRel & DevEx",
-    company: "OneStream Software",
-    companyUrl: "https://onestreamsoftware.com",
-    location: "Kansas City, MO",
-    tagline: "DevRel & DevEx leader. Coffee evangelist. ADHD-fueled technologist.",
-    blurb:
-      "I help companies build communities, programs, and experiences that developers actually like. Almost three decades in tech, the last decade-plus in Developer Relations and Developer Experience.",
-    longBio:
-      "I am a Technical Architect, International Speaker, and DevEx / DevRel Leader with over three decades of versatile experience in the tech industry — from support, networking, systems, databases, and application and website development, to developer relations and community engagement. With extensive experience at SMBs and enterprise companies like OneStream Software, CircleCI, Auth0, Sprint, and Hallmark Cards, I am a committed advocate for open-source software and tools, with a deep passion for developer relations, community, and their role in improving the developer experience. Beyond my professional pursuits, I am a proud father of adults, extremely passionate about coffee, travel, hiking, camping, and the mountains, and love exploring new technologies.",
-    email: "jeremy@jmeiss.me",
-    resumeHref: "/files/JeremyMeissResume-2025.pdf",
-    avatar: "/images/author/jeremy-meiss.jpg",
-    portrait: "/images/jeremy-meiss-brickwall.jpg",
-    portraitCaption: "jerdog, in the wild",
-  },
-  socials: [
-    { label: "GitHub", handle: "jerdog", href: "https://github.com/jerdog", rel: "me" },
-    { label: "LinkedIn", handle: "jeremymeiss", href: "https://linkedin.com/in/jeremymeiss", rel: "me" },
-    {
-      label: "Mastodon",
-      handle: "@jerdog@hachyderm.io",
-      href: "https://hachyderm.io/@jerdog",
-      rel: "me",
-    },
-    { label: "Bluesky", handle: "@jerdog.dev", href: "https://bsky.app/profile/jerdog.dev", rel: "me" },
-    { label: "DEV", handle: "@jerdog", href: "https://dev.to/jerdog", rel: "me" },
-    { label: "RSS", handle: "/index.xml", href: "/index.xml" },
-    { label: "Email", handle: "jeremy@jmeiss.me", href: "mailto:jeremy@jmeiss.me" },
-  ],
-  affiliations: [
-    "Director of DevRel @ OneStream",
-    "ex CircleCI",
-    "ex Solace",
-    "ex Auth0",
-    "ex XDA",
-    "DevOpsDays KC organizer",
-    "DevOpsPartyGames co-creator",
-  ],
-  sideProjects: [
-    { name: "DevOpsPartyGames", href: "https://devopspartygames.com" },
-    { name: "DevOpsDays KC", href: "https://devopsdays.org/kansascity" },
-  ],
-  copyright: "2024–26 Jeremy Meiss. All rights reserved.",
-};
+const SideProjectSchema = z.object({
+  name: z.string().min(1),
+  href: z.string().url(),
+});
+
+const PersonSchema = z.object({
+  name: z.string().min(1),
+  handle: z.string().min(1),
+  role: z.string().min(1),
+  company: z.string().min(1),
+  companyUrl: z.string().url(),
+  location: z.string().min(1),
+  tagline: z.string().min(1),
+  blurb: z.string().min(1),
+  longBio: z.string().min(1),
+  twitter: z.string().optional(),
+  email: z.string().email(),
+  resumeHref: z.string().min(1),
+  avatar: z.string().min(1),
+  portrait: z.string().min(1),
+  portraitCaption: z.string().min(1),
+});
+
+const SiteConfigSchema = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1),
+  url: z.string().url(),
+  rssPath: z.string().min(1),
+  copyright: z.string().min(1),
+  person: PersonSchema,
+  socials: z.array(SocialLinkSchema).min(1),
+  affiliations: z.array(z.string().min(1)),
+  sideProjects: z.array(SideProjectSchema),
+});
+
+export type SocialLink = z.infer<typeof SocialLinkSchema>;
+export type SiteConfig = z.infer<typeof SiteConfigSchema>;
+
+export const siteConfig: SiteConfig = loadYaml("site.yaml", SiteConfigSchema);
