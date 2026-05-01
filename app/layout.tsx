@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Serif_Display, Inter, Caveat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import "./custom.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/content/site";

@@ -160,6 +160,17 @@
 .prose-mdx a:hover {
   color: var(--color-accent-deep);
 }
+/* rehype-autolink-headings: `.prose-mdx a` alone wins over `.heading-anchor` — need this compound selector */
+.prose-mdx a.heading-anchor {
+  text-decoration: none;
+  text-underline-offset: unset;
+  text-decoration-thickness: unset;
+  color: inherit;
+  font-size: 0.8em;
+}
+.prose-mdx a.heading-anchor:hover {
+  color: var(--color-accent);
+}
 .prose-mdx strong {
   color: var(--color-ink);
   font-weight: 600;

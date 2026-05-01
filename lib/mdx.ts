@@ -29,7 +29,7 @@ export const mdxOptions = {
       {
         behavior: "append",
         properties: { className: ["heading-anchor"], ariaHidden: true, tabIndex: -1 },
-        content: { type: "text", value: " §" },
+        content: { type: "text", value: " #" },
       },
     ],
     [

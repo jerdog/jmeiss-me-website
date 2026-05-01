@@ -1,0 +1,2 @@
+/* Site-specific overrides. Prefer `globals.css` for typography tied to `.prose-mdx`
+   (those rules need the same specificity as other prose selectors). */
