@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
+import { offSiteAnchorProps } from "@/lib/off-site-href";
 
 interface FigureProps {
   src: string;
@@ -59,7 +60,11 @@ export function Figure({
           {caption && attr ? " · " : null}
           {attr ? (
             attrLink ? (
-              <a href={attrLink} className="text-accent hover:underline" rel="noopener noreferrer">
+              <a
+                href={attrLink}
+                className="text-accent hover:underline"
+                {...offSiteAnchorProps(attrLink)}
+              >
                 {attr}
               </a>
             ) : (

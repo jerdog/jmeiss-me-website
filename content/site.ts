@@ -10,6 +10,13 @@
 import { z } from "zod";
 import { loadYaml } from "@/lib/content";
 
+function trimPersonField(value: unknown): string {
+  if (value === undefined || value === null) return "";
+  const s = String(value).trim();
+  if (s === "-" || s === "—") return "";
+  return s;
+}
+
 const SocialLinkSchema = z.object({
   label: z.string().min(1),
   handle: z.string().min(1),
@@ -24,10 +31,18 @@ const SideProjectSchema = z.object({
 
 const PersonSchema = z.object({
   name: z.string().min(1),
-  handle: z.string().min(1),
+  handle: z.preprocess(trimPersonField, z.string()),
   role: z.string().min(1),
-  company: z.string().min(1),
-  companyUrl: z.string().url(),
+  company: z.preprocess(trimPersonField, z.string()),
+  companyUrl: z.preprocess(trimPersonField, z.string()).superRefine((val, ctx) => {
+    if (!val) return;
+    if (!z.string().url().safeParse(val).success) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "companyUrl must be a valid URL when set",
+      });
+    }
+  }),
   location: z.string().min(1),
   tagline: z.string().min(1),
   blurb: z.string().min(1),
@@ -56,3 +71,6 @@ export type SocialLink = z.infer<typeof SocialLinkSchema>;
 export type SiteConfig = z.infer<typeof SiteConfigSchema>;
 
 export const siteConfig: SiteConfig = loadYaml("site.yaml", SiteConfigSchema);
+
+/** Origin of `siteConfig.url` — for same-origin vs external link checks. */
+export const siteOrigin = new URL(siteConfig.url).origin;

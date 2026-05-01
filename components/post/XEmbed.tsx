@@ -47,7 +47,11 @@ export function XEmbed({ user, id, theme = "light" }: XEmbedProps) {
   return (
     <div ref={ref} className="my-6 flex justify-center">
       <blockquote className="twitter-tweet" data-theme={theme} data-dnt="true">
-        <a href={`https://twitter.com/${encodeURIComponent(user)}/status/${id}`}>
+        <a
+          href={`https://twitter.com/${encodeURIComponent(user)}/status/${id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View this post on X (formerly Twitter) →
         </a>
       </blockquote>

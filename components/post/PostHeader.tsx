@@ -4,6 +4,7 @@ import { Tape } from "@/components/surfaces/Tape";
 import type { PostSummary } from "@/lib/posts";
 import { siteConfig } from "@/content/site";
 import { formatLongDate } from "@/lib/format";
+import { roleCompanyLine } from "@/lib/person-line";
 
 interface PostHeaderProps {
   post: PostSummary;
@@ -14,6 +15,7 @@ interface PostHeaderProps {
 export function PostHeader({ post, number }: PostHeaderProps) {
   const { person } = siteConfig;
   const date = formatLongDate(post.date);
+  const byline = roleCompanyLine(person.role, person.company);
 
   return (
     <Card variant="card" shadow="ink" className="px-7 py-9 sm:px-12 sm:py-9">
@@ -54,9 +56,7 @@ export function PostHeader({ post, number }: PostHeaderProps) {
         </div>
         <div className="leading-tight">
           <p className="text-sm font-semibold">{person.name}</p>
-          <p className="text-xs text-muted">
-            {person.role} · {person.company}
-          </p>
+          {byline ? <p className="text-xs text-muted">{byline}</p> : null}
         </div>
         <span
           className="reduced-motion-flat ml-auto hidden font-hand text-xl text-warm sm:inline-block"

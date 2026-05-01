@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
+import { offSiteAnchorProps } from "@/lib/off-site-href";
 
 interface ButtonProps {
   href: string;
@@ -21,9 +22,17 @@ export function Button({ href, children, variant = "primary", className }: Butto
     className,
   );
 
-  if (/^https?:\/\//.test(href) || href.startsWith("mailto:")) {
+  if (href.startsWith("mailto:") || href.startsWith("tel:")) {
     return (
-      <a href={href} className={cls} rel="noopener noreferrer">
+      <a href={href} className={cls}>
+        {children}
+      </a>
+    );
+  }
+
+  if (/^https?:\/\//.test(href)) {
+    return (
+      <a href={href} className={cls} {...offSiteAnchorProps(href)}>
         {children}
       </a>
     );

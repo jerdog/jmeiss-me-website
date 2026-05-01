@@ -46,7 +46,7 @@ Drafts (`draft: true`) are visible in `npm run dev` so you can preview them loca
 │   │                          #  YouTube, XEmbed, Figure, Button, Callout, PullQuote, PostImage
 │   ├── posts/                 # PostCard, PostsIndexClient (filterable list)
 │   ├── seo/                   # JsonLd
-│   ├── speaking/              # TalkRow, TopicChips, EmptyTalksState
+│   ├── speaking/              # TalkRow, TopicChips, EmptyTalksState, PastTalksBlock
 │   └── surfaces/              # BPaper, Card, Tape, Tag — design-system primitives
 │
 ├── content/                   # All site copy, data, and posts (the editable surface)
@@ -54,7 +54,7 @@ Drafts (`draft: true`) are visible in `npm run dev` so you can preview them loca
 │   ├── data/                  # YAML — editable source of truth for site config
 │   │   ├── site.yaml          # Site title, bio, socials, copyright
 │   │   ├── now.yaml           # /now items
-│   │   ├── talks.yaml         # /speaking talks + topics
+│   │   ├── talks.yaml         # /speaking: upcomingTalks, talks, pastTalks, topics
 │   │   ├── reading.yaml       # /about bookshelf
 │   │   ├── coffee.yaml        # /about coffee log
 │   │   └── services.yaml      # Home "what i actually do" cards
@@ -70,6 +70,9 @@ Drafts (`draft: true`) are visible in `npm run dev` so you can preview them loca
 │   ├── content.ts             # loadYaml(filename, schema) — used by content/*.ts loaders
 │   ├── mdx.ts                 # MDX compile + ToC extraction
 │   ├── format.ts              # Date formatters (UTC-stable to avoid hydration drift)
+│   ├── off-site-href-core.ts  # Pure `target`/`rel` helpers (pass page origin)
+│   ├── off-site-href.ts       # Wraps core with `siteOrigin` from site.yaml (server / MDX)
+│   ├── notist.ts              # Notist profile + event JSON for /speaking past talks
 │   └── cn.ts                  # className util
 │
 ├── public/                    # Static assets served at the root
@@ -204,7 +207,7 @@ Aside from `content/posts/`, all editable copy lives in plain **YAML** files und
 |---------------------------------|-------------------------------------------------------|
 | `content/data/site.yaml`        | Site title, description, bio, socials, affiliations, copyright. Canonical source for OG, JSON-LD, footer, About. |
 | `content/data/now.yaml`         | `/now` page and the Now panel on the home page.       |
-| `content/data/talks.yaml`       | `/speaking` talks + topic chips.                      |
+| `content/data/talks.yaml`       | `/speaking`: `upcomingTalks`, optional `talks`, optional Notist `pastTalks`, `topics` chips — see below. |
 | `content/data/reading.yaml`     | Bookshelf on `/about`.                                |
 | `content/data/coffee.yaml`      | Coffee log on `/about`.                               |
 | `content/data/services.yaml`    | "What i actually do" cards on the home page.          |
@@ -226,11 +229,72 @@ Error: Content YAML failed validation (site.yaml):
 
 **Empty lists are fine**
 
-Setting `talks: []`, `reading: []`, or `coffee: []` is intentional — the corresponding UI renders a tidy empty-state block rather than crashing or showing a blank section.
+Setting `upcomingTalks: []`, `talks: []`, `reading: []`, or `coffee: []` is intentional — the corresponding UI renders a tidy empty-state block rather than crashing or showing a blank section.
 
 **When to edit the TS file instead of the YAML**
 
 Only when you want to change the schema itself (add a new field, tighten a constraint). The TS file is where the `z.object({...})` schema lives; the YAML file is where data flows.
+
+### `content/data/site.yaml` — optional person fields
+
+`person.handle`, `person.company`, and `person.companyUrl` may be empty or omitted (or use `-` / `—` as a placeholder for company). The home hero, post bylines, and about page omit gaps instead of printing stray punctuation. JSON-LD includes `worksFor` and `alternateName` only when the corresponding fields have real values. `companyUrl` must still be either empty or a valid absolute URL.
+
+### `content/data/talks.yaml` — `/speaking`
+
+Four blocks drive the page:
+
+| Key | Purpose |
+|-----|---------|
+| `upcomingTalks` | Rows under **Upcoming events.** Each entry needs **`eventDate`** (`YYYY-MM-DD`, UTC calendar day). Rows render only while `eventDate` is **today or later** (UTC); older entries disappear on the next build or ISR revalidate (`/speaking` is cached ~1h because of the Notist fetch). Optional **`date`** overrides the month/year chip (`TalkRow` expects two words like `May 2026`). Sorted soonest-first. |
+| `talks` | Optional **More dates.** manual catalog (any mix of past or future). Each row needs a display **`date`**, **`title`**, **`event`**, and **`type`**. Optional **`upcoming: true`** applies the highlighted “upcoming” card style; it is not inferred from the `date` string — set it when you want that treatment. |
+| `pastTalks` | Optional. **`feedUrl`** — Notist public profile JSON (`https://noti.st/<username>.json`). **`portfolioUrl`** (default `https://speaking.jmeiss.me`), **`limit`** (default `10`, max `50`). Renders **Past talks.** with titles, conferences (from Notist event JSON), and links. |
+| `topics` | Subject chips at the bottom of `/speaking`. |
+
+Allowed `type` for both talk lists: `Keynote`, `Talk`, `Panel`, `Workshop`, `Podcast`, `Webinar`. Optional URL fields: `href`, `recording`, `slides`.
+
+#### Example: `upcomingTalks` and `talks`
+
+```yaml
+pastTalks:
+  feedUrl: "https://noti.st/jeremymeiss.json"
+  portfolioUrl: "https://speaking.jmeiss.me"
+  limit: 10
+
+upcomingTalks:
+  # eventDate is required — used to hide the row after the conference day (UTC).
+  - eventDate: "2026-09-18"
+    # Optional: overrides the small calendar chip; otherwise derived from eventDate (e.g. "Sep 2026").
+    date: "Sep 2026"
+    title: "Developer Experience Is a Strategy, Not a Slogan"
+    event: "Abstracta Testing Summit"
+    location: "Montevideo, Uruguay"
+    type: Talk
+    href: "https://abstracta.us/testing-summit-uy/"
+  - eventDate: "2026-11-05"
+    title: "Keynote: Communities and Coffee Shops"
+    event: "DevOpsDays Somewhere"
+    type: Keynote
+
+# Supplemental rows that are always listed when non-empty (no automatic date hiding).
+talks:
+  - date: "Mar 2026"
+    title: "OSS Contributor Guidelines… for Robots?"
+    event: "SCaLE 23x"
+    location: "Pasadena, CA"
+    type: Talk
+    upcoming: false
+    href: "https://www.socallinuxexpo.org/scale/23x"
+  - date: "May 2026"
+    title: "Internal enablement session (not public)"
+    event: "ACME Corp"
+    type: Workshop
+    upcoming: true
+
+topics:
+  - "Developer Experience as a strategy"
+```
+
+Use `upcomingTalks` for anything that should **drop off the site** after the event date; use `talks` for a **fixed** list (archived highlights, private gigs you still want listed, etc.). **Past talks** from Notist fill in separately when `pastTalks` is set. Code: `content/talks.ts` (YAML + `visibleUpcomingTalkRows`), `lib/notist.ts` (profile + event JSON for past talks).
 
 ## Scripts
 

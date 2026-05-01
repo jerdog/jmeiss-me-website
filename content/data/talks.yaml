@@ -1,22 +1,78 @@
 # Speaking engagements and topics for /speaking.
 #
-# `talks` is an ordered list (newest first is conventional). Set
-# `upcoming: true` on future engagements — the UI highlights those.
-# Allowed `type` values: Keynote, Talk, Panel, Workshop, Podcast, Webinar.
+# Full reference: README.md → "content/data/talks.yaml — /speaking"
 #
-# `topics` drives the chips at the bottom of /speaking — these are
-# subjects Jeremy is happy to talk about, not a list of past talks.
+# -----------------------------------------------------------------------------
+# Example — copy into `upcomingTalks` / `talks` below (or uncomment).
+# -----------------------------------------------------------------------------
 #
-# An empty `talks` list renders an empty-state callout.
+# upcomingTalks:
+#   # Shown only while eventDate is today or later (UTC). After that, hidden on rebuild/ISR.
+#   - eventDate: "2026-09-18"
+#     date: "Sep 2026" # optional chip override (default: month + year from eventDate)
+#     title: "Developer Experience Is a Strategy, Not a Slogan"
+#     event: "Abstracta Testing Summit"
+#     location: "Montevideo, Uruguay"
+#     type: Talk
+#     href: "https://abstracta.us/testing-summit-uy/"
+#   - eventDate: "2026-11-05"
+#     title: "Keynote: Communities and Coffee Shops"
+#     event: "DevOpsDays Somewhere"
+#     type: Keynote
+#
+# talks:
+#   # Optional "more dates" — always listed when non-empty; no automatic expiry.
+#   - date: "Mar 2026"
+#     title: "OSS Contributor Guidelines… for Robots?"
+#     event: "SCaLE 23x"
+#     location: "Pasadena, CA"
+#     type: Talk
+#     upcoming: false
+#     href: "https://www.socallinuxexpo.org/scale/23x"
+#   - date: "May 2026"
+#     title: "Internal enablement session (not public)"
+#     event: "ACME Corp"
+#     type: Workshop
+#     upcoming: true
+#
+# -----------------------------------------------------------------------------
+
+pastTalks:
+  feedUrl: "https://noti.st/jeremymeiss.json"
+  portfolioUrl: "https://speaking.jmeiss.me"
+  limit: 10
+
+upcomingTalks:
+  - eventDate: "2026-05-19"
+    date: "May 19, 2026"
+    title: "It's Not Rocket Science, It's a Flywheel: Engineering OS Communities With DevEx"
+    event: "Open Source Summit NA, 2026"
+    location: "Minneapolis, MN"
+    type: Talk
+    href: "https://osselcna2026.sched.com/event/2JQuk/its-not-rocket-science-its-a-flywheel-engineering-os-communities-with-devex-jeremy-meiss-wwt?iframe=yes&w=100%&sidebar=yes&bg=no"
+  - eventDate: "2026-09-10"
+    date: "Sep 10-11, 2026"
+    title: "Don’t Panic: A Hitchhiker’s Guide to Agentic DevOps"
+    event: "KCDC 2026"
+    location: "Kansas City, MO"
+    type: Talk
+    href: "https://kcdc.info"
+  - eventDate: "2026-09-10"
+    date: "Sep 10-11, 2026"
+    title: "Stop Dreaming, Start Engineering: Cloud Patterns for Production AI"
+    event: "KCDC 2026"
+    location: "Kansas City, MO"
+    type: Talk
+    href: "https://kcdc.info"
 
 talks: []
 
 topics:
-  - "Building DevRel from scratch"
-  - "Measuring DevRel without OKR pain"
+  - "AI-Native Development, practices, and principles"
   - "Developer Experience as a strategy"
-  - "Community, but not the cringe kind"
-  - "Mentorship & rebuilding civilisation"
+  - "Building Open Source communities"
+  - "DevRel past, present, future"
+  - "Developer Communities and your company"
+  - "Mentorship"
+  - "DevOps Practices and principles"
   - "ADHD in the technologist's life"
-  - "AI in CONTRIBUTING.md"
-  - "CI/CD interoperability"

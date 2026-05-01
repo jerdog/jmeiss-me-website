@@ -37,11 +37,15 @@ export default async function HomePage() {
       jobTitle: siteConfig.person.role,
       url: siteConfig.url,
       image: `${siteConfig.url}${siteConfig.person.portrait}`,
-      worksFor: {
-        "@type": "Organization",
-        name: siteConfig.person.company,
-        url: siteConfig.person.companyUrl,
-      },
+      ...(siteConfig.person.company && siteConfig.person.companyUrl
+        ? {
+            worksFor: {
+              "@type": "Organization",
+              name: siteConfig.person.company,
+              url: siteConfig.person.companyUrl,
+            },
+          }
+        : {}),
       sameAs: siteConfig.socials
         .filter((s) => s.href.startsWith("http"))
         .map((s) => s.href),

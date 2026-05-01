@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { BPaper } from "@/components/surfaces/BPaper";
 import { Container } from "@/components/layout/Container";
 import { Tape } from "@/components/surfaces/Tape";
 import { NowPanel } from "@/components/home/NowPanel";
 import { now } from "@/content/now";
+import { offSiteAnchorProps } from "@/lib/off-site-href";
 
 export const metadata: Metadata = {
   title: "Now",
@@ -24,13 +24,13 @@ export default function NowPage() {
         </h1>
         <p className="max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
           A{" "}
-          <Link
+          <a
             href="https://nownownow.com/about"
-            rel="noopener noreferrer"
             className="text-accent underline underline-offset-4 hover:text-accent-deep"
+            {...offSiteAnchorProps("https://nownownow.com/about")}
           >
             /now
-          </Link>{" "}
+          </a>{" "}
           page in the spirit of Derek Sivers — what I&apos;m focusing on at this point in life.
           Updated whenever it shifts.
         </p>

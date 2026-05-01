@@ -5,81 +5,78 @@
 # Open Graph metadata, and JSON-LD.
 
 title: "Jeremy Meiss"
-description: "Personal website of Jeremy Meiss — DevRel & DevEx leader, international speaker, coffee evangelist."
+description: "Personal website of Jeremy Meiss — International speaker, DevRel & DevEx leader, Technical Architect, and lover of coffee."
 url: "https://jmeiss.me"
 rssPath: "/index.xml"
-copyright: "2024–26 Jeremy Meiss. All rights reserved."
+copyright: "2026 Jeremy Meiss. All rights reserved."
 
 person:
   name: "Jeremy Meiss"
-  handle: "@IAmJerdog"
-  role: "Director of DevRel & DevEx"
-  company: "OneStream Software"
+  handle: "jerdog"
+  role: "Technical Architect, DevRel & DevEx Leader"
+  company: "-"
   companyUrl: "https://onestreamsoftware.com"
   location: "Kansas City, MO"
   tagline: "DevRel & DevEx leader. Coffee evangelist. ADHD-fueled technologist."
   blurb: >-
-    I help companies build communities, programs, and experiences that
-    developers actually like. Almost three decades in tech, the last
-    decade-plus in Developer Relations and Developer Experience.
+    Over 30 years of passion for technology, coffee, and building developer communities.
   longBio: >-
-    I am a Technical Architect, International Speaker, and DevEx / DevRel
-    Leader with over three decades of versatile experience in the tech
-    industry — from support, networking, systems, databases, and
-    application and website development, to developer relations and
-    community engagement. With extensive experience at SMBs and
-    enterprise companies like OneStream Software, CircleCI, Auth0, Sprint,
-    and Hallmark Cards, I am a committed advocate for open-source software
-    and tools, with a deep passion for developer relations, community, and
-    their role in improving the developer experience. Beyond my
-    professional pursuits, I am a proud father of adults, extremely
-    passionate about coffee, travel, hiking, camping, and the mountains,
-    and love exploring new technologies.
-  email: "jeremy@jmeiss.me"
-  resumeHref: "/files/JeremyMeissResume-2025.pdf"
+    I am a Technical Architect, DevEx / DevRel Leader, and International Speaker with
+    over three decades of versatile experience in the tech industry. I am a committed
+    advocate for open-source software and tools, with a deep passion for developer
+    relations, community, and the developer experience. Beyond my professional
+    pursuits, I am a proud father of adults, extremely passionate about coffee, travel,
+    hiking, camping, and the mountains, and love exploring new technologies.
+  email: "jeremy.meiss@gmail.com"
+  resumeHref: "/files/JeremyMeissResume-2026.pdf"
   avatar: "/images/author/jeremy-meiss.jpg"
   portrait: "/images/jeremy-meiss-brickwall.jpg"
   portraitCaption: "jerdog, in the wild"
 
 socials:
-  - label: GitHub
-    handle: jerdog
-    href: "https://github.com/jerdog"
+  - label: Bluesky
+    handle: "@jerdog.dev"
+    href: "https://bsky.app/profile/jerdog.dev"
     rel: me
   - label: LinkedIn
     handle: jeremymeiss
     href: "https://linkedin.com/in/jeremymeiss"
     rel: me
-  - label: Mastodon
-    handle: "@jerdog@hachyderm.io"
-    href: "https://hachyderm.io/@jerdog"
-    rel: me
-  - label: Bluesky
-    handle: "@jerdog.dev"
-    href: "https://bsky.app/profile/jerdog.dev"
+  - label: GitHub
+    handle: jerdog
+    href: "https://github.com/jerdog"
     rel: me
   - label: DEV
     handle: "@jerdog"
     href: "https://dev.to/jerdog"
     rel: me
-  - label: RSS
-    handle: "/index.xml"
-    href: "/index.xml"
-  - label: Email
-    handle: "jeremy@jmeiss.me"
-    href: "mailto:jeremy@jmeiss.me"
+  - label: Mastodon
+    handle: "@jerdog@hachyderm.io"
+    href: "https://hachyderm.io/@jerdog"
+    rel: me
+  # - label: RSS
+  #   handle: "/index.xml"
+  #   href: "/index.xml"
+  # - label: Email
+  #   handle: "jeremy@jmeiss.me"
+  #   href: "mailto:jeremy@jmeiss.me"
 
 affiliations:
-  - "Director of DevRel @ OneStream"
+  - "Technical Architect @ WWT"
+  - "ex OneStream"
   - "ex CircleCI"
   - "ex Solace"
   - "ex Auth0"
   - "ex XDA"
+  - "ex Sprint"
+  - "ex Hallmark Cards"
   - "DevOpsDays KC organizer"
   - "DevOpsPartyGames co-creator"
 
 sideProjects:
-  - name: DevOpsPartyGames
-    href: "https://devopspartygames.com"
   - name: DevOpsDays KC
     href: "https://devopsdays.org/kansascity"
+  - name: CommunityDays KC
+    href: "https://communitydays.info"
+  - name: DevOpsPartyGames
+    href: "https://devopspartygames.com"

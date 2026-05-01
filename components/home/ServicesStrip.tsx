@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card } from "@/components/surfaces/Card";
 import { services } from "@/content/services";
+import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href";
 
 export function ServicesStrip() {
   return (
@@ -42,9 +43,20 @@ export function ServicesStrip() {
           );
 
           return service.href ? (
-            <Link key={service.number} href={service.href} className="block">
-              {Inner}
-            </Link>
+            isOffSiteHref(service.href) ? (
+              <a
+                key={service.number}
+                href={service.href}
+                className="block"
+                {...offSiteAnchorProps(service.href)}
+              >
+                {Inner}
+              </a>
+            ) : (
+              <Link key={service.number} href={service.href} className="block">
+                {Inner}
+              </Link>
+            )
           ) : (
             <div key={service.number}>{Inner}</div>
           );

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
+import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href-core";
 
 interface PagefindResult {
   id: string;
@@ -176,25 +177,47 @@ export default function SearchModal({ onClose }: SearchModalProps) {
             </p>
           ) : (
             <ul>
-              {results.map((r) => (
-                <li key={r.url} className="border-b border-rule last:border-b-0">
-                  <Link
-                    href={r.url}
-                    onClick={onClose}
-                    className={cn(
-                      "block px-4 py-3 transition-colors hover:bg-card focus:bg-card",
+              {results.map((r) => {
+                const origin = window.location.origin;
+                return (
+                  <li key={r.url} className="border-b border-rule last:border-b-0">
+                    {isOffSiteHref(r.url, origin) ? (
+                      <a
+                        href={r.url}
+                        onClick={onClose}
+                        className={cn(
+                          "block px-4 py-3 transition-colors hover:bg-card focus:bg-card",
+                        )}
+                        {...offSiteAnchorProps(r.url, origin)}
+                      >
+                        <p className="font-display text-lg leading-tight text-ink">
+                          {r.title}
+                        </p>
+                        <p
+                          className="mt-1 line-clamp-2 text-sm text-ink-soft"
+                          dangerouslySetInnerHTML={{ __html: r.excerpt }}
+                        />
+                      </a>
+                    ) : (
+                      <Link
+                        href={r.url}
+                        onClick={onClose}
+                        className={cn(
+                          "block px-4 py-3 transition-colors hover:bg-card focus:bg-card",
+                        )}
+                      >
+                        <p className="font-display text-lg leading-tight text-ink">
+                          {r.title}
+                        </p>
+                        <p
+                          className="mt-1 line-clamp-2 text-sm text-ink-soft"
+                          dangerouslySetInnerHTML={{ __html: r.excerpt }}
+                        />
+                      </Link>
                     )}
-                  >
-                    <p className="font-display text-lg leading-tight text-ink">
-                      {r.title}
-                    </p>
-                    <p
-                      className="mt-1 line-clamp-2 text-sm text-ink-soft"
-                      dangerouslySetInnerHTML={{ __html: r.excerpt }}
-                    />
-                  </Link>
-                </li>
-              ))}
+                  </li>
+                );
+              })}
             </ul>
           )}
         </div>

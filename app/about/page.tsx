@@ -26,6 +26,32 @@ export default function AboutPage() {
   // ProfilePage / Person JSON-LD: this is the canonical "about" entity for
   // the site. Same `@id` as the home page Person so crawlers can stitch the
   // graph together; here we add the longer description and address details.
+  const mainEntity: Record<string, unknown> = {
+    "@type": "Person",
+    "@id": `${siteConfig.url}/#person`,
+    name: person.name,
+    description: person.longBio,
+    jobTitle: person.role,
+    url: siteConfig.url,
+    email: `mailto:${person.email}`,
+    image: `${siteConfig.url}${person.portrait}`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Kansas City",
+      addressRegion: "MO",
+      addressCountry: "US",
+    },
+    sameAs: socials.filter((s) => s.href.startsWith("http")).map((s) => s.href),
+  };
+  if (person.handle) mainEntity.alternateName = person.handle;
+  if (person.company && person.companyUrl) {
+    mainEntity.worksFor = {
+      "@type": "Organization",
+      name: person.company,
+      url: person.companyUrl,
+    };
+  }
+
   const profileJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
@@ -33,29 +59,7 @@ export default function AboutPage() {
     url: `${siteConfig.url}/about`,
     name: `About ${person.name}`,
     inLanguage: "en-US",
-    mainEntity: {
-      "@type": "Person",
-      "@id": `${siteConfig.url}/#person`,
-      name: person.name,
-      alternateName: person.handle,
-      description: person.longBio,
-      jobTitle: person.role,
-      url: siteConfig.url,
-      email: `mailto:${person.email}`,
-      image: `${siteConfig.url}${person.portrait}`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Kansas City",
-        addressRegion: "MO",
-        addressCountry: "US",
-      },
-      worksFor: {
-        "@type": "Organization",
-        name: person.company,
-        url: person.companyUrl,
-      },
-      sameAs: socials.filter((s) => s.href.startsWith("http")).map((s) => s.href),
-    },
+    mainEntity,
   };
 
   return (

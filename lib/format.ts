@@ -37,3 +37,18 @@ export function formatLongDate(iso: string | undefined): string {
   if (Number.isNaN(d.getTime())) return "";
   return d.toLocaleDateString("en-US", LONG_DATE);
 }
+
+const MONTH_YEAR_UTC: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "short",
+  timeZone: "UTC",
+};
+
+/**
+ * "May 2026" from a calendar date `YYYY-MM-DD` — used by TalkRow (splits on space → two lines).
+ */
+export function formatMonthYearUtcFromYmd(isoYmd: string): string {
+  const d = new Date(`${isoYmd}T12:00:00.000Z`);
+  if (Number.isNaN(d.getTime())) return "";
+  return d.toLocaleDateString("en-US", MONTH_YEAR_UTC);
+}

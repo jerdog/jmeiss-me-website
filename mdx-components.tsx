@@ -7,6 +7,7 @@ import { PullQuote } from "@/components/post/PullQuote";
 import { Callout } from "@/components/post/Callout";
 import { PostImage } from "@/components/post/PostImage";
 import { Tape } from "@/components/surfaces/Tape";
+import { offSiteAnchorProps } from "@/lib/off-site-href";
 
 /**
  * Component map applied during MDX rendering. Authors can use these tags
@@ -20,6 +21,15 @@ export const mdxComponents: MDXComponents = {
   PullQuote,
   Callout,
   Tape,
+  a: ({ href, children, ...props }) => {
+    const h = typeof href === "string" ? href : "";
+    const extra = h ? offSiteAnchorProps(h) : {};
+    return (
+      <a href={h || undefined} {...props} {...extra}>
+        {children}
+      </a>
+    );
+  },
   img: (props) => {
     const { src, alt, width, height } = props as {
       src?: string;

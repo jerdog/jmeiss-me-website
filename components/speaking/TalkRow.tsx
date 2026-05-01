@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Talk } from "@/content/talks";
 import { cn } from "@/lib/cn";
+import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href";
 
 interface TalkRowProps {
   talk: Talk;
@@ -38,6 +39,17 @@ export function TalkRow({ talk }: TalkRowProps) {
   );
 
   if (talk.href) {
+    if (isOffSiteHref(talk.href)) {
+      return (
+        <a
+          href={talk.href}
+          className="block hover:bg-card focus-visible:outline-2"
+          {...offSiteAnchorProps(talk.href)}
+        >
+          {inner}
+        </a>
+      );
+    }
     return (
       <Link href={talk.href} className="block hover:bg-card focus-visible:outline-2">
         {inner}

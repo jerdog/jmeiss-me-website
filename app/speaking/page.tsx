@@ -5,21 +5,31 @@ import { Tape } from "@/components/surfaces/Tape";
 import { TalkRow } from "@/components/speaking/TalkRow";
 import { TopicChips } from "@/components/speaking/TopicChips";
 import { EmptyTalksState } from "@/components/speaking/EmptyTalksState";
-import { talks, topics } from "@/content/talks";
+import { PastTalksBlock } from "@/components/speaking/PastTalksBlock";
+import {
+  talks,
+  topics,
+  pastTalks,
+  upcomingTalks,
+  visibleUpcomingTalkRows,
+} from "@/content/talks";
 import { siteConfig } from "@/content/site";
+import { fetchNotistPastTalks } from "@/lib/notist";
 
 export const metadata: Metadata = {
   title: "Speaking",
   description:
-    "Keynotes, conference talks, panels, and podcasts on Developer Relations, Developer Experience, community, and more.",
+    "Keynotes, conference talks, panels, and podcasts on Emerging Technologies, DevOps, AI, Developer Relations, Developer Experience, community, and more.",
   alternates: {
     canonical: "/speaking",
   },
 };
 
-export default function SpeakingPage() {
-  const upcoming = talks.filter((t) => t.upcoming);
-  const past = talks.filter((t) => !t.upcoming);
+export default async function SpeakingPage() {
+  const upcomingRows = visibleUpcomingTalkRows(upcomingTalks);
+  const notistPast = pastTalks
+    ? await fetchNotistPastTalks(pastTalks.feedUrl, pastTalks.limit)
+    : [];
 
   return (
     <BPaper>
@@ -29,12 +39,15 @@ export default function SpeakingPage() {
             <Tape rotation={-3} color="highlight">
               on stage
             </Tape>
-            <h1 className="mt-4 mb-3 font-display text-5xl leading-[0.95] tracking-tight md:text-6xl lg:text-[5.25rem]">
+            <h1 className="mt-4 mb-3 font-display text-5xl leading-[1.08] tracking-tight md:text-6xl md:leading-[1.06] lg:text-[5.25rem] lg:leading-[1.05]">
               i give the kind of talks that have{" "}
-              <span className="bg-highlight px-1.5">actual jokes</span>.
+              <span className="box-decoration-clone rounded-sm bg-highlight px-1 py-px">
+                actual jokes
+              </span>
+              .
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
-              keynotes, conference talks, panels, podcasts. mostly devrel, devex, and community.
+              keynotes, conference talks, panels, podcasts. mostly emerging technologies, devops, ai, devrel, devex, and community.
               occasionally squirrels.
             </p>
           </div>
@@ -61,21 +74,43 @@ export default function SpeakingPage() {
 
       <Container className="pt-2 pb-6">
         <div className="mb-4 flex items-baseline gap-4">
-          <h2 className="font-display text-2xl md:text-3xl">upcoming &amp; recent.</h2>
-          {talks.length > 0 ? (
-            <span className="font-hand text-lg text-muted">{talks.length} in the catalog</span>
+          <h2 className="font-display text-2xl md:text-3xl">upcoming events.</h2>
+          {upcomingRows.length > 0 ? (
+            <span className="font-hand text-lg text-muted">
+              {upcomingRows.length} on the calendar
+            </span>
           ) : null}
         </div>
-        {talks.length === 0 ? (
+        {upcomingRows.length === 0 ? (
           <EmptyTalksState />
         ) : (
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-            {[...upcoming, ...past].map((t) => (
-              <TalkRow key={`${t.date}-${t.title}`} talk={t} />
+            {upcomingRows.map((t) => (
+              <TalkRow key={`upcoming-${t.date}-${t.title}`} talk={t} />
             ))}
           </div>
         )}
       </Container>
+
+      {talks.length > 0 ? (
+        <Container className="pb-6">
+          <div className="mb-4 flex items-baseline gap-4">
+            <h2 className="font-display text-2xl md:text-3xl">more dates.</h2>
+            <span className="font-hand text-lg text-muted">{talks.length} in the catalog</span>
+          </div>
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+            {talks.map((t) => (
+              <TalkRow key={`${t.date}-${t.title}`} talk={t} />
+            ))}
+          </div>
+        </Container>
+      ) : null}
+
+      {pastTalks ? (
+        <Container className="pb-6">
+          <PastTalksBlock talks={notistPast} portfolioUrl={pastTalks.portfolioUrl} />
+        </Container>
+      ) : null}
 
       <Container className="pt-6 pb-12">
         <h2 className="mb-4 font-display text-2xl md:text-3xl">topics i&apos;ll happily talk about.</h2>
