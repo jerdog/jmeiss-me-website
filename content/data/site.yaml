@@ -19,7 +19,7 @@ person:
   location: "Kansas City, MO"
   tagline: "DevRel & DevEx leader. Coffee evangelist. ADHD-fueled technologist."
   blurb: >-
-    Over 30 years of passion for technology, coffee, and building developer communities.
+    Over 3 decades of passion for technology, coffee, and building developer communities.
   longBio: >-
     I am a Technical Architect, DevEx / DevRel Leader, and International Speaker with
     over three decades of versatile experience in the tech industry. I am a committed
@@ -75,7 +75,7 @@ affiliations:
 
 sideProjects:
   - name: DevOpsDays KC
-    href: "https://devopsdays.org/kansascity"
+    href: "https://devopsdayskc.org"
   - name: CommunityDays KC
     href: "https://communitydays.info"
   - name: DevOpsPartyGames

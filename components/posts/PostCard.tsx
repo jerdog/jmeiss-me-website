@@ -31,9 +31,9 @@ export function PostCard({ post, index = 0, dark }: PostCardProps) {
           <span>· essay {String(post.essayNumber).padStart(3, "0")} ·</span>
           <span>{post.readMinutes} min</span>
         </div>
-        <h3 className="font-display text-2xl leading-tight tracking-tight">
+        <h2 className="font-display text-2xl leading-tight tracking-tight">
           {post.title}
-        </h3>
+        </h2>
         <p className={`text-sm leading-relaxed ${subtle}`}>{post.excerpt}</p>
         <div
           className={`mt-auto flex items-baseline justify-between border-t border-dashed ${ruleClass} pt-3`}

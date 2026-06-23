@@ -15,8 +15,10 @@ const variantClass: Record<NonNullable<CalloutProps["variant"]>, { box: string; 
 
 export function Callout({ children, variant = "note", title, className }: CalloutProps) {
   const cls = variantClass[variant];
+  const label = title ?? variant;
   return (
     <aside
+      aria-label={label}
       className={cn(
         "my-6 border-l-4 px-5 py-4 font-body text-base leading-relaxed text-ink-soft",
         cls.box,

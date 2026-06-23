@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# Skip the crawl when staged changes cannot affect site links.
+if ! git diff --cached --name-only | grep -qE '^(content/|app/|components/|public/|lib/|scripts/check-links|package\.json|package-lock\.json|next\.config)'; then
+  exit 0
+fi
+
+npm run check-links

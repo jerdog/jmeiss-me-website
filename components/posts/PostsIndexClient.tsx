@@ -53,7 +53,7 @@ export function PostsIndexClient({ posts, tags }: PostsIndexClientProps) {
           leadership nobody wants to write about.
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-1.5">
+        <div className="mt-6 flex flex-wrap gap-1.5" role="group" aria-label="Filter essays by tag">
           {allTags.map((tag) => {
             const isActive = active === tag;
             return (
@@ -62,6 +62,7 @@ export function PostsIndexClient({ posts, tags }: PostsIndexClientProps) {
                 type="button"
                 onClick={() => setActive(tag)}
                 aria-pressed={isActive}
+                aria-label={tag === "all" ? "Show all essays" : `Filter by ${tag}`}
                 className={cn(
                   "rounded-full border border-ink px-3.5 py-1 font-body text-xs transition-colors",
                   isActive ? "bg-accent text-paper" : "bg-card text-ink hover:bg-highlight",

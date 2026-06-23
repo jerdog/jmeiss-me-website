@@ -410,7 +410,7 @@ function BAbout({ data }) {
         </div>
         <div>
           <BTape rotation={-3}>about</BTape>
-          <h1 style={{ fontFamily: B_FONTS.display, fontSize: 64, lineHeight: 0.98, letterSpacing: "-0.02em", margin: "16px 0 16px", fontWeight: 400 }}>almost 30 years in tech. still genuinely <span style={{ color: B_COLORS.warm, fontStyle: "italic" }}>likes</span> it.</h1>
+          <h1 style={{ fontFamily: B_FONTS.display, fontSize: 64, lineHeight: 0.98, letterSpacing: "-0.02em", margin: "16px 0 16px", fontWeight: 400 }}>over 3 decades in tech. still genuinely <span style={{ color: B_COLORS.warm, fontStyle: "italic" }}>likes</span> it.</h1>
           <p style={{ fontFamily: B_FONTS.body, fontSize: 16, lineHeight: 1.6, color: B_COLORS.inkSoft, margin: 0 }}>{person.longBio}</p>
           <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 8 }}>
             {["Director of DevRel @ OneStream", "ex CircleCI", "ex Solace", "ex Auth0", "ex XDA", "DevOpsDays KC organizer", "DevOpsPartyGames co-creator"].map((t, i) => (
@@ -425,7 +425,7 @@ function BAbout({ data }) {
         <div style={{ background: B_COLORS.ink, color: B_COLORS.paper, padding: "28px 32px" }}>
           <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 12 }}>
             <div style={{ fontFamily: B_FONTS.display, fontSize: 38, color: B_COLORS.highlight }}>/now <span style={{ fontFamily: B_FONTS.hand, fontSize: 22, color: B_COLORS.accentSoft, marginLeft: 8 }}>— what i'm actually doing</span></div>
-            <div style={{ fontFamily: B_FONTS.mono, fontSize: 11, letterSpacing: "0.14em", color: B_COLORS.accentSoft }}>{data.now.updated.toUpperCase()}</div>
+            <div style={{ fontFamily: B_FONTS.mono, fontSize: 11, letterSpacing: "0.14em", color: B_COLORS.accentSoft }}>Updated: {data.now.updated.toUpperCase()}</div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16 }}>
             {data.now.items.map((it, i) => (

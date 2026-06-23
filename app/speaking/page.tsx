@@ -40,14 +40,14 @@ export default async function SpeakingPage() {
               on stage
             </Tape>
             <h1 className="mt-4 mb-3 font-display text-5xl leading-[1.08] tracking-tight md:text-6xl md:leading-[1.06] lg:text-[5.25rem] lg:leading-[1.05]">
-              i give the kind of talks that have{" "}
+              i give talks on tech and culture. sometimes with{" "}
               <span className="box-decoration-clone rounded-sm bg-highlight px-1 py-px">
-                actual jokes
+                jokes
               </span>
               .
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
-              keynotes, conference talks, panels, podcasts. mostly emerging technologies, devops, ai, devrel, devex, and community.
+              keynotes, conference talks, panels, podcasts. mostly emerging technologies, culture, devops, ai, devrel, devex, and community.
               occasionally squirrels.
             </p>
           </div>
@@ -56,10 +56,10 @@ export default async function SpeakingPage() {
               className="reduced-motion-flat border border-ink bg-ink px-6 py-5 text-paper"
               style={{ transform: "rotate(1deg)" }}
             >
-              <p className="font-hand text-2xl text-highlight">want me at your event?</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-paper/85">
-                i&apos;ll travel. send me a note about format, audience, and what you want them
-                to walk away believing.
+              <p className="font-hand text-4xl text-highlight">want me at your event?</p>
+              <p className="mt-1.5 text-base leading-relaxed text-paper/85">
+                i'll travel. send me a note about format, audience, and what you want them
+                to walk away having learned.
               </p>
               <a
                 href={`mailto:${siteConfig.person.email}?subject=Speaking%20request`}

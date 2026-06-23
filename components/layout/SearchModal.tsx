@@ -66,6 +66,15 @@ interface SearchModalProps {
   onClose: () => void;
 }
 
+const FOCUSABLE =
+  'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function getFocusableElements(container: HTMLElement): HTMLElement[] {
+  return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
+    (el) => !el.hasAttribute("disabled") && el.getAttribute("aria-hidden") !== "true",
+  );
+}
+
 /**
  * The search modal body — Pagefind loader, debounced search, results list.
  * Loaded lazily via `next/dynamic` from `SearchDialog` so this code only
@@ -76,8 +85,9 @@ export default function SearchModal({ onClose }: SearchModalProps) {
   const [results, setResults] = useState<ResultRow[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  const dialogRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -88,13 +98,46 @@ export default function SearchModal({ onClose }: SearchModalProps) {
     };
   }, []);
 
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+      if (e.key !== "Tab") return;
+
+      const focusable = getFocusableElements(panel);
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [onClose]);
+
   const runSearch = useCallback(async (q: string) => {
     setError(null);
     if (!q.trim()) {
       setResults([]);
+      setStatusMessage("");
       return;
     }
     setLoading(true);
+    setStatusMessage("Searching…");
     try {
       const api = await loadPagefind();
       const { results: hits } = await api.search(q);
@@ -109,9 +152,15 @@ export default function SearchModal({ onClose }: SearchModalProps) {
         }),
       );
       setResults(rows);
+      setStatusMessage(
+        rows.length === 0
+          ? `No matches for ${q}.`
+          : `${rows.length} result${rows.length === 1 ? "" : "s"} for ${q}.`,
+      );
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
       setResults([]);
+      setStatusMessage("Search is not available right now.");
     } finally {
       setLoading(false);
     }
@@ -129,13 +178,19 @@ export default function SearchModal({ onClose }: SearchModalProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Search posts"
-      className="fixed inset-0 z-50 flex items-start justify-center bg-ink/60 p-4 sm:pt-20"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-      ref={dialogRef}
+      className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:pt-20"
     >
-      <div className="w-full max-w-2xl border border-ink bg-paper hard-shadow-ink">
+      <button
+        type="button"
+        tabIndex={-1}
+        aria-hidden="true"
+        className="absolute inset-0 cursor-default bg-ink/60"
+        onClick={onClose}
+      />
+      <div
+        ref={panelRef}
+        className="relative z-10 w-full max-w-2xl border border-ink bg-paper hard-shadow-ink"
+      >
         <div className="flex items-center gap-3 border-b border-ink px-4 py-3">
           <span aria-hidden className="font-mono text-sm text-muted">
             ⌕
@@ -147,28 +202,38 @@ export default function SearchModal({ onClose }: SearchModalProps) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search posts…"
             aria-label="Search posts"
+            aria-controls="search-results"
             autoComplete="off"
             spellCheck={false}
-            className="w-full bg-transparent font-body text-base text-ink outline-none placeholder:text-muted"
+            className="w-full bg-transparent font-body text-base text-ink placeholder:text-muted"
           />
           <button
             type="button"
             onClick={onClose}
+            aria-label="Close search"
             className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted hover:text-ink"
           >
-            Esc
+            <span aria-hidden>Esc</span>
           </button>
         </div>
 
-        <div className="max-h-[60vh] overflow-y-auto">
+        <div
+          id="search-results"
+          className="max-h-[60vh] overflow-y-auto"
+          aria-live="polite"
+          aria-busy={loading}
+        >
+          <p className="sr-only">{statusMessage}</p>
           {error ? (
             <p className="px-4 py-6 text-sm text-warm">
               Search isn&apos;t available right now. (Pagefind index may be missing.)
             </p>
           ) : loading ? (
-            <p className="px-4 py-6 text-sm text-muted">Searching…</p>
+            <p className="px-4 py-6 text-sm text-muted" aria-hidden>
+              Searching…
+            </p>
           ) : results.length === 0 && query ? (
-            <p className="px-4 py-6 text-sm text-muted">
+            <p className="px-4 py-6 text-sm text-muted" aria-hidden>
               No matches for <strong>{query}</strong>.
             </p>
           ) : results.length === 0 ? (

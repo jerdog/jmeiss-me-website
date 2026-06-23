@@ -4,6 +4,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
 import type { Pluggable } from "unified";
 import type { TocEntry } from "@/components/post/ContentsRail";
+import { rehypeUnwrapMedia } from "@/lib/rehype-unwrap-media";
 
 /**
  * Shared remark/rehype plugin chain for MDX rendering on post pages.
@@ -23,6 +24,7 @@ export const mdxOptions = {
   development: process.env.NODE_ENV !== "production",
   remarkPlugins: [remarkGfm] as Pluggable[],
   rehypePlugins: [
+    rehypeUnwrapMedia,
     rehypeSlug,
     [
       rehypeAutolinkHeadings,

@@ -32,7 +32,7 @@ export default function NowPage() {
             /now
           </a>{" "}
           page in the spirit of Derek Sivers — what I&apos;m focusing on at this point in life.
-          Updated whenever it shifts.
+          Updated whenever it shifts. Or when the pack of rabid 🐿️ goes into hibernation.
         </p>
       </Container>
 

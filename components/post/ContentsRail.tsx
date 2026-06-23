@@ -89,11 +89,17 @@ export function ContentsRail({ entries }: ContentsRailProps) {
           <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
             reading progress
           </p>
-          <div className="h-1.5 bg-paper-deep">
+          <div
+            className="h-1.5 bg-paper-deep"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(progress * 100)}
+            aria-label="Reading progress"
+          >
             <div
               className="h-full bg-warm transition-[width]"
               style={{ width: `${Math.round(progress * 100)}%` }}
-              aria-hidden
             />
           </div>
         </div>

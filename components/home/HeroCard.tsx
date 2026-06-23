@@ -58,12 +58,12 @@ export function HeroCard() {
         </Link>
         <Link
           href="/posts"
-          className="rounded-full bg-ink px-5 py-2.5 font-body text-sm font-medium opacity-75 text-paper transition-colors hover:bg-accent-deep"
+          className="rounded-full bg-ink px-5 py-2.5 font-body text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
         >
           read my writing
         </Link>
         <Link
-          href="/posts"
+          href="/about"
           className="rounded-full bg-ink px-5 py-2.5 font-body text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
         >
           about me

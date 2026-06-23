@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 import { SearchDialog } from "@/components/layout/SearchDialog";
 
@@ -13,6 +13,9 @@ const items = [
   { href: "/about", label: "about + now" },
 ];
 
+const FOCUSABLE =
+  'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -21,6 +24,13 @@ function isActive(pathname: string, href: string) {
 export function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  const closeMenu = useCallback(() => {
+    setOpen(false);
+    menuButtonRef.current?.focus();
+  }, []);
 
   // Close the panel whenever the route changes. We diff against the previous
   // pathname so biome's exhaustive-deps check sees pathname being read.
@@ -32,12 +42,42 @@ export function Nav() {
     }
   }, [pathname, lastPath]);
 
-  // Close on Escape and lock scroll while open.
+  // Focus the first link when the panel opens; trap focus while open.
   useEffect(() => {
     if (!open) return;
+
+    const panel = panelRef.current;
+    const focusable = panel
+      ? Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
+          (el) => el.getAttribute("aria-hidden") !== "true",
+        )
+      : [];
+    focusable[0]?.focus();
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        closeMenu();
+        return;
+      }
+      if (e.key !== "Tab" || !panel) return;
+
+      const nodes = Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
+        (el) => el.getAttribute("aria-hidden") !== "true",
+      );
+      if (nodes.length === 0) return;
+
+      const first = nodes[0];
+      const last = nodes[nodes.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
+
     document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -45,21 +85,21 @@ export function Nav() {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
     };
-  }, [open]);
+  }, [open, closeMenu]);
 
   return (
     <header className="sticky top-0 z-40 bg-ink text-paper">
       <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-4 px-5 py-4 sm:px-8 md:px-10">
-        <Link
-          href="/"
-          aria-label="Jeremy Meiss — home"
-          className="flex items-center gap-3 rounded-full"
-        >
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent-soft font-display text-base font-bold text-ink">
+        <Link href="/" className="flex items-center gap-3 rounded-full">
+          <span
+            aria-hidden
+            className="flex h-7 w-7 items-center justify-center rounded-full bg-accent-soft font-display text-base font-bold text-ink"
+          >
             jm
           </span>
           <span className="font-display text-xl tracking-tight">jeremy meiss</span>
           <span
+            aria-hidden
             className="reduced-motion-flat hidden font-hand text-lg text-highlight sm:inline-block"
             style={{ transform: "rotate(-3deg)" }}
           >
@@ -94,6 +134,7 @@ export function Nav() {
 
         {/* Mobile: hamburger toggle, hidden from sm up. */}
         <button
+          ref={menuButtonRef}
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -101,7 +142,6 @@ export function Nav() {
           onClick={() => setOpen((v) => !v)}
           className="flex h-10 w-10 items-center justify-center rounded-full text-paper transition-colors hover:bg-paper/10 sm:hidden"
         >
-          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
           <svg
             aria-hidden
             role="presentation"
@@ -134,14 +174,14 @@ export function Nav() {
           dim covers the rest of the page so taps outside close it. */}
       {open ? (
         <div className="sm:hidden">
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
+          <div
+            aria-hidden
+            onClick={closeMenu}
             className="fixed inset-0 top-[64px] z-30 cursor-default bg-ink/60 backdrop-blur-[2px]"
           />
           <div
             id="mobile-nav-panel"
+            ref={panelRef}
             className="absolute inset-x-0 z-40 border-t border-paper/15 bg-ink shadow-lg"
           >
             <nav aria-label="Primary" className="flex flex-col gap-1 px-5 py-4">

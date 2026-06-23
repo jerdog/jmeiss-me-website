@@ -4,8 +4,11 @@
  * Edit `content/data/now.yaml`, not this file. Build-time Zod validation
  * catches schema drift; the /now item ordering in YAML is preserved in
  * the rendered output. An empty `items` list renders an empty-state UI.
+ * An empty `updated` string falls back to this file's last-modified month/year.
  */
 
+import { statSync } from "node:fs";
+import path from "node:path";
 import { z } from "zod";
 import { loadYaml } from "@/lib/content";
 
@@ -15,12 +18,25 @@ const NowItemSchema = z.object({
 });
 
 const NowPageSchema = z.object({
-  updated: z.string().min(1),
+  updated: z.string(),
   location: z.string().min(1),
   items: z.array(NowItemSchema),
 });
 
+const NOW_YAML = "now.yaml";
+
+function updatedFromFileMtime(filename: string): string {
+  const filePath = path.join(process.cwd(), "content", "data", filename);
+  const { mtime } = statSync(filePath);
+  return mtime.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+}
+
 export type NowItem = z.infer<typeof NowItemSchema>;
 export type NowPage = z.infer<typeof NowPageSchema>;
 
-export const now: NowPage = loadYaml("now.yaml", NowPageSchema);
+const rawNow = loadYaml(NOW_YAML, NowPageSchema);
+
+export const now: NowPage = {
+  ...rawNow,
+  updated: rawNow.updated.trim() || updatedFromFileMtime(NOW_YAML),
+};

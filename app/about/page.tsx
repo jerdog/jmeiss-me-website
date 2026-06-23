@@ -73,7 +73,7 @@ export default function AboutPage() {
           <div className="md:col-span-7">
             <Tape rotation={-3}>about</Tape>
             <h1 className="mt-4 mb-4 font-display text-4xl leading-[0.98] tracking-tight md:text-5xl lg:text-6xl">
-              almost 30 years in tech. still genuinely{" "}
+              over three decades in tech. still genuinely{" "}
               <span className="italic text-warm">likes</span> it.
             </h1>
             <p className="text-base leading-relaxed text-ink-soft md:text-lg">{person.longBio}</p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
 /**
@@ -13,6 +13,12 @@ const SearchModal = dynamic(() => import("./SearchModal"), { ssr: false });
 
 export function SearchDialog() {
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  const close = useCallback(() => {
+    setOpen(false);
+    triggerRef.current?.focus();
+  }, []);
 
   // Open with `/` or Cmd/Ctrl+K. Close with Escape. The modal also handles
   // its own Esc internally once mounted, but we keep this here so the
@@ -26,15 +32,16 @@ export function SearchDialog() {
         e.preventDefault();
         setOpen(true);
       }
-      if (e.key === "Escape" && open) setOpen(false);
+      if (e.key === "Escape" && open) close();
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+  }, [open, close]);
 
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Open search"
@@ -47,7 +54,7 @@ export function SearchDialog() {
         </span>
       </button>
 
-      {open ? <SearchModal onClose={() => setOpen(false)} /> : null}
+      {open ? <SearchModal onClose={close} /> : null}
     </>
   );
 }

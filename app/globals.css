@@ -70,6 +70,14 @@
     border-radius: 2px;
   }
 
+  /* Keep focused headings and skip targets clear of the sticky nav */
+  #main,
+  :target,
+  .prose-mdx h2,
+  .prose-mdx h3 {
+    scroll-margin-top: 5rem;
+  }
+
   /* Honor reduced-motion preferences */
   @media (prefers-reduced-motion: reduce) {
     *,

@@ -23,7 +23,7 @@ export function NowPanel({ now, variant = "panel" }: NowPanelProps) {
             </span>
           </p>
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-accent-soft">
-            {now.updated}
+            Updated: {now.updated}
           </p>
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-5">
