@@ -57,7 +57,7 @@
   }
 
   .page-grid-post {
-    @apply grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,1fr)_280px];
+    @apply grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_320px] md:gap-10 md:items-start;
   }
 
   .page-col-7 {
@@ -145,7 +145,7 @@
   }
 
   .post-signoff {
-    @apply mt-8 border-y-2 border-ink py-5 font-hand text-2xl text-warm;
+    @apply mt-8 border-y-2 border-ink py-6 font-body text-xl text-ink-soft italic;
   }
 
   /* Tag archive */

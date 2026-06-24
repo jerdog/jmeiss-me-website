@@ -39,8 +39,8 @@ export function PostHeader({ post, number }: PostHeaderProps) {
           <Image
             src={person.avatar}
             alt=""
-            width={44}
-            height={44}
+            width={48}
+            height={48}
             className="post-header__avatar"
           />
         </div>

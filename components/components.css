@@ -77,7 +77,7 @@
   }
 
   .tape--text-paper {
-    @apply text-paper;
+    @apply font-bold text-paper;
   }
 
   .tag-chip {
@@ -619,11 +619,11 @@
   }
 
   .post-header__meta {
-    @apply mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-accent;
+    @apply mb-3 font-mono text-sm uppercase tracking-[0.08em] text-accent-deep;
   }
 
   .post-header__title {
-    @apply mb-5 font-display text-4xl leading-[0.95] tracking-tight md:text-5xl lg:text-6xl xl:text-7xl;
+    @apply mb-5 font-display text-4xl leading-[0.95] tracking-[-0.01em] md:text-5xl lg:text-6xl xl:text-7xl;
   }
 
   .post-header__excerpt {
@@ -635,7 +635,7 @@
   }
 
   .post-header__avatar-wrap {
-    @apply flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-accent-soft text-ink;
+    @apply flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-accent-soft text-ink;
   }
 
   .post-header__avatar {
@@ -647,15 +647,15 @@
   }
 
   .post-header__name {
-    @apply text-sm font-semibold;
+    @apply text-lg font-semibold;
   }
 
   .post-header__role {
-    @apply text-xs text-muted;
+    @apply text-base text-ink-soft;
   }
 
   .post-header__hint {
-    @apply ml-auto hidden font-hand text-xl text-warm sm:inline-block;
+    @apply ml-auto hidden font-body text-base font-medium text-warm sm:inline-block;
   }
 
   .contents-rail {
@@ -663,15 +663,15 @@
   }
 
   .contents-rail__label {
-    @apply mb-2 font-mono text-xs uppercase tracking-[0.12em] text-accent;
+    @apply mb-2.5 font-mono text-sm uppercase tracking-[0.08em] text-accent-deep;
   }
 
   .contents-rail__panel {
-    @apply sticky top-24 border border-ink bg-card px-5 py-4;
+    @apply sticky top-24 border border-ink bg-card px-6 py-5;
   }
 
   .contents-rail__list {
-    @apply space-y-1.5 text-sm leading-loose;
+    @apply space-y-2 text-lg leading-relaxed;
   }
 
   .contents-rail__item {
@@ -699,7 +699,7 @@
   }
 
   .contents-rail__progress-label {
-    @apply mb-1.5 font-mono text-xs uppercase tracking-[0.12em] text-muted;
+    @apply mb-2 font-mono text-sm uppercase tracking-[0.08em] text-ink-soft;
   }
 
   .contents-rail__progress-track {
