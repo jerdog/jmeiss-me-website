@@ -15,27 +15,27 @@
   /* ── Typography ────────────────────────────────────────────────────── */
 
   .eyebrow {
-    @apply font-mono text-[10px] uppercase tracking-[0.14em] text-accent;
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-accent;
   }
 
   .eyebrow-sm {
-    @apply font-mono text-[11px] uppercase tracking-[0.12em] text-accent;
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-accent;
   }
 
   .eyebrow-xs {
-    @apply font-mono text-[9px] font-bold uppercase tracking-[0.18em];
+    @apply font-mono text-[11px] font-bold uppercase tracking-[0.12em];
   }
 
   .hand-note {
-    @apply font-hand text-lg text-muted;
+    @apply font-body text-base text-ink-soft italic;
   }
 
   .hand-note-xl {
-    @apply font-hand text-xl text-muted;
+    @apply font-body text-lg text-ink-soft italic;
   }
 
   .hand-accent {
-    @apply font-hand text-xl text-warm;
+    @apply font-body text-sm font-medium text-accent-deep;
   }
 
   /* ── Section headings (pages + components) ─────────────────────────── */
@@ -53,7 +53,7 @@
   }
 
   .section-note {
-    @apply font-hand text-lg text-muted;
+    @apply font-body text-sm text-ink-soft;
   }
 
   .section-heading {
@@ -75,7 +75,7 @@
   /* ── Links ─────────────────────────────────────────────────────────── */
 
   .back-link {
-    @apply font-hand text-xl text-accent transition-colors hover:text-accent-deep;
+    @apply font-body text-base font-medium text-accent transition-colors hover:text-accent-deep;
   }
 
   .text-link {

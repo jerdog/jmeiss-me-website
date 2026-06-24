@@ -70,19 +70,19 @@
 
   /* Page typography */
   .page-title {
-    @apply mt-4 mb-3 font-display text-4xl leading-[0.95] tracking-tight md:text-5xl lg:text-6xl;
+    @apply mt-4 mb-3 font-display text-4xl leading-[0.95] tracking-[-0.01em] md:text-5xl lg:text-6xl;
   }
 
   .page-title-tight {
-    @apply mt-4 mb-4 font-display text-4xl leading-[0.98] tracking-tight md:text-5xl lg:text-6xl;
+    @apply mt-4 mb-4 font-display text-4xl leading-[0.98] tracking-[-0.01em] md:text-5xl lg:text-6xl;
   }
 
   .page-title-speaking {
-    @apply mt-4 mb-3 font-display text-5xl leading-[1.08] tracking-tight md:text-6xl md:leading-[1.06] lg:text-[5.25rem] lg:leading-[1.05];
+    @apply mt-4 mb-3 font-display text-5xl leading-[1.08] tracking-[-0.01em] md:text-6xl md:leading-[1.06] lg:text-[5.25rem] lg:leading-[1.05];
   }
 
   .page-title-not-found {
-    @apply mt-4 mb-4 font-display text-5xl leading-[0.95] tracking-tight md:text-6xl;
+    @apply mt-4 mb-4 font-display text-5xl leading-[0.95] tracking-[-0.01em] md:text-6xl;
   }
 
   .page-lede {
@@ -128,7 +128,7 @@
   }
 
   .speaking-cta-body {
-    @apply mt-1.5 text-base leading-relaxed text-paper/85;
+    @apply mt-1.5 text-base leading-relaxed text-paper/90;
   }
 
   .speaking-grid {

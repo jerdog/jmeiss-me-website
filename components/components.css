@@ -57,7 +57,7 @@
   }
 
   .tape {
-    @apply tape-shadow inline-block px-3.5 py-[3px] font-hand text-lg leading-tight;
+    @apply tape-shadow inline-block px-4 py-1 font-hand text-xl font-semibold leading-snug;
   }
 
   .tape--highlight {
@@ -127,15 +127,15 @@
   }
 
   .nav__monogram {
-    @apply flex h-7 w-7 items-center justify-center rounded-full bg-accent-soft font-display text-base font-bold text-ink;
+    @apply flex h-8 w-8 items-center justify-center rounded-full bg-accent-soft font-display text-lg font-bold text-ink;
   }
 
   .nav__name {
-    @apply font-display text-xl tracking-tight;
+    @apply font-display text-2xl tracking-tight;
   }
 
   .nav__alias {
-    @apply hidden font-hand text-lg text-highlight sm:inline-block;
+    @apply hidden font-hand text-xl font-semibold text-highlight sm:inline-block;
   }
 
   .nav__desktop {
@@ -147,7 +147,7 @@
   }
 
   .nav-link {
-    @apply rounded-full px-3 py-2 text-sm transition-colors sm:px-4;
+    @apply rounded-full px-3.5 py-2 text-base transition-colors sm:px-4;
   }
 
   .nav-link--active {
@@ -171,7 +171,7 @@
   }
 
   .nav__overlay {
-    @apply fixed inset-0 top-[64px] z-30 cursor-default bg-ink/60 backdrop-blur-[2px];
+    @apply fixed inset-0 top-[72px] z-30 cursor-default bg-ink/60 backdrop-blur-[2px];
   }
 
   .nav__panel {
@@ -187,11 +187,11 @@
   }
 
   .search-trigger {
-    @apply inline-flex w-full items-center gap-2 rounded-full border border-paper/30 bg-paper/5 px-3 py-1.5 text-xs text-paper/80 transition-colors hover:bg-paper/10 sm:w-auto;
+    @apply inline-flex w-full items-center gap-2 rounded-full border border-paper/30 bg-paper/5 px-3.5 py-2 text-sm text-paper/80 transition-colors hover:bg-paper/10 sm:w-auto;
   }
 
   .search-trigger__kbd {
-    @apply ml-2 rounded border border-paper/20 bg-paper/10 px-1 font-mono text-[10px];
+    @apply ml-2 rounded border border-paper/20 bg-paper/10 px-1 font-mono text-xs;
   }
 
   /* ── Search modal ────────────────────────────────────────────────── */
@@ -221,7 +221,7 @@
   }
 
   .search-modal__close {
-    @apply font-mono text-[10px] uppercase tracking-[0.14em] text-muted hover:text-ink;
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-muted hover:text-ink;
   }
 
   .search-modal__results {
@@ -267,15 +267,15 @@
   }
 
   .footer__copyright {
-    @apply mt-4 text-[10px] uppercase tracking-[0.14em] text-accent-soft;
+    @apply mt-4 text-xs uppercase tracking-[0.12em] text-highlight;
   }
 
   .footer__column {
-    @apply text-xs leading-relaxed text-paper/85;
+    @apply text-sm leading-relaxed text-paper/90;
   }
 
   .footer__heading {
-    @apply mb-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-soft;
+    @apply mb-2 font-mono text-xs uppercase tracking-[0.12em] text-highlight;
   }
 
   .footer__list {
@@ -291,7 +291,7 @@
   }
 
   .footer__icon {
-    @apply shrink-0 text-accent-soft;
+    @apply shrink-0 text-highlight;
   }
 
   .footer__label {
@@ -299,7 +299,7 @@
   }
 
   .footer__handle {
-    @apply text-paper/65;
+    @apply text-paper/80;
   }
 
   /* ── Home ──────────────────────────────────────────────────────────── */
@@ -317,11 +317,11 @@
   }
 
   .hero-card__byline {
-    @apply mt-2 font-mono text-[11px] uppercase tracking-[0.12em] text-accent;
+    @apply mt-2 font-mono text-xs uppercase tracking-[0.1em] text-accent-deep;
   }
 
   .hero-card__title {
-    @apply mt-3 mb-4 font-display text-5xl leading-[0.95] tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-[5.5rem];
+    @apply mt-3 mb-4 font-display text-5xl leading-[0.95] tracking-[-0.01em] text-ink sm:text-6xl md:text-7xl lg:text-[5.5rem];
   }
 
   .hero-card__underline-wrap {
@@ -353,11 +353,11 @@
   }
 
   .now-panel__subtitle-wide {
-    @apply ml-2 font-hand text-xl text-accent-soft;
+    @apply ml-2 font-display text-lg text-highlight;
   }
 
   .now-panel__meta-wide {
-    @apply font-mono text-[10px] uppercase tracking-[0.14em] text-accent-soft;
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-highlight;
   }
 
   .now-panel__grid {
@@ -365,15 +365,15 @@
   }
 
   .now-panel__item-wide {
-    @apply border-t border-dashed border-muted pt-3;
+    @apply border-t border-dashed border-rule-on-ink pt-3;
   }
 
   .now-panel__label-wide {
-    @apply mb-1.5 font-mono text-[9px] uppercase tracking-[0.16em] text-accent-soft;
+    @apply mb-1.5 font-mono text-xs uppercase tracking-[0.12em] text-highlight;
   }
 
   .now-panel__text-wide {
-    @apply text-sm leading-relaxed text-paper/90;
+    @apply text-base leading-relaxed text-paper;
   }
 
   .now-panel--card {
@@ -381,7 +381,7 @@
   }
 
   .now-panel__header-card {
-    @apply mb-4 flex items-start justify-between gap-3 border-b border-dashed border-muted pb-3;
+    @apply mb-4 flex items-start justify-between gap-3 border-b border-dashed border-rule-on-ink pb-3;
   }
 
   .now-panel__title-card {
@@ -389,11 +389,11 @@
   }
 
   .now-panel__subtitle-card {
-    @apply mt-0.5 font-hand text-lg text-accent-soft;
+    @apply mt-0.5 font-display text-base text-highlight;
   }
 
   .now-panel__meta-card {
-    @apply text-right font-mono text-[10px] uppercase leading-relaxed tracking-[0.12em] text-accent-soft;
+    @apply text-right font-mono text-xs uppercase leading-relaxed tracking-[0.12em] text-highlight;
   }
 
   .now-panel__item-card {
@@ -401,15 +401,15 @@
   }
 
   .now-panel__item-card--bordered {
-    @apply border-b border-dashed border-ink-soft;
+    @apply border-b border-dashed border-rule-on-ink;
   }
 
   .now-panel__label-card {
-    @apply mb-0.5 font-mono text-[10px] uppercase tracking-[0.16em] text-accent-soft;
+    @apply mb-0.5 font-mono text-xs uppercase tracking-[0.12em] text-highlight;
   }
 
   .now-panel__text-card {
-    @apply text-sm leading-snug text-paper/90;
+    @apply text-base leading-snug text-paper;
   }
 
   .feed-strip {
@@ -417,7 +417,7 @@
   }
 
   .feed-strip__note {
-    @apply hidden font-hand text-xl text-muted sm:block;
+    @apply hidden font-body text-sm text-ink-soft sm:block;
   }
 
   .feed-strip__grid {
@@ -485,7 +485,7 @@
   }
 
   .recent-essays__date {
-    @apply hidden text-right font-mono text-[10px] uppercase tracking-[0.12em] text-muted sm:block;
+    @apply hidden text-right font-mono text-xs uppercase tracking-[0.12em] text-muted sm:block;
   }
 
   .services-strip {
@@ -501,11 +501,11 @@
   }
 
   .service-card__number--light {
-    @apply font-mono text-[10px] uppercase tracking-[0.16em] text-accent;
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-accent;
   }
 
   .service-card__number--dark {
-    @apply font-mono text-[10px] uppercase tracking-[0.16em] text-highlight;
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-highlight;
   }
 
   .service-card__title--light {
@@ -521,7 +521,7 @@
   }
 
   .service-card__body--dark {
-    @apply text-sm leading-relaxed text-paper/85;
+    @apply text-base leading-relaxed text-paper/90;
   }
 
   /* ── Posts ─────────────────────────────────────────────────────────── */
@@ -535,7 +535,7 @@
   }
 
   .posts-index__title {
-    @apply my-3 font-display text-5xl leading-[0.95] tracking-tight md:text-6xl lg:text-[5.25rem];
+    @apply my-3 font-display text-5xl leading-[0.95] tracking-[-0.01em] md:text-6xl lg:text-[5.25rem];
   }
 
   .posts-index__highlight {
@@ -567,11 +567,11 @@
   }
 
   .post-card__meta--light {
-    @apply flex justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-accent;
+    @apply flex justify-between font-mono text-xs uppercase tracking-[0.12em] text-accent;
   }
 
   .post-card__meta--dark {
-    @apply flex justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-highlight;
+    @apply flex justify-between font-mono text-xs uppercase tracking-[0.12em] text-highlight;
   }
 
   .post-card__title {
@@ -583,7 +583,7 @@
   }
 
   .post-card__excerpt--dark {
-    @apply text-sm leading-relaxed text-paper/70;
+    @apply text-base leading-relaxed text-paper/85;
   }
 
   .post-card__footer--light {
@@ -599,7 +599,7 @@
   }
 
   .post-card__tags--dark {
-    @apply text-xs text-paper/70;
+    @apply text-xs text-paper/80;
   }
 
   .post-card__date--light {
@@ -663,7 +663,7 @@
   }
 
   .contents-rail__label {
-    @apply mb-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent;
+    @apply mb-2 font-mono text-xs uppercase tracking-[0.12em] text-accent;
   }
 
   .contents-rail__panel {
@@ -699,7 +699,7 @@
   }
 
   .contents-rail__progress-label {
-    @apply mb-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted;
+    @apply mb-1.5 font-mono text-xs uppercase tracking-[0.12em] text-muted;
   }
 
   .contents-rail__progress-track {
@@ -727,7 +727,7 @@
   }
 
   .related-posts__date {
-    @apply font-mono text-[10px] uppercase tracking-[0.14em] text-accent;
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-accent;
   }
 
   .related-posts__post-title {
@@ -773,15 +773,15 @@
   }
 
   .bookshelf__state--reading {
-    @apply text-right font-mono text-[10px] uppercase tracking-[0.12em] text-warm;
+    @apply text-right font-mono text-xs uppercase tracking-[0.12em] text-warm;
   }
 
   .bookshelf__state--finished {
-    @apply text-right font-mono text-[10px] uppercase tracking-[0.12em] text-accent;
+    @apply text-right font-mono text-xs uppercase tracking-[0.12em] text-accent;
   }
 
   .bookshelf__state--next {
-    @apply text-right font-mono text-[10px] uppercase tracking-[0.12em] text-muted;
+    @apply text-right font-mono text-xs uppercase tracking-[0.12em] text-muted;
   }
 
   .coffee-log__item {
@@ -805,7 +805,7 @@
   }
 
   .coffee-log__method {
-    @apply font-mono text-[10px] uppercase tracking-[0.12em] text-muted;
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-muted;
   }
 
   .coffee-log__note {
@@ -821,7 +821,7 @@
   }
 
   .social-grid__label {
-    @apply flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent;
+    @apply flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-accent;
   }
 
   .social-grid__handle {
@@ -863,11 +863,11 @@
   }
 
   .talk-row__badge--upcoming {
-    @apply text-right font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-warm;
+    @apply text-right font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-warm;
   }
 
   .talk-row__badge--past {
-    @apply text-right font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-accent;
+    @apply text-right font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-accent;
   }
 
   .talk-row__link {

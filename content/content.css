@@ -179,7 +179,7 @@
   }
 
   .content-callout__label {
-    @apply mb-1 font-mono text-[10px] uppercase tracking-[0.14em];
+    @apply mb-1 font-mono text-xs uppercase tracking-[0.12em];
   }
 
   .content-callout__label--note {
@@ -207,7 +207,7 @@
   }
 
   .content-pullquote__cite {
-    @apply mt-3 block font-hand text-base not-italic text-accent-soft;
+    @apply mt-3 block font-body text-base not-italic text-highlight;
   }
 
   .content-figure {
@@ -219,7 +219,7 @@
   }
 
   .content-figure__caption {
-    @apply mt-2 text-center font-hand text-base text-muted;
+    @apply mt-2 text-center font-body text-sm text-ink-soft;
   }
 
   .content-figure__caption-link {
@@ -239,7 +239,7 @@
   }
 
   .content-youtube__caption {
-    @apply mt-2 text-center font-hand text-base text-muted;
+    @apply mt-2 text-center font-body text-sm text-ink-soft;
   }
 
   .content-embed {
