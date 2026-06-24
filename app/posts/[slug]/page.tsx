@@ -61,10 +61,6 @@ export default async function PostPage({ params }: PageProps) {
   const related = await getRelatedPosts(post.urlSlug, 3);
   const toc = extractToc(post.content);
 
-  // BlogPosting JSON-LD: gives Google, Bing, and AI crawlers a structured
-  // version of the metadata they otherwise have to scrape from the OG tags.
-  // Image and author URLs must be absolute for schema.org validators to
-  // accept them, so resolve everything against siteConfig.url.
   const canonical = post.canonical ?? `${siteConfig.url}/posts/${post.urlSlug}`;
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -93,11 +89,8 @@ export default async function PostPage({ params }: PageProps) {
   return (
     <BPaper>
       <JsonLd data={articleJsonLd} />
-      <Container className="pt-6 pb-2">
-        <Link
-          href="/posts"
-          className="font-hand text-xl text-accent transition-colors hover:text-accent-deep"
-        >
+      <Container className="page-pad-post-top">
+        <Link href="/posts" className="back-link">
           ← back to the writing
         </Link>
       </Container>
@@ -106,16 +99,11 @@ export default async function PostPage({ params }: PageProps) {
         <PostHeader post={post} number={post.essayNumber} />
       </Container>
 
-      <Container className="pt-2 pb-6">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,1fr)_280px]">
-          <article
-            data-post-article
-            className="prose-mdx pt-3"
-          >
+      <Container className="page-pad-post-body">
+        <div className="page-grid-post">
+          <article data-post-article className="prose-mdx post-article">
             <MDXContent source={post.content} />
-            <div className="mt-8 border-y-2 border-ink py-5 font-hand text-2xl text-warm">
-              — jeremy, somewhere in kansas city
-            </div>
+            <div className="post-signoff">— jeremy, somewhere in kansas city</div>
           </article>
 
           <ContentsRail entries={toc} />
@@ -126,7 +114,7 @@ export default async function PostPage({ params }: PageProps) {
         <RelatedPosts posts={related} />
       </Container>
 
-      <div className="h-12" />
+      <div className="page-spacer" />
     </BPaper>
   );
 }

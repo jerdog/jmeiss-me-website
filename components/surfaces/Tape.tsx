@@ -12,15 +12,15 @@ interface TapeProps {
 }
 
 const colorMap: Record<NonNullable<TapeProps["color"]>, string> = {
-  highlight: "bg-highlight",
-  warm: "bg-warm",
-  "accent-soft": "bg-accent-soft",
-  card: "bg-card",
+  highlight: "tape--highlight",
+  warm: "tape--warm",
+  "accent-soft": "tape--accent-soft",
+  card: "tape--card",
 };
 
 const textColorMap: Record<NonNullable<TapeProps["textColor"]>, string> = {
-  ink: "text-ink",
-  paper: "text-paper",
+  ink: "",
+  paper: "tape--text-paper",
 };
 
 /**
@@ -38,12 +38,7 @@ export function Tape({
 }: TapeProps) {
   return (
     <span
-      className={cn(
-        "reduced-motion-flat tape-shadow inline-block px-3.5 py-[3px] font-hand text-lg leading-tight",
-        colorMap[color],
-        textColorMap[textColor],
-        className,
-      )}
+      className={cn("tape reduced-motion-flat", colorMap[color], textColorMap[textColor], className)}
       style={{ transform: `rotate(${rotation}deg)`, ...style }}
     >
       {children}

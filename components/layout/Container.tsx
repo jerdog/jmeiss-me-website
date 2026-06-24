@@ -10,15 +10,15 @@ interface ContainerProps {
 }
 
 const widths: Record<NonNullable<ContainerProps["width"]>, string> = {
-  narrow: "max-w-3xl",
-  default: "max-w-[1200px]",
-  wide: "max-w-[1400px]",
-  full: "max-w-none",
+  narrow: "container--narrow",
+  default: "container--default",
+  wide: "container--wide",
+  full: "container--full",
 };
 
 const paddings: Record<NonNullable<ContainerProps["padding"]>, string> = {
-  default: "px-5 sm:px-8 md:px-10",
-  tight: "px-4 md:px-6",
+  default: "container-pad--default",
+  tight: "container-pad--tight",
   none: "",
 };
 
@@ -29,7 +29,7 @@ export function Container({
   padding = "default",
 }: ContainerProps) {
   return (
-    <div className={cn("mx-auto w-full", widths[width], paddings[padding], className)}>
+    <div className={cn("container", widths[width], paddings[padding], className)}>
       {children}
     </div>
   );

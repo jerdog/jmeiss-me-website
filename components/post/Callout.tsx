@@ -8,31 +8,17 @@ interface CalloutProps {
 }
 
 const variantClass: Record<NonNullable<CalloutProps["variant"]>, { box: string; label: string }> = {
-  note: { box: "border-accent bg-card", label: "text-accent" },
-  warn: { box: "border-warm bg-card", label: "text-warm" },
-  tip: { box: "border-ink bg-highlight", label: "text-ink" },
+  note: { box: "content-callout--note", label: "content-callout__label--note" },
+  warn: { box: "content-callout--warn", label: "content-callout__label--warn" },
+  tip: { box: "content-callout--tip", label: "content-callout__label--tip" },
 };
 
 export function Callout({ children, variant = "note", title, className }: CalloutProps) {
   const cls = variantClass[variant];
   const label = title ?? variant;
   return (
-    <aside
-      aria-label={label}
-      className={cn(
-        "my-6 border-l-4 px-5 py-4 font-body text-base leading-relaxed text-ink-soft",
-        cls.box,
-        className,
-      )}
-    >
-      <p
-        className={cn(
-          "mb-1 font-mono text-[10px] uppercase tracking-[0.14em]",
-          cls.label,
-        )}
-      >
-        {title ?? variant}
-      </p>
+    <aside aria-label={label} className={cn("content-callout", cls.box, className)}>
+      <p className={cn("content-callout__label", cls.label)}>{title ?? variant}</p>
       <div>{children}</div>
     </aside>
   );

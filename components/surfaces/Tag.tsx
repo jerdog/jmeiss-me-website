@@ -14,8 +14,8 @@ interface TagProps {
 }
 
 const sizeClass: Record<NonNullable<TagProps["size"]>, string> = {
-  sm: "text-xs px-3 py-1",
-  md: "text-sm px-4 py-1.5",
+  sm: "tag-chip--sm",
+  md: "tag-chip--md",
 };
 
 /** A pill chip used for tag filters and inline tag references. */
@@ -28,9 +28,9 @@ export function Tag({
   className,
 }: TagProps) {
   const cls = cn(
-    "inline-flex items-center font-body rounded-full border border-ink transition-colors",
+    "tag-chip",
     sizeClass[size],
-    selected ? "bg-accent text-paper" : "bg-card text-ink hover:bg-highlight",
+    selected ? "tag-chip--selected" : "tag-chip--default",
     className,
   );
 

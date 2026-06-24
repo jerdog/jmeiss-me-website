@@ -23,13 +23,13 @@ export function PostsIndexClient({ posts, tags }: PostsIndexClientProps) {
 
   return (
     <>
-      <header className="px-1 pb-6 pt-2">
-        <Tape rotation={-2} className="mb-3">
+      <header className="posts-index__header">
+        <Tape rotation={-2} className="posts-index__tape">
           the writing
         </Tape>
-        <h1 className="my-3 font-display text-5xl leading-[0.95] tracking-tight md:text-6xl lg:text-[5.25rem]">
+        <h1 className="posts-index__title">
           {posts.length} essays. some good, some{" "}
-          <span className="relative inline-block">
+          <span className="posts-index__highlight">
             spicy.
             <svg
               aria-hidden
@@ -37,7 +37,7 @@ export function PostsIndexClient({ posts, tags }: PostsIndexClientProps) {
               height="40"
               viewBox="0 0 200 40"
               preserveAspectRatio="none"
-              className="absolute -left-2 -top-2 h-[calc(100%+1rem)] w-[calc(100%+1rem)]"
+              className="posts-index__scribble"
             >
               <path
                 d="M10,30 Q50,2 100,18 T190,12 Q190,38 100,32 T10,30 Z"
@@ -48,12 +48,12 @@ export function PostsIndexClient({ posts, tags }: PostsIndexClientProps) {
             </svg>
           </span>
         </h1>
-        <p className="max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
+        <p className="posts-index__lede">
           mostly devrel & devex, with regular detours into metrics, community, and the parts of
           leadership nobody wants to write about.
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-1.5" role="group" aria-label="Filter essays by tag">
+        <div className="posts-index__filters" role="group" aria-label="Filter essays by tag">
           {allTags.map((tag) => {
             const isActive = active === tag;
             return (
@@ -64,8 +64,8 @@ export function PostsIndexClient({ posts, tags }: PostsIndexClientProps) {
                 aria-pressed={isActive}
                 aria-label={tag === "all" ? "Show all essays" : `Filter by ${tag}`}
                 className={cn(
-                  "rounded-full border border-ink px-3.5 py-1 font-body text-xs transition-colors",
-                  isActive ? "bg-accent text-paper" : "bg-card text-ink hover:bg-highlight",
+                  "filter-chip",
+                  isActive ? "filter-chip--active" : "filter-chip--inactive",
                 )}
               >
                 #{tag}
@@ -75,20 +75,16 @@ export function PostsIndexClient({ posts, tags }: PostsIndexClientProps) {
         </div>
       </header>
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <div className="posts-index__grid">
         {filtered.map((post, i) => (
           <PostCard key={post.urlSlug} post={post} index={i} />
         ))}
       </div>
 
       {filtered.length === 0 ? (
-        <div className="my-10 rounded-md border border-dashed border-rule bg-card px-6 py-12 text-center">
-          <p className="font-display text-2xl text-ink">No essays under #{active} yet.</p>
-          <button
-            type="button"
-            onClick={() => setActive("all")}
-            className="mt-3 text-sm text-accent underline underline-offset-4"
-          >
+        <div className="posts-index__empty">
+          <p className="empty-state-title">No essays under #{active} yet.</p>
+          <button type="button" onClick={() => setActive("all")} className="btn-text-spaced">
             ← back to all essays
           </button>
         </div>

@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { cn } from "@/lib/cn";
 import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href-core";
 
 interface PagefindResult {
@@ -178,21 +177,18 @@ export default function SearchModal({ onClose }: SearchModalProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Search posts"
-      className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:pt-20"
+      className="search-modal"
     >
       <button
         type="button"
         tabIndex={-1}
         aria-hidden="true"
-        className="absolute inset-0 cursor-default bg-ink/60"
+        className="search-modal__backdrop"
         onClick={onClose}
       />
-      <div
-        ref={panelRef}
-        className="relative z-10 w-full max-w-2xl border border-ink bg-paper hard-shadow-ink"
-      >
-        <div className="flex items-center gap-3 border-b border-ink px-4 py-3">
-          <span aria-hidden className="font-mono text-sm text-muted">
+      <div ref={panelRef} className="search-modal__panel">
+        <div className="search-modal__header">
+          <span aria-hidden className="search-modal__icon">
             ⌕
           </span>
           <input
@@ -205,13 +201,13 @@ export default function SearchModal({ onClose }: SearchModalProps) {
             aria-controls="search-results"
             autoComplete="off"
             spellCheck={false}
-            className="w-full bg-transparent font-body text-base text-ink placeholder:text-muted"
+            className="search-modal__input"
           />
           <button
             type="button"
             onClick={onClose}
             aria-label="Close search"
-            className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted hover:text-ink"
+            className="search-modal__close"
           >
             <span aria-hidden>Esc</span>
           </button>
@@ -219,25 +215,25 @@ export default function SearchModal({ onClose }: SearchModalProps) {
 
         <div
           id="search-results"
-          className="max-h-[60vh] overflow-y-auto"
+          className="search-modal__results"
           aria-live="polite"
           aria-busy={loading}
         >
           <p className="sr-only">{statusMessage}</p>
           {error ? (
-            <p className="px-4 py-6 text-sm text-warm">
+            <p className="search-modal__message--error">
               Search isn&apos;t available right now. (Pagefind index may be missing.)
             </p>
           ) : loading ? (
-            <p className="px-4 py-6 text-sm text-muted" aria-hidden>
+            <p className="search-modal__message" aria-hidden>
               Searching…
             </p>
           ) : results.length === 0 && query ? (
-            <p className="px-4 py-6 text-sm text-muted" aria-hidden>
+            <p className="search-modal__message" aria-hidden>
               No matches for <strong>{query}</strong>.
             </p>
           ) : results.length === 0 ? (
-            <p className="px-4 py-6 text-sm text-muted">
+            <p className="search-modal__message">
               Type to search posts. <kbd>/</kbd> opens, <kbd>Esc</kbd> closes.
             </p>
           ) : (
@@ -245,21 +241,17 @@ export default function SearchModal({ onClose }: SearchModalProps) {
               {results.map((r) => {
                 const origin = window.location.origin;
                 return (
-                  <li key={r.url} className="border-b border-rule last:border-b-0">
+                  <li key={r.url} className="search-modal__result">
                     {isOffSiteHref(r.url, origin) ? (
                       <a
                         href={r.url}
                         onClick={onClose}
-                        className={cn(
-                          "block px-4 py-3 transition-colors hover:bg-card focus:bg-card",
-                        )}
+                        className="search-modal__result-link"
                         {...offSiteAnchorProps(r.url, origin)}
                       >
-                        <p className="font-display text-lg leading-tight text-ink">
-                          {r.title}
-                        </p>
+                        <p className="search-modal__result-title">{r.title}</p>
                         <p
-                          className="mt-1 line-clamp-2 text-sm text-ink-soft"
+                          className="search-modal__result-excerpt"
                           dangerouslySetInnerHTML={{ __html: r.excerpt }}
                         />
                       </a>
@@ -267,15 +259,11 @@ export default function SearchModal({ onClose }: SearchModalProps) {
                       <Link
                         href={r.url}
                         onClick={onClose}
-                        className={cn(
-                          "block px-4 py-3 transition-colors hover:bg-card focus:bg-card",
-                        )}
+                        className="search-modal__result-link"
                       >
-                        <p className="font-display text-lg leading-tight text-ink">
-                          {r.title}
-                        </p>
+                        <p className="search-modal__result-title">{r.title}</p>
                         <p
-                          className="mt-1 line-clamp-2 text-sm text-ink-soft"
+                          className="search-modal__result-excerpt"
                           dangerouslySetInnerHTML={{ __html: r.excerpt }}
                         />
                       </Link>

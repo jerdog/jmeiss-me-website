@@ -35,9 +35,14 @@ Drafts (`draft: true`) are visible in `npm run dev` so you can preview them loca
 │   ├── manifest.ts            # /manifest.webmanifest
 │   ├── not-found.tsx          # 404 page
 │   ├── layout.tsx             # root <html>/<body>, fonts, site metadata
-│   └── page.tsx               # /
+│   ├── page.tsx               # /
+│   ├── globals.css            # CSS entry: Tailwind, tokens, base, imports layer files
+│   ├── tokens.css             # Design tokens (@theme) and custom @utility helpers
+│   ├── global.css             # Shared classes used by app pages and components
+│   └── app.css                # Page-only layout and route styles
 │
 ├── components/                # React components (organized by surface)
+│   ├── components.css         # Component-only styles
 │   ├── about/                 # PortraitCard, Bookshelf, CoffeeLog, SocialGrid
 │   ├── home/                  # HeroCard, NowPanel, FeedStrip, RecentEssays, ServicesStrip
 │   ├── icons/                 # Inline SVG icon component (Font Awesome subset)
@@ -50,6 +55,7 @@ Drafts (`draft: true`) are visible in `npm run dev` so you can preview them loca
 │   └── surfaces/              # BPaper, Card, Tape, Tag — design-system primitives
 │
 ├── content/                   # All site copy, data, and posts (the editable surface)
+│   ├── content.css            # MDX prose typography and shortcode styles
 │   ├── posts/                 # *.mdx — individual essays
 │   ├── data/                  # YAML — editable source of truth for site config
 │   │   ├── site.yaml          # Site title, bio, socials, copyright
@@ -148,7 +154,7 @@ Anything Markdown supports works (headings, lists, links, code fences with Shiki
 
 <YouTube id="dQw4w9WgXcQ" title="A talk you should watch" />
 
-<XEmbed url="https://x.com/IAmJerdog/status/1234567890" />
+<XEmbed user="IAmJerdog" id="1234567890" />
 
 <PullQuote attribution="Patrick Lencioni">
   Genius is in the simplification.
@@ -164,7 +170,7 @@ Anything Markdown supports works (headings, lists, links, code fences with Shiki
 | `Callout`   | Boxed note (informational/aside).                          | Accepts `title`. |
 | `Figure`    | Image + caption + attribution.                             | Local images go through `next/image` (avif/webp); animated GIFs auto-pass `unoptimized`. |
 | `YouTube`   | Embeds `youtube.com/embed/<id>`.                           | Pass `id`, optional `title`. |
-| `XEmbed`    | Embeds an X / Twitter post.                                | Pass `url`. |
+| `XEmbed`    | Embeds an X / Twitter post.                                | Pass `user` (handle, no `@`) and `id` (status ID); optional `theme`. |
 | `PullQuote` | Big stylized quote.                                        | Optional `attribution`. |
 | `Button`    | Pill button styled to match the site.                      | Pass `href`; works for in-page anchors. |
 | `Tape`      | Inline "tape sticker" decoration.                          | `rotation`, `color`, `textColor`. |

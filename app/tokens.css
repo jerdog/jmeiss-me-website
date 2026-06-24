@@ -1,0 +1,67 @@
+/* Direction B v2 — "Personal Field Notes" design tokens.
+   Azure / white / black palette tuned for WCAG AA.
+   Contrast vs paper(#ffffff): ink 21:1, inkSoft 12.6:1, muted 4.6:1, accent 5.4:1, warm 4.7:1
+   Contrast vs ink(#0b0d10): paper 19.6:1, highlight 16.7:1, accentSoft 8.2:1 */
+@theme {
+  /* Surface */
+  --color-paper: #ffffff;
+  --color-paper-deep: #eaf1f8;
+  --color-card: #f5f9fd;
+
+  /* Ink */
+  --color-ink: #0b0d10;
+  --color-ink-soft: #2a3340;
+  --color-muted: #5a6878;
+
+  /* Lines */
+  --color-rule: #cbd6e2;
+
+  /* Brand accent (azure) */
+  --color-accent: #0a5fbf;
+  --color-accent-deep: #08458a;
+  --color-accent-soft: #7fb6f1;
+
+  /* Restrained warm accent */
+  --color-warm: #b1361b;
+
+  /* Pale highlight band */
+  --color-highlight: #cfe4fb;
+
+  /* Fonts (variables wired by next/font in app/layout.tsx) */
+  --font-display: var(--font-display, "DM Serif Display", "Playfair Display", Georgia, serif);
+  --font-body: var(--font-body, "Inter", -apple-system, sans-serif);
+  --font-hand: var(--font-hand, "Caveat", "Patrick Hand", cursive);
+  --font-mono: var(--font-mono, "JetBrains Mono", ui-monospace, monospace);
+}
+
+/* Utility helpers (tape angles, hand-set headings, etc.) */
+@utility tape-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+@utility hard-shadow-ink {
+  box-shadow: 6px 6px 0 var(--color-ink);
+}
+
+@utility hard-shadow-ink-sm {
+  box-shadow: 3px 3px 0 var(--color-ink);
+}
+
+@utility hard-shadow-ink-md {
+  box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+@utility hard-shadow-accent {
+  box-shadow: 6px 6px 0 var(--color-accent);
+}
+
+@utility hard-shadow-warm {
+  box-shadow: 4px 4px 0 var(--color-warm);
+}
+
+@utility hand-underline {
+  background-image: linear-gradient(transparent calc(100% - 4px), var(--color-warm) 4px);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 4px;
+}

@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Serif_Display, Inter, Caveat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import "./custom.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/content/site";
@@ -87,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${dmSerifDisplay.variable} ${inter.variable} ${caveat.variable} ${jetbrainsMono.variable}`}
     >
       <body
-        className="font-body bg-paper text-ink antialiased"
+        className="body-shell"
         // Netlify deploy previews inject a `<div data-netlify-deploy-id>`
         // outside `</html>` which the browser hoists into <body>. React then
         // sees an unexpected child during hydration and throws #418. The drawer
@@ -97,7 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+          className="skip-link"
         >
           Skip to content
         </a>

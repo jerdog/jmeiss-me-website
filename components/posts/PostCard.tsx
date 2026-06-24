@@ -5,43 +5,35 @@ import { formatShortDate } from "@/lib/format";
 
 interface PostCardProps {
   post: PostSummary;
-  /** Index in the visible list — used to alternate dark/light treatment. */
   index?: number;
-  /** When true, render the dark variant. Overrides index-based logic. */
   dark?: boolean;
 }
 
 export function PostCard({ post, index = 0, dark }: PostCardProps) {
   const isDark = dark ?? index % 3 === 0;
-  const variant = isDark ? "ink" : "card";
-  const shadow = isDark ? "warm" : "ink-md";
-  const accent = isDark ? "text-highlight" : "text-accent";
-  const subtle = isDark ? "text-paper/70" : "text-ink-soft/85";
-  const ruleClass = isDark ? "border-paper/20" : "border-paper-deep";
-  const handColor = isDark ? "text-highlight" : "text-warm";
 
   return (
     <Link href={`/posts/${post.urlSlug}`} className="block h-full">
       <Card
-        variant={variant}
-        shadow={shadow}
-        className="flex h-full min-h-[220px] flex-col gap-2.5 px-7 py-6"
+        variant={isDark ? "ink" : "card"}
+        shadow={isDark ? "warm" : "ink-md"}
+        className="post-card"
       >
-        <div className={`flex justify-between font-mono text-[10px] uppercase tracking-[0.14em] ${accent}`}>
+        <div className={isDark ? "post-card__meta--dark" : "post-card__meta--light"}>
           <span>· essay {String(post.essayNumber).padStart(3, "0")} ·</span>
           <span>{post.readMinutes} min</span>
         </div>
-        <h2 className="font-display text-2xl leading-tight tracking-tight">
-          {post.title}
-        </h2>
-        <p className={`text-sm leading-relaxed ${subtle}`}>{post.excerpt}</p>
-        <div
-          className={`mt-auto flex items-baseline justify-between border-t border-dashed ${ruleClass} pt-3`}
-        >
-          <span className={`text-xs ${isDark ? "text-paper/70" : "text-muted"}`}>
+        <h2 className="post-card__title">{post.title}</h2>
+        <p className={isDark ? "post-card__excerpt--dark" : "post-card__excerpt--light"}>
+          {post.excerpt}
+        </p>
+        <div className={isDark ? "post-card__footer--dark" : "post-card__footer--light"}>
+          <span className={isDark ? "post-card__tags--dark" : "post-card__tags--light"}>
             {post.tags.map((t) => `#${t}`).join(" ")}
           </span>
-          <span className={`font-hand text-base ${handColor}`}>{formatShortDate(post.date)} →</span>
+          <span className={isDark ? "post-card__date--dark" : "post-card__date--light"}>
+            {formatShortDate(post.date)} →
+          </span>
         </div>
       </Card>
     </Link>

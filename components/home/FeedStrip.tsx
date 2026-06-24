@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card } from "@/components/surfaces/Card";
 import type { PostSummary } from "@/lib/posts";
 import { formatLongDate } from "@/lib/format";
+import { cn } from "@/lib/cn";
 
 interface FeedStripProps {
   posts: PostSummary[];
@@ -18,16 +19,12 @@ interface FeedItem {
 }
 
 const accentClass: Record<FeedItem["accent"], string> = {
-  accent: "text-accent",
-  warm: "text-warm",
-  highlight: "text-highlight",
-  ink: "text-ink",
+  accent: "feed-card__kind--accent",
+  warm: "feed-card__kind--warm",
+  highlight: "feed-card__kind--highlight",
+  ink: "feed-card__kind--ink",
 };
 
-/**
- * The 4-card mixed activity feed on the home page. Pulls the latest 2 posts
- * by default and pads with placeholder talk/coffee cards until live data exists.
- */
 export function FeedStrip({ posts }: FeedStripProps) {
   const newest = posts.slice(0, 2);
   const placeholderTalk: FeedItem = {
@@ -81,14 +78,12 @@ export function FeedStrip({ posts }: FeedStripProps) {
   ];
 
   return (
-    <section className="py-8 md:py-10">
-      <div className="mb-5 flex items-baseline justify-between">
-        <h2 className="font-display text-3xl tracking-tight md:text-4xl">the feed.</h2>
-        <span className="hidden font-hand text-xl text-muted sm:block">
-          — posts, talks, coffee, repeat.
-        </span>
+    <section className="feed-strip">
+      <div className="section-heading-row">
+        <h2 className="section-heading">the feed.</h2>
+        <span className="feed-strip__note">— posts, talks, coffee, repeat.</span>
       </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="feed-strip__grid">
         {items.map((c, i) => (
           <FeedCard key={`${c.kind}-${i}`} item={c} />
         ))}
@@ -98,34 +93,23 @@ export function FeedStrip({ posts }: FeedStripProps) {
 }
 
 function FeedCard({ item }: { item: FeedItem }) {
-  // text-muted (#5a6878) on bg-highlight (#cfe4fb) measures 4.37:1 — under AA.
-  // text-ink-soft (#2a3340) on bg-highlight measures ~10:1 and stays in palette.
-  const metaClass = item.variant === "highlight" ? "text-ink-soft" : "text-muted";
   const inner = (
-    <Card
-      variant={item.variant}
-      shadow="ink-sm"
-      rotation={item.rotate}
-      className="flex min-h-[140px] flex-col justify-between px-4 pt-4 pb-4"
-    >
+    <Card variant={item.variant} shadow="ink-sm" rotation={item.rotate} className="feed-card">
+      <p className={cn("eyebrow-xs", accentClass[item.accent])}>· {item.kind} ·</p>
+      <p className="feed-card__title">{item.title}</p>
       <p
-        className={`font-mono text-[9px] font-bold uppercase tracking-[0.18em] ${accentClass[item.accent]}`}
+        className={
+          item.variant === "highlight" ? "feed-card__meta--on-highlight" : "feed-card__meta"
+        }
       >
-        · {item.kind} ·
+        {item.meta}
       </p>
-      <p className="mt-2 font-display text-lg leading-[1.15] text-ink">{item.title}</p>
-      <p className={`mt-2 font-hand text-base ${metaClass}`}>{item.meta}</p>
     </Card>
   );
 
   if (item.href) {
-    return (
-      <Link href={item.href} className="block">
-        {inner}
-      </Link>
-    );
+    return <Link href={item.href}>{inner}</Link>;
   }
 
   return inner;
 }
-

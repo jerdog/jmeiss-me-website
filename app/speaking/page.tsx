@@ -33,37 +33,31 @@ export default async function SpeakingPage() {
 
   return (
     <BPaper>
-      <Container className="py-10 md:py-14">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
-          <div className="md:col-span-7">
+      <Container className="page-pad-standard">
+        <div className="page-grid-12">
+          <div className="page-col-7">
             <Tape rotation={-3} color="highlight">
               on stage
             </Tape>
-            <h1 className="mt-4 mb-3 font-display text-5xl leading-[1.08] tracking-tight md:text-6xl md:leading-[1.06] lg:text-[5.25rem] lg:leading-[1.05]">
+            <h1 className="page-title-speaking">
               i give talks on tech and culture. sometimes with{" "}
-              <span className="box-decoration-clone rounded-sm bg-highlight px-1 py-px">
-                jokes
-              </span>
-              .
+              <span className="speaking-highlight">jokes</span>.
             </h1>
-            <p className="max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
+            <p className="page-lede-narrow">
               keynotes, conference talks, panels, podcasts. mostly emerging technologies, culture, devops, ai, devrel, devex, and community.
               occasionally squirrels.
             </p>
           </div>
-          <div className="md:col-span-5">
-            <div
-              className="reduced-motion-flat border border-ink bg-ink px-6 py-5 text-paper"
-              style={{ transform: "rotate(1deg)" }}
-            >
-              <p className="font-hand text-4xl text-highlight">want me at your event?</p>
-              <p className="mt-1.5 text-base leading-relaxed text-paper/85">
+          <div className="page-col-5">
+            <div className="speaking-cta reduced-motion-flat" style={{ transform: "rotate(1deg)" }}>
+              <p className="speaking-cta-title">want me at your event?</p>
+              <p className="speaking-cta-body">
                 i'll travel. send me a note about format, audience, and what you want them
                 to walk away having learned.
               </p>
               <a
                 href={`mailto:${siteConfig.person.email}?subject=Speaking%20request`}
-                className="mt-3 inline-flex items-center rounded-full bg-warm px-4 py-2 text-sm font-medium text-paper transition-colors hover:opacity-90"
+                className="btn-warm"
               >
                 send the note →
               </a>
@@ -72,11 +66,11 @@ export default async function SpeakingPage() {
         </div>
       </Container>
 
-      <Container className="pt-2 pb-6">
-        <div className="mb-4 flex items-baseline gap-4">
-          <h2 className="font-display text-2xl md:text-3xl">upcoming events.</h2>
+      <Container className="speaking-section">
+        <div className="section-header">
+          <h2 className="section-title-inline">upcoming events.</h2>
           {upcomingRows.length > 0 ? (
-            <span className="font-hand text-lg text-muted">
+            <span className="section-note">
               {upcomingRows.length} on the calendar
             </span>
           ) : null}
@@ -84,7 +78,7 @@ export default async function SpeakingPage() {
         {upcomingRows.length === 0 ? (
           <EmptyTalksState />
         ) : (
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+          <div className="speaking-grid">
             {upcomingRows.map((t) => (
               <TalkRow key={`upcoming-${t.date}-${t.title}`} talk={t} />
             ))}
@@ -93,12 +87,12 @@ export default async function SpeakingPage() {
       </Container>
 
       {talks.length > 0 ? (
-        <Container className="pb-6">
-          <div className="mb-4 flex items-baseline gap-4">
-            <h2 className="font-display text-2xl md:text-3xl">more dates.</h2>
-            <span className="font-hand text-lg text-muted">{talks.length} in the catalog</span>
+        <Container className="page-pad-section">
+          <div className="section-header">
+            <h2 className="section-title-inline">more dates.</h2>
+            <span className="section-note">{talks.length} in the catalog</span>
           </div>
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+          <div className="speaking-grid">
             {talks.map((t) => (
               <TalkRow key={`${t.date}-${t.title}`} talk={t} />
             ))}
@@ -107,13 +101,13 @@ export default async function SpeakingPage() {
       ) : null}
 
       {pastTalks ? (
-        <Container className="pb-6">
+        <Container className="page-pad-section">
           <PastTalksBlock talks={notistPast} portfolioUrl={pastTalks.portfolioUrl} />
         </Container>
       ) : null}
 
-      <Container className="pt-6 pb-12">
-        <h2 className="mb-4 font-display text-2xl md:text-3xl">topics i&apos;ll happily talk about.</h2>
+      <Container className="page-pad-footer">
+        <h2 className="section-title">topics i&apos;ll happily talk about.</h2>
         <TopicChips topics={topics} />
       </Container>
     </BPaper>

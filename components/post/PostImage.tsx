@@ -10,16 +10,6 @@ interface PostImageProps {
   className?: string;
 }
 
-/**
- * Default image rendering inside MDX posts. Uses `next/image` for optimization.
- * Falls back to a plain <img> for remote URLs that aren't pre-configured.
- *
- * Width and height are required to avoid CLS. The shortcode normalizer or
- * a build-time `image-size` probe should populate them for legacy posts.
- *
- * Animated GIFs are passed straight through (`unoptimized`) because next/image
- * would otherwise turn them into still images while logging a warning.
- */
 export function PostImage({
   src,
   alt = "",
@@ -34,7 +24,7 @@ export function PostImage({
   const h = height ?? 800;
 
   return (
-    <figure className={cn("my-6", className)}>
+    <figure className={cn("content-figure", className)}>
       {isRemote ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -42,7 +32,7 @@ export function PostImage({
           alt={alt}
           loading="lazy"
           decoding="async"
-          className="h-auto max-w-full border border-rule"
+          className="content-figure__image"
         />
       ) : (
         <Image
@@ -50,16 +40,12 @@ export function PostImage({
           alt={alt}
           width={w}
           height={h}
-          className="h-auto max-w-full border border-rule"
+          className="content-figure__image"
           sizes="(min-width: 768px) 720px, 100vw"
           unoptimized={isAnimated}
         />
       )}
-      {caption ? (
-        <figcaption className="mt-2 text-center font-hand text-base text-muted">
-          {caption}
-        </figcaption>
-      ) : null}
+      {caption ? <figcaption className="content-figure__caption">{caption}</figcaption> : null}
     </figure>
   );
 }

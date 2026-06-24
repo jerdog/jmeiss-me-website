@@ -5,9 +5,7 @@ import { offSiteAnchorProps } from "@/lib/off-site-href";
 interface FigureProps {
   src: string;
   alt?: string;
-  /** Caption text below the image. */
   caption?: string;
-  /** Attribution credit (e.g. photographer + link). */
   attr?: string;
   attrLink?: string;
   width?: number;
@@ -15,10 +13,6 @@ interface FigureProps {
   className?: string;
 }
 
-/**
- * Replaces Hugo's `{{< figure ... >}}` shortcode.
- * Combines image + caption + attribution credit.
- */
 export function Figure({
   src,
   alt = "",
@@ -33,7 +27,7 @@ export function Figure({
   const isAnimated = /\.gif($|\?)/i.test(src);
 
   return (
-    <figure className={cn("my-6", className)}>
+    <figure className={cn("content-figure", className)}>
       {isRemote ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -41,7 +35,7 @@ export function Figure({
           alt={alt}
           loading="lazy"
           decoding="async"
-          className="h-auto max-w-full border border-rule"
+          className="content-figure__image"
         />
       ) : (
         <Image
@@ -49,20 +43,20 @@ export function Figure({
           alt={alt}
           width={width}
           height={height}
-          className="h-auto max-w-full border border-rule"
+          className="content-figure__image"
           sizes="(min-width: 768px) 720px, 100vw"
           unoptimized={isAnimated}
         />
       )}
       {(caption || attr) && (
-        <figcaption className="mt-2 text-center font-hand text-base text-muted">
+        <figcaption className="content-figure__caption">
           {caption}
           {caption && attr ? " · " : null}
           {attr ? (
             attrLink ? (
               <a
                 href={attrLink}
-                className="text-accent hover:underline"
+                className="content-figure__caption-link"
                 {...offSiteAnchorProps(attrLink)}
               >
                 {attr}

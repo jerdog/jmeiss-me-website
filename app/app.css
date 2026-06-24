@@ -1,0 +1,159 @@
+/* Page-level layout and typography — used only by routes in app/ */
+@reference "./tokens.css";
+
+@layer components {
+  /* Container spacing modifiers (used with .container) */
+  .page-pad-hero {
+    @apply py-8 md:py-12;
+  }
+
+  .page-pad-standard {
+    @apply py-10 md:py-14;
+  }
+
+  .page-pad-about-hero {
+    @apply pt-10 pb-6 md:pt-14;
+  }
+
+  .page-pad-section {
+    @apply py-6;
+  }
+
+  .page-pad-footer {
+    @apply pt-6 pb-12;
+  }
+
+  .page-pad-post-top {
+    @apply pt-6 pb-2;
+  }
+
+  .page-pad-post-body {
+    @apply pt-2 pb-6;
+  }
+
+  .page-pad-now-bottom {
+    @apply pb-10;
+  }
+
+  .page-pad-not-found {
+    @apply py-16 md:py-24;
+  }
+
+  .page-spacer {
+    @apply h-12;
+  }
+
+  /* Grids */
+  .page-grid-12 {
+    @apply grid grid-cols-1 gap-6 md:grid-cols-12;
+  }
+
+  .page-grid-12-wide {
+    @apply grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10;
+  }
+
+  .page-grid-2 {
+    @apply grid grid-cols-1 gap-5 md:grid-cols-2;
+  }
+
+  .page-grid-post {
+    @apply grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,1fr)_280px];
+  }
+
+  .page-col-7 {
+    @apply md:col-span-7;
+  }
+
+  .page-col-5 {
+    @apply md:col-span-5;
+  }
+
+  /* Page typography */
+  .page-title {
+    @apply mt-4 mb-3 font-display text-4xl leading-[0.95] tracking-tight md:text-5xl lg:text-6xl;
+  }
+
+  .page-title-tight {
+    @apply mt-4 mb-4 font-display text-4xl leading-[0.98] tracking-tight md:text-5xl lg:text-6xl;
+  }
+
+  .page-title-speaking {
+    @apply mt-4 mb-3 font-display text-5xl leading-[1.08] tracking-tight md:text-6xl md:leading-[1.06] lg:text-[5.25rem] lg:leading-[1.05];
+  }
+
+  .page-title-not-found {
+    @apply mt-4 mb-4 font-display text-5xl leading-[0.95] tracking-tight md:text-6xl;
+  }
+
+  .page-lede {
+    @apply max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg;
+  }
+
+  .page-lede-narrow {
+    @apply max-w-xl text-base leading-relaxed text-ink-soft md:text-lg;
+  }
+
+  .page-lede-plain {
+    @apply text-base text-ink-soft md:text-lg;
+  }
+
+  .page-title-emphasis {
+    @apply italic text-warm;
+  }
+
+  /* About page */
+  .about-affiliations {
+    @apply mt-5 flex flex-wrap gap-2;
+  }
+
+  .about-affiliation {
+    @apply rounded-full border border-ink bg-card px-3 py-1 font-body text-xs;
+  }
+
+  .about-actions {
+    @apply mt-5 flex flex-wrap gap-3;
+  }
+
+  /* Speaking page */
+  .speaking-highlight {
+    @apply box-decoration-clone rounded-sm bg-highlight px-1 py-px;
+  }
+
+  .speaking-cta {
+    @apply border border-ink bg-ink px-6 py-5 text-paper;
+  }
+
+  .speaking-cta-title {
+    @apply font-hand text-4xl text-highlight;
+  }
+
+  .speaking-cta-body {
+    @apply mt-1.5 text-base leading-relaxed text-paper/85;
+  }
+
+  .speaking-grid {
+    @apply grid grid-cols-1 gap-3 md:grid-cols-2;
+  }
+
+  .speaking-section {
+    @apply pt-2 pb-6;
+  }
+
+  /* Post page */
+  .post-article {
+    @apply pt-3;
+  }
+
+  .post-signoff {
+    @apply mt-8 border-y-2 border-ink py-5 font-hand text-2xl text-warm;
+  }
+
+  /* Tag archive */
+  .tag-archive-tape {
+    @apply mt-4;
+  }
+
+  .tag-archive-count {
+    @apply mt-8 grid grid-cols-1 gap-5 md:grid-cols-2;
+  }
+}

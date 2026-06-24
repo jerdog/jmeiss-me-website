@@ -12,10 +12,10 @@ interface BPaperProps {
  */
 export function BPaper({ children, className }: BPaperProps) {
   return (
-    <div className={cn("relative bg-paper", className)}>
+    <div className={cn("bpaper", className)}>
       <svg
         aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.06] mix-blend-multiply"
+        className="bpaper__grain"
         width="100%"
         height="100%"
       >
@@ -30,7 +30,7 @@ export function BPaper({ children, className }: BPaperProps) {
         </defs>
         <rect width="100%" height="100%" fill="url(#bgrain)" />
       </svg>
-      <div className="relative">{children}</div>
+      <div className="bpaper__content">{children}</div>
     </div>
   );
 }

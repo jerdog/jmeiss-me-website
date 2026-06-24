@@ -8,23 +8,19 @@ export function HeroCard() {
   const { person } = siteConfig;
   const byline = roleCompanyLine(person.role, person.company);
   return (
-    <Card variant="card" shadow="ink" className="px-7 py-10 sm:px-11 sm:py-10">
-      <Tape rotation={-3} className="absolute -top-3.5 left-10">
+    <Card variant="card" shadow="ink" className="hero-card">
+      <Tape rotation={-3} className="hero-card__tape-left">
         hello
       </Tape>
-      <Tape rotation={4} color="highlight" className="absolute -top-3.5 right-14">
+      <Tape rotation={4} color="highlight" className="hero-card__tape-right">
         personal website
       </Tape>
 
-      {byline ? (
-        <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
-          {byline}
-        </p>
-      ) : null}
+      {byline ? <p className="hero-card__byline">{byline}</p> : null}
 
-      <h1 className="mt-3 mb-4 font-display text-5xl leading-[0.95] tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-        hi, i&apos;m jeremy. {" "}
-        <span className="relative inline-block">
+      <h1 className="hero-card__title">
+        hi, i&apos;m jeremy.{" "}
+        <span className="hero-card__underline-wrap">
           welcome
           <svg
             aria-hidden
@@ -32,7 +28,7 @@ export function HeroCard() {
             height="14"
             viewBox="0 0 400 14"
             preserveAspectRatio="none"
-            className="absolute bottom-[-6px] left-0"
+            className="hero-card__underline"
           >
             <path
               d="M2,8 Q100,2 200,7 T398,6"
@@ -42,36 +38,23 @@ export function HeroCard() {
               strokeLinecap="round"
             />
           </svg>
-        </span>.
+        </span>
+        .
       </h1>
 
-      <p className="mb-5 max-w-xl text-[1.0625rem] leading-relaxed text-ink-soft">
-        {person.blurb}
-      </p>
+      <p className="hero-card__blurb">{person.blurb}</p>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <Link
-          href="/speaking"
-          className="rounded-full border border-ink bg-transparent px-5 py-2.5 font-body text-sm text-ink transition-colors hover:bg-card"
-        >
+      <div className="hero-card__actions">
+        <Link href="/speaking" className="btn-secondary-lg">
           my speaking portfolio
         </Link>
-        <Link
-          href="/posts"
-          className="rounded-full bg-ink px-5 py-2.5 font-body text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
-        >
+        <Link href="/posts" className="btn-primary-lg">
           read my writing
         </Link>
-        <Link
-          href="/about"
-          className="rounded-full bg-ink px-5 py-2.5 font-body text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
-        >
+        <Link href="/about" className="btn-primary-lg">
           about me
         </Link>
-        <span
-          className="reduced-motion-flat ml-1 inline-block font-hand text-xl text-warm"
-          style={{ transform: "rotate(-2deg)" }}
-        >
+        <span className="hand-accent reduced-motion-flat ml-1" style={{ transform: "rotate(-2deg)" }}>
           ← start here
         </span>
       </div>

@@ -32,8 +32,6 @@ export function Nav() {
     menuButtonRef.current?.focus();
   }, []);
 
-  // Close the panel whenever the route changes. We diff against the previous
-  // pathname so biome's exhaustive-deps check sees pathname being read.
   const [lastPath, setLastPath] = useState(pathname);
   useEffect(() => {
     if (pathname !== lastPath) {
@@ -42,7 +40,6 @@ export function Nav() {
     }
   }, [pathname, lastPath]);
 
-  // Focus the first link when the panel opens; trap focus while open.
   useEffect(() => {
     if (!open) return;
 
@@ -88,28 +85,24 @@ export function Nav() {
   }, [open, closeMenu]);
 
   return (
-    <header className="sticky top-0 z-40 bg-ink text-paper">
-      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-4 px-5 py-4 sm:px-8 md:px-10">
-        <Link href="/" className="flex items-center gap-3 rounded-full">
-          <span
-            aria-hidden
-            className="flex h-7 w-7 items-center justify-center rounded-full bg-accent-soft font-display text-base font-bold text-ink"
-          >
+    <header className="nav">
+      <div className="nav__inner">
+        <Link href="/" className="nav__brand">
+          <span aria-hidden className="nav__monogram">
             jm
           </span>
-          <span className="font-display text-xl tracking-tight">jeremy meiss</span>
+          <span className="nav__name">jeremy meiss</span>
           <span
             aria-hidden
-            className="reduced-motion-flat hidden font-hand text-lg text-highlight sm:inline-block"
+            className="nav__alias reduced-motion-flat"
             style={{ transform: "rotate(-3deg)" }}
           >
             (jerdog)
           </span>
         </Link>
 
-        {/* Desktop nav: visible from sm up. */}
-        <div className="hidden items-center gap-2 sm:flex sm:gap-3">
-          <nav aria-label="Primary" className="flex items-center gap-1">
+        <div className="nav__desktop">
+          <nav aria-label="Primary" className="nav__links">
             {items.map((item) => {
               const active = isActive(pathname, item.href);
               return (
@@ -118,10 +111,8 @@ export function Nav() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "rounded-full px-3 py-2 text-sm transition-colors sm:px-4",
-                    active
-                      ? "bg-accent-soft font-medium text-ink"
-                      : "text-paper hover:bg-paper/10",
+                    "nav-link",
+                    active ? "nav-link--active" : "nav-link--inactive",
                   )}
                 >
                   {item.label}
@@ -132,7 +123,6 @@ export function Nav() {
           <SearchDialog />
         </div>
 
-        {/* Mobile: hamburger toggle, hidden from sm up. */}
         <button
           ref={menuButtonRef}
           type="button"
@@ -140,7 +130,7 @@ export function Nav() {
           aria-expanded={open}
           aria-controls="mobile-nav-panel"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-paper transition-colors hover:bg-paper/10 sm:hidden"
+          className="nav__menu-btn"
         >
           <svg
             aria-hidden
@@ -170,21 +160,11 @@ export function Nav() {
         </button>
       </div>
 
-      {/* Mobile drop-down panel. Drop-down anchored under the bar; full-width
-          dim covers the rest of the page so taps outside close it. */}
       {open ? (
-        <div className="sm:hidden">
-          <div
-            aria-hidden
-            onClick={closeMenu}
-            className="fixed inset-0 top-[64px] z-30 cursor-default bg-ink/60 backdrop-blur-[2px]"
-          />
-          <div
-            id="mobile-nav-panel"
-            ref={panelRef}
-            className="absolute inset-x-0 z-40 border-t border-paper/15 bg-ink shadow-lg"
-          >
-            <nav aria-label="Primary" className="flex flex-col gap-1 px-5 py-4">
+        <div className="nav__mobile-only">
+          <div aria-hidden onClick={closeMenu} className="nav__overlay" />
+          <div id="mobile-nav-panel" ref={panelRef} className="nav__panel">
+            <nav aria-label="Primary" className="nav__mobile-links">
               {items.map((item) => {
                 const active = isActive(pathname, item.href);
                 return (
@@ -194,17 +174,15 @@ export function Nav() {
                     aria-current={active ? "page" : undefined}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "rounded-full px-4 py-3 text-base transition-colors",
-                      active
-                        ? "bg-accent-soft font-medium text-ink"
-                        : "text-paper hover:bg-paper/10",
+                      "nav-link nav-link--mobile",
+                      active ? "nav-link--active" : "nav-link--inactive",
                     )}
                   >
                     {item.label}
                   </Link>
                 );
               })}
-              <div className="mt-2 border-t border-paper/10 pt-3">
+              <div className="nav__mobile-search">
                 <SearchDialog />
               </div>
             </nav>

@@ -37,24 +37,19 @@ export default async function TagArchivePage({ params }: PageProps) {
 
   return (
     <BPaper>
-      <Container className="py-10 md:py-14">
-        <Link
-          href="/posts"
-          className="font-hand text-xl text-accent transition-colors hover:text-accent-deep"
-        >
+      <Container className="page-pad-standard">
+        <Link href="/posts" className="back-link">
           ← all writing
         </Link>
-        <Tape rotation={-2} className="mt-4">
+        <Tape rotation={-2} className="tag-archive-tape">
           tag archive
         </Tape>
-        <h1 className="mt-3 mb-3 font-display text-4xl leading-[0.98] tracking-tight md:text-5xl lg:text-6xl">
-          #{canonical}
-        </h1>
-        <p className="text-base text-ink-soft md:text-lg">
+        <h1 className="page-title-tight">#{canonical}</h1>
+        <p className="page-lede-plain">
           {posts.length} {posts.length === 1 ? "essay" : "essays"} tagged #{canonical}.
         </p>
 
-        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="tag-archive-count">
           {posts.map((post, i) => (
             <PostCard key={post.urlSlug} post={post} index={i} />
           ))}

@@ -10,29 +10,19 @@ interface TalkRowProps {
 export function TalkRow({ talk }: TalkRowProps) {
   const [month, year] = talk.date.split(" ");
   const inner = (
-    <div
-      className={cn(
-        "grid grid-cols-[3.5rem_1fr_4.5rem] items-center gap-4 border border-ink px-4 py-4",
-        talk.upcoming ? "bg-highlight hard-shadow-ink-sm" : "bg-card",
-      )}
-    >
-      <div className="border border-ink bg-paper py-2 text-center font-display leading-none">
-        <p className="text-base text-ink">{month}</p>
-        <p className="text-[11px] text-muted">{year}</p>
+    <div className={cn("talk-row", talk.upcoming ? "talk-row--upcoming" : "talk-row--past")}>
+      <div className="talk-row__date">
+        <p className="talk-row__month">{month}</p>
+        <p className="talk-row__year">{year}</p>
       </div>
       <div>
-        <p className="font-display text-lg leading-tight text-ink">{talk.title}</p>
-        <p className="mt-0.5 text-xs text-ink-soft">
+        <p className="talk-row__title">{talk.title}</p>
+        <p className="talk-row__meta">
           {talk.event}
           {talk.location ? ` · ${talk.location}` : ""}
         </p>
       </div>
-      <p
-        className={cn(
-          "text-right font-mono text-[9px] font-bold uppercase tracking-[0.14em]",
-          talk.upcoming ? "text-warm" : "text-accent",
-        )}
-      >
+      <p className={talk.upcoming ? "talk-row__badge--upcoming" : "talk-row__badge--past"}>
         {talk.upcoming ? "↑ next" : talk.type}
       </p>
     </div>
@@ -41,17 +31,13 @@ export function TalkRow({ talk }: TalkRowProps) {
   if (talk.href) {
     if (isOffSiteHref(talk.href)) {
       return (
-        <a
-          href={talk.href}
-          className="block hover:bg-card focus-visible:outline-2"
-          {...offSiteAnchorProps(talk.href)}
-        >
+        <a href={talk.href} className="talk-row__link" {...offSiteAnchorProps(talk.href)}>
           {inner}
         </a>
       );
     }
     return (
-      <Link href={talk.href} className="block hover:bg-card focus-visible:outline-2">
+      <Link href={talk.href} className="talk-row__link">
         {inner}
       </Link>
     );

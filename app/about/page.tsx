@@ -23,9 +23,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const { person, socials, affiliations } = siteConfig;
 
-  // ProfilePage / Person JSON-LD: this is the canonical "about" entity for
-  // the site. Same `@id` as the home page Person so crawlers can stitch the
-  // graph together; here we add the longer description and address details.
   const mainEntity: Record<string, unknown> = {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
@@ -65,41 +62,32 @@ export default function AboutPage() {
   return (
     <BPaper>
       <JsonLd data={profileJsonLd} />
-      <Container className="pt-10 pb-6 md:pt-14">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
-          <div className="md:col-span-5">
+      <Container className="page-pad-about-hero">
+        <div className="page-grid-12-wide">
+          <div className="page-col-5">
             <PortraitCard />
           </div>
-          <div className="md:col-span-7">
+          <div className="page-col-7">
             <Tape rotation={-3}>about</Tape>
-            <h1 className="mt-4 mb-4 font-display text-4xl leading-[0.98] tracking-tight md:text-5xl lg:text-6xl">
+            <h1 className="page-title-tight">
               over three decades in tech. still genuinely{" "}
-              <span className="italic text-warm">likes</span> it.
+              <span className="page-title-emphasis">likes</span> it.
             </h1>
-            <p className="text-base leading-relaxed text-ink-soft md:text-lg">{person.longBio}</p>
+            <p className="page-lede">{person.longBio}</p>
 
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="about-affiliations">
               {affiliations.map((a) => (
-                <span
-                  key={a}
-                  className="rounded-full border border-ink bg-card px-3 py-1 font-body text-xs"
-                >
+                <span key={a} className="about-affiliation">
                   {a}
                 </span>
               ))}
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a
-                href={person.resumeHref}
-                className="inline-flex items-center rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
-              >
+            <div className="about-actions">
+              <a href={person.resumeHref} className="btn-primary">
                 Download resume (PDF)
               </a>
-              <a
-                href={`mailto:${person.email}`}
-                className="inline-flex items-center rounded-full border border-ink bg-paper px-4 py-2 text-sm text-ink transition-colors hover:bg-card"
-              >
+              <a href={`mailto:${person.email}`} className="btn-secondary">
                 Email me
               </a>
             </div>
@@ -107,19 +95,19 @@ export default function AboutPage() {
         </div>
       </Container>
 
-      <Container className="py-6">
+      <Container className="page-pad-section">
         <NowPanel now={now} variant="wide" />
       </Container>
 
-      <Container className="py-6">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <Container className="page-pad-section">
+        <div className="page-grid-2">
           <Bookshelf />
           <CoffeeLog />
         </div>
       </Container>
 
-      <Container className="pt-6 pb-12">
-        <h2 className="mb-4 font-display text-2xl md:text-3xl">say hi.</h2>
+      <Container className="page-pad-footer">
+        <h2 className="section-title">say hi.</h2>
         <SocialGrid socials={socials} />
       </Container>
     </BPaper>

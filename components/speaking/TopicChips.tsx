@@ -6,13 +6,13 @@ interface TopicChipsProps {
 
 export function TopicChips({ topics }: TopicChipsProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="topic-chips">
       {topics.map((topic, i) => (
         <span
           key={topic}
           className={cn(
-            "reduced-motion-flat rounded-full border border-ink px-4 py-1.5 font-body text-sm",
-            i % 2 === 1 ? "bg-ink text-paper" : "bg-card text-ink",
+            "topic-chip reduced-motion-flat",
+            i % 2 === 1 ? "topic-chip--dark" : "topic-chip--light",
           )}
           style={{ transform: `rotate(${(((i % 3) - 1) * 0.7).toFixed(2)}deg)` }}
         >

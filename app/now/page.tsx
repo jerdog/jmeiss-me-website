@@ -17,16 +17,14 @@ export const metadata: Metadata = {
 export default function NowPage() {
   return (
     <BPaper>
-      <Container className="py-10 md:py-14">
+      <Container className="page-pad-standard">
         <Tape rotation={-2}>now</Tape>
-        <h1 className="mt-4 mb-3 font-display text-4xl leading-[0.95] tracking-tight md:text-5xl lg:text-6xl">
-          what i&apos;m up to today-ish.
-        </h1>
-        <p className="max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
+        <h1 className="page-title">what i&apos;m up to today-ish.</h1>
+        <p className="page-lede">
           A{" "}
           <a
             href="https://nownownow.com/about"
-            className="text-accent underline underline-offset-4 hover:text-accent-deep"
+            className="text-link"
             {...offSiteAnchorProps("https://nownownow.com/about")}
           >
             /now
@@ -36,7 +34,7 @@ export default function NowPage() {
         </p>
       </Container>
 
-      <Container className="pb-10">
+      <Container className="page-pad-now-bottom">
         <NowPanel now={now} variant="wide" />
       </Container>
     </BPaper>

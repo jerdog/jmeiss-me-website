@@ -19,7 +19,7 @@ export default async function WritingIndexPage() {
 
   return (
     <BPaper>
-      <Container className="py-10 md:py-14">
+      <Container className="page-pad-standard">
         <PostsIndexClient posts={posts} tags={tags} />
       </Container>
     </BPaper>

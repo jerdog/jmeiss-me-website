@@ -15,19 +15,19 @@ interface CardProps<T extends ElementType = "div"> {
 }
 
 const variantClass: Record<NonNullable<CardProps["variant"]>, string> = {
-  paper: "bg-paper text-ink border border-ink",
-  ink: "bg-ink text-paper border border-ink",
-  highlight: "bg-highlight text-ink border border-ink",
-  card: "bg-card text-ink border border-ink",
+  paper: "card--paper",
+  ink: "card--ink",
+  highlight: "card--highlight",
+  card: "card--card",
 };
 
 const shadowClass: Record<NonNullable<CardProps["shadow"]>, string> = {
   none: "",
-  ink: "hard-shadow-ink",
-  "ink-sm": "hard-shadow-ink-sm",
-  "ink-md": "hard-shadow-ink-md",
-  warm: "hard-shadow-warm",
-  accent: "hard-shadow-accent",
+  ink: "card-shadow--ink",
+  "ink-sm": "card-shadow--ink-sm",
+  "ink-md": "card-shadow--ink-md",
+  warm: "card-shadow--warm",
+  accent: "card-shadow--accent",
 };
 
 /** Boxy card with hard offset shadow — the main surface in Direction B v2. */
@@ -44,12 +44,7 @@ export function Card<T extends ElementType = "div">({
   const Component = (as ?? "div") as ElementType;
   return (
     <Component
-      className={cn(
-        "reduced-motion-flat relative",
-        variantClass[variant],
-        shadowClass[shadow],
-        className,
-      )}
+      className={cn("card reduced-motion-flat", variantClass[variant], shadowClass[shadow], className)}
       style={rotation ? { transform: `rotate(${rotation}deg)`, ...style } : style}
       {...rest}
     >

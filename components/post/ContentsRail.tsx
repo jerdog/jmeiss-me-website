@@ -13,10 +13,6 @@ interface ContentsRailProps {
   entries: TocEntry[];
 }
 
-/**
- * Sticky right rail with table of contents and a reading-progress bar that
- * tracks the entire article based on scroll position.
- */
 export function ContentsRail({ entries }: ContentsRailProps) {
   const [activeId, setActiveId] = useState<string | null>(entries[0]?.id ?? null);
   const [progress, setProgress] = useState(0);
@@ -60,37 +56,32 @@ export function ContentsRail({ entries }: ContentsRailProps) {
   if (entries.length === 0) return null;
 
   return (
-    <aside className="pt-2">
-      <div className="sticky top-24 border border-ink bg-card px-5 py-4">
-        <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent">
-          contents
-        </p>
-        <ul className="space-y-1.5 text-sm leading-loose">
+    <aside className="contents-rail">
+      <div className="contents-rail__panel">
+        <p className="contents-rail__label">contents</p>
+        <ul className="contents-rail__list">
           {entries.map((entry) => (
             <li
               key={entry.id}
               className={cn(
-                "transition-colors",
-                entry.depth >= 3 ? "pl-3" : "",
-                activeId === entry.id ? "text-warm font-medium" : "text-ink-soft",
+                "contents-rail__item",
+                entry.depth >= 3 && "contents-rail__item--nested",
+                activeId === entry.id
+                  ? "contents-rail__item--active"
+                  : "contents-rail__item--inactive",
               )}
             >
-              <a
-                href={`#${entry.id}`}
-                className="block hover:text-accent focus:text-accent"
-              >
+              <a href={`#${entry.id}`} className="contents-rail__link">
                 {activeId === entry.id ? "→ " : "· "}
                 {entry.text}
               </a>
             </li>
           ))}
         </ul>
-        <div className="mt-4 border-t border-dashed border-paper-deep pt-3">
-          <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
-            reading progress
-          </p>
+        <div className="contents-rail__progress-wrap">
+          <p className="contents-rail__progress-label">reading progress</p>
           <div
-            className="h-1.5 bg-paper-deep"
+            className="contents-rail__progress-track"
             role="progressbar"
             aria-valuemin={0}
             aria-valuemax={100}
@@ -98,7 +89,7 @@ export function ContentsRail({ entries }: ContentsRailProps) {
             aria-label="Reading progress"
           >
             <div
-              className="h-full bg-warm transition-[width]"
+              className="contents-rail__progress-bar"
               style={{ width: `${Math.round(progress * 100)}%` }}
             />
           </div>

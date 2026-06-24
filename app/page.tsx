@@ -14,10 +14,6 @@ export default async function HomePage() {
   const posts = await getAllPosts();
   const recent = posts.slice(0, 4);
 
-  // WebSite + Person on the home page so search engines get a sitelinks
-  // searchbox candidate (Pagefind index handles the actual queries) and a
-  // canonical Person entity that downstream schema (BlogPosting authors)
-  // can reference by `@id` if we ever want to wire that up.
   const homeJsonLd = [
     {
       "@context": "https://schema.org",
@@ -55,12 +51,12 @@ export default async function HomePage() {
   return (
     <BPaper>
       <JsonLd data={homeJsonLd} />
-      <Container className="py-8 md:py-12">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
-          <div className="md:col-span-7">
+      <Container className="page-pad-hero">
+        <div className="page-grid-12">
+          <div className="page-col-7">
             <HeroCard />
           </div>
-          <div className="md:col-span-5">
+          <div className="page-col-5">
             <NowPanel now={now} variant="panel" />
           </div>
         </div>
@@ -72,7 +68,7 @@ export default async function HomePage() {
         <ServicesStrip />
       </Container>
 
-      <div className="h-12" />
+      <div className="page-spacer" />
     </BPaper>
   );
 }

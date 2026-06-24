@@ -9,16 +9,9 @@ interface ButtonProps {
   className?: string;
 }
 
-/**
- * In-content call-to-action button. Replaces Hugo's `{{< button >}}` shortcode.
- * Uses a real anchor so it remains keyboard-navigable and indexable.
- */
 export function Button({ href, children, variant = "primary", className }: ButtonProps) {
   const cls = cn(
-    "inline-flex items-center gap-2 rounded-full px-5 py-2 font-body text-sm font-medium transition-colors",
-    variant === "primary"
-      ? "bg-ink text-paper hover:bg-accent-deep"
-      : "border border-ink bg-paper text-ink hover:bg-card",
+    variant === "primary" ? "btn-primary-lg" : "btn-secondary-lg",
     className,
   );
 
