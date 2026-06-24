@@ -1,4 +1,5 @@
 import type { NotistPastTalk } from "@/lib/notist";
+import { NewTabHint } from "@/components/a11y/NewTabHint";
 import { offSiteAnchorProps } from "@/lib/off-site-href";
 
 function portfolioLabel(portfolioUrl: string): string {
@@ -26,6 +27,7 @@ export function PastTalksBlock({ talks, portfolioUrl }: PastTalksBlockProps) {
           {...offSiteAnchorProps(portfolioUrl, { existingRel: "me" })}
         >
           full portfolio on {host} →
+          <NewTabHint />
         </a>
       </div>
       {talks.length > 0 ? (
@@ -40,6 +42,7 @@ export function PastTalksBlock({ talks, portfolioUrl }: PastTalksBlockProps) {
                 <span className="past-talks__date">{t.dateLabel || "—"}</span>
                 <span className="past-talks__title">{t.title}</span>
                 <span className="past-talks__event">{t.conference || "—"}</span>
+                <NewTabHint />
               </a>
             </li>
           ))}
@@ -53,6 +56,7 @@ export function PastTalksBlock({ talks, portfolioUrl }: PastTalksBlockProps) {
             {...offSiteAnchorProps(portfolioUrl, { existingRel: "me" })}
           >
             {host}
+            <NewTabHint />
           </a>
           .
         </p>

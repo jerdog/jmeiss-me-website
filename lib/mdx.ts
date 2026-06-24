@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import type { Pluggable } from "unified";
 import type { TocEntry } from "@/components/post/ContentsRail";
 import { rehypeUnwrapMedia } from "@/lib/rehype-unwrap-media";
+import { rehypeTableScope } from "@/lib/rehype-table-scope";
 
 /**
  * Shared remark/rehype plugin chain for MDX rendering on post pages.
@@ -42,6 +43,7 @@ export const mdxOptions = {
         defaultLang: "plaintext",
       },
     ],
+    rehypeTableScope,
   ] as Pluggable[],
 };
 

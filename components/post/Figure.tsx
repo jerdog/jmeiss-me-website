@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
-import { offSiteAnchorProps } from "@/lib/off-site-href";
+import { NewTabHint } from "@/components/a11y/NewTabHint";
+import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href";
 
 interface FigureProps {
   src: string;
@@ -60,6 +61,7 @@ export function Figure({
                 {...offSiteAnchorProps(attrLink)}
               >
                 {attr}
+                {isOffSiteHref(attrLink) ? <NewTabHint /> : null}
               </a>
             ) : (
               <span>{attr}</span>

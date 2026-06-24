@@ -197,11 +197,11 @@
   /* ── Search modal ────────────────────────────────────────────────── */
 
   .search-modal {
-    @apply fixed inset-0 z-50 flex items-start justify-center p-4 sm:pt-20;
+    @apply fixed inset-0 z-50 m-0 flex h-full max-h-none w-full max-w-none items-start justify-center border-0 bg-transparent p-4 sm:pt-20;
   }
 
-  .search-modal__backdrop {
-    @apply absolute inset-0 cursor-default bg-ink/60;
+  .search-modal::backdrop {
+    @apply bg-ink/60;
   }
 
   .search-modal__panel {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewTabHint } from "@/components/a11y/NewTabHint";
 import { Card } from "@/components/surfaces/Card";
 import { services } from "@/content/services";
 import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href";
@@ -33,6 +34,7 @@ export function ServicesStrip() {
                 {...offSiteAnchorProps(service.href)}
               >
                 {Inner}
+                <NewTabHint />
               </a>
             ) : (
               <Link key={service.number} href={service.href} className="block">

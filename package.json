@@ -13,6 +13,7 @@
     "new-post": "node scripts/new-post.mjs",
     "port-shortcodes": "tsx scripts/port-shortcodes.ts",
     "audit-frontmatter": "tsx scripts/audit-frontmatter.ts",
+    "audit-a11y-content": "tsx scripts/audit-a11y-content.ts",
     "check-links": "node scripts/check-links.mjs",
     "prepare": "husky"
   },

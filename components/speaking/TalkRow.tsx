@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewTabHint } from "@/components/a11y/NewTabHint";
 import type { Talk } from "@/content/talks";
 import { cn } from "@/lib/cn";
 import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href";
@@ -33,6 +34,7 @@ export function TalkRow({ talk }: TalkRowProps) {
       return (
         <a href={talk.href} className="talk-row__link" {...offSiteAnchorProps(talk.href)}>
           {inner}
+          <NewTabHint />
         </a>
       );
     }

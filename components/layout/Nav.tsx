@@ -162,7 +162,7 @@ export function Nav() {
         <div className="nav__mobile-only">
           <div aria-hidden onClick={closeMenu} className="nav__overlay" />
           <div id="mobile-nav-panel" ref={panelRef} className="nav__panel">
-            <nav aria-label="Primary" className="nav__mobile-links">
+            <nav aria-label="Mobile primary" className="nav__mobile-links">
               {items.map((item) => {
                 const active = isActive(pathname, item.href);
                 return (

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewTabHint } from "@/components/a11y/NewTabHint";
 import { siteConfig } from "@/content/site";
 import { Icon } from "@/components/icons/Icon";
 import { iconForSocial } from "@/components/icons/social";
@@ -14,7 +15,7 @@ export function Footer() {
           <p className="footer__copyright">&copy;{siteConfig.copyright}</p>
         </div>
 
-        <div className="footer__column">
+        <nav aria-label="Side projects" className="footer__column">
           <p className="footer__heading">side projects</p>
           <ul className="footer__list">
             {siteConfig.sideProjects.map((p) => (
@@ -26,6 +27,7 @@ export function Footer() {
                     {...offSiteAnchorProps(p.href)}
                   >
                     {p.name}
+                    <NewTabHint />
                   </a>
                 ) : (
                   <Link href={p.href} className="footer__link">
@@ -35,9 +37,9 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
-        <div className="footer__column">
+        <nav aria-label="Social links" className="footer__column">
           <p className="footer__heading">elsewhere</p>
           <ul className="footer__list">
             {elsewhere.map((social) => {
@@ -55,6 +57,7 @@ export function Footer() {
                       ) : null}
                       <span className="footer__label">{social.label.toLowerCase()}</span>
                       <span className="footer__handle">{social.handle}</span>
+                      <NewTabHint />
                     </a>
                   ) : (
                     <Link
@@ -73,7 +76,7 @@ export function Footer() {
               );
             })}
           </ul>
-        </div>
+        </nav>
       </div>
     </footer>
   );

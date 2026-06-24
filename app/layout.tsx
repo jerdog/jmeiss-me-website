@@ -101,7 +101,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Nav />
-        <main id="main">{children}</main>
+        <main id="main" data-pagefind-body>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

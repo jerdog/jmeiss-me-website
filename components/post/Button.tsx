@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
+import { NewTabHint } from "@/components/a11y/NewTabHint";
 import { offSiteAnchorProps } from "@/lib/off-site-href";
 
 interface ButtonProps {
@@ -27,6 +28,7 @@ export function Button({ href, children, variant = "primary", className }: Butto
     return (
       <a href={href} className={cls} {...offSiteAnchorProps(href)}>
         {children}
+        <NewTabHint />
       </a>
     );
   }

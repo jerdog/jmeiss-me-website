@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewTabHint } from "@/components/a11y/NewTabHint";
 import type { SocialLink } from "@/content/site";
 import { Icon } from "@/components/icons/Icon";
 import { iconForSocial } from "@/components/icons/social";
@@ -32,6 +33,7 @@ export function SocialGrid({ socials }: SocialGridProps) {
             {...offSiteAnchorProps(s.href, { existingRel: s.rel })}
           >
             {card}
+            <NewTabHint />
           </a>
         ) : (
           <Link

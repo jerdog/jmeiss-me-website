@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { Tape } from "@/components/surfaces/Tape";
 import { NowPanel } from "@/components/home/NowPanel";
 import { now } from "@/content/now";
+import { NewTabHint } from "@/components/a11y/NewTabHint";
 import { offSiteAnchorProps } from "@/lib/off-site-href";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function NowPage() {
             {...offSiteAnchorProps("https://nownownow.com/about")}
           >
             /now
+            <NewTabHint />
           </a>{" "}
           page in the spirit of Derek Sivers — what I&apos;m focusing on at this point in life.
           Updated whenever it shifts. Or when the pack of rabid 🐿️ goes into hibernation.
