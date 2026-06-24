@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import "./globals.css";
 
 /**
@@ -19,9 +20,9 @@ export default function GlobalError({
           <h1 className="page-title-not-found">Something went wrong.</h1>
           <p className="page-lede">
             An unexpected error occurred. You can try again, or head{" "}
-            <a href="/" className="text-link">
+            <Link href="/" className="text-link">
               home
-            </a>
+            </Link>
             .
           </p>
           <button type="button" onClick={() => reset()} className="btn-primary mt-4">
