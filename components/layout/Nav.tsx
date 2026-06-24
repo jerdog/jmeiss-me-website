@@ -32,13 +32,11 @@ export function Nav() {
     menuButtonRef.current?.focus();
   }, []);
 
-  const [lastPath, setLastPath] = useState(pathname);
-  useEffect(() => {
-    if (pathname !== lastPath) {
-      setOpen(false);
-      setLastPath(pathname);
-    }
-  }, [pathname, lastPath]);
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    if (open) setOpen(false);
+  }
 
   useEffect(() => {
     if (!open) return;

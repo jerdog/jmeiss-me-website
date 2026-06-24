@@ -52,8 +52,7 @@ export default async function SpeakingPage() {
             <div className="speaking-cta reduced-motion-flat" style={{ transform: "rotate(1deg)" }}>
               <p className="speaking-cta-title">want me at your event?</p>
               <p className="speaking-cta-body">
-                i'll travel. send me a note about format, audience, and what you want them
-                to walk away having learned.
+                {"i'll travel. send me a note about format, audience, and what you want them to walk away having learned."}
               </p>
               <a
                 href={`mailto:${siteConfig.person.email}?subject=Speaking%20request`}
