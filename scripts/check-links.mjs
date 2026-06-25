@@ -5,13 +5,13 @@
  * Usage:
  *   npm run check-links
  *
- * Used by the pre-commit hook and CI to catch broken internal links and
- * dead external URLs before they ship.
+ * Used by CI to catch broken internal links and dead external URLs before they ship.
  */
 import { spawn, execSync } from "node:child_process";
 import net from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { LinkChecker, LinkState } from "linkinator";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = await getFreePort();
@@ -130,10 +130,30 @@ try {
   await waitForServer(baseUrl);
 
   log("Crawling links…");
-  execSync(
-    `npx linkinator "${baseUrl}" --recurse --skip "${SKIP}" --verbosity error`,
-    { cwd: ROOT, stdio: "inherit" },
-  );
+  console.log(`🏊‍♂️ crawling ${baseUrl}`);
+
+  const checker = new LinkChecker();
+  checker.on("link", (link) => {
+    if (link.state === LinkState.BROKEN) {
+      console.error(`[${link.status}] ${link.url}`);
+    }
+  });
+
+  const result = await checker.check({
+    path: baseUrl,
+    recurse: true,
+    linksToSkip: SKIP.split(",").filter(Boolean),
+  });
+
+  if (!result.passed) {
+    const broken = result.links.filter((link) => link.state === LinkState.BROKEN);
+    console.error(`\nDetected ${broken.length} broken link(s).`);
+    for (const link of broken) {
+      const parent = link.parent ? ` (from ${link.parent})` : "";
+      console.error(`  [${link.status}] ${link.url}${parent}`);
+    }
+    process.exit(1);
+  }
 
   log("No broken links found.");
 } catch (error) {
