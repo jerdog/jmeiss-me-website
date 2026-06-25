@@ -66,8 +66,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/categories",
-        destination: "/tags",
+        source: "/posts/developer-experience-essential-devops-success",
+        destination: "/posts/devex-essential-devops-success",
         permanent: true,
       },
     ];
