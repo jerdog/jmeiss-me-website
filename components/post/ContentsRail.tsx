@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { cn } from "@/lib/cn";
+import { smoothScrollToElement } from "@/lib/smooth-scroll";
 
 export interface TocEntry {
   id: string;
@@ -53,6 +54,15 @@ export function ContentsRail({ entries }: ContentsRailProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  function handleTocClick(event: MouseEvent<HTMLAnchorElement>, id: string) {
+    event.preventDefault();
+    const target = document.getElementById(id);
+    if (target) {
+      smoothScrollToElement(target);
+      history.replaceState(null, "", `#${id}`);
+    }
+  }
+
   if (entries.length === 0) return null;
 
   return (
@@ -71,7 +81,11 @@ export function ContentsRail({ entries }: ContentsRailProps) {
                   : "contents-rail__item--inactive",
               )}
             >
-              <a href={`#${entry.id}`} className="contents-rail__link">
+              <a
+                href={`#${entry.id}`}
+                className="contents-rail__link"
+                onClick={(event) => handleTocClick(event, entry.id)}
+              >
                 {activeId === entry.id ? "→ " : "· "}
                 {entry.text}
               </a>

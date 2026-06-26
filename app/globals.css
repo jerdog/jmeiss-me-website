@@ -6,6 +6,7 @@
   html {
     text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
     /* Decorative rotated cards, washi tape, and the hero underline SVG can
        extend past the viewport on narrow phones (Lighthouse content-width
        audit reported 425px doc in a 360px viewport). overflow-x: clip
@@ -45,6 +46,10 @@
 
   /* Honor reduced-motion preferences */
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
     *,
     *::before,
     *::after {

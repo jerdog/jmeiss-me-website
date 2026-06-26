@@ -186,6 +186,10 @@
     @apply mt-2 border-t border-paper/10 pt-3;
   }
 
+  .scroll-to-top {
+    @apply fixed right-5 bottom-5 z-30 rounded-full border border-ink bg-card px-4 py-2.5 font-body text-sm font-medium text-ink shadow-[3px_3px_0_0_var(--color-ink)] transition-[opacity,transform] hover:bg-highlight sm:right-8 md:right-10;
+  }
+
   .search-trigger {
     @apply inline-flex w-full items-center gap-2 rounded-full border border-paper/30 bg-paper/5 px-3.5 py-2 text-sm text-paper/80 transition-colors hover:bg-paper/10 sm:w-auto;
   }
@@ -659,7 +663,8 @@
   }
 
   .contents-rail {
-    @apply pt-2;
+    /* Stretch to article height so the sticky panel has room to follow scroll. */
+    @apply pt-2 md:self-stretch;
   }
 
   .contents-rail__label {
@@ -667,7 +672,7 @@
   }
 
   .contents-rail__panel {
-    @apply sticky top-24 border border-ink bg-card px-6 py-5;
+    @apply sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto border border-ink bg-card px-6 py-5;
   }
 
   .contents-rail__list {

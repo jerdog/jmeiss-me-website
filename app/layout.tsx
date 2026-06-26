@@ -3,6 +3,7 @@ import { DM_Serif_Display, Inter, Caveat, JetBrains_Mono } from "next/font/googl
 import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { siteConfig } from "@/content/site";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -106,6 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
