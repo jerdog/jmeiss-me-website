@@ -1,12 +1,20 @@
-# Coffee log for /about.
+# Coffee data for the site.
 #
-# Add entries like:
+# `feed` — home-page feed strip card (edit when the cup changes).
+# `coffee` — full log on /about (add entries below; empty list shows an empty state).
+#
+# `feed.title`, `feed.meta`, and each log entry's `note` support inline Markdown.
+
+feed:
+  title: "Daily-driver pourovers from local KC roasters"
+  meta: "the about page"
+  href: "/about"
+
+# Add log entries like:
 #   - roaster: "Messenger Coffee"
 #     origin: "Colombia, Finca Tamana"
 #     method: "V60"
 #     note: "Raspberry, dark chocolate, a little ginger"
 #     href: "https://messengercoffee.com"  # optional
-#
-# An empty list renders the "brewing notes coming soon" state.
 
 coffee: []

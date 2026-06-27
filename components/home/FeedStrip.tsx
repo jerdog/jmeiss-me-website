@@ -1,11 +1,18 @@
 import Link from "next/link";
+import { NewTabHint } from "@/components/a11y/NewTabHint";
+import { InlineMarkdown } from "@/components/content/InlineMarkdown";
 import { Card } from "@/components/surfaces/Card";
-import type { PostSummary } from "@/lib/posts";
+import type { FeedCoffee } from "@/content/coffee";
+import type { Talk } from "@/content/talks";
 import { formatLongDate } from "@/lib/format";
+import type { PostSummary } from "@/lib/posts";
+import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href";
 import { cn } from "@/lib/cn";
 
 interface FeedStripProps {
   posts: PostSummary[];
+  upcomingTalk?: Talk;
+  feedCoffee: FeedCoffee;
 }
 
 interface FeedItem {
@@ -25,26 +32,33 @@ const accentClass: Record<FeedItem["accent"], string> = {
   ink: "feed-card__kind--ink",
 };
 
-export function FeedStrip({ posts }: FeedStripProps) {
-  const newest = posts.slice(0, 2);
-  const placeholderTalk: FeedItem = {
+function talkFeedItem(talk: Talk): FeedItem {
+  const metaParts = [talk.date, talk.event].filter(Boolean);
+  return {
     kind: "TALK",
-    title: "Talks list — coming soon",
-    meta: "the speaking page",
+    title: talk.title,
+    meta: metaParts.join(" · "),
     rotate: 1.5,
     variant: "highlight",
     accent: "ink",
-    href: "/speaking",
+    href: talk.href ?? "/speaking",
   };
-  const placeholderCoffee: FeedItem = {
+}
+
+function coffeeFeedItem(feed: FeedCoffee): FeedItem {
+  return {
     kind: "COFFEE",
-    title: "Coffee log — in progress",
-    meta: "the about page",
+    title: feed.title,
+    meta: feed.meta,
     rotate: -0.5,
     variant: "card",
     accent: "warm",
-    href: "/about",
+    href: feed.href,
   };
+}
+
+export function FeedStrip({ posts, upcomingTalk, feedCoffee }: FeedStripProps) {
+  const newest = posts.slice(0, 2);
 
   const items: FeedItem[] = [
     ...(newest[0]
@@ -60,8 +74,8 @@ export function FeedStrip({ posts }: FeedStripProps) {
           },
         ]
       : []),
-    placeholderTalk,
-    placeholderCoffee,
+    ...(upcomingTalk ? [talkFeedItem(upcomingTalk)] : []),
+    coffeeFeedItem(feedCoffee),
     ...(newest[1]
       ? [
           {
@@ -84,8 +98,8 @@ export function FeedStrip({ posts }: FeedStripProps) {
         <span className="feed-strip__note">— posts, talks, coffee, repeat.</span>
       </div>
       <div className="feed-strip__grid">
-        {items.map((c, i) => (
-          <FeedCard key={`${c.kind}-${i}`} item={c} />
+        {items.map((c) => (
+          <FeedCard key={`${c.kind}-${c.title}-${c.href ?? ""}`} item={c} />
         ))}
       </div>
     </section>
@@ -96,20 +110,29 @@ function FeedCard({ item }: { item: FeedItem }) {
   const inner = (
     <Card variant={item.variant} shadow="ink-sm" rotation={item.rotate} className="feed-card">
       <p className={cn("eyebrow-xs", accentClass[item.accent])}>· {item.kind} ·</p>
-      <p className="feed-card__title">{item.title}</p>
+      <p className="feed-card__title">
+        <InlineMarkdown>{item.title}</InlineMarkdown>
+      </p>
       <p
         className={
           item.variant === "highlight" ? "feed-card__meta--on-highlight" : "feed-card__meta"
         }
       >
-        {item.meta}
+        <InlineMarkdown>{item.meta}</InlineMarkdown>
       </p>
     </Card>
   );
 
-  if (item.href) {
-    return <Link href={item.href}>{inner}</Link>;
+  if (!item.href) return inner;
+
+  if (isOffSiteHref(item.href)) {
+    return (
+      <a href={item.href} className="block" {...offSiteAnchorProps(item.href)}>
+        {inner}
+        <NewTabHint />
+      </a>
+    );
   }
 
-  return inner;
+  return <Link href={item.href}>{inner}</Link>;
 }

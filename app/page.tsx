@@ -7,12 +7,15 @@ import { RecentEssays } from "@/components/home/RecentEssays";
 import { ServicesStrip } from "@/components/home/ServicesStrip";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllPosts } from "@/lib/posts";
+import { feedCoffee } from "@/content/coffee";
 import { now } from "@/content/now";
 import { siteConfig } from "@/content/site";
+import { upcomingTalks, visibleUpcomingTalkRows } from "@/content/talks";
 
 export default async function HomePage() {
   const posts = await getAllPosts();
   const recent = posts.slice(0, 4);
+  const nextTalk = visibleUpcomingTalkRows(upcomingTalks)[0];
 
   const homeJsonLd = [
     {
@@ -63,7 +66,7 @@ export default async function HomePage() {
       </Container>
 
       <Container>
-        <FeedStrip posts={posts} />
+        <FeedStrip posts={posts} upcomingTalk={nextTalk} feedCoffee={feedCoffee} />
         <RecentEssays posts={recent} />
         <ServicesStrip />
       </Container>

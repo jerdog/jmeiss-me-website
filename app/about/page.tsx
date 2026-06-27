@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BPaper } from "@/components/surfaces/BPaper";
+import { InlineMarkdown } from "@/components/content/InlineMarkdown";
 import { Container } from "@/components/layout/Container";
 import { Tape } from "@/components/surfaces/Tape";
 import { PortraitCard } from "@/components/about/PortraitCard";
@@ -73,7 +74,9 @@ export default function AboutPage() {
               over three decades in tech. still genuinely{" "}
               <span className="page-title-emphasis">likes</span> it.
             </h1>
-            <p className="page-lede">{person.longBio}</p>
+            <p className="page-lede">
+              <InlineMarkdown>{person.longBio}</InlineMarkdown>
+            </p>
 
             <div className="about-affiliations">
               {affiliations.map((a) => (

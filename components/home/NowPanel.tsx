@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InlineMarkdown } from "@/components/content/InlineMarkdown";
 import { Card } from "@/components/surfaces/Card";
 import type { NowPage } from "@/content/now";
 import { cn } from "@/lib/cn";
@@ -22,7 +23,9 @@ export function NowPanel({ now, variant = "panel" }: NowPanelProps) {
           {now.items.map((item) => (
             <div key={item.label} className="now-panel__item-wide">
               <p className="now-panel__label-wide">{item.label}</p>
-              <p className="now-panel__text-wide">{item.text}</p>
+              <p className="now-panel__text-wide">
+                <InlineMarkdown>{item.text}</InlineMarkdown>
+              </p>
             </div>
           ))}
         </div>
@@ -54,7 +57,9 @@ export function NowPanel({ now, variant = "panel" }: NowPanelProps) {
           )}
         >
           <p className="now-panel__label-card">{item.label}</p>
-          <p className="now-panel__text-card">{item.text}</p>
+          <p className="now-panel__text-card">
+            <InlineMarkdown>{item.text}</InlineMarkdown>
+          </p>
         </div>
       ))}
     </Card>

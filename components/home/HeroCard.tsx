@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InlineMarkdown } from "@/components/content/InlineMarkdown";
 import { Card } from "@/components/surfaces/Card";
 import { Tape } from "@/components/surfaces/Tape";
 import { siteConfig } from "@/content/site";
@@ -42,7 +43,9 @@ export function HeroCard() {
         .
       </h1>
 
-      <p className="hero-card__blurb">{person.blurb}</p>
+      <p className="hero-card__blurb">
+        <InlineMarkdown>{person.blurb}</InlineMarkdown>
+      </p>
 
       <div className="hero-card__actions">
         <Link href="/speaking" className="btn-secondary-lg">

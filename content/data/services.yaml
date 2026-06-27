@@ -3,6 +3,8 @@
 # Ordered list; `number` is displayed in the card header as a numeric
 # prefix (e.g. "01"). `href` is optional — omit to render as a plain card,
 # include to make the card a link.
+#
+# `title` and `body` support inline Markdown: **bold**, *italic*, [links](url), `code`.
 
 services:
   - number: "01"

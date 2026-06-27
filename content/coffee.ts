@@ -1,7 +1,8 @@
 /**
- * Coffee log data for the /about page.
+ * Coffee data for the site.
  *
  * Edit `content/data/coffee.yaml`, not this file.
+ * `feed` drives the home feed strip; `coffee` is the full log on /about.
  */
 
 import { z } from "zod";
@@ -15,10 +16,21 @@ const CoffeeSchema = z.object({
   href: z.string().url().optional(),
 });
 
+const FeedCoffeeSchema = z.object({
+  title: z.string().min(1),
+  meta: z.string().min(1),
+  href: z.string().min(1).default("/about"),
+});
+
 const CoffeeFileSchema = z.object({
+  feed: FeedCoffeeSchema,
   coffee: z.array(CoffeeSchema),
 });
 
 export type Coffee = z.infer<typeof CoffeeSchema>;
+export type FeedCoffee = z.infer<typeof FeedCoffeeSchema>;
 
-export const coffee: Coffee[] = loadYaml("coffee.yaml", CoffeeFileSchema).coffee;
+const data = loadYaml("coffee.yaml", CoffeeFileSchema);
+
+export const feedCoffee: FeedCoffee = data.feed;
+export const coffee: Coffee[] = data.coffee;

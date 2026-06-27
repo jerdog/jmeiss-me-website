@@ -3,16 +3,17 @@
 # Edit this file to update what's shown on /now and the home Now panel.
 # `updated` is a free-form human string (e.g. "May 2026"). Leave it
 # empty to use the month and year from this file's last modification.
-# `items`
-# appear in the order listed. Delete an item to remove it.
+# `items` appear in the order listed. Delete an item to remove it.
+#
+# `text` supports inline Markdown: **bold**, *italic*, [links](url), `code`.
 
 updated: ""
 location: "Kansas City, MO"
 
 items:
   - label: "Working on"
-    text: "Migrating jmeiss.me from Hugo to Next.js. Notes-first, not yet shipped."
+    text: "Technical Solution Architect at WWT, and working on various side projects."
   - label: "Reading"
-    text: "Currently working through a backlog. Updates incoming once /now is wired."
+    text: "'This Is How They Tell Me the World Ends' by Nicole Perlroth; 'Call for the Dead' by John le Carré."
   - label: "Drinking"
-    text: "Daily-driver pourovers from local Kansas City roasters."
+    text: "**Espresso**: latest single-origin from Thou Mayest Coffee; **Whiskey**: variety of Irish whiskey's and rare bourbons."

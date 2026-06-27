@@ -1,3 +1,4 @@
+import { InlineMarkdown } from "@/components/content/InlineMarkdown";
 import { coffee } from "@/content/coffee";
 import { cn } from "@/lib/cn";
 
@@ -29,7 +30,11 @@ export function CoffeeLog() {
                 </p>
                 <p className="coffee-log__method">{entry.method}</p>
               </div>
-              <p className="coffee-log__note">“{entry.note}”</p>
+              <p className="coffee-log__note">
+                “
+                <InlineMarkdown>{entry.note}</InlineMarkdown>
+                ”
+              </p>
             </li>
           ))}
         </ul>

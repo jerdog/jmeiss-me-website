@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NewTabHint } from "@/components/a11y/NewTabHint";
+import { InlineMarkdown } from "@/components/content/InlineMarkdown";
 import { Card } from "@/components/surfaces/Card";
 import { services } from "@/content/services";
 import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href";
@@ -17,10 +18,10 @@ export function ServicesStrip() {
                 {service.number}
               </p>
               <p className={isMiddle ? "service-card__title--dark" : "service-card__title--light"}>
-                {service.title}
+                <InlineMarkdown>{service.title}</InlineMarkdown>
               </p>
               <p className={isMiddle ? "service-card__body--dark" : "service-card__body--light"}>
-                {service.body}
+                <InlineMarkdown>{service.body}</InlineMarkdown>
               </p>
             </Card>
           );

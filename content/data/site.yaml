@@ -3,6 +3,9 @@
 # Editable source of truth — consumed by `content/site.ts`, validated with
 # Zod at build time, and surfaced in the layout, footer, /about,
 # Open Graph metadata, and JSON-LD.
+#
+# `person.blurb` and `person.longBio` support inline Markdown on the home hero
+# and /about page (metadata fields like `description` stay plain text).
 
 title: "Jeremy Meiss"
 description: "Personal website of Jeremy Meiss — International speaker, DevRel & DevEx leader, Technical Architect, and lover of coffee."
