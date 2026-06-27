@@ -435,10 +435,12 @@ export async function getPostsByTag(
 }
 
 export async function getAllTags(opts: ParseOptions = {}): Promise<string[]> {
-  const all = await getAllPosts(opts);
-  const set = new Set<string>();
-  for (const p of all) for (const t of p.tags) set.add(t);
-  return Array.from(set).sort();
+  const counts = await getTagCounts(opts);
+  return Object.keys(counts).sort((a, b) => {
+    const byCount = counts[b]! - counts[a]!;
+    if (byCount !== 0) return byCount;
+    return a.localeCompare(b);
+  });
 }
 
 /**
