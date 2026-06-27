@@ -2,7 +2,7 @@ import { BPaper } from "@/components/surfaces/BPaper";
 import { Container } from "@/components/layout/Container";
 import { HeroCard } from "@/components/home/HeroCard";
 import { NowPanel } from "@/components/home/NowPanel";
-import { FeedStrip } from "@/components/home/FeedStrip";
+import { FeedStrip, type FeedTalk } from "@/components/home/FeedStrip";
 import { RecentEssays } from "@/components/home/RecentEssays";
 import { ServicesStrip } from "@/components/home/ServicesStrip";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -10,12 +10,36 @@ import { getAllPosts } from "@/lib/posts";
 import { feedCoffee } from "@/content/coffee";
 import { now } from "@/content/now";
 import { siteConfig } from "@/content/site";
-import { upcomingTalks, visibleUpcomingTalkRows } from "@/content/talks";
+import { pastTalks, upcomingTalks, visibleUpcomingTalkRows } from "@/content/talks";
+import { fetchNotistPastTalks } from "@/lib/notist";
 
 export default async function HomePage() {
   const posts = await getAllPosts();
   const recent = posts.slice(0, 4);
-  const nextTalk = visibleUpcomingTalkRows(upcomingTalks)[0];
+
+  const upcoming = visibleUpcomingTalkRows(upcomingTalks)[0];
+  let feedTalk: FeedTalk | undefined;
+
+  if (upcoming) {
+    const metaParts = [upcoming.date, upcoming.event].filter(Boolean);
+    feedTalk = {
+      timing: "upcoming",
+      title: upcoming.title,
+      meta: metaParts.join(" · "),
+      href: upcoming.href ?? "/speaking",
+    };
+  } else if (pastTalks) {
+    const latest = (await fetchNotistPastTalks(pastTalks.feedUrl, 1))[0];
+    if (latest) {
+      const metaParts = [latest.dateLabel, latest.conference].filter(Boolean);
+      feedTalk = {
+        timing: "recent",
+        title: latest.title,
+        meta: metaParts.join(" · "),
+        href: latest.href,
+      };
+    }
+  }
 
   const homeJsonLd = [
     {
@@ -66,7 +90,7 @@ export default async function HomePage() {
       </Container>
 
       <Container>
-        <FeedStrip posts={posts} upcomingTalk={nextTalk} feedCoffee={feedCoffee} />
+        <FeedStrip posts={posts} feedTalk={feedTalk} feedCoffee={feedCoffee} />
         <RecentEssays posts={recent} />
         <ServicesStrip />
       </Container>
