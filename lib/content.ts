@@ -4,18 +4,33 @@ import { parse as parseYaml } from "yaml";
 import type { z } from "zod";
 
 /**
+ * Validate parsed YAML against a Zod schema.
+ *
+ * Used by `content/*.ts` modules that import `.yaml` files directly so
+ * Turbopack tracks edits and triggers Fast Refresh in dev.
+ */
+export function validateYaml<T extends z.ZodTypeAny>(
+  parsed: unknown,
+  schema: T,
+  filename: string,
+): z.infer<T> {
+  const result = schema.safeParse(parsed);
+  if (!result.success) {
+    const issues = result.error.issues
+      .map((i) => `${i.path.join(".") || "<root>"}: ${i.message}`)
+      .join("\n  ");
+    throw new Error(`Content YAML failed validation (${filename}):\n  ${issues}`);
+  }
+  return result.data;
+}
+
+/**
  * Read a YAML file from `content/data/` and validate it with Zod.
  *
  * YAML is the editable source of truth for every non-post piece of site
  * content (site config, /now, talks, reading, coffee, services). The TS
- * modules in `content/*.ts` are thin wrappers around this loader so that
- * call-site ergonomics don't change — consumers still `import { siteConfig }
- * from "@/content/site"` and get the inferred Zod type.
- *
- * Parsing happens at module-load time on the server, which in this repo
- * means build time (everything that consumes this data is statically
- * generated). That keeps the runtime cost at zero and turns malformed
- * YAML into a hard build failure with a readable error.
+ * modules in `content/*.ts` import the YAML files directly so the bundler
+ * watches them in dev; this helper remains for scripts and one-off tools.
  *
  * Parameters:
  * - `filename`: a bare filename within `content/data/`, e.g. "site.yaml"
@@ -48,12 +63,5 @@ export function loadYaml<T extends z.ZodTypeAny>(
     );
   }
 
-  const result = schema.safeParse(parsed);
-  if (!result.success) {
-    const issues = result.error.issues
-      .map((i) => `${i.path.join(".") || "<root>"}: ${i.message}`)
-      .join("\n  ");
-    throw new Error(`Content YAML failed validation (${filename}):\n  ${issues}`);
-  }
-  return result.data;
+  return validateYaml(parsed, schema, filename);
 }

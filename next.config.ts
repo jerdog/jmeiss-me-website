@@ -8,6 +8,14 @@ const withMDX = createMDX({
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   reactStrictMode: true,
+  turbopack: {
+    rules: {
+      "*.{yaml,yml}": {
+        loaders: ["yaml-loader"],
+        as: "*.js",
+      },
+    },
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },
@@ -50,6 +58,14 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
     ];
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.ya?ml$/,
+      type: "json",
+      loader: "yaml-loader",
+    });
+    return config;
   },
   async redirects() {
     return [

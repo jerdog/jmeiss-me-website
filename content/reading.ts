@@ -5,7 +5,8 @@
  */
 
 import { z } from "zod";
-import { loadYaml } from "@/lib/content";
+import readingYaml from "./data/reading.yaml";
+import { validateYaml } from "@/lib/content";
 
 const BookStateSchema = z.enum(["Reading", "Re-reading", "Finished", "Up next"]);
 
@@ -23,4 +24,4 @@ const ReadingFileSchema = z.object({
 export type BookState = z.infer<typeof BookStateSchema>;
 export type Book = z.infer<typeof BookSchema>;
 
-export const reading: Book[] = loadYaml("reading.yaml", ReadingFileSchema).reading;
+export const reading: Book[] = validateYaml(readingYaml, ReadingFileSchema, "reading.yaml").reading;

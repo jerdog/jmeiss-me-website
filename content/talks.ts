@@ -26,7 +26,8 @@
  */
 
 import { z } from "zod";
-import { loadYaml } from "@/lib/content";
+import talksYaml from "./data/talks.yaml";
+import { validateYaml } from "@/lib/content";
 import { formatMonthYearUtcFromYmd } from "@/lib/format";
 
 const TalkTypeSchema = z.enum([
@@ -83,7 +84,7 @@ export type Talk = z.infer<typeof TalkSchema>;
 export type UpcomingTalk = z.infer<typeof UpcomingTalkSchema>;
 export type PastTalksConfig = z.infer<typeof PastTalksSchema>;
 
-const data = loadYaml("talks.yaml", TalksFileSchema);
+const data = validateYaml(talksYaml, TalksFileSchema, "talks.yaml");
 
 export const upcomingTalks: UpcomingTalk[] = data.upcomingTalks;
 export const talks: Talk[] = data.talks;

@@ -5,7 +5,8 @@
  */
 
 import { z } from "zod";
-import { loadYaml } from "@/lib/content";
+import servicesYaml from "./data/services.yaml";
+import { validateYaml } from "@/lib/content";
 
 const ServiceSchema = z.object({
   number: z.string().min(1),
@@ -20,4 +21,8 @@ const ServicesFileSchema = z.object({
 
 export type Service = z.infer<typeof ServiceSchema>;
 
-export const services: Service[] = loadYaml("services.yaml", ServicesFileSchema).services;
+export const services: Service[] = validateYaml(
+  servicesYaml,
+  ServicesFileSchema,
+  "services.yaml",
+).services;

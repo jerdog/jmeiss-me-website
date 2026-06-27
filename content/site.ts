@@ -8,7 +8,8 @@
  */
 
 import { z } from "zod";
-import { loadYaml } from "@/lib/content";
+import siteYaml from "./data/site.yaml";
+import { validateYaml } from "@/lib/content";
 
 function trimPersonField(value: unknown): string {
   if (value === undefined || value === null) return "";
@@ -70,7 +71,7 @@ const SiteConfigSchema = z.object({
 export type SocialLink = z.infer<typeof SocialLinkSchema>;
 export type SiteConfig = z.infer<typeof SiteConfigSchema>;
 
-export const siteConfig: SiteConfig = loadYaml("site.yaml", SiteConfigSchema);
+export const siteConfig: SiteConfig = validateYaml(siteYaml, SiteConfigSchema, "site.yaml");
 
 /** Origin of `siteConfig.url` — for same-origin vs external link checks. */
 export const siteOrigin = new URL(siteConfig.url).origin;

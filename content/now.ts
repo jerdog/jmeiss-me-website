@@ -10,7 +10,8 @@
 import { statSync } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
-import { loadYaml } from "@/lib/content";
+import nowYaml from "./data/now.yaml";
+import { validateYaml } from "@/lib/content";
 
 const NowItemSchema = z.object({
   label: z.string().min(1),
@@ -34,7 +35,7 @@ function updatedFromFileMtime(filename: string): string {
 export type NowItem = z.infer<typeof NowItemSchema>;
 export type NowPage = z.infer<typeof NowPageSchema>;
 
-const rawNow = loadYaml(NOW_YAML, NowPageSchema);
+const rawNow = validateYaml(nowYaml, NowPageSchema, NOW_YAML);
 
 export const now: NowPage = {
   ...rawNow,

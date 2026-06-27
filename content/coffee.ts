@@ -6,7 +6,8 @@
  */
 
 import { z } from "zod";
-import { loadYaml } from "@/lib/content";
+import coffeeYaml from "./data/coffee.yaml";
+import { validateYaml } from "@/lib/content";
 
 const CoffeeSchema = z.object({
   roaster: z.string().min(1),
@@ -30,7 +31,7 @@ const CoffeeFileSchema = z.object({
 export type Coffee = z.infer<typeof CoffeeSchema>;
 export type FeedCoffee = z.infer<typeof FeedCoffeeSchema>;
 
-const data = loadYaml("coffee.yaml", CoffeeFileSchema);
+const data = validateYaml(coffeeYaml, CoffeeFileSchema, "coffee.yaml");
 
 export const feedCoffee: FeedCoffee = data.feed;
 export const coffee: Coffee[] = data.coffee;

@@ -347,8 +347,10 @@ async function readPostFile(filePath: string): Promise<Post> {
 let cache: Promise<Post[]> | null = null;
 
 async function readAllPosts(): Promise<Post[]> {
-  if (cache) return cache;
-  cache = (async () => {
+  // Re-read post files on every request in dev (posts are loaded via fs, not imports).
+  if (process.env.NODE_ENV !== "development" && cache) return cache;
+
+  const load = (async () => {
     const entries = await fs.readdir(POSTS_DIR, { withFileTypes: true });
     const files = entries
       .filter((e) => e.isFile() && /\.mdx?$/.test(e.name) && !e.name.startsWith("_"))
@@ -372,7 +374,12 @@ async function readAllPosts(): Promise<Post[]> {
     }
     return posts;
   })();
-  return cache;
+
+  if (process.env.NODE_ENV !== "development") {
+    cache = load;
+  }
+
+  return load;
 }
 
 function isPublished(post: Post, opts: ParseOptions): boolean {
