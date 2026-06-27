@@ -1,23 +1,10 @@
-import { reading, type Book } from "@/content/reading";
-import { cn } from "@/lib/cn";
+import { InlineMarkdown } from "@/components/content/InlineMarkdown";
 
-const colors = [
-  "bg-accent",
-  "bg-accent-deep",
-  "bg-ink",
-  "bg-accent-soft",
-  "bg-highlight",
-  "bg-ink-soft",
-];
+interface BookshelfProps {
+  text?: string;
+}
 
-const stateClass: Record<Book["state"], string> = {
-  Reading: "bookshelf__state--reading",
-  "Re-reading": "bookshelf__state--reading",
-  Finished: "bookshelf__state--finished",
-  "Up next": "bookshelf__state--next",
-};
-
-export function Bookshelf() {
+export function Bookshelf({ text }: BookshelfProps) {
   return (
     <div className="panel-box">
       <div className="panel-heading">
@@ -25,29 +12,14 @@ export function Bookshelf() {
         <span className="hand-note">— what i&apos;m reading</span>
       </div>
 
-      {reading.length === 0 ? (
+      {text ? (
+        <p className="about-panel__body">
+          <InlineMarkdown>{text}</InlineMarkdown>
+        </p>
+      ) : (
         <p className="empty-state-body-spaced">
           Bookshelf currently empty — Jeremy will post titles here as the reading list fills out.
         </p>
-      ) : (
-        <ul>
-          {reading.map((book, i) => (
-            <li
-              key={book.title}
-              className={cn(
-                "bookshelf__row",
-                i < reading.length - 1 && "bookshelf__row--bordered",
-              )}
-            >
-              <span className={cn("bookshelf__spine", colors[i % colors.length])} aria-hidden />
-              <span>
-                <span className="bookshelf__title">{book.title}</span>
-                <span className="bookshelf__author">{book.author}</span>
-              </span>
-              <span className={stateClass[book.state]}>{book.state}</span>
-            </li>
-          ))}
-        </ul>
       )}
     </div>
   );

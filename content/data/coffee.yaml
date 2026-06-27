@@ -1,7 +1,7 @@
-# Coffee log for /about.
+# Legacy structured coffee log (unused).
 #
-# The home feed strip “COFFEE” card uses the “Drinking” item from `now.yaml`.
-# Add log entries below; an empty list shows an empty state on /about.
+# /about “the coffee log” and the home feed strip COFFEE card both use the
+# “Drinking” item from `now.yaml`.
 #
 # Each entry's `note` supports inline Markdown.
 

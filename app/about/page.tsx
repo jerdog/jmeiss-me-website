@@ -11,9 +11,9 @@ import { CoffeeLog } from "@/components/about/CoffeeLog";
 import { SocialGrid } from "@/components/about/SocialGrid";
 import { NowPanel } from "@/components/home/NowPanel";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { siteConfig } from "@/content/site";
+import { siteConfig, siteOrigin } from "@/content/site";
 import { badgeProfileUrl, badges } from "@/content/badges";
-import { now } from "@/content/now";
+import { drinkingFromNow, now, readingFromNow } from "@/content/now";
 
 export const metadata: Metadata = {
   title: "About",
@@ -96,7 +96,7 @@ export default function AboutPage() {
       </Container>
 
       <Container className="page-pad-section">
-        <BadgeWall badges={badges} profileUrl={badgeProfileUrl} />
+        <BadgeWall badges={badges} profileUrl={badgeProfileUrl} pageOrigin={siteOrigin} />
       </Container>
 
       <Container className="page-pad-section">
@@ -105,8 +105,8 @@ export default function AboutPage() {
 
       <Container className="page-pad-section">
         <div className="page-grid-2">
-          <Bookshelf />
-          <CoffeeLog />
+          <Bookshelf text={readingFromNow(now)} />
+          <CoffeeLog text={drinkingFromNow(now)} />
         </div>
       </Container>
 

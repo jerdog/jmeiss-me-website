@@ -811,6 +811,10 @@
     @apply mt-3 text-center font-hand text-xl text-warm;
   }
 
+  .about-panel__body {
+    @apply text-base leading-relaxed text-ink-soft;
+  }
+
   .bookshelf__row {
     @apply grid grid-cols-[2rem_1fr_5.5rem] items-baseline gap-3 py-2.5;
   }
@@ -1007,6 +1011,35 @@
 
   .badge-wall__issuer {
     @apply mt-1 font-mono text-[0.625rem] uppercase tracking-[0.08em] text-muted;
+  }
+
+  .badge-wall__expand-wrap {
+    @apply mt-4 flex justify-center border-t border-rule pt-4;
+  }
+
+  .badge-wall__expand-btn {
+    @apply min-w-[12rem];
+  }
+
+  .badge-wall__more {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .badge-wall__more--open {
+    grid-template-rows: 1fr;
+  }
+
+  .badge-wall__more-inner {
+    min-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .badge-wall__more--open .badge-wall__more-inner {
+    @apply border-t border-rule pt-4 opacity-100;
   }
 
   .topic-chips {

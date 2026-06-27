@@ -1,5 +1,6 @@
-# Bookshelf for /about.
+# Legacy structured bookshelf data (unused).
 #
+# /about “the shelf” reads the “Reading” item from `now.yaml` instead.
 # Add entries like:
 #   - title: "Good Strategy / Bad Strategy"
 #     author: "Richard Rumelt"

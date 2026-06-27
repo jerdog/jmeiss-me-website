@@ -42,6 +42,24 @@ export const now: NowPage = {
   updated: rawNow.updated.trim() || updatedFromFileMtime(NOW_YAML),
 };
 
+/** Find a /now item by label (case-insensitive). */
+export function nowItemByLabel(page: NowPage, label: string): NowItem | undefined {
+  const needle = label.toLowerCase();
+  return page.items.find((item) => item.label.toLowerCase() === needle);
+}
+
+/** Prose for /about “the shelf” — sourced from the /now “Reading” item. */
+export function readingFromNow(page: NowPage): string | undefined {
+  const text = nowItemByLabel(page, "reading")?.text.trim();
+  return text || undefined;
+}
+
+/** Prose for /about “the coffee log” — sourced from the /now “Drinking” item. */
+export function drinkingFromNow(page: NowPage): string | undefined {
+  const text = nowItemByLabel(page, "drinking")?.text.trim();
+  return text || undefined;
+}
+
 /** Home feed strip coffee card — sourced from the /now “Drinking” item. */
 export interface FeedCoffeeCard {
   title: string;
@@ -49,10 +67,8 @@ export interface FeedCoffeeCard {
   href: string;
 }
 
-const DRINKING_LABEL = "drinking";
-
 export function feedCoffeeFromNow(page: NowPage): FeedCoffeeCard {
-  const drinking = page.items.find((item) => item.label.toLowerCase() === DRINKING_LABEL);
+  const drinking = nowItemByLabel(page, "drinking");
   return {
     title: drinking?.text.trim() || "What's in the cup lately.",
     meta: "the about page",
