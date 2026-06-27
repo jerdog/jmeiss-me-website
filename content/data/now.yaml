@@ -6,6 +6,8 @@
 # `items` appear in the order listed. Delete an item to remove it.
 #
 # `text` supports inline Markdown: **bold**, *italic*, [links](url), `code`.
+# “Drinking” is the quick snapshot for /now, the home feed strip, and /about.
+# Detailed roaster/distillery notes live in `drinking.yaml`.
 
 updated: ""
 location: "Kansas City, MO"

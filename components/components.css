@@ -847,31 +847,39 @@
     @apply text-right font-mono text-xs uppercase tracking-[0.12em] text-muted;
   }
 
-  .coffee-log__item {
+  .about-panel__body--spaced {
+    @apply mb-4 border-b border-dashed border-paper-deep pb-4;
+  }
+
+  .drinking-log__list {
+    @apply list-none p-0;
+  }
+
+  .drinking-log__item {
     @apply py-3;
   }
 
-  .coffee-log__item--bordered {
+  .drinking-log__item--bordered {
     @apply border-b border-dashed border-paper-deep;
   }
 
-  .coffee-log__row {
+  .drinking-log__row {
     @apply flex items-baseline justify-between gap-2;
   }
 
-  .coffee-log__title {
+  .drinking-log__title {
     @apply font-display text-base leading-tight;
   }
 
-  .coffee-log__origin {
+  .drinking-log__detail {
     @apply italic text-warm;
   }
 
-  .coffee-log__method {
-    @apply font-mono text-xs uppercase tracking-[0.12em] text-muted;
+  .drinking-log__meta {
+    @apply shrink-0 font-mono text-xs uppercase tracking-[0.12em] text-muted;
   }
 
-  .coffee-log__note {
+  .drinking-log__note {
     @apply mt-1 font-hand text-base text-accent;
   }
 

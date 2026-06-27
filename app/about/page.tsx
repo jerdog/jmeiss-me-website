@@ -7,12 +7,13 @@ import { AboutCredentials } from "@/components/about/AboutCredentials";
 import { BadgeWall } from "@/components/about/BadgeWall";
 import { PortraitCard } from "@/components/about/PortraitCard";
 import { Bookshelf } from "@/components/about/Bookshelf";
-import { CoffeeLog } from "@/components/about/CoffeeLog";
+import { DrinkingPanel } from "@/components/about/DrinkingPanel";
 import { SocialGrid } from "@/components/about/SocialGrid";
 import { NowPanel } from "@/components/home/NowPanel";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig, siteOrigin } from "@/content/site";
 import { badgeProfileUrl, badges } from "@/content/badges";
+import { drinks } from "@/content/drinking";
 import { drinkingFromNow, now, readingFromNow } from "@/content/now";
 
 export const metadata: Metadata = {
@@ -106,7 +107,7 @@ export default function AboutPage() {
       <Container className="page-pad-section">
         <div className="page-grid-2">
           <Bookshelf text={readingFromNow(now)} />
-          <CoffeeLog text={drinkingFromNow(now)} />
+          <DrinkingPanel snapshot={drinkingFromNow(now)} drinks={drinks} />
         </div>
       </Container>
 

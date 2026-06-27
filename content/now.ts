@@ -54,7 +54,7 @@ export function readingFromNow(page: NowPage): string | undefined {
   return text || undefined;
 }
 
-/** Prose for /about “the coffee log” — sourced from the /now “Drinking” item. */
+/** Prose snapshot for /about “what i'm drinking” — sourced from the /now “Drinking” item. */
 export function drinkingFromNow(page: NowPage): string | undefined {
   const text = nowItemByLabel(page, "drinking")?.text.trim();
   return text || undefined;

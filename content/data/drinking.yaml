@@ -1,0 +1,23 @@
+# Structured drinking log for /about “what i'm drinking”.
+#
+# The /now “Drinking” item is the quick snapshot (also used on the home feed
+# strip). Add detailed entries below when you want roaster/distillery notes.
+#
+# `kind` is `coffee` or `spirit`. Each entry's `note` supports inline Markdown.
+
+drinks: []
+# Example coffee:
+#   - kind: coffee
+#     roaster: "Thou Mayest Coffee"
+#     origin: "Ethiopia, Guji"
+#     method: "Espresso"
+#     note: "Blueberry, milk chocolate, very clean"
+#     href: "https://thoumayest.com"
+# Example spirit:
+#   - kind: spirit
+#     producer: "Redbreast"
+#     name: "12 Year"
+#     style: "Irish whiskey"
+#     serving: "Neat"
+#     note: "Sherry, dried fruit, long finish"
+#     href: "https://example.com"

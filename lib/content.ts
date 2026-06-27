@@ -28,7 +28,7 @@ export function validateYaml<T extends z.ZodTypeAny>(
  * Read a YAML file from `content/data/` and validate it with Zod.
  *
  * YAML is the editable source of truth for every non-post piece of site
- * content (site config, /now, talks, reading, coffee, services). The TS
+ * content (site config, /now, talks, reading, drinking, services). The TS
  * modules in `content/*.ts` import the YAML files directly so the bundler
  * watches them in dev; this helper remains for scripts and one-off tools.
  *
