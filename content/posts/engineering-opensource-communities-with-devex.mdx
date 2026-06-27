@@ -1,0 +1,156 @@
+---
+title: "It's Not Rocket Science, It's a Flywheel: Engineering Open Source Communities with DevEx"
+date: 2025-12-22T08:13:06-05:00
+draft: false
+hero: /images/posts/devex-flywheel-hero-image.png
+description: "Open source community growth isn't rocket science; it's engineering. Discover how to use Developer Experience (DevEx) principles to build a self-sustaining 'flywheel' of contributions, reduce burnout, and improve project health."
+summary: "Stop hoping for open source community growth. Learn how to engineer it by applying the 'flywheel' concept to Developer Experience, creating sustainable momentum through better onboarding, tooling, and feedback."
+author:
+  name: Jeremy Meiss
+  image: /images/author/jeremy-meiss.jpg
+tags:
+  - devex
+  - community
+  - open source
+toc: false
+---
+
+I have done just about everything in IT over the past few decades, including being a janitor at some point. I remember the days when we used to build servers by hand, and I still have the scars to prove it, because, evidently, innovation stopped at figuring out how to sand down the sharp steel inside a server chassis.
+
+While hardware has changed, one thing in open source remains a constant struggle: **The Maintainer's Dilemma**.
+
+![xkcd comic on dependency](/images/posts/xkcd_dependency.png)
+(Source: [XKCD](https://xkcd.com/2347/))
+
+You want to grow your project and community, but doing so requires a massive amount of time and effort—resources you likely don’t have. Often, the default response is to simply wait and "hope" for the best: we hope people get involved; we hope for pull requests; we hope we don't burn out.
+
+But as I discussed at Community over Code North America 2025, **hope is not a strategy**.
+
+![Ted Lasso - it's the hope that kills](/images/posts/ted-lasso-hope-that-kills-you.gif)
+
+Building a thriving open source community shouldn't be a mystery, and it doesn't have to be a grind that leads to burnout. Instead of hoping for growth, we need to start *engineering* the conditions for success. To do that, we can combine the physics of a **flywheel** with the principles of **Developer Experience (DevEx)**.
+
+## Quick DevEx Primer
+
+We define Developer Experience (DevEx) as *"the journey of developers as they learn and deploy technology... focusing on eliminating obstacles that hinder a developer or practitioner from achieving success"* (courtesy of Jessica West, Chronosphere).
+
+There are 3 **core dimensions** that you can measure (and improve) in Developer Experience:
+
+- **Feedback Loops:** This dimension concerns the speed and quality of the learning cycles that define a developer's workflow. It answers the question: "How quickly do I learn if my change is correct?" Fast, high-quality feedback loops are characterized by rapid build and test times, swift code reviews, and smooth, predictable deployments. Slow or noisy feedback loops, in contrast, kill momentum and create frustration.
+- **Cognitive Load:** This refers to the total amount of mental effort required to perform a task. In software development, cognitive load is increased by factors such as complex architectures, poorly documented code, inconsistent tooling, and ambiguous processes. Reducing unnecessary cognitive load allows developers to dedicate their finite mental energy to solving the core problem at hand, rather than fighting their environment.
+- **Flow State:** Often described as "being in the zone," flow state is a mental state of deep, energized focus and full immersion in a task. It is in this state that developers are at their most productive, creative, and satisfied. Achieving flow state requires long, uninterrupted blocks of time, clear goals, and an environment free from distractions and context-switching.
+
+A positive DevEx is characterized by frictionless workflows that empower developers, reduce unnecessary cognitive overhead, and allow them to focus on high-value, creative work.
+
+![Impacts of DevEx](/images/posts/devex-positive-impacts.png)
+
+> *(I've written a [few things about DevEx](https://jmeiss.me/tags/developer-experience/) if you'd like to read more)*
+
+## Why DevEx is (Slightly) Different in Open Source
+
+In a corporate environment, developers are paid to be there. In open source, they are volunteers. They have a choice about where they spend their energy. This means the stakes are higher, and the barriers to entry must be lower than they would be for employees who are forced to use tools like Jira ("apologies" to Atlassian).
+
+While DevEx is often discussed in the context of enterprise productivity (saving time, reducing churn), it is just as critical for open source (and hint: that's "developer productivity", not "developer experience"). If a potential contributor faces friction (bad docs, confusing tooling, or silence on a PR) they stop. We lose not just their contribution, but the opportunity for a long-term community member.
+
+## The Physics of Community
+
+In engineering, a [flywheel](https://www.theengineeringchoice.com/what-is-flywheel/) is a mechanical device designed to efficiently store rotational energy. It’s a heavy wheel that requires significant effort to start spinning, but once it gains momentum, it becomes a self-reinforcing loop.
+
+![Parts of a flywheel](/images/posts/parts-of-flywheel.jpg)
+
+In the context of business and community, the concept is identical. There is no single "lucky break" or "killer innovation" that builds a massive community in one swoop. It is a process of relentlessly pushing a giant, heavy flywheel, turn upon turn, building momentum over time.
+
+Jim Collins, in his book "Good to Great," popularized the concept of the **"flywheel effect"** in business. His research identified that no matter how dramatic the end result, good-to-great transformations never happen in one fell swoop. In building a great company or social sector enterprise, there is no single defining action, no grand program, no one killer innovation, no solitary lucky break, no miracle moment. Rather, the process he described was relentlessly pushing a giant, heavy flywheel, turn upon turn, building momentum until a point of breakthrough, and beyond. The key to the flywheel effect is that it requires consistent, focused effort over time to build momentum. Each small push adds to the overall momentum, and as the flywheel spins faster, it becomes easier to keep it going.
+
+If you stop pushing - or worse, if you constantly change your process - you lose that stored energy and have to start over.
+
+Metaphorically, this is exactly what we want for our communities: a self-reinforcing loop that, once set in motion, gains its own momentum and drives continuous growth and improvement without requiring constant, heavy lifting from the maintainer.
+
+To get the flywheel spinning, we need to engineer specific "pushes" that remove friction and increase "joy."
+
+## Components of the OSS DevEx Flywheel
+
+### 1. The Welcome Mat (Onboarding)
+
+The `README.md` is your community's front door. If it’s locked or hard to find, no one enters. It needs to clearly answer: What is this? How do I run it? How do I contribute?
+
+- **Essentials:** Ensure your `README.md`, `CONTRIBUTING.md`, and `Code of Conduct` are clear and accessible.
+- **Templates are vital:** Use Issue and PR templates to guide contributors and set the tone.
+- **Make the Ask:** People often want to help but don't know how. Don't just wait for code. List your needs explicitly, whether it's testing, answering questions, or writing blog posts (see [Andy Lester’s "14 ways"](https://web.archive.org/web/20220701201249/https://smartbear.com/blog/14-ways-to-contribute-to-open-source-without-being/) on the Wayback Machine for some ideas).
+- **Good First Issues:** Label issues clearly so newcomers can get an easy win.
+
+### 2. "Time to Joy" & Tooling
+
+How quickly can a contributor go from zero to a result? We have called this "Time to Joy" (and other variations) for many years. We love serotonin; you need to give your contributors that feeling as early as possible.
+
+- **The "Hello World" Standard:** Ensure there is a simple example that runs in minutes.
+- **Automate the Environment:** Environment setup is a killer. Use tools like `devcontainer.json` so a contributor can hit a button in GitHub, open a Codespace, and be ready to code without fighting local dependencies.
+- **Linting:** Use automated linters to handle style debates. It keeps the codebase consistent and removes the awkward "you missed a semicolon" conversations from code reviews. Things like Prettier, ESLint, and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) are great options.
+
+### 3. Feedback Loops
+
+A contribution without feedback feels like shouting into the void. Silence kills momentum.
+
+- **Automate the First Response:** Use GitHub Actions ([some examples](https://github.com/marketplace?query=thank&type=actions)) to thank a contributor immediately when they open a PR.
+- **Office Hours:** If you can, hold office hours. Being available for open conversation helps people get past barriers they can't solve via text.
+- **Code Reviews:** Be timely and constructive.
+
+#### Handling the "Dead End" Thread
+
+We’ve all seen it: someone posts an issue about an error, replies later with "Oh, I figured it out," and vanishes. This is incredibly frustrating for the next person who hits that error.
+
+Even if the user has vanished, you must ask the question: "How did you fix it?". Even if they don't reply, you keep the issue visible so someone else can provide the answer later. If you know the fix, document it publicly. Poorly documented bugs are a massive DevEx fail.
+
+### 4. Recognition & Value
+
+Recognition is the currency of open source, and people contribute where they feel valued.
+
+- **Celebrate Everything:** Use tools like the "**[All Contributors](https://allcontributors.org/)**" bot to recognize documentation, triage, and design work — not just code.
+- **Re-engaging the Core:** If you have contributors who have gone silent, reach out to them. Send a message just to say, "I appreciate what you've been doing". Understanding their motivations—or why they left—is critical to helping your project. People contribute where they feel valued.
+- **Public Thanks:** Shout out contributors in release notes, blogs, and on social media. Put them on your README.md with a [GitHub Action](https://github.com/marketplace/actions/contribute-list).
+
+### 5. Leadership Pipeline
+
+Finally, a flywheel needs stability. Create clear paths to maintainership. If a task is important, it needs a name attached to it. As your community grows, identify promising contributors and give them specific roles, like "Documentation Lead" or "Release Team" - the Kubernetes Community does a really good job of this.
+
+Empower them to own that domain. This shares the emotional labor and mitigates the burnout that comes from trying to do it all yourself.
+
+## The DevEx Flywheel in Action
+
+When we put it all together:
+
+- **Good Docs** -> New contributor arrives, feels confident.
+- **Great Tooling** -> They get set up quickly ("Time to Joy"!).
+- **Helpful Feedback** -> Their first PR is a positive experience.
+- **Public Recognition** -> They feel valued and stick around.
+- **New Leaders Emerge** -> Growing community, less burnout, more sustainability.
+
+![A flywheel spinning and in action](/images/posts/flywheel-spinning.jpg)
+
+Now you have an engaged contributor who helps improve the project and mentor others. The flywheel is spinning. But how do you measure that?
+
+## Measuring the Spin
+
+How do you know if your engineering is working? You can look to metrics from **[CHAOSS](https://chaoss.community/)** (Community Health Analytics Open Source Software):
+
+- **New Contributors, and Who are They?** ([CHAOSS](https://chaoss.community/?p=3613), [OpenSource.com](https://opensource.com/article/17/4/encourage-new-contributors))
+- **Contributor Absence Factor:** How reliant is a project on a small number of contributors? ([CHAOSS](https://chaoss.community/?p=3944))
+- **Time to First Response:** Are people getting feedback quickly? (CHAOSS [First Response](https://chaoss.community/?p=3448), [Time to Close](https://chaoss.community/?p=3446))
+- **Retention:** Are contributors staying for more than one PR?
+
+## It Starts With a Single Push
+
+You don't have to fix everything at once. The goal is small, consistent pushes on the flywheel.
+
+1. **Dogfood your guide:** Follow your own `CONTRIBUTING.md` from scratch. Where do *you* get stuck?
+2. **The "Friend Test":** Ask a friend unfamiliar with the project to try and run it. Compare notes.
+3. **Fix one thing:** Pick the single biggest point of friction you found and fix it this week.
+
+## Conclusion
+
+Stop hoping for community growth - start "engineering" it through the principles of Developer Experience. Small, consistent improvements will create the powerful, sustainable momentum your project needs.
+
+## Further Reading
+
+- [View the CHAOSS Metrics Catalog](https://chaoss.community/kb-metrics-and-metrics-models/)
+- [GitHub Repository Insights](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository)

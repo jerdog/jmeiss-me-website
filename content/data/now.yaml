@@ -1,0 +1,21 @@
+# /now page items.
+#
+# Edit this file to update what's shown on /now and the home Now panel.
+# `updated` is a free-form human string (e.g. "May 2026"). Leave it
+# empty to use the month and year from this file's last modification.
+# `items` appear in the order listed. Delete an item to remove it.
+#
+# `text` supports inline Markdown: **bold**, *italic*, [links](url), `code`.
+# “Drinking” is the quick snapshot for /now, the home feed strip, and /about.
+# Detailed roaster/distillery notes live in `drinking.yaml`.
+
+updated: ""
+location: "Kansas City, MO"
+
+items:
+  - label: "Working on"
+    text: "Technical Solution Architect at WWT, and working on various side projects."
+  - label: "Reading"
+    text: "'This Is How They Tell Me the World Ends' by Nicole Perlroth; 'Call for the Dead' by John le Carré."
+  - label: "Drinking"
+    text: "**Espresso**: latest single-origin from Thou Mayest Coffee; **Whiskey**: variety of Irish whiskey's and craft bourbons."

@@ -1,0 +1,184 @@
+/* Shared classes used across app pages and components */
+@reference "./tokens.css";
+
+@layer components {
+  /* ── Shell ─────────────────────────────────────────────────────────── */
+
+  .body-shell {
+    @apply font-body bg-paper text-ink antialiased;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-paper;
+  }
+
+  /* ── Typography ────────────────────────────────────────────────────── */
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-accent;
+  }
+
+  .eyebrow-sm {
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-accent;
+  }
+
+  .eyebrow-xs {
+    @apply font-mono text-[11px] font-bold uppercase tracking-[0.12em];
+  }
+
+  .hand-note {
+    @apply font-body text-base text-ink-soft italic;
+  }
+
+  .hand-note-xl {
+    @apply font-body text-lg text-ink-soft italic;
+  }
+
+  .hand-accent {
+    @apply font-body text-sm font-medium text-accent-deep;
+  }
+
+  /* ── Section headings (pages + components) ─────────────────────────── */
+
+  .section-title {
+    @apply mb-4 font-display text-2xl md:text-3xl;
+  }
+
+  .section-title-inline {
+    @apply font-display text-2xl md:text-3xl;
+  }
+
+  .section-header {
+    @apply mb-4 flex items-baseline gap-4;
+  }
+
+  .section-note {
+    @apply font-body text-sm text-ink-soft;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl tracking-tight md:text-4xl;
+  }
+
+  .section-heading-spaced {
+    @apply mb-4 font-display text-3xl tracking-tight md:text-4xl;
+  }
+
+  .section-heading-row {
+    @apply mb-5 flex items-baseline justify-between;
+  }
+
+  .section-heading-row-compact {
+    @apply mb-3 flex items-baseline justify-between;
+  }
+
+  /* ── Links ─────────────────────────────────────────────────────────── */
+
+  .back-link {
+    @apply font-body text-base font-medium text-accent transition-colors hover:text-accent-deep;
+  }
+
+  .text-link {
+    @apply text-accent underline underline-offset-4 hover:text-accent-deep;
+  }
+
+  /* ── Buttons ───────────────────────────────────────────────────────── */
+
+  .btn-primary {
+    @apply inline-flex items-center rounded-full bg-ink px-4 py-2 font-body text-sm font-medium text-paper transition-colors hover:bg-accent-deep;
+  }
+
+  .btn-primary-lg {
+    @apply inline-flex items-center rounded-full bg-ink px-5 py-2.5 font-body text-sm font-medium text-paper transition-colors hover:bg-accent-deep;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center rounded-full border border-ink bg-paper px-4 py-2 font-body text-sm text-ink transition-colors hover:bg-card;
+  }
+
+  .btn-secondary-lg {
+    @apply inline-flex items-center rounded-full border border-ink bg-transparent px-5 py-2.5 font-body text-sm text-ink transition-colors hover:bg-card;
+  }
+
+  .btn-warm {
+    @apply inline-flex items-center rounded-full mt-3 bg-warm px-4 py-2 font-body text-sm font-medium text-paper transition-colors hover:opacity-90;
+  }
+
+  .btn-text {
+    @apply font-body text-sm text-accent underline underline-offset-4 hover:text-accent-deep;
+  }
+
+  .btn-text-spaced {
+    @apply mt-3 font-body text-sm text-accent underline underline-offset-4 hover:text-accent-deep;
+  }
+
+  /* ── Empty states ──────────────────────────────────────────────────── */
+
+  .empty-state {
+    @apply rounded-md border border-dashed border-rule bg-card px-6 py-12 text-center;
+  }
+
+  .empty-state--speaking {
+    @apply px-7;
+  }
+
+  .empty-state-footer {
+    @apply mt-4 text-sm;
+  }
+
+  .empty-state-body-spaced {
+    @apply mt-2 text-sm text-ink-soft;
+  }
+
+  .empty-state-title {
+    @apply font-display text-2xl text-ink;
+  }
+
+  .empty-state-body {
+    @apply mt-2 text-sm text-ink-soft;
+  }
+
+  /* ── Panels ────────────────────────────────────────────────────────── */
+
+  .panel-box {
+    @apply border border-ink bg-card px-6 py-5;
+  }
+
+  .panel-heading {
+    @apply mb-3 flex items-baseline gap-2;
+  }
+
+  .panel-title {
+    @apply font-display text-2xl md:text-3xl;
+  }
+
+  /* ── Layout container ──────────────────────────────────────────────── */
+
+  .container {
+    @apply mx-auto w-full;
+  }
+
+  .container--narrow {
+    @apply max-w-3xl;
+  }
+
+  .container--default {
+    @apply max-w-[1200px];
+  }
+
+  .container--wide {
+    @apply max-w-[1400px];
+  }
+
+  .container--full {
+    @apply max-w-none;
+  }
+
+  .container-pad--default {
+    @apply px-5 sm:px-8 md:px-10;
+  }
+
+  .container-pad--tight {
+    @apply px-4 md:px-6;
+  }
+}

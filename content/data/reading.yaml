@@ -1,0 +1,12 @@
+# Legacy structured bookshelf data (unused).
+#
+# /about “the shelf” reads the “Reading” item from `now.yaml` instead.
+# Add entries like:
+#   - title: "Good Strategy / Bad Strategy"
+#     author: "Richard Rumelt"
+#     state: "Reading"               # Reading|Re-reading|Finished|Up next
+#     href: "https://bookshop.org/…" # optional
+#
+# An empty list renders the "bookshelf currently empty" state.
+
+reading: []

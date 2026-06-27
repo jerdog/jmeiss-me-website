@@ -1,0 +1,288 @@
+/* MDX article typography and content shortcode styles */
+@reference "../app/tokens.css";
+
+/* Article body */
+.prose-mdx {
+  font-family: var(--font-body);
+  color: var(--color-ink-soft);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+.prose-mdx > * + * {
+  margin-top: 1.25rem;
+}
+
+/* Post pages: article fills the column; TOC sits in a fixed right rail */
+.prose-mdx.post-article {
+  max-width: none;
+}
+
+.prose-mdx h2 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+  font-weight: 400;
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+.prose-mdx h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--color-ink);
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-mdx p {
+  margin: 0 0 1.25rem;
+}
+
+.prose-mdx a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.prose-mdx a:hover {
+  color: var(--color-accent-deep);
+}
+
+/* rehype-autolink-headings: `.prose-mdx a` alone wins over `.heading-anchor` */
+.prose-mdx a.heading-anchor {
+  text-decoration: none;
+  text-underline-offset: unset;
+  text-decoration-thickness: unset;
+  color: inherit;
+  font-size: 0.8em;
+}
+
+.prose-mdx a.heading-anchor:hover {
+  color: var(--color-accent);
+}
+
+.prose-mdx strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.prose-mdx ul,
+.prose-mdx ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.prose-mdx ul {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.prose-mdx ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.prose-mdx li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.prose-mdx li::marker {
+  color: var(--color-accent-deep);
+}
+
+.prose-mdx li > ul {
+  list-style-type: circle;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-mdx hr {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background-color: var(--color-card);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  border: 1px solid var(--color-rule);
+}
+
+.prose-mdx pre,
+.prose-mdx figure[data-rehype-pretty-code-figure] pre {
+  font-family: var(--font-mono);
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-ink);
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.prose-mdx figure[data-rehype-pretty-code-figure] {
+  margin: 1.5rem 0;
+}
+
+.prose-mdx figure[data-rehype-pretty-code-figure] pre {
+  margin: 0;
+}
+
+.prose-mdx pre code,
+.prose-mdx figure[data-rehype-pretty-code-figure] code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  border-radius: 0;
+}
+
+.prose-mdx hr {
+  border: 0;
+  border-top: 1px dashed var(--color-rule);
+  margin: 2rem 0;
+}
+
+.prose-mdx img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--color-rule);
+}
+
+/* Lede paragraph (first paragraph after PostHeader) */
+.prose-mdx > p:first-of-type {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--color-ink);
+}
+
+/* MDX shortcode typography */
+@layer components {
+  .prose-mdx blockquote {
+    @apply relative my-7 border border-ink border-l-[6px] border-l-warm bg-highlight px-6 py-5 hard-shadow-ink-sm;
+  }
+
+  .prose-mdx blockquote p {
+    @apply m-0 font-display text-xl leading-snug text-ink italic;
+  }
+
+  .prose-mdx blockquote strong {
+    @apply font-semibold text-ink not-italic;
+  }
+
+  .prose-mdx .mdx-table-wrap {
+    @apply my-7 overflow-x-auto border border-ink bg-paper hard-shadow-ink-sm;
+  }
+
+  .prose-mdx table {
+    @apply w-full border-collapse text-[0.9375rem];
+  }
+
+  .prose-mdx th,
+  .prose-mdx td {
+    @apply border border-ink px-3.5 py-2.5 text-left align-top;
+  }
+
+  .prose-mdx thead th {
+    @apply border-ink bg-ink font-mono text-[0.6875rem] tracking-[0.08em] text-paper uppercase;
+  }
+
+  .prose-mdx tbody tr:nth-child(even) {
+    @apply bg-card;
+  }
+
+  .content-callout {
+    @apply my-6 border-l-4 px-5 py-4 font-body text-base leading-relaxed text-ink-soft;
+  }
+
+  .content-callout--note {
+    @apply border-accent bg-card;
+  }
+
+  .content-callout--warn {
+    @apply border-warm bg-card;
+  }
+
+  .content-callout--tip {
+    @apply border-ink bg-highlight;
+  }
+
+  .content-callout__label {
+    @apply mb-1 font-mono text-xs uppercase tracking-[0.12em];
+  }
+
+  .content-callout__label--note {
+    @apply text-accent;
+  }
+
+  .content-callout__label--warn {
+    @apply text-warm;
+  }
+
+  .content-callout__label--tip {
+    @apply text-ink;
+  }
+
+  .content-pullquote {
+    @apply hard-shadow-warm relative my-8 bg-ink px-7 py-7 text-highlight;
+  }
+
+  .content-pullquote__mark {
+    @apply absolute -top-2 left-4 font-display text-7xl leading-none text-warm;
+  }
+
+  .content-pullquote__text {
+    @apply font-display text-2xl leading-snug;
+  }
+
+  .content-pullquote__cite {
+    @apply mt-3 block font-body text-base not-italic text-highlight;
+  }
+
+  .content-figure {
+    @apply my-6;
+  }
+
+  .content-figure__image {
+    @apply h-auto max-w-full border border-rule;
+  }
+
+  .content-figure__caption {
+    @apply mt-2 text-center font-body text-sm text-ink-soft;
+  }
+
+  .content-figure__caption-link {
+    @apply text-accent hover:underline;
+  }
+
+  .content-youtube {
+    @apply my-6 w-full overflow-hidden border border-ink bg-ink;
+  }
+
+  .content-youtube__frame {
+    @apply h-full w-full;
+  }
+
+  .content-youtube-wrap {
+    @apply my-6;
+  }
+
+  .content-youtube__caption {
+    @apply mt-2 text-center font-body text-sm text-ink-soft;
+  }
+
+  .content-embed {
+    @apply my-6 flex justify-center;
+  }
+}

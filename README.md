@@ -1,0 +1,390 @@
+# jmeiss.me
+
+Personal website of Jeremy Meiss — DevRel & DevEx leader, international speaker, coffee evangelist.
+
+Built on **Next.js 15 (App Router)** with **TypeScript**, **MDX**, **Tailwind v4**, **Pagefind**, and deployed to **Netlify**. Migrated from Hugo in April 2026; the cutover commits removed all Hugo legacy. Posts live as `.mdx` files in `content/posts/` and are rendered through a custom MDX pipeline so authors can drop in components like `<YouTube>`, `<Figure>`, `<Callout>`, and `<PullQuote>` alongside Markdown prose.
+
+## Quick start
+
+```bash
+git clone git@github.com:jerdog/jmeiss-me-website.git
+cd jmeiss-me-website
+npm install
+npm run dev
+```
+
+Then open <http://localhost:3000>.
+
+Drafts (`draft: true`) are visible in `npm run dev` so you can preview them locally; the production build excludes them from the static export and from `/sitemap.xml`, `/index.xml`, and the search index.
+
+## Project structure
+
+```text
+.
+├── app/                       # Next.js App Router routes (each folder = URL segment)
+│   ├── about/                 # /about
+│   ├── now/                   # /now
+│   ├── posts/                 # /posts and /posts/[slug]
+│   ├── speaking/              # /speaking
+│   ├── tags/[tag]/            # /tags/<kebab-tag>
+│   ├── index.xml/route.ts     # /index.xml — RSS 2.0 (preserves Hugo path)
+│   ├── atom.xml/route.ts      # /atom.xml — Atom feed
+│   ├── feed.json/route.ts     # /feed.json — JSON Feed v1.1
+│   ├── sitemap.ts             # /sitemap.xml
+│   ├── robots.ts              # /robots.txt
+│   ├── manifest.ts            # /manifest.webmanifest
+│   ├── not-found.tsx          # 404 page
+│   ├── layout.tsx             # root <html>/<body>, fonts, site metadata
+│   ├── page.tsx               # /
+│   ├── globals.css            # CSS entry: Tailwind, tokens, base, imports layer files
+│   ├── tokens.css             # Design tokens (@theme) and custom @utility helpers
+│   ├── global.css             # Shared classes used by app pages and components
+│   └── app.css                # Page-only layout and route styles
+│
+├── components/                # React components (organized by surface)
+│   ├── components.css         # Component-only styles
+│   ├── about/                 # PortraitCard, Bookshelf, CoffeeLog, SocialGrid
+│   ├── home/                  # HeroCard, NowPanel, FeedStrip, RecentEssays, ServicesStrip
+│   ├── icons/                 # Inline SVG icon component (Font Awesome subset)
+│   ├── layout/                # Nav, Footer, Container, SearchDialog, SearchModal
+│   ├── post/                  # MDXContent, PostHeader, ContentsRail, RelatedPosts,
+│   │                          #  YouTube, XEmbed, Figure, Button, Callout, PullQuote, PostImage
+│   ├── posts/                 # PostCard, PostsIndexClient (filterable list)
+│   ├── seo/                   # JsonLd
+│   ├── speaking/              # TalkRow, TopicChips, EmptyTalksState, PastTalksBlock
+│   └── surfaces/              # BPaper, Card, Tape, Tag — design-system primitives
+│
+├── content/                   # All site copy, data, and posts (the editable surface)
+│   ├── content.css            # MDX prose typography and shortcode styles
+│   ├── posts/                 # *.mdx — individual essays
+│   ├── data/                  # YAML — editable source of truth for site config
+│   │   ├── site.yaml          # Site title, bio, socials, copyright
+│   │   ├── now.yaml           # /now items
+│   │   ├── talks.yaml         # /speaking: upcomingTalks, talks, pastTalks, topics
+│   │   ├── reading.yaml       # /about bookshelf
+│   │   ├── coffee.yaml        # /about coffee log
+│   │   └── services.yaml      # Home "what i actually do" cards
+│   ├── site.ts                # Thin loader: parses + validates site.yaml via Zod
+│   ├── now.ts                 # Thin loader: parses + validates now.yaml
+│   ├── talks.ts               # Thin loader: parses + validates talks.yaml
+│   ├── reading.ts             # Thin loader: parses + validates reading.yaml
+│   ├── coffee.ts              # Thin loader: parses + validates coffee.yaml
+│   └── services.ts            # Thin loader: parses + validates services.yaml
+│
+├── lib/                       # Shared helpers
+│   ├── posts.ts               # Frontmatter parser (TOML+YAML), Zod schema, getAllPosts/etc.
+│   ├── content.ts             # loadYaml(filename, schema) — used by content/*.ts loaders
+│   ├── mdx.ts                 # MDX compile + ToC extraction
+│   ├── format.ts              # Date formatters (UTC-stable to avoid hydration drift)
+│   ├── off-site-href-core.ts  # Pure `target`/`rel` helpers (pass page origin)
+│   ├── off-site-href.ts       # Wraps core with `siteOrigin` from site.yaml (server / MDX)
+│   ├── notist.ts              # Notist profile + event JSON for /speaking past talks
+│   └── cn.ts                  # className util
+│
+├── public/                    # Static assets served at the root
+│   ├── images/posts/          # Post hero/inline images
+│   ├── images/                # Site-level images (avatars, portraits, logos)
+│   ├── files/                 # Resume PDFs and downloadables
+│   └── pagefind/              # Generated by `npm run build` — do NOT edit by hand
+│
+├── scripts/                   # CLI helpers (see "Scripts" below)
+├── docs/                      # Design + planning artifacts (prototype JSX, plan)
+├── mdx-components.tsx         # Maps MDX tags -> React components for posts
+├── next.config.ts             # MDX wiring, image formats (avif/webp), redirects
+├── netlify.toml               # Build config, security headers, cache headers
+├── postcss.config.mjs         # Tailwind v4 PostCSS plugin
+└── tsconfig.json
+```
+
+## Writing a new post
+
+The post pipeline is intentionally low-friction — write Markdown with optional MDX components, set five frontmatter fields, commit.
+
+### 1. Scaffold
+
+```bash
+npm run new-post "Why DevRel needs a new name"
+```
+
+This creates `content/posts/why-devrel-needs-a-new-name.mdx` with today's date, `draft: true`, and a placeholder body. Drafts are visible in `npm run dev` but excluded from production builds, sitemap, RSS, and search index.
+
+### 2. Frontmatter
+
+```yaml
+---
+title: "Why DevRel needs a new name"
+date: 2026-04-30
+tags: [devrel, opinion]
+excerpt: "A 240-character TL;DR shown on the index, in cards, and in OG/RSS metadata."
+draft: true
+---
+```
+
+| Field       | Required | Type           | Notes |
+|-------------|----------|----------------|-------|
+| `title`     | yes      | string         | Display title and `<title>`. |
+| `date`      | yes      | ISO date       | Publish date. Used for sort order, RSS, sitemap, and the post header. |
+| `tags`      | no       | string[]       | Lowercased on read. URL slugs are kebab-cased automatically (`Open Source` → `/tags/open-source`). |
+| `excerpt`   | no       | string         | If omitted, the first prose paragraph is auto-extracted (HTML/MDX stripped). |
+| `draft`     | no       | boolean        | `true` hides the post from production. Default `false`. |
+| `cover`     | no       | path or URL    | Hero image used for OG card and BlogPosting JSON-LD. |
+| `slug`      | no       | string         | Override the URL slug (filename slug used otherwise). |
+| `canonical` | no       | URL            | If the post is cross-published, set the canonical href. |
+| `updated`   | no       | ISO date       | Bumps `dateModified` in JSON-LD and sitemap `lastmod`. |
+| `toc`       | no       | boolean        | Reserved for opt-out; ToC currently always renders when headings exist. |
+
+Legacy aliases (still parsed, kept for migrated posts): `summary` → `excerpt`, `description` → `excerpt`, `keywords` → `tags`, `hero` → `cover`, `publishDate` → `date`. Both YAML (`---`) and TOML (`+++`) frontmatter delimiters work.
+
+### 3. Body — Markdown + MDX components
+
+Anything Markdown supports works (headings, lists, links, code fences with Shiki highlighting, GFM tables and task lists). On top of that, the following components are auto-imported:
+
+```mdx
+<Callout title="A note before we begin">
+  Posts can include rich callouts with full MDX inside.
+</Callout>
+
+<Figure
+  src="/images/posts/community-collab.png"
+  alt="Two people pushing a shared elephant"
+  caption="Community is a shared lift, not a solo carry."
+  attr="Photo by Sam Carter on Unsplash"
+  attrLink="https://unsplash.com/@samcarter"
+/>
+
+<YouTube id="dQw4w9WgXcQ" title="A talk you should watch" />
+
+<XEmbed user="IAmJerdog" id="1234567890" />
+
+<PullQuote attribution="Patrick Lencioni">
+  Genius is in the simplification.
+</PullQuote>
+
+<Button href="#summary">Jump to summary</Button>
+
+<Tape rotation={-2} color="warm">Sticker</Tape>
+```
+
+| Component   | Purpose                                                    | Notes |
+|-------------|------------------------------------------------------------|-------|
+| `Callout`   | Boxed note (informational/aside).                          | Accepts `title`. |
+| `Figure`    | Image + caption + attribution.                             | Local images go through `next/image` (avif/webp); animated GIFs auto-pass `unoptimized`. |
+| `YouTube`   | Embeds `youtube.com/embed/<id>`.                           | Pass `id`, optional `title`. |
+| `XEmbed`    | Embeds an X / Twitter post.                                | Pass `user` (handle, no `@`) and `id` (status ID); optional `theme`. |
+| `PullQuote` | Big stylized quote.                                        | Optional `attribution`. |
+| `Button`    | Pill button styled to match the site.                      | Pass `href`; works for in-page anchors. |
+| `Tape`      | Inline "tape sticker" decoration.                          | `rotation`, `color`, `textColor`. |
+| `PostImage` | Used by Markdown image syntax `![alt](src)` automatically. | You usually don't render this directly. |
+
+Plain markdown images (`![alt](/images/posts/foo.png)`) are routed to `<PostImage>`, which uses `next/image` with `sizes="(min-width: 768px) 720px, 100vw"`. Animated GIFs (`*.gif`) are detected and rendered with `unoptimized` so they actually animate; `next/image` would otherwise log a warning and produce a still frame.
+
+### 4. Images and downloadables
+
+Drop image files into `public/images/posts/` and reference them with site-root paths:
+
+```mdx
+![Caption](/images/posts/cool-thing.png)
+```
+
+Downloadable files (PDFs, etc.) go in `public/files/`.
+
+External images work too; remote URLs render as plain `<img loading="lazy" decoding="async">` because they aren't pre-configured for `next/image`'s domain allowlist. **Always use `https://`** — the build does not enforce this, but mixed-content errors will appear in production.
+
+### 5. Verify and ship
+
+```bash
+npm run audit-frontmatter   # Validate every post's frontmatter against the Zod schema
+npm run typecheck           # tsc --noEmit
+npm run build               # Full production build + Pagefind index
+```
+
+Then either:
+
+- **Push the branch.** Netlify builds a deploy preview at `https://deploy-preview-<#>--jmeiss-me-toha.netlify.app`. Open the PR, review, merge to `main`. Netlify rebuilds production.
+- **Merge to main directly** for small typo fixes / quick edits if you want to skip the preview.
+
+To publish a draft, flip `draft: false` (or remove the field) in the post's frontmatter and push.
+
+## Editing site data
+
+Aside from `content/posts/`, all editable copy lives in plain **YAML** files under `content/data/`. Each has a matching `content/<name>.ts` that parses it at build time, validates with Zod, and exports a typed payload — you never have to touch TypeScript to update copy.
+
+| File                            | Used by                                               |
+|---------------------------------|-------------------------------------------------------|
+| `content/data/site.yaml`        | Site title, description, bio, socials, affiliations, copyright. Canonical source for OG, JSON-LD, footer, About. |
+| `content/data/now.yaml`         | `/now` page and the Now panel on the home page.       |
+| `content/data/talks.yaml`       | `/speaking`: `upcomingTalks`, optional `talks`, optional Notist `pastTalks`, `topics` chips — see below. |
+| `content/data/reading.yaml`     | Bookshelf on `/about`.                                |
+| `content/data/coffee.yaml`      | Coffee log on `/about`.                               |
+| `content/data/services.yaml`    | "What i actually do" cards on the home page.          |
+
+**How editing works**
+
+1. Open the YAML file, edit the text.
+2. Save. (`npm run dev` picks it up instantly.)
+3. Commit + push. Netlify rebuilds.
+
+**Validation**
+
+Every field is checked at build time against a Zod schema that lives alongside the loader (for example, `content/site.ts` declares `SiteConfigSchema`). If you typo a field, drop a required one, or pass `"not-a-url"` where a URL is expected, the build fails with a line like:
+
+```text
+Error: Content YAML failed validation (site.yaml):
+  person.email: Invalid email
+```
+
+**Empty lists are fine**
+
+Setting `upcomingTalks: []`, `talks: []`, `reading: []`, or `coffee: []` is intentional — the corresponding UI renders a tidy empty-state block rather than crashing or showing a blank section.
+
+**When to edit the TS file instead of the YAML**
+
+Only when you want to change the schema itself (add a new field, tighten a constraint). The TS file is where the `z.object({...})` schema lives; the YAML file is where data flows.
+
+### `content/data/site.yaml` — optional person fields
+
+`person.handle`, `person.company`, and `person.companyUrl` may be empty or omitted (or use `-` / `—` as a placeholder for company). The home hero, post bylines, and about page omit gaps instead of printing stray punctuation. JSON-LD includes `worksFor` and `alternateName` only when the corresponding fields have real values. `companyUrl` must still be either empty or a valid absolute URL.
+
+### `content/data/talks.yaml` — `/speaking`
+
+Four blocks drive the page:
+
+| Key | Purpose |
+|-----|---------|
+| `upcomingTalks` | Rows under **Upcoming events.** Each entry needs **`eventDate`** (`YYYY-MM-DD`, UTC calendar day). Rows render only while `eventDate` is **today or later** (UTC); older entries disappear on the next build or ISR revalidate (`/speaking` is cached ~1h because of the Notist fetch). Optional **`date`** overrides the month/year chip (`TalkRow` expects two words like `May 2026`). Sorted soonest-first. |
+| `talks` | Optional **More dates.** manual catalog (any mix of past or future). Each row needs a display **`date`**, **`title`**, **`event`**, and **`type`**. Optional **`upcoming: true`** applies the highlighted “upcoming” card style; it is not inferred from the `date` string — set it when you want that treatment. |
+| `pastTalks` | Optional. **`feedUrl`** — Notist public profile JSON (`https://noti.st/<username>.json`). **`portfolioUrl`** (default `https://speaking.jmeiss.me`), **`limit`** (default `10`, max `50`). Renders **Past talks.** with titles, conferences (from Notist event JSON), and links. |
+| `topics` | Subject chips at the bottom of `/speaking`. |
+
+Allowed `type` for both talk lists: `Keynote`, `Talk`, `Panel`, `Workshop`, `Podcast`, `Webinar`. Optional URL fields: `href`, `recording`, `slides`.
+
+#### Example: `upcomingTalks` and `talks`
+
+```yaml
+pastTalks:
+  feedUrl: "https://noti.st/jeremymeiss.json"
+  portfolioUrl: "https://speaking.jmeiss.me"
+  limit: 10
+
+upcomingTalks:
+  # eventDate is required — used to hide the row after the conference day (UTC).
+  - eventDate: "2026-09-18"
+    # Optional: overrides the small calendar chip; otherwise derived from eventDate (e.g. "Sep 2026").
+    date: "Sep 2026"
+    title: "Developer Experience Is a Strategy, Not a Slogan"
+    event: "Abstracta Testing Summit"
+    location: "Montevideo, Uruguay"
+    type: Talk
+    href: "https://abstracta.us/testing-summit-uy/"
+  - eventDate: "2026-11-05"
+    title: "Keynote: Communities and Coffee Shops"
+    event: "DevOpsDays Somewhere"
+    type: Keynote
+
+# Supplemental rows that are always listed when non-empty (no automatic date hiding).
+talks:
+  - date: "Mar 2026"
+    title: "OSS Contributor Guidelines… for Robots?"
+    event: "SCaLE 23x"
+    location: "Pasadena, CA"
+    type: Talk
+    upcoming: false
+    href: "https://www.socallinuxexpo.org/scale/23x"
+  - date: "May 2026"
+    title: "Internal enablement session (not public)"
+    event: "ACME Corp"
+    type: Workshop
+    upcoming: true
+
+topics:
+  - "Developer Experience as a strategy"
+```
+
+Use `upcomingTalks` for anything that should **drop off the site** after the event date; use `talks` for a **fixed** list (archived highlights, private gigs you still want listed, etc.). **Past talks** from Notist fill in separately when `pastTalks` is set. Code: `content/talks.ts` (YAML + `visibleUpcomingTalkRows`), `lib/notist.ts` (profile + event JSON for past talks).
+
+## Scripts
+
+| Script                          | What it does |
+|---------------------------------|--------------|
+| `npm run dev`                   | Next.js dev server on `:3000`. Drafts visible. Hot reload on MDX. |
+| `npm run build`                 | Production build + Pagefind index. Outputs to `.next/`. |
+| `npm run build:next`            | Build only, skip Pagefind. Useful when iterating on JSX. |
+| `npm run start`                 | Serve a built site locally. |
+| `npm run lint`                  | `next lint`. |
+| `npm run typecheck`             | `tsc --noEmit` — full repo type-check. |
+| `npm run new-post "Title"`      | Scaffold a new draft MDX post. |
+| `npm run audit-frontmatter`     | Validate every post's frontmatter and print a summary table. |
+| `npm run port-shortcodes`       | Migration helper — rewrites Hugo shortcodes to MDX components. Idempotent. |
+
+## URLs, redirects, and feeds
+
+- Posts: `/posts/<slug>` (filename slug, or `slug:` frontmatter override).
+- Tags: `/tags/<kebab-cased-tag>` (auto-generated from each post's `tags`).
+- Static: `/`, `/about`, `/now`, `/speaking`, `/posts`.
+- Feeds: `/index.xml` (RSS, same path as Hugo), `/atom.xml`, `/feed.json`. All include the latest 22 posts and use the canonical post URL as the GUID.
+- Search: Pagefind index at `/pagefind/`, surfaced via the in-nav search modal (`Cmd/Ctrl+K` or `/`).
+- Sitemap: `/sitemap.xml` — home, all posts, all tag archives, and the four static pages. `lastModified` uses `frontmatter.updated` if present, otherwise `frontmatter.date`.
+- Robots: `/robots.txt` — allow everything, points to the sitemap.
+
+Redirects defined in `next.config.ts` (also enforced by Netlify):
+
+| From                  | To                  | Why |
+|-----------------------|---------------------|-----|
+| `/post/:slug`         | `/posts/:slug`      | Some inbound links use the singular path. |
+| `/categories/:tag`    | `/tags/:tag`        | Hugo legacy URL pattern. |
+| `/categories`         | `/tags`             | Same. |
+
+## Deploy (Netlify)
+
+`netlify.toml` is the single source of truth for the build config:
+
+- **Build command:** `npm run build`
+- **Publish dir:** `.next`
+- **Plugin:** `@netlify/plugin-nextjs` handles everything (image optimization, redirects, ISR if we turn it on).
+- **Node:** 20.
+
+Security headers applied to every route: HSTS, `X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy` (deny camera/mic/geolocation/FLoC), `Cross-Origin-Opener-Policy: same-origin`. CSP is intentionally not set — post bodies embed YouTube, X, and Imgur, and the maintenance cost outweighs the benefit for a personal blog.
+
+Cache headers:
+
+| Pattern             | Policy                                            |
+|---------------------|---------------------------------------------------|
+| `/_next/static/*`   | `max-age=31536000, immutable`                     |
+| `/_next/image*`     | `max-age=31536000, immutable`                     |
+| `/images/*`         | `max-age=2592000, must-revalidate` (30 days)      |
+| `/files/*`          | `max-age=2592000, must-revalidate`                |
+| `/pagefind/*`       | `max-age=300, must-revalidate` (rebuilt each deploy) |
+| `/index.xml` etc.   | `max-age=3600, s-maxage=3600`                     |
+
+## Performance
+
+- **Static generation:** every route is statically rendered at build time (52 pages on the current corpus). No server-side rendering at request time.
+- **Bundle:** ~102 kB shared first-load JS, 106–114 kB per page.
+- **Images:** AVIF/WebP via `next/image` with explicit `width`/`height` to keep CLS at 0; animated GIFs pass through unoptimized.
+- **Search:** Pagefind is split out — the search modal loads the index only when the user opens search (Cmd/Ctrl+K, `/`, or click).
+- **Fonts:** `next/font/google` with `display: swap` for DM Serif Display, Inter, Caveat, JetBrains Mono — all self-hosted by Next at build time, no runtime Google fetch.
+
+## SEO
+
+Every page sets:
+
+- `<title>` (templated `%s — Jeremy Meiss`) and `<meta name="description">`.
+- Canonical `<link rel="canonical">` (Next infers from `metadataBase` + `alternates.canonical`).
+- Open Graph + Twitter `summary_large_image` cards. Posts use the `cover` image; the home page falls back to the site default.
+- JSON-LD: `BlogPosting` on each post, `WebSite` + `Person` on the home, `ProfilePage` on `/about`.
+- RSS / Atom / JSON Feed all point GUIDs at the canonical post URL.
+
+To check the structured data, run a build and `cat .next/server/app/posts/<slug>.html | grep ld+json`, or paste a deploy-preview URL into Google's Rich Results Test.
+
+## Accessibility
+
+- Skip-to-content link in the root layout.
+- Sticky `<header>` with proper `aria-label` and `aria-current` on the active link.
+- Mobile hamburger uses `aria-expanded` + `aria-controls` and traps Esc.
+- Search modal is `role="dialog" aria-modal="true"` with focus management on open and Esc to close.
+- All interactive elements are keyboard-reachable; the `prefers-reduced-motion` media query disables card rotation/transforms.
+- Images carry meaningful `alt` (or `alt=""` for decorative ones — header avatars, sticker tape, etc.).
+
+## License & contributing
+
+This is a personal site. The content is © Jeremy Meiss. The code is intentionally not open-licensed; if you want to fork the design or template, reach out first.

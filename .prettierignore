@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+public
+old_layouts
+themes
+layouts
+archetypes
+static
+content/posts
+docs
+package-lock.json

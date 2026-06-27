@@ -1,0 +1,89 @@
+# Site-level configuration and personal content.
+#
+# Editable source of truth — consumed by `content/site.ts`, validated with
+# Zod at build time, and surfaced in the layout, footer, /about,
+# Open Graph metadata, and JSON-LD.
+#
+# `person.blurb` and `person.longBio` support inline Markdown on the home hero
+# and /about page (metadata fields like `description` stay plain text).
+
+title: "Jeremy Meiss"
+description: "Personal website of Jeremy Meiss — International speaker, DevRel & DevEx leader, Technical Architect, and lover of coffee."
+url: "https://jmeiss.me"
+rssPath: "/index.xml"
+copyright: "2016-26 Jeremy Meiss. All rights reserved."
+
+person:
+  name: "Jeremy Meiss"
+  handle: "jerdog"
+  role: "Technical Architect, DevRel & DevEx Leader"
+  company: "-"
+  companyUrl: "https://onestreamsoftware.com"
+  location: "Kansas City, MO"
+  tagline: "DevRel & DevEx leader. Coffee evangelist. ADHD-fueled technologist."
+  blurb: >-
+    Over 3 decades of passion for technology, coffee, and building developer communities.
+  longBio: >-
+    I am a Technical Architect, DevEx / DevRel Leader, and International Speaker with
+    over three decades of versatile experience in the tech industry. I am a committed
+    advocate for open-source software and tools, with a deep passion for developer
+    relations, community, and the developer experience. Beyond my professional
+    pursuits, I am a proud father of adults, extremely passionate about coffee, travel,
+    hiking, camping, and the mountains, and love exploring new technologies.
+  email: "jeremy.meiss@gmail.com"
+  resumeHref: "/files/JeremyMeissResume-2026.pdf"
+  avatar: "/images/author/jeremy-meiss.jpg"
+  portrait: "/images/jeremy-meiss-brickwall.jpg"
+  portraitCaption: "jerdog, in the wild"
+
+socials:
+  - label: Bluesky
+    handle: "@jerdog.dev"
+    href: "https://bsky.app/profile/jerdog.dev"
+    rel: me
+  - label: LinkedIn
+    handle: jeremymeiss
+    href: "https://linkedin.com/in/jeremymeiss"
+    rel: me
+  - label: GitHub
+    handle: jerdog
+    href: "https://github.com/jerdog"
+    rel: me
+  - label: DEV
+    handle: "@jerdog"
+    href: "https://dev.to/jerdog"
+    rel: me
+  - label: Mastodon
+    handle: "@jerdog@hachyderm.io"
+    href: "https://hachyderm.io/@jerdog"
+    rel: me
+  # - label: RSS
+  #   handle: "/index.xml"
+  #   href: "/index.xml"
+  # - label: Email
+  #   handle: "jeremy@jmeiss.me"
+  #   href: "mailto:jeremy@jmeiss.me"
+
+# Shown under “current & past employment” on /about.
+employment:
+  - "Technical Architect @ WWT"
+  - "ex OneStream"
+  - "ex CircleCI"
+  - "ex Solace"
+  - "ex Auth0"
+  - "ex XDA"
+  - "ex Sprint"
+  - "ex Hallmark Cards"
+
+# Community roles — not employers. Credly-verified programs live in badges.yaml.
+affiliations:
+  - "DevOpsDays KC organizer"
+  - "DevOpsPartyGames co-creator"
+
+sideProjects:
+  - name: DevOpsDays KC
+    href: "https://devopsdayskc.org"
+  - name: CommunityDays KC
+    href: "https://communitydays.info"
+  # - name: DevOpsPartyGames
+  #   href: "https://devopspartygames.com"

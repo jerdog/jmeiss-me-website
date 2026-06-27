@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+staged_files=$(git diff --cached --name-only)
+
+# Lockfile-only commits cannot affect site links.
+if [ "$(printf '%s\n' "$staged_files" | sed '/^$/d' | wc -l | tr -d ' ')" -eq 1 ] && printf '%s\n' "$staged_files" | grep -qx 'package-lock.json'; then
+  exit 0
+fi
+
+# Skip when staged changes cannot affect site content.
+if ! printf '%s\n' "$staged_files" | grep -qE '^(content/|app/|components/|public/|lib/|scripts/audit-a11y-content|package\.json|package-lock\.json|next\.config)'; then
+  exit 0
+fi
+
+npm run audit-a11y-content
