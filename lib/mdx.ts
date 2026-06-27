@@ -6,6 +6,7 @@ import type { Pluggable } from "unified";
 import type { TocEntry } from "@/components/post/ContentsRail";
 import { rehypeUnwrapMedia } from "@/lib/rehype-unwrap-media";
 import { rehypeTableScope } from "@/lib/rehype-table-scope";
+import { rehypeWrapTables } from "@/lib/rehype-wrap-tables";
 
 /**
  * Shared remark/rehype plugin chain for MDX rendering on post pages.
@@ -44,6 +45,7 @@ export const mdxOptions = {
       },
     ],
     rehypeTableScope,
+    rehypeWrapTables,
   ] as Pluggable[],
 };
 

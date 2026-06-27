@@ -35,6 +35,24 @@
   --font-mono: var(--font-mono, "JetBrains Mono", ui-monospace, monospace);
 }
 
+/* Hand-authored CSS (e.g. `.prose-mdx` in content.css) uses var(--color-*)
+   directly. Mirror @theme tokens on :root so they resolve outside @apply utilities. */
+:root {
+  --color-paper: #ffffff;
+  --color-paper-deep: #eaf1f8;
+  --color-card: #f5f9fd;
+  --color-ink: #0b0d10;
+  --color-ink-soft: #2a3340;
+  --color-muted: #5a6878;
+  --color-rule: #cbd6e2;
+  --color-rule-on-ink: color-mix(in srgb, #7fb6f1 38%, #0b0d10);
+  --color-accent: #0a5fbf;
+  --color-accent-deep: #08458a;
+  --color-accent-soft: #7fb6f1;
+  --color-warm: #b1361b;
+  --color-highlight: #cfe4fb;
+}
+
 /* Utility helpers (tape angles, hand-set headings, etc.) */
 @utility tape-shadow {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);

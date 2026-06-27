@@ -79,21 +79,32 @@
   margin: 1rem 0 1.5rem;
 }
 
+.prose-mdx ul {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.prose-mdx ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
 .prose-mdx li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.prose-mdx li::marker {
+  color: var(--color-accent-deep);
+}
+
+.prose-mdx li > ul {
+  list-style-type: circle;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.prose-mdx blockquote {
-  border-left: 3px solid var(--color-accent);
-  padding: 0.5rem 1.25rem;
-  margin: 1.5rem 0;
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  line-height: 1.4;
-  color: var(--color-ink);
-}
-
-.prose-mdx code {
+.prose-mdx hr {
   font-family: var(--font-mono);
   font-size: 0.875em;
   background-color: var(--color-card);
@@ -102,23 +113,36 @@
   border: 1px solid var(--color-rule);
 }
 
-.prose-mdx pre {
+.prose-mdx pre,
+.prose-mdx figure[data-rehype-pretty-code-figure] pre {
   font-family: var(--font-mono);
   background-color: var(--color-ink);
   color: var(--color-paper);
   padding: 1rem 1.25rem;
   border-radius: 4px;
+  border: 1px solid var(--color-ink);
   overflow-x: auto;
   font-size: 0.875rem;
   line-height: 1.6;
   margin: 1.5rem 0;
 }
 
-.prose-mdx pre code {
+.prose-mdx figure[data-rehype-pretty-code-figure] {
+  margin: 1.5rem 0;
+}
+
+.prose-mdx figure[data-rehype-pretty-code-figure] pre {
+  margin: 0;
+}
+
+.prose-mdx pre code,
+.prose-mdx figure[data-rehype-pretty-code-figure] code {
   background: transparent;
   border: none;
   padding: 0;
   color: inherit;
+  font-size: inherit;
+  border-radius: 0;
 }
 
 .prose-mdx hr {
@@ -135,28 +159,6 @@
   border: 1px solid var(--color-rule);
 }
 
-.prose-mdx table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  font-size: 0.95rem;
-}
-
-.prose-mdx th,
-.prose-mdx td {
-  text-align: left;
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid var(--color-rule);
-}
-
-.prose-mdx th {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
 /* Lede paragraph (first paragraph after PostHeader) */
 .prose-mdx > p:first-of-type {
   font-family: var(--font-display);
@@ -167,6 +169,39 @@
 
 /* MDX shortcode typography */
 @layer components {
+  .prose-mdx blockquote {
+    @apply relative my-7 border border-ink border-l-[6px] border-l-warm bg-highlight px-6 py-5 hard-shadow-ink-sm;
+  }
+
+  .prose-mdx blockquote p {
+    @apply m-0 font-display text-xl leading-snug text-ink italic;
+  }
+
+  .prose-mdx blockquote strong {
+    @apply font-semibold text-ink not-italic;
+  }
+
+  .prose-mdx .mdx-table-wrap {
+    @apply my-7 overflow-x-auto border border-ink bg-paper hard-shadow-ink-sm;
+  }
+
+  .prose-mdx table {
+    @apply w-full border-collapse text-[0.9375rem];
+  }
+
+  .prose-mdx th,
+  .prose-mdx td {
+    @apply border border-ink px-3.5 py-2.5 text-left align-top;
+  }
+
+  .prose-mdx thead th {
+    @apply border-ink bg-ink font-mono text-[0.6875rem] tracking-[0.08em] text-paper uppercase;
+  }
+
+  .prose-mdx tbody tr:nth-child(even) {
+    @apply bg-card;
+  }
+
   .content-callout {
     @apply my-6 border-l-4 px-5 py-4 font-body text-base leading-relaxed text-ink-soft;
   }
