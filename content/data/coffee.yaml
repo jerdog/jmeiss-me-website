@@ -1,14 +1,9 @@
-# Coffee data for the site.
+# Coffee log for /about.
 #
-# `feed` — home-page feed strip card (edit when the cup changes).
-# `coffee` — full log on /about (add entries below; empty list shows an empty state).
+# The home feed strip “COFFEE” card uses the “Drinking” item from `now.yaml`.
+# Add log entries below; an empty list shows an empty state on /about.
 #
-# `feed.title`, `feed.meta`, and each log entry's `note` support inline Markdown.
-
-feed:
-  title: "Daily-driver pourovers from local KC roasters"
-  meta: "the about page"
-  href: "/about"
+# Each entry's `note` supports inline Markdown.
 
 # Add log entries like:
 #   - roaster: "Messenger Coffee"

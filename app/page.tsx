@@ -7,8 +7,7 @@ import { RecentEssays } from "@/components/home/RecentEssays";
 import { ServicesStrip } from "@/components/home/ServicesStrip";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllPosts } from "@/lib/posts";
-import { feedCoffee } from "@/content/coffee";
-import { now } from "@/content/now";
+import { now, feedCoffeeFromNow } from "@/content/now";
 import { siteConfig } from "@/content/site";
 import { pastTalks, upcomingTalks, visibleUpcomingTalkRows } from "@/content/talks";
 import { fetchNotistPastTalks } from "@/lib/notist";
@@ -90,7 +89,7 @@ export default async function HomePage() {
       </Container>
 
       <Container>
-        <FeedStrip posts={posts} feedTalk={feedTalk} feedCoffee={feedCoffee} />
+        <FeedStrip posts={posts} feedTalk={feedTalk} feedCoffee={feedCoffeeFromNow(now)} />
         <RecentEssays posts={recent} />
         <ServicesStrip />
       </Container>

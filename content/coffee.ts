@@ -1,8 +1,8 @@
 /**
- * Coffee data for the site.
+ * Coffee log data for the /about page.
  *
  * Edit `content/data/coffee.yaml`, not this file.
- * `feed` drives the home feed strip; `coffee` is the full log on /about.
+ * The home feed strip coffee card comes from the “Drinking” item in `now.yaml`.
  */
 
 import { z } from "zod";
@@ -17,21 +17,10 @@ const CoffeeSchema = z.object({
   href: z.string().url().optional(),
 });
 
-const FeedCoffeeSchema = z.object({
-  title: z.string().min(1),
-  meta: z.string().min(1),
-  href: z.string().min(1).default("/about"),
-});
-
 const CoffeeFileSchema = z.object({
-  feed: FeedCoffeeSchema,
   coffee: z.array(CoffeeSchema),
 });
 
 export type Coffee = z.infer<typeof CoffeeSchema>;
-export type FeedCoffee = z.infer<typeof FeedCoffeeSchema>;
 
-const data = validateYaml(coffeeYaml, CoffeeFileSchema, "coffee.yaml");
-
-export const feedCoffee: FeedCoffee = data.feed;
-export const coffee: Coffee[] = data.coffee;
+export const coffee: Coffee[] = validateYaml(coffeeYaml, CoffeeFileSchema, "coffee.yaml").coffee;

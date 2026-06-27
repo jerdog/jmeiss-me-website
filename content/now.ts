@@ -41,3 +41,21 @@ export const now: NowPage = {
   ...rawNow,
   updated: rawNow.updated.trim() || updatedFromFileMtime(NOW_YAML),
 };
+
+/** Home feed strip coffee card — sourced from the /now “Drinking” item. */
+export interface FeedCoffeeCard {
+  title: string;
+  meta: string;
+  href: string;
+}
+
+const DRINKING_LABEL = "drinking";
+
+export function feedCoffeeFromNow(page: NowPage): FeedCoffeeCard {
+  const drinking = page.items.find((item) => item.label.toLowerCase() === DRINKING_LABEL);
+  return {
+    title: drinking?.text.trim() || "What's in the cup lately.",
+    meta: "the about page",
+    href: "/about",
+  };
+}

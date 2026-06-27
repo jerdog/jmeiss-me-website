@@ -2,7 +2,7 @@ import Link from "next/link";
 import { NewTabHint } from "@/components/a11y/NewTabHint";
 import { InlineMarkdown } from "@/components/content/InlineMarkdown";
 import { Card } from "@/components/surfaces/Card";
-import type { FeedCoffee } from "@/content/coffee";
+import type { FeedCoffeeCard } from "@/content/now";
 import { formatLongDate } from "@/lib/format";
 import type { PostSummary } from "@/lib/posts";
 import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href";
@@ -20,7 +20,7 @@ export interface FeedTalk {
 interface FeedStripProps {
   posts: PostSummary[];
   feedTalk?: FeedTalk;
-  feedCoffee: FeedCoffee;
+  feedCoffee: FeedCoffeeCard;
 }
 
 interface FeedItem {
@@ -58,7 +58,7 @@ function talkFeedItem(talk: FeedTalk): FeedItem {
   };
 }
 
-function coffeeFeedItem(feed: FeedCoffee): FeedItem {
+function coffeeFeedItem(feed: FeedCoffeeCard): FeedItem {
   return {
     kind: "COFFEE",
     title: feed.title,
