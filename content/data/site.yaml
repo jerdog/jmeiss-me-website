@@ -11,7 +11,7 @@ title: "Jeremy Meiss"
 description: "Personal website of Jeremy Meiss — International speaker, DevRel & DevEx leader, Technical Architect, and lover of coffee."
 url: "https://jmeiss.me"
 rssPath: "/index.xml"
-copyright: "2026 Jeremy Meiss. All rights reserved."
+copyright: "2016-26 Jeremy Meiss. All rights reserved."
 
 person:
   name: "Jeremy Meiss"
@@ -64,7 +64,8 @@ socials:
   #   handle: "jeremy@jmeiss.me"
   #   href: "mailto:jeremy@jmeiss.me"
 
-affiliations:
+# Shown under “current & past employment” on /about.
+employment:
   - "Technical Architect @ WWT"
   - "ex OneStream"
   - "ex CircleCI"
@@ -73,6 +74,9 @@ affiliations:
   - "ex XDA"
   - "ex Sprint"
   - "ex Hallmark Cards"
+
+# Community roles — not employers. Credly-verified programs live in badges.yaml.
+affiliations:
   - "DevOpsDays KC organizer"
   - "DevOpsPartyGames co-creator"
 
@@ -81,5 +85,5 @@ sideProjects:
     href: "https://devopsdayskc.org"
   - name: CommunityDays KC
     href: "https://communitydays.info"
-  - name: DevOpsPartyGames
-    href: "https://devopspartygames.com"
+  # - name: DevOpsPartyGames
+  #   href: "https://devopspartygames.com"

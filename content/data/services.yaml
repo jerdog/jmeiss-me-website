@@ -1,4 +1,4 @@
-# "What I actually do" cards on the home page.
+# "Additional Things I Do" cards on the home page.
 #
 # Ordered list; `number` is displayed in the card header as a numeric
 # prefix (e.g. "01"). `href` is optional — omit to render as a plain card,
@@ -8,12 +8,12 @@
 
 services:
   - number: "01"
-    title: "Build DevRel programs"
-    body: "From scratch or from chaos. Team design, motion plans, measurement, the works."
+    title: "DevRel & DevEx Consulting"
+    body: "From scratch or from chaos. Team design,  plans, measurement, the works."
   - number: "02"
     title: "Speak at your event"
-    body: "Keynotes, panels, fireside chats. DevRel, DevEx, community, ADHD-fueled tangents."
+    body: "Keynotes, panels, fireside chats. DevOps, DevRel, DevEx, community, ADHD-fueled tangents."
     href: "/speaking"
   - number: "03"
-    title: "Advise & coach"
-    body: "For early-stage teams or first-time DevRel leads. Office hours by the half-day."
+    title: "Adhoc & Advisory"
+    body: "One-off consulting projects. Advisory services for early-stage teams or first-time DevRel leads."

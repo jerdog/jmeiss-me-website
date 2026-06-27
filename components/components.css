@@ -977,6 +977,38 @@
     @apply text-ink underline hover:no-underline;
   }
 
+  .badge-wall__header {
+    @apply flex-wrap items-start justify-between gap-3;
+  }
+
+  .badge-wall__profile-link {
+    @apply shrink-0;
+  }
+
+  .badge-wall__grid {
+    @apply grid list-none grid-cols-2 gap-4 p-0 sm:grid-cols-3 md:grid-cols-4;
+  }
+
+  .badge-wall__item {
+    @apply flex h-full flex-col items-center border border-ink bg-paper px-3 py-4 text-center no-underline transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:hard-shadow-ink-sm focus-visible:-translate-y-0.5 focus-visible:hard-shadow-ink-sm;
+  }
+
+  .badge-wall__image-wrap {
+    @apply mb-3 flex h-[120px] w-[120px] items-center justify-center;
+  }
+
+  .badge-wall__image {
+    @apply h-auto max-h-[120px] w-auto max-w-[120px] object-contain;
+  }
+
+  .badge-wall__name {
+    @apply font-body text-sm leading-snug font-medium text-ink;
+  }
+
+  .badge-wall__issuer {
+    @apply mt-1 font-mono text-[0.625rem] uppercase tracking-[0.08em] text-muted;
+  }
+
   .topic-chips {
     @apply flex flex-wrap gap-2;
   }

@@ -15,6 +15,7 @@
     "audit-frontmatter": "tsx scripts/audit-frontmatter.ts",
     "audit-a11y-content": "tsx scripts/audit-a11y-content.ts",
     "check-links": "tsx scripts/check-links.ts",
+    "sync-badges": "node scripts/sync-credly-badges.mjs",
     "prepare": "husky"
   },
   "dependencies": {

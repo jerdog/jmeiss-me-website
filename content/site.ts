@@ -65,6 +65,7 @@ const SiteConfigSchema = z.object({
   person: PersonSchema,
   socials: z.array(SocialLinkSchema).min(1),
   affiliations: z.array(z.string().min(1)),
+  employment: z.array(z.string().min(1)),
   sideProjects: z.array(SideProjectSchema),
 });
 

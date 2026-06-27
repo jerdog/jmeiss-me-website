@@ -1,0 +1,53 @@
+# Verified credentials (Credly) for /about.
+#
+# Regenerate from Credly:
+#   npm run sync-badges
+#
+# Source: https://www.credly.com/users/jeremy-meiss/badges.json
+
+profileUrl: https://www.credly.com/users/jeremy-meiss
+badges:
+  - name: "Speaker: OSS + ELC North America 2026"
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/1747b0d9-38d8-4987-afec-c811eaed45fa/blob
+    href: https://www.credly.com/badges/2ca324d7-3327-4d17-a681-c19a57c3121a
+  - name: "Speaker: Open Source Summit North America 2025"
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/d1f7438d-92e4-4a47-a22a-523c7284ca77/blob
+    href: https://www.credly.com/badges/01c820c1-582e-4e5f-a8cd-6b7ec0e25b45
+  - name: CD Foundation Ambassador 2025
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/86c3ce90-4aa3-41d2-ad46-07231a8683a2/blob
+    href: https://www.credly.com/badges/18147fbc-0a52-4b60-b802-d0a1093db277
+  - name: "Program Committee Member: Open Source Summit Europe 2025"
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/63cb83d9-0465-4868-8fa9-2b1009b0a426/blob
+    href: https://www.credly.com/badges/58a6f0d1-e3fa-4baa-9201-c668240c332f
+  - name: "Program Committee Member: Open Source Summit North America 2025"
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/3e257d07-e518-4ff5-9549-260240ba1c98/blob
+    href: https://www.credly.com/badges/355f0927-2763-4647-bc93-1ef752c0772f
+  - name: Program Committee Member - cdCon 2024
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/bc34a53d-bd05-4b41-85b1-21e05a5e9055/image.png
+    href: https://www.credly.com/badges/acda211f-6ef3-4c3a-9c61-f84fac44ddbf
+  - name: "Speaker: Open Source Summit North America 2024"
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/5d7ece29-f2e6-47aa-88d9-d99c5ba0a336/image.png
+    href: https://www.credly.com/badges/9b26abca-7931-4439-a021-e66266a7fa76
+  - name: "Program Committee Member: Open Source Summit North America 2024"
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/98a7375e-c775-4c9f-9d25-505143929a3f/image.png
+    href: https://www.credly.com/badges/41424ceb-e7f6-46ef-9fce-03dcf13d52f6
+  - name: Speaker - Continuous Delivery Mini Summit 2023
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/0b753312-2772-40be-92bc-2d7ea2cdf291/image.png
+    href: https://www.credly.com/badges/166bd9c8-97a3-47cd-88de-0ba135efcdbb
+  - name: "Program Committee: Spinnaker Summit 2023"
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/5c4cfea8-0069-4e94-b350-4a2157f62621/image.png
+    href: https://www.credly.com/badges/7713068e-7427-475b-8da5-9d32b3b3baa8
+  - name: cdCon 2022 Speaker
+    issuer: The Linux Foundation
+    image: https://images.credly.com/images/d0b72760-8a19-42e0-8a8e-9c10a5ce93ee/image.png
+    href: https://www.credly.com/badges/d4359d19-c9d1-4e93-a726-1227dd1acf66

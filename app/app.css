@@ -102,12 +102,24 @@
   }
 
   /* About page */
-  .about-affiliations {
-    @apply mt-5 flex flex-wrap gap-2;
+  .about-credentials {
+    @apply mt-5 space-y-4;
+  }
+
+  .about-credentials__group {
+    @apply space-y-2;
+  }
+
+  .about-credentials__heading {
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-muted;
+  }
+
+  .about-credentials__chips {
+    @apply flex list-none flex-wrap gap-2 p-0;
   }
 
   .about-affiliation {
-    @apply rounded-full border border-ink bg-card px-3 py-1 font-body text-xs;
+    @apply inline-block rounded-full border border-ink bg-card px-3 py-1 font-body text-xs;
   }
 
   .about-actions {

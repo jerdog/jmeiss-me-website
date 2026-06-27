@@ -3,6 +3,8 @@ import { BPaper } from "@/components/surfaces/BPaper";
 import { InlineMarkdown } from "@/components/content/InlineMarkdown";
 import { Container } from "@/components/layout/Container";
 import { Tape } from "@/components/surfaces/Tape";
+import { AboutCredentials } from "@/components/about/AboutCredentials";
+import { BadgeWall } from "@/components/about/BadgeWall";
 import { PortraitCard } from "@/components/about/PortraitCard";
 import { Bookshelf } from "@/components/about/Bookshelf";
 import { CoffeeLog } from "@/components/about/CoffeeLog";
@@ -10,6 +12,7 @@ import { SocialGrid } from "@/components/about/SocialGrid";
 import { NowPanel } from "@/components/home/NowPanel";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/content/site";
+import { badgeProfileUrl, badges } from "@/content/badges";
 import { now } from "@/content/now";
 
 export const metadata: Metadata = {
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const { person, socials, affiliations } = siteConfig;
+  const { person, socials, employment, affiliations } = siteConfig;
 
   const mainEntity: Record<string, unknown> = {
     "@type": "Person",
@@ -78,13 +81,7 @@ export default function AboutPage() {
               <InlineMarkdown>{person.longBio}</InlineMarkdown>
             </p>
 
-            <div className="about-affiliations">
-              {affiliations.map((a) => (
-                <span key={a} className="about-affiliation">
-                  {a}
-                </span>
-              ))}
-            </div>
+            <AboutCredentials employment={employment} affiliations={affiliations} />
 
             <div className="about-actions">
               <a href={person.resumeHref} className="btn-primary">
@@ -96,6 +93,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+      </Container>
+
+      <Container className="page-pad-section">
+        <BadgeWall badges={badges} profileUrl={badgeProfileUrl} />
       </Container>
 
       <Container className="page-pad-section">

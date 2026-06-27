@@ -8,7 +8,7 @@ import { isOffSiteHref, offSiteAnchorProps } from "@/lib/off-site-href";
 export function ServicesStrip() {
   return (
     <section className="services-strip">
-      <h2 className="section-heading-spaced">what i actually do.</h2>
+      <h2 className="section-heading-spaced">additional things i do.</h2>
       <div className="services-strip__grid">
         {services.map((service, i) => {
           const isMiddle = i === 1;
